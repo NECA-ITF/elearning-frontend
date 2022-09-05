@@ -2,11 +2,12 @@
   position: relative;
   overflow: hidden;
   border: none;
+  width:10%;
   color: white;
   display: inline-block;
   font-size: 15px;
   line-height: 15px;
-  padding: 15px 15px 14px;
+  padding: 25px 25px 22px;
   text-decoration: none;
   cursor: pointer;
   background: #151D3B;
@@ -15,11 +16,6 @@
   touch-action: manipulation;
 }
 
-.button span:first-child {
-  position: relative;
-  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-  z-index: 10;
-}
 
 .button span:last-child {
   color: white;
@@ -29,7 +25,7 @@
   transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
   z-index: 100;
   opacity: 0;
-  top: 50%;
+  top: 61%;
   left: 50%;
   transform: translateY(225%) translateX(-50%);
   height: 14px;
@@ -46,7 +42,7 @@
   background-color: #D82148;
   /* #B33030 */
   transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transition: transform 2500ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
   z-index: 50;
 }
