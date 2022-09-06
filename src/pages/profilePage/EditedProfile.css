@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.main{background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);;
+    padding: 2rem;
+    width: 45%;
+    height: 500px;
+
+}
+.mainone{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    
+    
+}
+.main2{
+    border: 1px solid gray;
+    padding: 3rem;
+    width: 30%;
+    height: 350px;
+
+}
+
+.border{
+    
+}
+.border p{
+    color: white;
+}
