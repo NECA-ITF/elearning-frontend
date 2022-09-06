@@ -3,14 +3,14 @@ import React from 'react';
 // import CustomInput from './components/customInput/CustomInput';
 import './App.css';
 // import ProfilePage from './pages/profilePage/ProfilePage';
-import SignupPage from './pages/signupPage/SignupPage';
+import LoginPage from './pages/loginPage/LoginPage';
 
 function App() {
   return (
     <div>
         {/* <CustomButton/>
         <CustomInput/> */}
-        <SignupPage />
+        <LoginPage />
     </div>
   )
 }
