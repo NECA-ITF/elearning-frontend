@@ -20,7 +20,7 @@ function NavBar() {
                     </ul>
                 </nav>
                 <div className='apply'>
-                        <p><span>Apply Now</span></p>
+                        <p><span>LOGIN</span></p>
                 </div>
         </div>
      )
