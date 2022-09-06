@@ -1,27 +1,29 @@
 import React from 'react'
 import itflogo from '../../assets/itf_log.png';
-import './HomePage.css'
+import './NavBar.css';
 
 function NavBar() {
-  return (
-    <div>
-        
-        <div className='nav-bar'>
-          <nav className='nav'>
-            <img src={itflogo} alt="itflogo" />
-            <ul className='content'>
-              <li>Home</li>
-              <li>About</li>
-              <li>Course</li>
-              <li>Dashboard</li>
-              <li>Contact</li>
-              <li><span>Apply Now</span></li>
-            </ul>
-          </nav>
+    return (
+            <div className='nav-bar'>
+          
+                <div className='mylogo'>
+                    <img src={itflogo} alt="itflogo" style={{width:'70px', height:'70px', padding:'5px 5px'}}/>
+                </div>
+                <nav className='nav'>
+                    <ul className='content'>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Course</li>
+                        <li>Dashboard</li>
+                        <li>Contact</li>
+                        
+                    </ul>
+                </nav>
+                <div className='apply'>
+                        <p><span>Apply Now</span></p>
+                </div>
         </div>
-    
-    </div>
-  )
+     )
 }
 
 export default NavBar
