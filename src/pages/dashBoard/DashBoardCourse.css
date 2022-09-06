@@ -1,0 +1,69 @@
+.coursecard{
+    font-family: Trebuchet MS;
+    width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
+    /* border: 1px solid blue; */
+    background-color: #f9f9f9;
+    margin-bottom: 3rem;
+}
+.course-inn-div{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+.thumb{
+    width: 100%;
+}
+.bottom-sec{
+    /* border: 1px solid yellow; */
+    width: 90%
+}
+.stardiv{
+    margin-top: 4%;
+    display: flex;
+    justify-content: justify;
+    /* align-items: center; */
+}
+.profileicons{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.stardiv{
+    display: flex;
+    /* border: 1px solid green; */
+    height: 3rem;
+}
+.star-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+   margin: 0 2rem;
+}
+.svg-div, .case-div, .clock-div{
+    display: flex;
+}
+.svg-div{
+    /* border: 1px solid pink; */
+    border-bottom: 1px solid #7d8492;
+    gap:3rem;
+}
+.case-div, .clock-div img{
+    width: 1rem;
+}
+.case-div, .clock-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px
+}
+.case-div, .clock-div p{
+    font-size: 0.8rem;
+}
+.course-title{
+    text-align: center;
+}
