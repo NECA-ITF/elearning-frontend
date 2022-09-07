@@ -34,6 +34,7 @@ function DashBoard() {
             <ul className='dashcontent'>
                 <li>Home</li>
                 <li>About</li>
+                <li>Courses</li>
                 <li>Contact</li>   
             </ul>
         </nav>
@@ -44,10 +45,11 @@ function DashBoard() {
       </div>
       <div className='dashcustominput'>
         <div className='dashindiv'>
-          <CustomInput placeholder="Find a course" className="dashinput" style={{width:'300px'}} onChange={input}/>
-          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'48px', padding:'5px 0px', margin:'10px 0px'}}/>
+          <CustomInput placeholder="Find a course" className="dashinput" type= 'search' style={{width:'400px', padding: '10px 15px 12px'}} onChange={input}/>
+          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'41px', padding:'5px 0px', margin:'10px 0px'}}/>
         </div>
       </div>
+      {/* <h1>All Courses</h1> */}
       <DashCourseList courses= {searchInput ? searchCourse : courses}/>
     </div>
   )

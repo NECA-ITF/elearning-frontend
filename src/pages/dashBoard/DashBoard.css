@@ -29,6 +29,7 @@
 .dashcontent li:hover{
     font-weight: bolder;
     background-color: #D82148;
+    color: #f9f9f9;
 }
 .dashnav{
       align-items: center;
@@ -50,6 +51,6 @@
     display: flex;
     /* border: 1px solid black; */
     margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 
