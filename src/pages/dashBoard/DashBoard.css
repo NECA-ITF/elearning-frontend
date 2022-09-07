@@ -1,0 +1,56 @@
+.dashcontainer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.dashnav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #151D3B;
+    /* border: 1px solid #151D3B; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.dashnav{
+    display: flex;
+    justify-content: space-around;
+}
+.dashcontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+}
+.dashcontent li{
+    padding: 10px;
+}
+.dashcontent li:hover{
+    font-weight: bolder;
+    background-color: #D82148;
+    color: #f9f9f9;
+}
+.dashnav{
+      align-items: center;
+}
+.arrowhov:hover {
+    color: #151D3B;
+    background-color: #D82148;
+    transition: 2s ease-in;
+}
+.dashcustominput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: -webkit-sticky;
+    /* border: 1px solid green; */
+    /* margin-left: 30%; */
+}
+.dashindiv{
+    display: flex;
+    /* border: 1px solid black; */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
