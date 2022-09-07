@@ -7,8 +7,7 @@ import './App.css';
 function App() {
   return (
     <div>
-        {/* <CustomButton/>
-        <CustomInput/> */
+     
     </div>
   )
 }
