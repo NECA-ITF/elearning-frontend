@@ -1,7 +1,6 @@
 import React from 'react'
 import './HomePage.css'
 import CustomButton from '../../components/customButton/CustomButton';
-import CustomInput from '../../components/customInput/CustomInput';
 import image from '../../assets/newlogo.png';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
