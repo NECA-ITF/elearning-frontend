@@ -5,6 +5,7 @@ import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import MyCourses from './pages/myCourses/MyCourses';
 import './App.css';
+import EditedProfile from './pages/profilePage/EditedProfile';
 
 function App() {
   return (
