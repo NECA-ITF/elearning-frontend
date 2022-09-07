@@ -7,8 +7,7 @@ import EditedProfile from './pages/profilePage/EditedProfile';
 function App() {
   return (
     <div>
-        {/* <CustomButton/>
-        <CustomInput/> */
+      
     </div>
   )
 }
