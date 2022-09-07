@@ -27,9 +27,7 @@ function SignupPage() {
             </div>
             <div className='bottom'>
               <h5>By signing up, you agree to our <span>Terms of Use</span> and <span>Privacy Policy </span></h5>
-              <p>Already have an account?</p>
-              <p> Log In</p>
-
+              <p>Already have an account? <span>Login</span></p>
             </div>
 
           </form>
