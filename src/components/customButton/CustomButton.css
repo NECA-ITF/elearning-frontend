@@ -1,0 +1,59 @@
+.button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  width:10%;
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 25px 25px 22px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #151D3B;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+
+.button span:last-child {
+  color: white;
+  display:grid;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 61%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D82148;
+  /* #B33030 */
+  transform-origin: bottom center;
+  transition: transform 2500ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
