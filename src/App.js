@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   return (
     <div>
+      <h1>Elearning service</h1>
         <CustomButton/>
         <CustomInput/>
     </div>
