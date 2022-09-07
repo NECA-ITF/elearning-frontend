@@ -1,15 +1,21 @@
 import React from 'react'
 import './HomePage.css'
 import CustomButton from '../../components/customButton/CustomButton';
+import CustomInput from '../../components/customInput/CustomInput';
 import image from '../../assets/newlogo.png';
+import NavBar from './NavBar';
 
 
 
 function HomePage() {
   return (
-    <div className='homepg'>
+    <div className='homepagebody'>
+      <NavBar />
+      <div className='homepg'>
       <div className='custominput'>
         <div className='indiv'>
+          {/* <CustomInput placeholder="Find a course" className="input" style={{width:'300px'}}/>
+        <CustomButton title="click" className="bet" style={{width:'100px', height:'48px', padding:'5px 0px', margin:'10px 0px'}}/> */}
         </div>
         
       </div>
@@ -28,6 +34,7 @@ function HomePage() {
       <div className='shapedividers_com-6246'>
       
       </div>
+    </div>
     </div>
   )
 }
