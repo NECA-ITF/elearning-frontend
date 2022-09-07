@@ -4,7 +4,7 @@ import './CustomButton.css';
 function CustomButton({title, ...otherProps}) {
   return (
     <div>
-        <button {...otherProps} className='button'><span className="text"></span>{title}</button>
+        <button {...otherProps} className='button'>{title}<span className="text">{title}</span></button>
     </div>
   )
 }
