@@ -20,7 +20,7 @@ function MyCourses() {
             <li>External Links</li>
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>Introduction to <span>React.</span></h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others</p>
+            <h1 className='course-header'>Introduction to <span>React.</span></h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
             <p className='rates'>Ratings <Ratings/></p>
           </div>
       </div>
