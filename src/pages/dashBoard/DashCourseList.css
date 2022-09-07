@@ -1,0 +1,13 @@
+.coursecontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:1.8rem;
+}
+@media screen and (max-width:700px) {
+    .coursecontainer{
+        display: grid;
+        gap:0.2rem;
+    }
+}

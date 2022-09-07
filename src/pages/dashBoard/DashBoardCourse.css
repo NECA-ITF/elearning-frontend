@@ -1,0 +1,85 @@
+.coursecard{
+    font-family: Trebuchet MS;
+    width: 20%;
+    /* border-radius: 10px; */
+    overflow: hidden;
+    /* border: 1px solid blue; */
+    background-color: #f9f9f9;
+    margin-bottom: 3rem;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.course-inn-div{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+.thumb{
+    width: 100%;
+}
+.bottom-sec{
+    /* border: 1px solid yellow; */
+    width: 90%
+}
+.stardiv{
+    margin-top: 10%;
+    display: flex;
+    justify-content: justify;
+    /* align-items: center; */
+}
+.profileicons{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.stardiv{
+    display: flex;
+    /* border: 1px solid green; */
+    height: 3rem;
+}
+.star-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+   margin: 0 0.7rem;
+}
+.star-text h6{
+    background-color: #e1e4eb;
+    margin-left: 0.8rem;
+    padding: 0.2rem;
+}
+.svg-div, .case-div, .clock-div{
+    display: flex;
+}
+.svg-div{
+    /* border: 1px solid pink; */
+    border-bottom: 1px solid #7d8492;
+    margin-bottom: 1rem;
+    gap:5rem;
+}
+.case-div, .clock-div img{
+    width: 1rem;
+}
+.case-div p{
+    /* width: 50%; */
+    min-width: 5rem;
+}
+.case-div, .clock-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px
+}
+.case-div, .clock-div p{
+    font-size: 0.7rem;
+}
+.course-title{
+    text-align: center;
+}
+@media screen and (max-width:700px) {
+    .coursecard{
+        width: 80%;
+    }
+}
