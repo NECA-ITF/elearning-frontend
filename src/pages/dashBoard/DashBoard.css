@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&display=swap');
+
 .dashcontainer{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'BioRhyme', serif;
 }
 .dashnav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,24 +42,48 @@
 .userpro{
     display: flex;
     gap: 10px;
+    /* border: 1px solid yellow; */
+    margin-right: 1.5rem;
 }
-.arrowhov:hover {
-    color: #151D3B;
+.prodiv{
+    display: flex;
+    /* border: 1px solid blue; */
+}
+.arrowhov:hover .droplogout{
+    display: block;
+    /* color: #151D3B;
     background-color: #D82148;
-    transition: 2s ease-in;
+    transition: 2s ease-in; */
+}
+.arrowhov:hover .droplogout{
+    background-color: #D82148;
+}
+.droplogout{
+    display: none;
+    position: absolute;
+    z-index: 3;
 }
 .dashcustominput{
     display: flex;
     justify-content: center;
     align-items: center;
     position: -webkit-sticky;
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     /* border: 1px solid green; */
     /* margin-left: 30%; */
 }
 .dashindiv{
     display: flex;
+    padding: 0.7rem 0;
     /* border: 1px solid black; */
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 0.2rem;
+    /* margin-bottom: 3rem; */
+}
+.titlediv{
+    width: 100%;
+    /* border: 1px solid green; */
+}
+.titlediv h1{
+    margin-left: 6rem;
 }
 

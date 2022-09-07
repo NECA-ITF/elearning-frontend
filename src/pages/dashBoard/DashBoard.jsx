@@ -23,6 +23,7 @@ function DashBoard() {
     )):[]
     setSearchCourse([...filteredCourses])
   }
+  
 
   return (
     <div className='dashcontainer'>
@@ -40,17 +41,25 @@ function DashBoard() {
         </nav>
         <div className='userpro'>
           <h3>welcome, hamidat</h3>
-          <img src={profile} alt='profileicon' style={{width:'30px'}}/>
-          <img src={arrow} alt='arrowdown' style={{width:'30px'}} className='arrowhov'/>
+          <div className='prodiv'>
+            <img src={profile} alt='profileicon' style={{width:'30px'}}/>
+            <img src={arrow} alt='arrowdown' style={{width:'30px'}} className='arrowhov'/>
+            <div className='droplogout'>
+              <h4>Logout</h4>
+            </div>
+            
+          </div>
         </div>
       </div>
       <div className='dashcustominput'>
         <div className='dashindiv'>
-          <CustomInput placeholder="Find a course" className="dashinput" type= 'search' style={{width:'400px', padding: '10px 15px 12px'}} onChange={input}/>
-          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'41px', padding:'5px 0px', margin:'10px 0px'}}/>
+          <CustomInput placeholder="Find a course" className="dashinput" type= 'search' style={{width:'400px', padding: '10px 15px 6px', fontFamily:'BioRhyme, serif'}} onChange={input}/>
+          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'41px', padding:'5px 0px', margin:'10px 0px', fontFamily:'BioRhyme, serif'}} type='submit' onclick= {input}/>
         </div>
       </div>
-      {/* <h1>All Courses</h1> */}
+      <div className='titlediv'>
+        <h1>All Courses</h1>
+      </div>
       <DashCourseList courses= {searchInput ? searchCourse : courses}/>
     </div>
   )
