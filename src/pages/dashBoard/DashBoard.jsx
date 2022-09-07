@@ -38,7 +38,8 @@ function DashBoard() {
                 <li>Contact</li>   
             </ul>
         </nav>
-        <div>
+        <div className='userpro'>
+          <h3>welcome, hamidat</h3>
           <img src={profile} alt='profileicon' style={{width:'30px'}}/>
           <img src={arrow} alt='arrowdown' style={{width:'30px'}} className='arrowhov'/>
         </div>
