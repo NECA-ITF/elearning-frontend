@@ -21,7 +21,7 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false}) {
             <div className='star-text'>
               <Rating placeholderRating={3.5}
                 emptySymbol={<img src={bstar} className="icon" alt='#'style={{width:'23px'}} />}
-                placeholderSymbol={<img src={bstar} className="icon" alt='#' style={{width:'23px'}}/>}
+                placeholderSymbol={<img src={bstar} className="icon" alt='#' style={{width:'23px' }}/>}
                 fullSymbol={<img src={bstar} className="icon" alt='#'style={{width:'23px'}}/>}
               />
               <h5> 4.9</h5>
