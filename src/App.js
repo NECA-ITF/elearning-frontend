@@ -3,7 +3,6 @@ import React from 'react';
 // import CustomInput from './components/customInput/CustomInput';
 import './App.css';
 
-
 function App() {
   return (
     <div>
