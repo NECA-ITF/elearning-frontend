@@ -4,6 +4,7 @@ import CustomButton from '../../components/customButton/CustomButton';
 import CustomInput from '../../components/customInput/CustomInput';
 import image from '../../assets/newlogo.png';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,7 +25,9 @@ function HomePage() {
           <h1>Eduspot</h1>
               <p>Welcome to Eduspot e-learning platform! Get started with us and start a course.</p>
               <div className='home-button'>
+                <Link to='/signupPage'>
                 <CustomButton title="GET STARTED" style={{width:'200px', height:'50px', padding:'1rem',color:'white', backgroundColor:'#151D3B', fontSize:'.7rem'}}/>
+                </Link>
                 </div>
         </div>
         <div className='pix'>
