@@ -10,8 +10,8 @@ import './App.css';
 function App() {
   return (
     <div>
-        {/* <CustomButton/> */}
-        {/* <CustomInput/> */}
+        <CustomButton/>
+        <CustomInput/>
     </div>
   )
 }
