@@ -6,6 +6,7 @@ import CustomButton from '../../components/customButton/CustomButton';
 import './LoginPage.css'
 function LoginPage() {
   return (
+  
     <div className="smallContl">
         <div className="col-2l">
           <img src={img} alt = 'learning' />

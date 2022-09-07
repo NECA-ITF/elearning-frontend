@@ -58,13 +58,27 @@
 }
 .bottom h5{
     color: white;
-    width: 80%;
+    width: 79%;
     margin: 10px auto;
     left: 7%;
+    font-size: 1.0rem;
    
     
     }
-
+.bottom p{
+    color:white;
+    width: 80%;
+    margin: 25px auto 0;
+    left: 16%;
+    font-size:1.5rem
+}
+.bottom h3{
+    color:white;
+    width: 20%;
+    margin: 20px auto;
+    left: 20%;
+    
+}
 .bottom span{
-    color: grey;
+    color: blue;
 }
