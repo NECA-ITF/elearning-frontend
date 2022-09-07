@@ -17,11 +17,12 @@ function DashBoardCourse({name, title, image, icons}) {
             <img src={icons} alt='ico' className='profileicons'></img>
             <div className='star-text'>
               <Rating placeholderRating={3}
-                emptySymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-red.png' className="icon" />}
-                placeholderSymbol={<img src="http://dreyescat.github.io/react-rating/assets/images/star-red.png" className="icon" />}
-                fullSymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-yellow.png' className="icon" />}
+                emptySymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-red.png' className="icon" alt='#' />}
+                placeholderSymbol={<img src="http://dreyescat.github.io/react-rating/assets/images/star-red.png" className="icon" alt='#'  />}
+                fullSymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-yellow.png' className="icon" alt='#'  />}
               />
               <h5> 4.9</h5>
+              <h6>180</h6>
             </div>
             
           </div>
@@ -32,13 +33,13 @@ function DashBoardCourse({name, title, image, icons}) {
             </div>
             <div className='case-div'>
               <img src={bcase} alt='case'/>
-              <p>lecture</p>
+              <p>{name}</p>
             </div>
           </div>
           <div className='course-title'>
             <p>{title}</p>
           </div>
-          <CustomButton title="start course" style={{width: "100%", marginBottom: '1rem', padding:"10px 0px 12px"}}/>
+          <CustomButton title="start course" style={{width: "100%", marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>
         </div>
       </div>
     </div>
