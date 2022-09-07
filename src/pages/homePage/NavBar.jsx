@@ -11,7 +11,7 @@ function NavBar() {
                 </div>
                 <nav className='nav'>
                     <ul className='content'>
-                        <li>Home</li>
+                        <li className='ho'> Home</li>
                         <li>About</li>
                         <li>Course</li>
                         <li>Dashboard</li>
@@ -20,7 +20,7 @@ function NavBar() {
                     </ul>
                 </nav>
                 <div className='apply'>
-                        <p><span>LOGIN</span></p>
+                    <p> LOGIN </p>
                 </div>
         </div>
      )
