@@ -13,7 +13,8 @@ select{
     margin: auto;
     display: flex;
     justify-content:space-between;
-    background: #FFF;
+    background: #EEE;
+
 }
 .course-section{
     width: 95%;
@@ -31,12 +32,13 @@ select{
     /* color: white; */
 }
 .course-video{
-    /* background-color: black; */
     width: 75%;
 }
 .course-video > ul{
     list-style: none;
     display: flex;
+    padding-bottom: 1rem;
+    border-bottom: .5px solid #7f7f7f;
 }
 .course-video > ul li{
     margin-right: 2rem;
@@ -71,8 +73,19 @@ select{
     cursor: pointer;
     color: #7f7f7f;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    transform: translateZ(0);
+    transition: transform .30s ease-out;
 }
 .course-list:hover{
     background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     color: white;
+    transform: scale(1.04);
+}
+/* .rates{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+} */
+.stars:hover{
+    color: yellow;
 }
