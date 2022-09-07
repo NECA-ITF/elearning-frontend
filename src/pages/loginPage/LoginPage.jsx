@@ -4,10 +4,10 @@ import React from 'react'
 // import CustomInput from '../../components/customInput/CustomInput';
 // import CustomButton from '../../components/customButton/CustomButton';
 
-function LoginPage() {
-  return (
+// function LoginPage() {
+//   return (
     
-  )
-}
+//   )
+// }
 
-export default LoginPage
+// export default LoginPage
