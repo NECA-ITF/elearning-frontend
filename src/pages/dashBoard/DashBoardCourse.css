@@ -20,7 +20,7 @@
 }
 .bottom-sec{
     /* border: 1px solid yellow; */
-    width: 80%
+    width: 90%
 }
 .stardiv{
     margin-top: 10%;
@@ -43,7 +43,7 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid blue; */
-   margin: 0 1rem;
+   margin: 0 0.7rem;
 }
 .star-text h6{
     background-color: #e1e4eb;

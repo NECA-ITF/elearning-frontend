@@ -5,6 +5,9 @@ import './DashBoardCourse.css'
 import clock from '../../assets/dashboard/clock.svg'
 import bcase from '../../assets/dashboard/briefcase.svg'
 import Rating from 'react-rating'
+import bstar from '../../assets/dashboard/bstar.svg'
+
+
 
 function DashBoardCourse({name, title, image, icons, isAdmin = false}) {
  
@@ -16,10 +19,10 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false}) {
           <div className='stardiv'>
             <img src={icons} alt='ico' className='profileicons'></img>
             <div className='star-text'>
-              <Rating placeholderRating={3}
-                emptySymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-red.png' className="icon" alt='#' />}
-                placeholderSymbol={<img src="http://dreyescat.github.io/react-rating/assets/images/star-red.png" className="icon" alt='#'  />}
-                fullSymbol={<img src='http://dreyescat.github.io/react-rating/assets/images/star-yellow.png' className="icon" alt='#'  />}
+              <Rating placeholderRating={3.5}
+                emptySymbol={<img src={bstar} className="icon" alt='#'style={{width:'23px'}} />}
+                placeholderSymbol={<img src={bstar} className="icon" alt='#' style={{width:'23px'}}/>}
+                fullSymbol={<img src={bstar} className="icon" alt='#'style={{width:'23px'}}/>}
               />
               <h5> 4.9</h5>
               <h6>180</h6>
