@@ -12,7 +12,6 @@ import EditedProfile from './pages/profilePage/EditedProfile';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import './App.css';
 
-
 function App() {
   return (
     <div>
