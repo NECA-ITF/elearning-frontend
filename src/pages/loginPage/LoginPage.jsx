@@ -45,7 +45,6 @@ function LoginPage() {
   return (
   
     <div className="smallContl">
-
           <form className='forml' onSubmit={httpLoginUser}>
             <div className="coll">          
               <h1>Login into your account</h1>
