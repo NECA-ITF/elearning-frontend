@@ -10,7 +10,6 @@ import MyCourses from './pages/myCourses/MyCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import './App.css';
-import LoginPage from './pages/adminLogin/AdminLogin';
 
 
 function App() {
