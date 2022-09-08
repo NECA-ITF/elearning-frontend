@@ -2,13 +2,17 @@ import React from 'react'
 import video from './courseAssets/vid1.mp4'
 import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import '../../App.css'
-import './MyCourses.css'
-import NavBar from './NavBar'
+import './PlayCourses.css'
+import MyCourseNav from './PlayCourseNav'
 import Ratings from './Ratings'
-function MyCourses() {
+
+
+
+function PlayCourses() {
+
   return (
     <div>
-      <NavBar/>
+      <MyCourseNav/>
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
@@ -45,4 +49,4 @@ function MyCourses() {
   )
 }
 
-export default MyCourses
+export default PlayCourses

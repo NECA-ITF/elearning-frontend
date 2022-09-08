@@ -7,6 +7,7 @@ import gith from './aboutAssets/gith.png'
 import linkd from './aboutAssets/linkd.png'
 
 
+
 function AboutPage() {
   return (
     <div className='ab'>

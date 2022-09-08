@@ -6,8 +6,7 @@ import './EditedProfile.css'
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
-function EditedProfile() {
-
+function ChangePassword() {
   return (
     <div className="mainone">
     <div className="main3 ">
@@ -46,35 +45,40 @@ function EditedProfile() {
              <div className='profile-img'>
                  <img src={logo} alt="Logo" className='img'/>
              </div>
+             <div className="border2" >
+                <p>Enter Old Password</p>
+                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+            </div>
 
             <div className="border2" >
-                <p>Fullname</p>
-                <CustomInput   placeholder='Maryam Suleiman' style={{width:'100%',height:'1rem'}}/>
+                <p>Create New Password</p>
+                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2">
-                <p>Phone number</p>
-                <CustomInput  placeholder='0908755780'  style={{width:'100%',height:'1rem'}}/>
+                <p>Re-Enter Password</p>
+                <CustomInput  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}/>
             </div>
-            <div className="border2">
-                <p>Other Links</p>
-                <CustomInput  placeholder='Twitter' style={{width:'100%',height:'1rem'}}/>
-                <CustomInput   placeholder='LinkedIn'style={{width:'100%',height:'1rem'}}/>
-          
-    
-            </div>
+            
             <Link to='/profile-page' className='links'>        
             <div className="border2">
-                <CustomButton title={'Confirm Changes'} style={{width:'100%', height:'1rem'}}/>
+                <CustomButton title={'Confirm Password'} style={{width:'100%', height:'1rem'}}/>
             </div> 
             </Link>
         </div>
     </div>
+
+
+
+
     </div>
-          
-          
-            
+
+
+
+
+        
+    
   )
 }
 
-export default EditedProfile
+export default ChangePassword

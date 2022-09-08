@@ -1,7 +1,7 @@
 .coursecard{
-    font-family: Trebuchet MS;
+    font-family: 'BioRhyme', serif;
     width: 20%;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     overflow: hidden;
     /* border: 1px solid blue; */
     background-color: #f9f9f9;
@@ -37,6 +37,20 @@
     display: flex;
     /* border: 1px solid green; */
     height: 3rem;
+}
+
+.initials{
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    background-color: #151D3B;
 }
 .star-text{
     display: flex;

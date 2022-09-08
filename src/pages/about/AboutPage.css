@@ -8,7 +8,8 @@ body{
     margin-top: 80px;
     gap: 15px;
     background-color: rgb(103, 175, 201);
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 .ab h2{
     margin-left: 50px;
