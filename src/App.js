@@ -8,16 +8,17 @@ import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
-import EditedProfile from './pages/profilePage/EditedProfile'
-import './App.css';
+import EditedProfile from './pages/profilePage/EditedProfile';
 import ChangePassword from './pages/profilePage/ChangePassword';
+import './App.css';
+
 
 function App() {
   return (
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<DashBoard />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />

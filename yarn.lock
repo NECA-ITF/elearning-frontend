@@ -1905,6 +1905,7 @@
     "csstype" "^3.0.2"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 "@types/react@^16.0.40":
   "integrity" "sha512-CD3LuBW4xIeGy6BxuNZdXBOsuP00OHFuNOq/4e2xKDq6z02XvdH9wIkuPNmz7BRQpo5ncy1zT9fz4tTDqXbjzQ=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-16.14.31.tgz"
@@ -1914,6 +1915,8 @@
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 "@types/resolve@1.17.1":
