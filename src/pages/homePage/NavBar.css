@@ -4,6 +4,10 @@
     align-items: center;
     width: 100%;
     background-color: white;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 3;
 }
 .apply {
     border: 1px solid #151D3B;
@@ -17,6 +21,10 @@
 .nav{
     display: flex;
     justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
 }
 .content{
     display: flex;
@@ -31,8 +39,7 @@
 }
 
 .content li:hover{
-    border-bottom: 2px solid red;
-    
+    border-bottom: 2px solid red; 
 }
 
 .nav{
