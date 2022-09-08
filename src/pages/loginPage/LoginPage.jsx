@@ -35,6 +35,13 @@ function LoginPage() {
               </div>
             </div>
           </form>
+        <div className="col-2l">
+          <img src={img} alt = 'learning' />
+          <div className="absl">
+            <img src={logo} alt="Logo" className='imgl'/>
+            <h1>Welcome Back to another great E-learning session</h1>
+          </div>
+        </div>
       </div>  
     )
 }
