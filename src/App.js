@@ -9,13 +9,14 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import MyCourses from './pages/myCourses/MyCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
+import ContactPage from './pages/contactPage/ContactPage';
 import './App.css';
 
 
 function App() {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
@@ -27,7 +28,8 @@ function App() {
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/editedProfile" element={<EditedProfile />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <ContactPage />
     </div>
   )
 }
