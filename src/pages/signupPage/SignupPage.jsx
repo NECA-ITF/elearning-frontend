@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 function SignupPage() {
+
   return (
       <div className="smallCont">
           <form className='form'>

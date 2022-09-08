@@ -2,13 +2,13 @@ import React from 'react'
 import video from './courseAssets/vid1.mp4'
 import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import '../../App.css'
-import './MyCourses.css'
-import MyCourseNav from './MyCourseNav'
+import './PlayCourses.css'
+import MyCourseNav from './PlayCourseNav'
 import Ratings from './Ratings'
 
 
 
-function MyCourses() {
+function PlayCourses() {
   return (
     <div>
       <MyCourseNav/>
@@ -48,4 +48,4 @@ function MyCourses() {
   )
 }
 
-export default MyCourses
+export default PlayCourses

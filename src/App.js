@@ -6,7 +6,7 @@ import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import DashBoard from './pages/dashBoard/DashBoard';
-import MyCourses from './pages/myCourses/MyCourses';
+import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import './App.css';
@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dash-board" element={<DashBoard />} />
-        <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/play-courses" element={<PlayCourses />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
