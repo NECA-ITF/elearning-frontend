@@ -1,5 +1,6 @@
 import React from 'react';
 import'./ProfilePage.css';
+import logo from '../../assets/itf_log.png';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
@@ -40,6 +41,11 @@ function ProfilePage() {
         </div>
         <div className="main">
           <div className='Back'>
+            
+            <div className='profile-img'>
+                 <img src={logo} alt="Logo" className='img'/>
+             </div>
+            
 
             <div className="border" >
                 <p>Fullname</p>
