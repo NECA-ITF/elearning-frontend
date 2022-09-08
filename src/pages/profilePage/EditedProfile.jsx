@@ -49,12 +49,12 @@ function EditedProfile() {
 
             <div className="border2" >
                 <p>Fullname</p>
-                <CustomInput   placeholder='SirB' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput   placeholder='Maryam Suleiman' style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2">
                 <p>Phone number</p>
-                <CustomInput  placeholder='090875578'  style={{width:'100%',height:'1rem'}}/>
+                <CustomInput  placeholder='0908755780'  style={{width:'100%',height:'1rem'}}/>
             </div>
             <div className="border2">
                 <p>Other Links</p>

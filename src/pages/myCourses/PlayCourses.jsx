@@ -9,6 +9,7 @@ import Ratings from './Ratings'
 
 
 function PlayCourses() {
+
   return (
     <div>
       <MyCourseNav/>
