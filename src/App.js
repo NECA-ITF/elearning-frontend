@@ -1,24 +1,24 @@
 import React from 'react';
-import HomePage from './pages/homePage/HomePage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/homePage/HomePage';
-import SignupPage from './pages/signupPage/SignupPage';
-import LoginPage from './pages/loginPage/LoginPage';
-import MyCourses from './pages/myCourses/MyCourses';
+// import HomePage from './pages/homePage/HomePage';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import SignupPage from './pages/signupPage/SignupPage';
+// import LoginPage from './pages/loginPage/LoginPage';
+// import MyCourses from './pages/myCourses/MyCourses';
 import './App.css';
+import AboutPage from './pages/about/AboutPage';
 
 function App() {
   return (
     <div>
-        <HomePage/>
-      <Router>
+        <AboutPage/>
+      {/* <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signupPage" element={<SignupPage />} />
         <Route path="/loginPage" element={<LoginPage />} />
         <Route path="myCourses/" element={<MyCourses />} />
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   )
 }
