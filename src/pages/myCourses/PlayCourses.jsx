@@ -4,17 +4,15 @@ import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import star from '../myCourses/courseAssets/rating.svg'
 import hover from '../myCourses/courseAssets/star.svg'
 import '../../App.css'
-import './MyCourses.css'
 import Ratings from 'react-rating'
 import './PlayCourses.css'
-import MyCourseNav from './PlayCourseNav'
-
+import PlayCourseNav from './PlayCourseNav'
 
 
 function PlayCourses() {
   return (
     <div>
-      <MyCourseNav/>
+      <PlayCourseNav/>
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
