@@ -15,8 +15,7 @@ function SignupPage() {
       <div className="smallCont">
           <form className='form'>
             <div className="col">          
-              <h4>APPLY NOW</h4>
-              <p>Sign up and start learning today</p>
+              <h2>Sign up and start learning today</h2>
               <CustomInput placeholder='FullName*' style = {{width: ' 100%'}} />
               <CustomInput placeholder='Email*' style = {{width: '100%'}} />
               <CustomInput placeholder='Phone Number' style = {{width: '100%'}} />
@@ -26,7 +25,7 @@ function SignupPage() {
               <CustomButton title = 'SIGN UP' style = {{width: '100%', margin: '8px 0% auto'}} />
             </Link>
             </div>
-            <div className='bottom'>
+            <div className='bottoms'>
               <h5>By signing up, you agree to our <span>Terms of Use</span> and <span>Privacy Policy </span></h5>
               <p>Already have an account? <span> <Link to='/login' className='links'> Login </Link> </span></p>
             </div>
@@ -35,7 +34,10 @@ function SignupPage() {
         <div className="col-2">
           <img src={img} alt = 'learning' />
           <div className="abs">
-            <img src={logo} alt="Logo" className='img'/>
+            <div className="flexs">
+                <img src={logo} alt="Logo" className='img'/>
+                <p>Eduspot</p>
+            </div>
             <h1>Welcome to our E-learning center</h1>
           </div>
         </div>

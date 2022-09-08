@@ -8,8 +8,10 @@ import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
-import EditedProfile from './pages/profilePage/EditedProfile';
+import EditedProfile from './pages/profilePage/EditedProfile'
+import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
+
 import './App.css';
 
 function App() {
