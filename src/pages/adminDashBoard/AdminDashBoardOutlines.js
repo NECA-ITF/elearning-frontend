@@ -63,7 +63,7 @@ function AdminDashBoardOutlines() {
                      </div>
                      <div id='adminDash-right-container-videos'>
                         <div className='videoContainer'>
-                            <video src={Movie}  width="200px" height='175px' controls/>
+                            <video src={Movie}  controls/>
                             <p>HTML course I</p>
                             <div className='videoButtons'>
                             <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
@@ -72,7 +72,7 @@ function AdminDashBoardOutlines() {
 
                         </div>
                         <div className='videoContainer'>
-                            <video src={Movie}  width="200px" height='175px' controls/>
+                            <video src={Movie}  controls/>
                             <p>HTML course II</p>
                             <div className='videoButtons'>
                             <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px' }}/>

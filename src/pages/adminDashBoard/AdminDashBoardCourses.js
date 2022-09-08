@@ -2,8 +2,7 @@ import React,{useState} from 'react'
 import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
 import courses from '../dashBoard/data.json'
-import DashCourseList from '../dashBoard/DashCourseList'
-
+import AdminDashBoardOutlines from '../adminDashBoard/AdminDashBoardOutlines'
 
 
 function AdminDashBoard() {
@@ -33,8 +32,7 @@ function AdminDashBoard() {
                 
             </div>
             <div id='adminDash-right'>
-            <DashCourseList courses= {searchCourse} isAdmin= {true}/>
-        
+            <AdminDashBoardOutlines/>
              </div>
     </div>
   )

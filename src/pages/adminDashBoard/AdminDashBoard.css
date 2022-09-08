@@ -88,6 +88,9 @@
     border-radius: 1rem;
     padding-bottom: 1rem;
 }
+.videoContainer video{
+ max-width:100%;
+}
 .videoButtons{
     display: flex;
     align-items: space-between;

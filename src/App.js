@@ -11,6 +11,7 @@ import MyCourses from './pages/myCourses/MyCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import './App.css';
+import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutlines';
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
         <Route path="/myCourses" element={<MyCourses />} />
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/editedProfile" element={<EditedProfile />} />
+        <Route  path="/admin-dashboard/" element={<AdminDashBoard />}/>
+        <Route  path="/outlines" element={<AdminDashBoardOutlines />}/>
         </Routes>
       </Router>
     </div>
