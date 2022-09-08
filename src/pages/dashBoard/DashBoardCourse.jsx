@@ -5,13 +5,9 @@ import './DashBoardCourse.css'
 import clock from '../../assets/dashboard/clock.svg'
 import bcase from '../../assets/dashboard/briefcase.svg'
 import Rating from 'react-rating'
-<<<<<<< HEAD
 import pinkstar from '../../assets/dashboard/rating.svg'
 import over from '../../assets/dashboard/star.svg'
-=======
-import bstar from '../../assets/dashboard/bstar.svg'
 import { Link } from 'react-router-dom';
->>>>>>> 8d5d721996a13d01871a8a2551ee92a61b9bf7be
 
 
 
@@ -49,15 +45,10 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false}) {
             <p>{title}</p>
           </div>
           {
-<<<<<<< HEAD
             isAdmin ? <CustomButton title='edit course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>:
-            <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
-=======
-            isAdmin ? <CustomButton title='edit course' style={{width: "100%", marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>:
             <Link to='/myCourses' className='links'>
-            <CustomButton title='start course' style={{width: "100%", marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
+              <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
             </Link>
->>>>>>> 8d5d721996a13d01871a8a2551ee92a61b9bf7be
           }
          
           
