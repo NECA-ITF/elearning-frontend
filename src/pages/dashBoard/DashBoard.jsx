@@ -7,6 +7,7 @@ import CustomButton from '../../components/customButton/CustomButton';
 import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
+import { Link } from 'react-router-dom';
 
 function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
@@ -36,9 +37,18 @@ function DashBoard() {
         </div>
         <nav className='dashnav'>
             <ul className='dashcontent'>
-                <li>Home</li>
-                <li>About</li>
-                <li>Courses</li>
+                    <Link to='/' className='links'>
+                        <li className='ho'> Home</li>
+                    </Link>
+                    <Link to='/about' className='links'>        
+                        <li>About</li>
+                    </Link>
+                    <Link to='/dashBoard' className='links'>        
+                        <li>Course</li>
+                    </Link>
+                    <Link to='/profilePage' className='links'>        
+                        <li>Profile</li>
+                    </Link>
                 <li>Contact</li>   
             </ul>
         </nav>
