@@ -20,13 +20,13 @@ function ForgotPassword() {
                 <h2>Forgot your password?</h2>          
               <p>Enter your username and we’ll help you reset your password.</p>
               <CustomInput placeholder='Email*' style = {{width: '100%'}} />
-              <Link to='/loginPage'className='links'>
+              <Link to='/login'className='links'>
               <CustomButton title='Reset Password ' style = {{width: '100%', marginTop: '20px'}} />
               </Link>
             </div>
             <div className='bottomf'>
              
-              <Link to='/loginPage' className='links'>
+              <Link to='/login' className='links'>
               <h5> Log In?</h5>
               </Link>
             </div>

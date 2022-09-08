@@ -9,7 +9,7 @@ body{
     width: 80%;
     font-size: 0.7rem;
     padding: 6rem;
-
+    line-height: 0.3rem;
 
 }
 
@@ -33,6 +33,7 @@ body{
     width: 20%;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 10rem;
     
 
 }
@@ -40,21 +41,20 @@ body{
 .veiw{
     display: flex;
     align-items: center;
-    height: 50px;
-    padding: 7px;
+    padding: 1rem;
     margin: 3px;
     
 }
 
 .veiw p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: white;
     cursor: pointer;
 }
 
 .border{
     border-bottom: 1px solid #202c46;
-    
+    padding: 1rem;
 }
 .border p{
     color:#202c46;
@@ -63,10 +63,11 @@ body{
 .Back{
     background: white;
     border-radius: 5px;
-    padding-bottom: 0.3rem;
+    padding-bottom: 3rem;
     padding-top: 0.3rem;
-    width: 50%;
+    width: 75%;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-left: 7rem;
 
 }

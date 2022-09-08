@@ -1,13 +1,14 @@
 import React from 'react'
 import './DashCourseList.css'
-import DashBoardCourse from './DashBoardCourse'
+import CourseCard from './CourseCard'
 
-function DashCourseList({courses}) {
+function DashCourseList({courses, isAdmin}) {
   return (
     <div>
       <div className='coursecontainer'>
         {courses.map((course)=>(
-          <DashBoardCourse
+          <CourseCard
+          isAdmin={isAdmin}
           key={course.id}
           name = {course.instructor}
           title = {course.title}
