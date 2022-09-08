@@ -8,13 +8,11 @@ import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
-import EditedProfile from './pages/profilePage/EditedProfile';
+import EditedProfile from './pages/profilePage/EditedProfile'
+import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import './App.css';
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
 function App() {
   return (
@@ -31,7 +29,7 @@ function App() {
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
-
+        <Route path="/contact-page" element={<ContactPage />} />
         </Routes>
       </Router>
     </div>
