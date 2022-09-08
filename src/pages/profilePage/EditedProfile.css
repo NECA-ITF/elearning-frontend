@@ -3,14 +3,12 @@ body{
     padding: 0;
 }
 
-
-
-
-.main{
+.main1{
     min-height: 100vh;
     width: 80%;
     font-size: 0.7rem;
     padding: 6rem;
+    line-height: 0.3rem;
 
 }
 
@@ -28,43 +26,53 @@ body{
     
     
 }
-.main2{
+.main3{
     border: 1px solid white;
     min-height: 100vh;
     width: 20%;
     padding-left: 1rem;
     padding-right: 1rem;
-   
-
+    padding-top:10rem;
 }
 
-.veiw{
+.veiw2{
     display: flex;
     align-items: center;
-    height: 50px;
-    padding: 7px;
+    padding: 1rem;
     margin: 3px;
     
 }
 
-.veiw p {
-    font-size: 0.7rem;
+.veiw2 p {
+    font-size: 0.8rem;
     color: white;
     cursor: pointer;
 }
- 
+.border2{
+    padding: 1rem;
+
+}
 .border p{
     color:#202c46;
     
 }
-.Back{
+.Back1{
     background: white;
     border-radius: 5px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 60%;
+    width: 75%;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-left: 7rem;
+}
+
+.profile-img {
+    text-align: center;
+    width: 8rem;
+    height: 8rem;
+    opacity: 1;
+    margin: 0 auto
 }
 
 
