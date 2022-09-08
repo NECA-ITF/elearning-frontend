@@ -5,11 +5,13 @@ import star from '../myCourses/courseAssets/rating.svg'
 import hover from '../myCourses/courseAssets/star.svg'
 import '../../App.css'
 import './MyCourses.css'
-import MyCourseNav from './MyCourseNav'
 import Ratings from 'react-rating'
+import './PlayCourses.css'
+import MyCourseNav from './PlayCourseNav'
 
 
-function MyCourses() {
+
+function PlayCourses() {
   return (
     <div>
       <MyCourseNav/>
@@ -71,4 +73,4 @@ function MyCourses() {
   )
 }
 
-export default MyCourses
+export default PlayCourses

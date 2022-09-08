@@ -39,8 +39,7 @@
 }
 
 .content li:hover{
-    border-bottom: 2px solid red;
-    
+    border-bottom: 2px solid red; 
 }
 
 .nav{
