@@ -6,18 +6,16 @@ import './EditedProfile.css'
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
-
 function ChangePassword() {
-
   return (
     <div className="mainone">
     <div className="main3 ">
-           
+    <Link to='/profile-page'className='links'>        
         <div  className='veiw2'>
         <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Profile</p>
-    
-
+        </div>
+    </Link>
 
         <div  className='veiw2' >
         <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
@@ -33,11 +31,12 @@ function ChangePassword() {
         <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Privacy</p>
         </div>
-        
+        <Link to='/login'className='links'> 
         <div  className='veiw2'>
         <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Log Out</p>
         </div>
+        </Link>
 
     </div> 
     <div className="main1">
@@ -46,27 +45,39 @@ function ChangePassword() {
              <div className='profile-img'>
                  <img src={logo} alt="Logo" className='img'/>
              </div>
+             <div className="border2" >
+                <p>Enter Old Password</p>
+                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+            </div>
 
             <div className="border2" >
-                <p>Create new password</p>
-                <CustomInput  style={{width:'100%',height:'1rem'}}/>
+                <p>Create New Password</p>
+                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2">
-                <p>Re-enter new password</p>
-                <CustomInput  style={{width:'100%',height:'1rem'}}/>
+                <p>Re-Enter Password</p>
+                <CustomInput  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}/>
             </div>
+            
             <Link to='/profile-page' className='links'>        
             <div className="border2">
-                <CustomButton title={'Confirm Changes'} style={{width:'100%', height:'1rem'}}/>
+                <CustomButton title={'Confirm Password'} style={{width:'100%', height:'1rem'}}/>
             </div> 
-            </Link> 
+            </Link>
         </div>
     </div>
+
+
+
+
     </div>
-          
-      </div>    
-            
+
+
+
+
+        
+    
   )
 }
 
