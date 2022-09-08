@@ -47,7 +47,7 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false, ...otherPr
           </div>
           {
             isAdmin ? <CustomButton title='edit course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>:
-            <Link to='/myCourses' className='links'>
+            <Link to='/play-courses' className='links'>
               <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
             </Link>
           }

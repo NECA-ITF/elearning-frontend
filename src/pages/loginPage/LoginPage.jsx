@@ -17,14 +17,14 @@ function LoginPage() {
               <h1>Login</h1>
               <CustomInput placeholder='Email*' style = {{width: '100%'}} />
               <CustomInput placeholder='Password*' type ='password' style = {{width: '100%'}} />
-              <Link to='/dashBoard'>
+              <Link to='/dash-board'>
               <CustomButton title = 'LOG IN' style = {{width: '100%', margin: '8px 0% 0'}} />
               </Link>
-              <Link to='/forgotPassword' style = {{textDecoration: 'none'}}>
+              <Link to='/forgot-password' style = {{textDecoration: 'none'}}>
                 <p style={{marginBottom: 'none'}}> Forgot password?</p>
               </Link>
               <div className='bottoml' style={{marginTop: 'none', textAlign: 'left'}}> 
-                <h5>Don't have an account? <span> <Link to='/signupPage' style = {{textDecoration: 'none'}}> Sign Up </Link> </span></h5>
+                <h5>Don't have an account? <span> <Link to='/signup' style = {{textDecoration: 'none'}}> Sign Up </Link> </span></h5>
               </div>
             </div>
           </form>

@@ -18,7 +18,7 @@ function ContactPage(){
               <CustomInput placeholder='Email*' style = {{width: '100%', marginTop: '-2.2%'}} />
               <CustomInput placeholder='Phone number*' style = {{width: '100%', marginTop: '-2.2%'}} />
               <textarea placeholder="Write us a message" cols="20" rows="4" id="textc"></textarea>
-              <Link to='/'>
+              <Link to='/' className="links">
               <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% 0'}} />
               </Link>
             </div>
