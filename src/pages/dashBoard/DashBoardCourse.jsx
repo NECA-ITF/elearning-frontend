@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, icons, isAdmin = false}) {
+function DashBoardCourse({name, title, image, icons, isAdmin = false, ...otherProps}) {
  
   return (
-    <div className='coursecard'>
+    <div className='coursecard' {...otherProps} >
       <div className='course-inn-div'>
         <img src={image} alt="thumb" className='thumb'/>
         <div className='bottom-sec'>
