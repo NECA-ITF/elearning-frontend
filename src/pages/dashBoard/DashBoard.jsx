@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import courses from './data.json'
 import itflogo from '../../assets/itf_log.png';
 import profile from '../../assets/dashboard/profile.svg'
@@ -11,6 +11,7 @@ import arrow from '../../assets/dashboard/arrow.svg'
 function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
   const [searchCourse, setSearchCourse]= useState(courses)
+  const [userData, setUserData] = useState(null);
 
   const input= (event)=>{
     
@@ -26,7 +27,18 @@ function DashBoard() {
     setSearchCourse([...filteredCourses])
   }
 
+  function logoutUser(params) {
+    localStorage.setItem('userData', null);
+    setUserData(null)
+  }
 
+
+  useEffect(() => {
+    const user = localStorage.getItem('userData');
+    setUserData(JSON.parse(user));
+  }, [])
+
+  
 
   return (
     <div className='dashcontainer'>
@@ -43,12 +55,12 @@ function DashBoard() {
             </ul>
         </nav>
         <div className='userpro'>
-          <h3>welcome, hamidat</h3>
+          <h3>welcome, {userData?.fullName}</h3>
           <div className='prodiv'>
             <img src={profile} alt='profileicon' style={{width:'30px'}}/>
             <img src={arrow} alt='arrowdown' style={{width:'30px'}} className='arrowhov'/>
             <div className='droplogout'>
-              <h4>Logout</h4>
+              <h4 onClick={logoutUser} style={{cursor: 'pointer'}}>Logout</h4>
             </div>
             
           </div>
