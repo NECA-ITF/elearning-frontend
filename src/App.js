@@ -12,7 +12,7 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import './App.css';
-import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutlines';
+import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} />
 
         </Routes>
       </Router>

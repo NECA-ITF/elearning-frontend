@@ -3,6 +3,7 @@ import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
 import courses from '../dashBoard/data.json'
 import DashCourseList from '../dashBoard/DashCourseList'
+import { Link } from 'react-router-dom'
 
 
 
@@ -26,8 +27,8 @@ function AdminDashBoard() {
     <div id='adminDash'>
             <div id='adminDash-left'>
                 <div id='admDashmarginTop'> 
-                     <CustomButton title="All Courses" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
-                     <CustomButton title="All Outline" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+               <CustomButton title="All Courses" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                     <Link to ='/admin-dashboard'> <CustomButton title="All Outline" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/></Link>
                      <CustomButton title="All Users" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
                 </div>
                 

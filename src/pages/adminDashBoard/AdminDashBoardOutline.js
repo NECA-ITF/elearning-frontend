@@ -2,10 +2,10 @@ import React,{useState} from 'react'
 import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
 import courses from '../dashBoard/data.json'
-import AdminDashBoardOutlines from '../adminDashBoard/AdminDashBoardOutlines'
+import AdminDashBoardOutlines from './AdminDashBoardOutlines'
 
 
-function AdminDashBoard() {
+function AdminDashBoardOutline() {
     const [searchInput, setSearchInput]= useState("")
   const [searchCourse, setSearchCourse]= useState(courses)
   const input= (event)=>{
@@ -38,4 +38,4 @@ function AdminDashBoard() {
   )
 }
 
-export default AdminDashBoard
+export default AdminDashBoardOutline
