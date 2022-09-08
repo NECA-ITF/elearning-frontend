@@ -19,7 +19,8 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false, ...otherPr
         <img src={image} alt="thumb" className='thumb'/>
         <div className='bottom-sec'>
           <div className='stardiv'>
-            <img src={icons} alt='ico' className='profileicons'></img>
+            <div className='initials'>{name.split(' ')[0].split('')[0]} {name.split(' ')[1].split('')[0]}</div>
+            {/* <img src={icons} alt='ico' className='profileicons'></img> */}
             <div className='star-text'>
               <Rating placeholderRating={3.5}
                 emptySymbol={<img src={pinkstar} className="icon" alt='#'style={{width:'23px'}} />}
