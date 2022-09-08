@@ -11,19 +11,23 @@ import arrow from '../../assets/dashboard/arrow.svg'
 
 function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
-  const [searchCourse, setSearchCourse]= useState([])
+  const [searchCourse, setSearchCourse]= useState(courses)
 
   const input= (event)=>{
-    const inp = event.target.value 
-    setSearchInput(inp)
-    console.log(inp)
+    
+    // const inp =  
+    setSearchInput(event.target.value)
 
-    const filteredCourses = inp ? courses.filter(course=>(
-      course.title.toLowerCase().includes(inp.toLowerCase())
-    )):[]
+  }
+  const searchClicked = (event) => {
+    event.preventDefault();
+    const filteredCourses = courses.filter(course=>(
+      course.title.toLowerCase().includes(searchInput.toLowerCase())
+    ))
     setSearchCourse([...filteredCourses])
   }
-  
+
+
 
   return (
     <div className='dashcontainer'>
@@ -52,15 +56,15 @@ function DashBoard() {
         </div>
       </div>
       <div className='dashcustominput'>
-        <div className='dashindiv'>
+        <form className='dashindiv' onSubmit={searchClicked}>
           <CustomInput placeholder="Find a course" className="dashinput" type= 'search' style={{width:'400px', padding: '10px 15px 6px', fontFamily:'BioRhyme, serif'}} onChange={input}/>
-          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'41px', padding:'5px 0px', margin:'10px 0px', fontFamily:'BioRhyme, serif'}} type='submit' onclick= {input}/>
-        </div>
+          <CustomButton title="search" className="dashbet" style={{width:'100px', height:'41px', padding:'5px 0px', margin:'10px 0px', fontFamily:'BioRhyme, serif'}} type='submit' />
+        </form>
       </div>
       <div className='titlediv'>
         <h1>All Courses</h1>
       </div>
-      <DashCourseList courses= {searchInput ? searchCourse : courses}/>
+      <DashCourseList courses= {searchCourse}/>
     </div>
   )
 }
