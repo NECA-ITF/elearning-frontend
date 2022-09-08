@@ -25,7 +25,7 @@ function LoginPage() {
     }
     if(!userData._id) return;
     localStorage.setItem('userData', JSON.stringify(userData));
-    navigate('/dashBoard');
+    navigate('/dash-board');
   }
  
   useEffect(() => {
@@ -39,7 +39,7 @@ function LoginPage() {
   }, [userData]);
 
   if(userData) {
-    return <Navigate to="/dashBoard" replace={true}/>
+    return <Navigate to="/dash-board" replace={true}/>
   }
 
   return (
