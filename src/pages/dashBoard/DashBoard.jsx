@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import DashBoardCourse from './DashBoardCourse'
 import courses from './data.json'
 import itflogo from '../../assets/itf_log.png';
 import profile from '../../assets/dashboard/profile.svg'
