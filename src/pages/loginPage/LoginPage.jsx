@@ -46,13 +46,6 @@ function LoginPage() {
   
     <div className="smallContl">
 
-        <div className="col-2l">
-          <img src={img} alt = 'learning' />
-          <div className="absl">
-            <img src={logo} alt="Logo" className='imgl'/>
-            <h1>Welcome Back!</h1>
-          </div>
-        </div>
           <form className='forml' onSubmit={httpLoginUser}>
             <div className="coll">          
               <h1>Login into your account</h1>

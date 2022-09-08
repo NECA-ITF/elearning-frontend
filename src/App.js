@@ -11,7 +11,6 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import './App.css';
 
-
 function App() {
   return (
     <div>
