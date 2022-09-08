@@ -3,12 +3,14 @@ import video from './courseAssets/vid1.mp4'
 import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import '../../App.css'
 import './MyCourses.css'
-import NavBar from './NavBar'
+import MyCourseNav from './MyCourseNav'
 import Ratings from './Ratings'
+
+
 function MyCourses() {
   return (
     <div>
-      <NavBar/>
+      <MyCourseNav/>
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>

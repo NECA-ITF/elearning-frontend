@@ -2,6 +2,7 @@ import React from 'react'
 import aboutpix from './aboutAssets/aboutpix.JPG'
 import './AboutPage.css'
 
+
 function AboutPage() {
   return (
     <div className='aboutpage'>
