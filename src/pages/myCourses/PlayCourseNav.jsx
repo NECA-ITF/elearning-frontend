@@ -4,7 +4,7 @@ import '../homePage/NavBar.css';
 import { Link } from 'react-router-dom';
 
 
-function MyCourseNav() {
+function PlayCourseNav() {
     return (
             <div className='nav-bar'>         
                 <div className='mylogo'>
@@ -38,4 +38,4 @@ function MyCourseNav() {
      )
 }
 
-export default MyCourseNav
+export default PlayCourseNav
