@@ -85,7 +85,7 @@ function DashBoard() {
       <div className='titlediv'>
         <h1>All Courses</h1>
       </div>
-      <DashCourseList courses= {searchCourse}/>
+      <DashCourseList courses= {searchCourse} />
     </div>
   )
 }
