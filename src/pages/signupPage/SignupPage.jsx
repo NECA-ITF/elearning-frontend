@@ -12,13 +12,6 @@ import { Link } from 'react-router-dom';
 function SignupPage() {
   return (
       <div className="smallCont">
-        <div className="col-2">
-          <img src={img} alt = 'learning' />
-          <div className="abs">
-            <img src={logo} alt="Logo" className='img'/>
-            <h1>Welcome to our E-learning center</h1>
-          </div>
-        </div>
           <form className='form'>
             <div className="col">          
               <h4>APPLY NOW</h4>
@@ -38,6 +31,13 @@ function SignupPage() {
             </div>
 
           </form>
+        <div className="col-2">
+          <img src={img} alt = 'learning' />
+          <div className="abs">
+            <img src={logo} alt="Logo" className='img'/>
+            <h1>Welcome to our E-learning center</h1>
+          </div>
+        </div>
       </div>
   )
 }
