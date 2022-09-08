@@ -1904,6 +1904,7 @@
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
+<<<<<<< Updated upstream
 "@types/react@^16.0.40":
   "integrity" "sha512-CD3LuBW4xIeGy6BxuNZdXBOsuP00OHFuNOq/4e2xKDq6z02XvdH9wIkuPNmz7BRQpo5ncy1zT9fz4tTDqXbjzQ=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-16.14.31.tgz"
@@ -1913,6 +1914,8 @@
     "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
+=======
+>>>>>>> Stashed changes
 "@types/resolve@1.17.1":
   "integrity" "sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw=="
   "resolved" "https://registry.npmjs.org/@types/resolve/-/resolve-1.17.1.tgz"

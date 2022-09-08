@@ -55,10 +55,10 @@ function DashBoard() {
                     <Link to='/about' className='links'>        
                         <li>About</li>
                     </Link>
-                    <Link to='/dashBoard' className='links'>        
+                    <Link to='/dash-board' className='links'>        
                         <li>Course</li>
                     </Link>
-                    <Link to='/profilePage' className='links'>        
+                    <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link>
                 <li>Contact</li>   

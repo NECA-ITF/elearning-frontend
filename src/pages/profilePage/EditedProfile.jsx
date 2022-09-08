@@ -11,7 +11,7 @@ function EditedProfile() {
   return (
     <div className="mainone">
     <div className="main3 ">
-    <Link to='/ProfilePage'className='links'>        
+    <Link to='/profile-page'className='links'>        
         <div  className='veiw2'>
         <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Profile</p>
@@ -32,7 +32,7 @@ function EditedProfile() {
         <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Privacy</p>
         </div>
-        <Link to='/loginPage'className='links'> 
+        <Link to='/login'className='links'> 
         <div  className='veiw2'>
         <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Log Out</p>
@@ -63,10 +63,11 @@ function EditedProfile() {
           
     
             </div>
+            <Link to='/profile-page' className='links'>        
             <div className="border2">
                 <CustomButton title={'Confirm Changes'} style={{width:'100%', height:'1rem'}}/>
-                
             </div> 
+            </Link>
         </div>
     </div>
     </div>

@@ -20,17 +20,17 @@ function NavBar() {
                     <Link to='/about' className='links'>        
                         <li>About</li>
                     </Link>
-                    <Link to='/dashBoard' className='links'>        
+                    <Link to='/dash-board' className='links'>        
                         <li>Course</li>
                     </Link>
-                    <Link to='/profilePage' className='links'>        
+                    <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link>
                         <li>Contact</li>
                         
                     </ul>
                 </nav>
-                <Link to='/loginPage' className='links'>
+                <Link to='/login' className='links'>
                     <div className='apply'>
                     <p> LOGIN </p>
                 </div>

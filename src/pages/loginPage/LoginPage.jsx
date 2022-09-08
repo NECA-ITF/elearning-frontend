@@ -25,7 +25,7 @@ function LoginPage() {
     }
     if(!userData._id) return;
     localStorage.setItem('userData', JSON.stringify(userData));
-    navigate('/dashBoard');
+    navigate('/dash-board');
   }
  
   useEffect(() => {
@@ -39,7 +39,7 @@ function LoginPage() {
   }, [userData]);
 
   if(userData) {
-    return <Navigate to="/dashBoard" replace={true}/>
+    return <Navigate to="/dash-board" replace={true}/>
   }
 
   return (
@@ -53,11 +53,11 @@ function LoginPage() {
              
               <CustomButton title = 'LOG IN' type="submit" style = {{width: '100%', margin: '8px 0% 0'}} />
             
-              <Link to='/forgotPassword'>
+              <Link to='/forgot-password'>
               <p style={{marginBottom: 'none'}}> Forgot password?</p>
               </Link>
               <div className='bottoml' style={{marginTop: 'none', textAlign: 'left'}}> 
-                <h5>Don't have an account? <span> <Link to='/signupPage'> Sign Up </Link> </span></h5>
+                <h5>Don't have an account? <span> <Link to='/signup'> Sign Up </Link> </span></h5>
               </div>
             </div>
           </form>

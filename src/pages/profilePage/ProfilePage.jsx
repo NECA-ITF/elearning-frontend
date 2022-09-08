@@ -9,7 +9,7 @@ function ProfilePage() {
   return (
     <div className="mainone">
         <div className="main2">
-        {<Link to='/editedProfile'className='links'>        
+        {<Link to='/edited-profile'className='links'>        
             <div  className='veiw'>
             <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Profile</p>
@@ -20,7 +20,7 @@ function ProfilePage() {
             <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Settings</p>
             </div>
-            <Link to='/forgotPassword'className='links'> 
+            <Link to='/change-password'className='links'> 
             <div  className='veiw'>
             <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Change password</p>
@@ -31,7 +31,7 @@ function ProfilePage() {
             <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Privacy</p>
             </div>
-            <Link to='/loginPage'className='links'> 
+            <Link to='/login'className='links'> 
             <div  className='veiw'>
             <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Log Out</p>
