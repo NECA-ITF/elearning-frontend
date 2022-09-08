@@ -1,10 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-
-function SignupPage() {
-  return (
-    <div>SignupPage</div>
-=======
 import img from '../../assets/image2.jpg'
 import logo from '../../assets/itf_log.png'
 import CustomInput from '../../components/customInput/CustomInput';
@@ -45,7 +39,6 @@ function SignupPage() {
           </div>
         </div>
       </div>
->>>>>>> 7ab51f1d83a7cb2570701c832ae9e98f3829e352
   )
 }
 

@@ -1,21 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/homePage/HomePage';
-import About from './pages/about/AboutPage';
-import SignupPage from './pages/signupPage/SignupPage';
-import LoginPage from './pages/loginPage/LoginPage';
-import ForgotPassword from './pages/forgotPassword/ForgotPassword';
-import DashBoard from './pages/dashBoard/DashBoard';
-import MyCourses from './pages/myCourses/MyCourses';
-import ProfilePage from './pages/profilePage/ProfilePage';
-import EditedProfile from './pages/profilePage/EditedProfile'
-import './App.css';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import HomePage from './pages/homePage/HomePage';
+// import About from './pages/about/AboutPage';
+// import SignupPage from './pages/signupPage/SignupPage';
+// import LoginPage from './pages/loginPage/LoginPage';
+// import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+// import DashBoard from './pages/dashBoard/DashBoard';
+// import MyCourses from './pages/myCourses/MyCourses';
+// import ProfilePage from './pages/profilePage/ProfilePage';
+// import EditedProfile from './pages/profilePage/EditedProfile'
+// import './App.css';
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard'
 
 
 function App() {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
@@ -27,7 +28,8 @@ function App() {
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/editedProfile" element={<EditedProfile />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <AdminDashBoard/>
     </div>
   )
 }

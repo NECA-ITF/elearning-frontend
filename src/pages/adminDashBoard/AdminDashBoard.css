@@ -1,6 +1,11 @@
 #adminDash{
     display: flex;
 }
+#dropDownContainer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 99%;
+}
 #admDashmarginTop{
      margin-top: 20px;
 }
@@ -32,7 +37,7 @@
     margin: 2rem auto 0 auto;
 }
 #adminDash-right{
-    margin: 3% auto auto 20%;
+    margin: 3% auto auto 17%;
     width:100%;   
 }
 #adminDash-right-container{
@@ -41,10 +46,11 @@
 #adminDash-right-container-outlines{
     border-right: 1px solid black;
     border-top: 1px solid black;
-    min-height: 88vh;
-    min-width: 50%;
+    min-height: 87vh;
+    min-width: 49%;
     padding: .5rem 0;
 }
+
 .outlinedetails{
     margin-bottom:10px ;
     align-items: center;
@@ -53,7 +59,7 @@
     background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46) ;
     display: flex;
     justify-content: space-between;
-    width:99%;
+    width:88%;
 }
 .outlinedetails:hover > .outineButtons{
     display: flex;
@@ -70,8 +76,4 @@
 .videoContainer{
     display: flex;
     justify-content: center;
-}
-#dropDownContainer{
-    display: flex;
-    justify-content: space-between;
 }

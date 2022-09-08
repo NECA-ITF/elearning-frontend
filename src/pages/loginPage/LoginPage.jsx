@@ -1,4 +1,11 @@
 import React from 'react'
+import img from '../../assets/image2.jpg';
+import logo from '../../assets/itf_log.png';
+import CustomInput from '../../components/customInput/CustomInput';
+import CustomButton from '../../components/customButton/CustomButton';
+import './LoginPage.css'
+import { Link } from 'react-router-dom';
+
 
 function LoginPage() {
   return (
