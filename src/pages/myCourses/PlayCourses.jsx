@@ -6,10 +6,14 @@ import './PlayCourses.css'
 import MyCourseNav from './PlayCourseNav'
 import Ratings from './Ratings'
 
+<<<<<<< Updated upstream:src/pages/myCourses/PlayCourses.jsx
 
 
 function PlayCourses() {
 
+=======
+function MyCourses() {
+>>>>>>> Stashed changes:src/pages/myCourses/MyCourses.jsx
   return (
     <div>
       <MyCourseNav/>

@@ -11,7 +11,10 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import './App.css';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 function App() {
   return (
