@@ -10,6 +10,7 @@ import MyCourses from './pages/myCourses/MyCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import './App.css';
+import ChangePassword from './pages/profilePage/ChangePassword';
 
 function App() {
   return (
@@ -18,13 +19,15 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/signupPage" element={<SignupPage />} />
-        <Route path="/loginPage" element={<LoginPage />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/dashBoard" element={<DashBoard />} />
-        <Route path="/myCourses" element={<MyCourses />} />
-        <Route path="/profilePage" element={<ProfilePage />} />
-        <Route path="/editedProfile" element={<EditedProfile />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/dash-board" element={<DashBoard />} />
+        <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/profile-page" element={<ProfilePage />} />
+        <Route path="/edited-profile" element={<EditedProfile />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+
         </Routes>
       </Router>
     </div>

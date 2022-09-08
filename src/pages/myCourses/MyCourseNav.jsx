@@ -21,10 +21,10 @@ function MyCourseNav() {
                     <Link to='/about' className='links'>        
                         <li>About</li>
                     </Link>
-                    <Link to='/dashBoard'className='links'>        
+                    <Link to='/dash-board'className='links'>        
                         <li>Course</li>
                     </Link>
-                    <Link to='/loginPage'className='links'>        
+                    <Link to='/login'className='links'>        
                         <li>Dashboard</li>
                     </Link>
                         <li>Contact</li>
@@ -32,7 +32,7 @@ function MyCourseNav() {
                     </ul>
                 </nav>
                 <div className='apply'>
-            <Link to='/loginPage'className='links'><p>Log Out</p></Link>
+            <Link to='/login'className='links'><p>Log Out</p></Link>
                 </div>
         </div>
      )
