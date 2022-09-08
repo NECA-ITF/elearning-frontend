@@ -1,6 +1,7 @@
 import React from 'react'
 import {Star} from 'phosphor-react'
-import './MyCourses.css'
+import './PlayCourses.css'
+
 function Ratings() {
   return (
     <div>
