@@ -49,16 +49,21 @@
     display: flex;
     /* border: 1px solid blue; */
 }
-.arrowhov:hover + .droplogout{
-    display: block;
-    color: #D82148;
-    transition: 4s ease-in;
-}
 .droplogout{
     display: none;
     position: absolute;
     z-index: 1;
     margin-top: 2%;
+}
+.arrowhov:hover + .droplogout{
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+.droplogout:hover {
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
 }
 .dashcustominput{
     display: flex;
