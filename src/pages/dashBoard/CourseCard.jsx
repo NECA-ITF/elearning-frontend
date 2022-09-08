@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomButton from '../../components/customButton/CustomButton'
-import './DashBoardCourse.css'
+import './CourseCard.css'
 // import RatingImage from '../../assets/images/star-grey.png'
 import clock from '../../assets/dashboard/clock.svg'
 import bcase from '../../assets/dashboard/briefcase.svg'
