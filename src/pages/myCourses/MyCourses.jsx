@@ -7,6 +7,7 @@ import MyCourseNav from './MyCourseNav'
 import Ratings from './Ratings'
 
 
+
 function MyCourses() {
   return (
     <div>

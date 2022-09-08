@@ -4,6 +4,7 @@ import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
+import { Link } from 'react-router-dom';
 
 
 function ChangePassword() {
@@ -55,11 +56,11 @@ function ChangePassword() {
                 <p>Re-enter new password</p>
                 <CustomInput  style={{width:'100%',height:'1rem'}}/>
             </div>
-           
+            <Link to='/profile-page' className='links'>        
             <div className="border2">
                 <CustomButton title={'Confirm Changes'} style={{width:'100%', height:'1rem'}}/>
-                
             </div> 
+            </Link> 
         </div>
     </div>
     </div>
