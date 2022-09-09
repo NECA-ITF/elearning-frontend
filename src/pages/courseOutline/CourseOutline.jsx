@@ -3,6 +3,8 @@ import CustomButton from '../../components/customButton/CustomButton';
 import NavBar from '../homePage/NavBar';
 import './CourseOutline.css'
 import OutlineList from './OutlineList';
+import { Link } from 'react-router-dom';
+
 
 function DashCourseOutline() {
     const accordionData = [
@@ -73,7 +75,9 @@ function DashCourseOutline() {
           <h5 className='description-text'>This course is fully up-to-date with React 18 (the latest version of React)!
           it was completely updated and re-recorded from the ground up - it teaches the very latest version of React with all the core, modern features you need to know!</h5>
           <div>
+          <Link to='/play-courses' className='links'>
             <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>
+          </Link>
           </div>
         </div>
       </div>

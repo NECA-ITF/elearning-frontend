@@ -61,7 +61,9 @@ function DashBoard() {
                     <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link>
-                <li>Contact</li>   
+                    <Link to='/contact-page' className='links'>
+                       <li>Contact</li>
+                    </Link>   
             </ul>
         </nav>
         <div className='userpro'>

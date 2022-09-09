@@ -24,11 +24,12 @@ function PlayCourseNav() {
                     <Link to='/dash-board'className='links'>        
                         <li>Course</li>
                     </Link>
-                    <Link to='/login'className='links'>        
-                        <li>Dashboard</li>
+                    <Link to='/profile-page'className='links'>        
+                        <li>Profile</li>
                     </Link>
+                    <Link to='/contact-page' className='links'>
                         <li>Contact</li>
-                        
+                    </Link>  
                     </ul>
                 </nav>
                 <div className='apply'>
