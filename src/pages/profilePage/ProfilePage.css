@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+.main{
+    border: 1px solid white;
+    min-height: 100vh;
+    width: 80%;
+    font-size: 0.7rem;
+    padding: 6rem;
+    line-height: 0.3rem;
+
+}
+
+.mainone{
+    position: fixed;
+    width: 100vw;
+    min-height: 100vh;
+    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46); 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.main2{
+    border: 1px solid white;
+    min-height: 100vh;
+    width: 20%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 10rem;
+    
+
+}
+
+.veiw{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 3px;
+    
+}
+
+.veiw p {
+    font-size: 0.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.border{
+    border-bottom: 1px solid #202c46;
+    padding: 1rem;
+}
+.border p{
+    color:#202c46;
+    
+}
+.Back{
+    background: white;
+    border-radius: 5px;
+    padding-bottom: 3rem;
+    padding-top: 0.3rem;
+    width: 75%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 7rem;
+
+}

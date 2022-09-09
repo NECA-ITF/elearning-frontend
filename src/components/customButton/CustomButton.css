@@ -16,7 +16,6 @@
   touch-action: manipulation;
 }
 
-
 .button span:last-child {
   color: white;
   display:grid;

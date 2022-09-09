@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&display=swap');
+
+.dashcontainer{
+    font-family: 'BioRhyme', serif;
+}
+.dashnav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #151D3B;
+    /* border: 1px solid #151D3B; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.dashnav{
+    display: flex;
+    justify-content: space-around;
+}
+.dashcontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+}
+.dashcontent li{
+    cursor: pointer;
+    padding: .9rem .9rem .1rem;
+}
+.dashcontent li:hover{
+    border-bottom: 2px solid red;
+}
+.dashnav{
+      align-items: center;
+}
+.userpro{
+    display: flex;
+    gap: 10px;
+    /* border: 1px solid yellow; */
+    margin-right: 1.5rem;
+}
+.prodiv{
+    display: flex;
+    /* border: 1px solid blue; */
+}
+.droplogout{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 2%;
+}
+.arrowhov:hover + .droplogout{
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+.droplogout:hover {
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+.dashcustominput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: -webkit-sticky;
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    /* border: 1px solid green; */
+    /* margin-left: 30%; */
+}
+.dashindiv{
+    display: flex;
+    padding: 0.7rem 0;
+    /* border: 1px solid black; */
+    margin-top: 0.2rem;
+    /* margin-bottom: 3rem; */
+}
+.titlediv{
+    width: 100%;
+    /* border: 1px solid green; */
+}
+.titlediv h1{
+    margin-left: 6rem;
+}
+
