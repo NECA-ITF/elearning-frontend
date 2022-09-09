@@ -32,6 +32,7 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/course-outline" element={<CourseOutline />} />
         </Routes>
       </Router>
     </div>

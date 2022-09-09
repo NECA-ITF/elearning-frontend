@@ -17,7 +17,7 @@ function LoginPage() {
               <h1>Login</h1>
               <CustomInput placeholder='Email*' style = {{width: '100%'}} />
               <CustomInput placeholder='Password*' type ='password' style = {{width: '100%'}} />
-              <Link to='/dash-board'>
+              <Link to='/dash-board' className='links'>
               <CustomButton title = 'LOG IN' style = {{width: '100%', margin: '8px 0% 0'}} />
               </Link>
               <Link to='/forgot-password' style = {{textDecoration: 'none'}}>
