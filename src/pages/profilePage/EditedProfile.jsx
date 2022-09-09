@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useNavigate} from 'react'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
@@ -7,6 +7,19 @@ import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
 function EditedProfile() {
+    const[userEditedProfile, setUserEditedprofile] = useState({
+        fullName:'',
+        phoneNumber:'',
+        twitter:'',
+        linkedIn:''
+    })
+    const navigate = useNavigate()
+    function updateEditedprofile(e){
+        const {name, value} = e.target
+        setUserEditedprofile(initialEdit => ({
+            ...initialEdit, [name]:value
+        }))
+    }
 
   return (
     <div className="mainone">
@@ -49,17 +62,17 @@ function EditedProfile() {
 
             <div className="border2" >
                 <p>Fullname</p>
-                <CustomInput   placeholder='Maryam Suleiman' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput   placeholder='Maryam Suleiman' name="fullname" style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2">
                 <p>Phone number</p>
-                <CustomInput  placeholder='0908755780'  style={{width:'100%',height:'1rem'}}/>
+                <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}/>
             </div>
             <div className="border2">
                 <p>Other Links</p>
-                <CustomInput  placeholder='Twitter' style={{width:'100%',height:'1rem'}}/>
-                <CustomInput   placeholder='LinkedIn'style={{width:'100%',height:'1rem'}}/>
+                <CustomInput  placeholder='Twitter' name="twitter" style={{width:'100%',height:'1rem'}}/>
+                <CustomInput   placeholder='LinkedIn' name="linkedIn"style={{width:'100%',height:'1rem'}}/>
           
     
             </div>
