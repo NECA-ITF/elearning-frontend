@@ -1,0 +1,68 @@
+#adminDash{
+    display: flex;
+}
+#admDashmarginTop{
+     margin-top: 5px;
+}
+#adminDash-rightdrpdwn{
+    border: 1px solid black;
+}
+#adminDash-left{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    position: fixed;
+    min-width: 15%;
+    min-height: 95%;
+    border: 1px solid black;
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46)
+}
+.sectiontabs{
+    display: block;
+    width: 90%;
+    padding: 2px;
+    background-color: rgb(153, 117, 117);
+    color: azure;
+    margin-top: 10px;
+    border-radius: .5rem;
+    margin: 2rem auto 0 auto;
+}
+#adminDash-right{
+    margin: 3% auto auto 20%;
+    width:100%;   
+}
+#adminDash-right-container{
+    display: flex;
+}
+#adminDash-right-container-outlines{
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    min-width: 50%;
+    padding: .5rem 0;
+}
+.outlinedetails{
+    margin-bottom:10px ;
+    align-items: center;
+    padding:8px;
+    color: white;
+    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46) ;
+    display: flex;
+    justify-content: space-between;
+    width:99%;
+}
+.outlinedetails:hover > .outineButtons{
+    display: flex;
+}
+.outineButtons{
+    display: none;
+    gap:10px;
+}
+#adminDash-right-container-videos{
+    border-top: 1px solid black;
+    min-width: 50%;
+   }
+#dropDownContainer{
+    display: flex;
+    justify-content: space-between;
+}
