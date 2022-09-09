@@ -45,4 +45,81 @@
 #adminDash-right-container-videos{
     border-top: 1px solid black;
     min-width: 50%;
-   }
+}
+
+body{
+    background-color:rgb(238, 214, 214);
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 15px;
+    background-color: rgb(103, 175, 201);
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+.ab h2{
+    margin-left: 400px;
+    padding-bottom: 15px;
+    color: red;
+    cursor: pointer;
+}
+.about h3{
+    /* color: aquamarine; */
+    cursor: pointer;
+}
+.about h3:hover{
+    /* background-color: plum; */
+    border-bottom: 2px solid red;
+}
+.chris img{
+    object-fit: cover;
+    /* margin-top: 40px; */
+
+}
+.mart img{
+    object-fit: fill
+    /* padding: -5px; */
+    /* width: 400px; */
+}
+/* .aboutpage{ */
+    /* width: 90%; */
+    /* margin: 0 auto; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-top: 50px; */
+    /* gap: 50px; */
+/* } */
+.ebenezer{
+    margin-right: 1px;
+    
+    /* background-color: aqua; */
+    margin-top: 100px;
+    /* border: 1px solid black; */
+}
+.ebenezer img{
+    border: 3px solid black;
+}
+.font{
+    margin-right: 20px;
+}
+.gitpix{
+    width: 25px;
+    cursor: pointer;
+
+}
+.linkdpix{
+    width: 25px;
+    margin-left: 20px;
+    /* background-color: whit; */
+    cursor: pointer;
+}
+.socials{
+    /* background-color: azure; */
+    align-items: center;
+    /* gap: 80px; */
+    /* margin: auto; */
+    margin-left: 30px;
+}
