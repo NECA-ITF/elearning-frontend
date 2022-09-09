@@ -61,14 +61,16 @@ function DashBoard() {
                     <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link>
-                <li>Contact</li>   
+                    <Link to='/contact-page' className='links'>
+                       <li>Contact</li>
+                    </Link>   
             </ul>
         </nav>
         <div className='userpro'>
           <h3>welcome, {userData?.fullName}</h3>
           <div className='prodiv'>
-            <img src={profile} alt='profileicon' style={{width:'30px'}}/>
-            <img src={arrow} alt='arrowdown' style={{width:'30px'}} className='arrowhov'/>
+            <img src={profile} alt='profileicon' style={{width:'20px'}}/>
+            <img src={arrow} alt='arrowdown' style={{width:'20px'}} className='arrowhov'/>
             <div className='droplogout'>
               <h4 onClick={logoutUser} style={{cursor: 'pointer'}}>Logout</h4>
             </div>

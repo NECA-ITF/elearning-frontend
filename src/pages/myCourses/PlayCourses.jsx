@@ -6,7 +6,6 @@ import hover from '../myCourses/courseAssets/star.svg'
 import '../../App.css'
 import Ratings from 'react-rating'
 import './PlayCourses.css'
-
 import PlayCourseNav from './PlayCourseNav'
 
 
