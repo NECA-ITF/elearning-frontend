@@ -26,8 +26,9 @@ function NavBar() {
                     <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link>
+                    <Link to='/contact-page' className='links'>
                         <li>Contact</li>
-                        
+                    </Link>    
                     </ul>
                 </nav>
                 <Link to='/login' className='links'>
