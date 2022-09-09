@@ -21,7 +21,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<CourseOutline />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
