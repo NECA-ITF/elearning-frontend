@@ -16,7 +16,7 @@
 }
 .sec-page{
     margin-top: 10px;
-    background-color: cadetblue;
+    background-color: cadetblue
 
 }
 
@@ -28,8 +28,6 @@
 }
 .ab h2{
     margin-left: 50px;
-    color: wheat;
-    cursor: pointer;
 }
 .about h3{
     /* color: aquamarine; */
