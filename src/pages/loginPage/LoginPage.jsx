@@ -14,29 +14,30 @@ function LoginPage() {
     password: "",
   })
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-function updateLoginPage(e){
-  const {name, value} = e.target
-  setUserInfo(intitialUserInfo =>({
-    ...intitialUserInfo, [name]:value
-  }))
-}
+  function updateLoginPage(e){
+    const {name, value} = e.target
+    setUserInfo(intitialUserInfo =>({
+      ...intitialUserInfo, [name]:value
+    }))
+  }
 
-function getUserData(e){
-  e.preventDefault()
-  fetch('http://192.168.1.2:5000/auth/user/login', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userInfo)
-  })
-  .then((res) => res.json())
-  .then((data) => {
-    if (data.success) navigate("/dash-board")
-  })
- }
+  function getUserData(e){
+    e.preventDefault()
+    fetch('http://192.168.1.2:5000/auth/user/login', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) navigate("/dash-board")
+
+    })
+  }
 
   return (
     <div className="smallContl">
@@ -46,7 +47,7 @@ function getUserData(e){
               <CustomInput placeholder='Email*' name="email" style = {{width: '100%'}} onChange={updateLoginPage}/>
               <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%'}} onChange={updateLoginPage}/>
               {/* <Link to='/dash-board' className='links'> */}
-              <CustomButton title = 'LOG IN' style = {{width: '100%', margin: '8px 0% 0'}} />
+              <CustomButton title = 'LOG IN' style = {{width: '100%', margin: '8px 0% 0'}}  />
               {/* </Link> */}
               <Link to='/forgot-password' style = {{textDecoration: 'none'}}>
                 <p style={{marginBottom: 'none'}}> Forgot password?</p>
