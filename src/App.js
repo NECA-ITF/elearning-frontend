@@ -9,13 +9,16 @@ import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
-import EditedProfile from './pages/profilePage/EditedProfile';
+import EditedProfile from './pages/profilePage/EditedProfile'
+import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
+import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
 
 
 function App() {
+  
   return (
     <div>
       <Router>
@@ -31,7 +34,8 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} />
-
+        <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/course-outline" element={<CourseOutline />} />
         </Routes>
       </Router>
     </div>

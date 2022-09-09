@@ -26,6 +26,8 @@
     margin-top: 10%;
     display: flex;
     justify-content: justify;
+    height: 3rem;
+    margin-bottom: 0.6rem;
     /* align-items: center; */
 }
 .profileicons{
@@ -33,13 +35,8 @@
     height: 40px;
     border-radius: 50%;
 }
-.stardiv{
-    display: flex;
-    /* border: 1px solid green; */
-    height: 3rem;
-}
 
-.initials {
+.initials{
     color: white;
     width: 2rem;
     height: 2rem;
@@ -52,17 +49,29 @@
     border-radius: 50%;
     background-color: #151D3B;
 }
-
 .star-text{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 1px solid blue; */
-   margin: 0 0.7rem;
+   margin: 0 0.7rem 0.3rem;
+   height: 3.8rem;
+   width: 90%;
 }
+.rate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    /* border: 1px solid red; */
+    padding: 0px;
+    height: 30px;
+}
+
 .star-text h6{
     background-color: #e1e4eb;
-    margin-left: 0.8rem;
+    margin-left: 0.2rem;
     padding: 0.2rem;
 }
 .svg-div, .case-div, .clock-div{
