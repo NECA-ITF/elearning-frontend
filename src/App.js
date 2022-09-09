@@ -11,10 +11,12 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
+import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 
 
 function App() {
+  
   return (
     <div>
       <Router>
@@ -30,6 +32,7 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/course-outline" element={<CourseOutline />} />
         </Routes>
       </Router>
     </div>
