@@ -1,29 +1,59 @@
-import React from 'react'
+import React, {useState} from 'react'
 import img from '../../assets/image2.jpg'
 import logo from '../../assets/itf_log.png'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import './SignupPage.css'
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 function SignupPage() {
+  const [userData, setUserData] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: ""
+  })
+  const navigate = useNavigate();
+
+  function updateUserdata(e){
+    const {value, name} = e.target
+    setUserData(initialUserData => ({
+      ...initialUserData,
+      [name]: value
+    }))
+    // console.log(userData)
+  }
+   function sendNewUserData(e){
+    e.preventDefault()
+    fetch('http://192.168.1.2:5000/auth/user/register', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+    .then((res) => {
+      // console.log(res)
+      if (res.ok) navigate("/login")
+    })
+   }
 
   return (
       <div className="smallCont">
-          <form className='form'>
+          <form className='form' onSubmit={sendNewUserData}>
             <div className="col">          
               <h2>Sign up and start learning today</h2>
-              <CustomInput placeholder='FullName*' style = {{width: ' 100%'}} />
-              <CustomInput placeholder='Email*' style = {{width: '100%'}} />
-              <CustomInput placeholder='Phone Number' style = {{width: '100%'}} />
-              <CustomInput placeholder='Password*' type ='password' style = {{width: '100%'}} />
-              <CustomInput placeholder='Confirm Password*' type ='password' style = {{width: '100%'}} />
-            <Link to='/login' className='links'>
+              <CustomInput placeholder='FullName*' name="fullName" style = {{width: ' 100%'}} onChange={updateUserdata} />
+              <CustomInput placeholder='Email*' name="email" style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Phone Number' name="phoneNumber" style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {{width: '100%'}} onChange={updateUserdata}/>
+            {/* <Link to='/login' className='links'> */}
               <CustomButton title = 'SIGN UP' style = {{width: '100%', margin: '8px 0% auto'}} />
-            </Link>
+            {/* </Link> */}
             </div>
             <div className='bottoms'>
               <h5>By signing up, you agree to our <span>Terms of Use</span> and <span>Privacy Policy </span></h5>

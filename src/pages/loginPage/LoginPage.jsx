@@ -1,25 +1,50 @@
-import React from 'react'
+import React, {useState} from 'react'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton';
 import './LoginPage.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 function LoginPage() {
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+  })
+const navigate = useNavigate()
+function updateLoginPage(e){
+  const {name, value} = e.target
+  setUserInfo(intitialUserInfo =>({
+    ...intitialUserInfo, [name]:value
+  }))
+}
+function getUserData(e){
+  e.preventDefault()
+  fetch('http://192.168.1.2:5000/auth/user/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userInfo)
+  })
+  .then((res) => {
+    console.log(res)
+    // if (res.ok) navigate("/dash-board")
+  })
+ }
+
   return (
-  
     <div className="smallContl">
-          <form className='forml'>
+          <form className='forml' onSubmit={getUserData}>
             <div className="coll">          
               <h1>Login</h1>
-              <CustomInput placeholder='Email*' style = {{width: '100%'}} />
-              <CustomInput placeholder='Password*' type ='password' style = {{width: '100%'}} />
-              <Link to='/dash-board' className='links'>
+              <CustomInput placeholder='Email*' name="email" style = {{width: '100%'}} />
+              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%'}} />
+              {/* <Link to='/dash-board' className='links'> */}
               <CustomButton title = 'LOG IN' style = {{width: '100%', margin: '8px 0% 0'}} />
-              </Link>
+              {/* </Link> */}
               <Link to='/forgot-password' style = {{textDecoration: 'none'}}>
                 <p style={{marginBottom: 'none'}}> Forgot password?</p>
               </Link>

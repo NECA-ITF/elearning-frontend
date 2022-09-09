@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useNavigate} from 'react';
 import'./ProfilePage.css';
 import logo from '../../assets/itf_log.png';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 
 function ProfilePage() {
+    const [userProfile, setUserProfile] = useState({
+        
+    })
+
   return (
     <div className="mainone">
         <div className="main2">
