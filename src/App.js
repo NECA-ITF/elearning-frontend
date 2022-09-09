@@ -11,6 +11,7 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
+import AdminUsers from './pages/adminDashBoard/AdminUsers';
 import './App.css';
 
 
@@ -19,7 +20,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<AdminUsers />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />

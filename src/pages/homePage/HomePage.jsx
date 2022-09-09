@@ -1,10 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-
-function HomePage() {
-  return (
-    <div>HomePage</div>
-=======
 import './HomePage.css'
 import CustomButton from '../../components/customButton/CustomButton';
 import image from '../../assets/newlogo.png';
@@ -43,7 +37,6 @@ function HomePage() {
     </div>
   </div>
   </div>
->>>>>>> 08c41cf03bbe65b583b957d85a4eb06e91cf34e1
   )
 }
 

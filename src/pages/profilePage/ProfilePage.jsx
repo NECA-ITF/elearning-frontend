@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function ProfilePage() {
-  return (
-    <div>ProfilePage</div>
-=======
 import React from 'react';
 import'./ProfilePage.css';
 import logo from '../../assets/itf_log.png';
@@ -72,7 +65,6 @@ function ProfilePage() {
         </div>
     </div>
     </div>
->>>>>>> 08c41cf03bbe65b583b957d85a4eb06e91cf34e1
   )
 }
 

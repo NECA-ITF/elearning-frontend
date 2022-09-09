@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function DashBoard() {
-  return (
-    <div>DashBoard</div>
-  )
-}
-
-export default DashBoard
-=======
 import React, { useState, useEffect } from 'react'
 import courses from './data.json'
 import itflogo from '../../assets/itf_log.png';
@@ -102,4 +91,4 @@ function DashBoard() {
 }
 
 export default DashBoard
->>>>>>> 08c41cf03bbe65b583b957d85a4eb06e91cf34e1
+

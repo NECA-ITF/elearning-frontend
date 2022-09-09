@@ -1,11 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-
-function LoginPage() {
-  return (
-    <div>LoginPage</div>
-  )
-=======
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
@@ -47,7 +40,6 @@ function LoginPage() {
         </div>
       </div>  
     )
->>>>>>> 08c41cf03bbe65b583b957d85a4eb06e91cf34e1
 }
 
 export default LoginPage
