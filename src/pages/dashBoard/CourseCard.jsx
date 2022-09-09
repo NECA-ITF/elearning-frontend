@@ -23,12 +23,14 @@ function DashBoardCourse({name, title, image, icons, isAdmin = false, ...otherPr
             {/* <img src={icons} alt='ico' className='profileicons'></img> */}
             <div className='star-text'>
               <Rating placeholderRating={3.5}
-                emptySymbol={<img src={pinkstar} className="icon" alt='#'style={{width:'23px'}} />}
-                placeholderSymbol={<img src={pinkstar} className="icon" alt='#' style={{width:'23px' }}/>}
-                fullSymbol={<img src={over} className="icon" alt='#'style={{width:'23px'}}/>}
+                emptySymbol={<img src={pinkstar} className="icon" alt='#'style={{width:'20px'}} />}
+                placeholderSymbol={<img src={pinkstar} className="icon" alt='#' style={{width:'20px' }}/>}
+                fullSymbol={<img src={over} className="icon" alt='#'style={{width:'20px'}}/>}
               />
-              <h5> 4.9</h5>
-              <h6>180</h6>
+              <div className='rate'>
+                <h5> 4.9</h5>
+                <h6>180</h6>
+              </div>
             </div>
             
           </div>

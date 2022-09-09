@@ -11,15 +11,17 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
+import DashCourseOutline from './pages/dashCourseOutline/DashCourseOutline';
 import './App.css';
 
 
 function App() {
+  
   return (
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<DashBoard />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
