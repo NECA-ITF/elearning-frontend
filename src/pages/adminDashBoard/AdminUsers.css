@@ -123,3 +123,19 @@ body{
     /* margin: auto; */
     margin-left: 30px;
 }
+.rasheed img{
+    object-fit: cover;
+    border: 3px solid black;
+}
+.aboutpage1{
+    /* margin-left: 5rem; */
+    margin-top: 100px;
+}
+.rasheed h2{
+    padding-right: 25px;
+}
+.users{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem
+}

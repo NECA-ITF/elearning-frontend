@@ -4,6 +4,7 @@ import CustomButton from '../../components/customButton/CustomButton'
 import gith from './adminAssets/gith.png'
 import linkd from './adminAssets/linkd.png'
 import ebenezer from './adminAssets/ebenezer.JPG'
+import aboutpix from './adminAssets/aboutpix.JPG'
 
 
 function adminUsers() {
@@ -22,20 +23,98 @@ function adminUsers() {
         {/* <div className='about'></div> */}
         </div>
 
+    <div className='users'>
         <div className='aboutpage'>
                 <div className='ebenezer'>
-                    <img src={ebenezer} alt="logo" width={250}/>
+                    <img src={ebenezer} alt="logo" width={300} height={300}/>
                 </div>
                 <div className='font'><h2>Aluya Ebenezer</h2></div>
                 <div className='socials'>
-                <img className='gitpix' src={gith} alt="g-icon" />
-                <img className='linkdpix' src={linkd} alt="l-icon"/>
+                    <img className='gitpix' src={gith} alt="g-icon" />
+                    <img className='linkdpix' src={linkd} alt="l-icon"/>
                 </div>
         </div>
+        
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+        
+        <div className='aboutpage1'>
+                <div className='rasheed'>
+                    <img src={aboutpix} alt="pics" width={300} height={300} />
+                </div>
+                <h2>Abdul Rasheed</h2>
+                <div className='socials'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+        </div>
+
+    </div> 
+
     </div>
-
-
-    
   )
 }
 
