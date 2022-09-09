@@ -19,10 +19,12 @@ body{
 .about h3{
     /* color: aquamarine; */
     cursor: pointer;
+    width: 50%;
 }
 .about h3:hover{
     /* background-color: plum; */
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
+    /* width: px; */
 }
 .chris img{
     object-fit: cover;
