@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './DashCourseOutline.css'
+import './CourseOutline.css'
 
 function OutlineList({title, content, lectures, time}) {
     const [isActive, setIsActive] = useState(false)

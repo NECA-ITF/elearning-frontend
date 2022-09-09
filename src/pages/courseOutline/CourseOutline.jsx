@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import NavBar from '../homePage/NavBar';
-import './DashCourseOutline.css'
+import './CourseOutline.css'
 import OutlineList from './OutlineList';
 
 function DashCourseOutline() {
