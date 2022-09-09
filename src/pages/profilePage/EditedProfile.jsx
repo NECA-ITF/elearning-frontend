@@ -22,7 +22,7 @@ function EditedProfile() {
         <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Settings</p>
         </div>
-
+        
         <div  className='veiw2'>
         <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Change password</p>
