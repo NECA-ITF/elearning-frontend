@@ -19,7 +19,7 @@ function ChangePassword() {
 
         <div  className='veiw2' >
         <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-            <p>Settings</p>
+            <p>Edit profile</p>
         </div>
 
         <div  className='veiw2'>
@@ -47,17 +47,17 @@ function ChangePassword() {
              </div>
              <div className="border2" >
                 <p>Enter Old Password</p>
-                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password"   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2" >
                 <p>Create New Password</p>
-                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password"   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
             </div>
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password"  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}/>
             </div>
             
             <Link to='/profile-page' className='links'>        

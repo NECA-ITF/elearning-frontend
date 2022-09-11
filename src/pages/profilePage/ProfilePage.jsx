@@ -13,16 +13,16 @@ function ProfilePage() {
   return (
     <div className="mainone">
         <div className="main2">
-        {<Link to='/edited-profile'className='links'>        
+       
             <div  className='veiw'>
             <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Profile</p>
             </div>
-        </Link>}
+        
 
             <div  className='veiw' >
             <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p>Settings</p>
+                <p>Edit Profile</p>
             </div>
             <Link to='/change-password'className='links'> 
             <div  className='veiw'>
