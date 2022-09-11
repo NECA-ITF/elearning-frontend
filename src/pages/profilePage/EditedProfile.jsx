@@ -76,11 +76,12 @@ function EditedProfile() {
             <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Edit Profile</p>
             </div>
-            
+            <Link to='/change-password'className='links'> 
             <div  className='veiw2'>
             <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Change password</p>
             </div>
+            </Link>
 
             <div  className='veiw2'>
             <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />

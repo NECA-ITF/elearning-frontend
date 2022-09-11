@@ -14,14 +14,13 @@ import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 
-
 function App() {
   
   return (
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<EditedProfile />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
