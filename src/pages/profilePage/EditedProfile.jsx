@@ -120,7 +120,7 @@ function EditedProfile() {
                 </div>
                 <Link to='/profile-page' className='links'>        
                 <div className="border2">
-                    <CustomButton title={'Confirm Changes'} style={{width:'100%', height:'1rem'}}/>
+                    <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem'}}/>
                 </div> 
                 </Link>
             </div>
