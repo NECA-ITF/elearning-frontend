@@ -14,7 +14,6 @@ import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 
-
 function App() {
   
   return (
