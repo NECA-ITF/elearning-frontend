@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
@@ -6,7 +6,36 @@ import './EditedProfile.css'
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
-function ChangePassword() {
+function ChangePassword(){ 
+   
+    const[userPasswords,setUserPasswords] = useState({
+        oldPassword:'',
+        password:'',
+        confirmPassword:''
+    })
+
+    function handleChangePassword(e){
+        const {name,value} = e.target
+        setUserPasswords(intialState => ({
+            ...intialState,
+            [name]:value
+        }))
+        console.log(userPasswords)
+    }
+    function handleOnSubmit(e){
+        e.preventDefault();
+        const {password,confirmPassword} = userPasswords 
+        if(password === confirmPassword){
+            //proceed running the fetch api to change
+        }
+        else{
+            console.log("password does not match")
+        }
+    }
+
+
+
+
   return (
     <div className="mainone">
     <div className="main3 ">
@@ -19,7 +48,7 @@ function ChangePassword() {
 
         <div  className='veiw2' >
         <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-            <p>Settings</p>
+            <p>Edit profile</p>
         </div>
 
         <div  className='veiw2'>
@@ -40,6 +69,7 @@ function ChangePassword() {
 
     </div> 
     <div className="main1">
+        <form onSubmit={handleOnSubmit}>
           <div className='Back1'>
 
              <div className='profile-img'>
@@ -47,17 +77,19 @@ function ChangePassword() {
              </div>
              <div className="border2" >
                 <p>Enter Old Password</p>
-                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password" name= 'oldPassword'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}
+                onChange={handleChangePassword}/>
             </div>
 
             <div className="border2" >
                 <p>Create New Password</p>
-                <CustomInput   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}
+                onChange={handleChangePassword}/>
             </div>
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}/>
+                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}  onChange={handleChangePassword}/>
             </div>
             
             <Link to='/profile-page' className='links'>        
@@ -66,19 +98,12 @@ function ChangePassword() {
             </div> 
             </Link>
         </div>
+        </form>
     </div>
 
-
-
-
     </div>
-
-
-
-
-        
-    
-  )
+  
+    )
 }
 
 export default ChangePassword
