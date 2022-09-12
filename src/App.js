@@ -9,11 +9,13 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
+
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
+import AdminProfile from './pages/adminLogin/AdminProfile';
 
 function App() {
   
