@@ -38,7 +38,7 @@ function AboutPage() {
                 <div className='chris'>
                     <img src={meda} alt="pics" width={300} height={300} />
                 </div>
-                <h3>Hammedah</h3>
+                <h3>Ajibade Hamidat</h3>
                 <div className='socmed'>
                     <img className='gitpix' src={gith} alt="" />
                     <img className='linkdpix' src={linkd} alt="" />
