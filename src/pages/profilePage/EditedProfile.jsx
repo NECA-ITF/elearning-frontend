@@ -22,6 +22,7 @@ function EditedProfile() {
         console.log(userEditedProfile)
     }
 
+
     function handleSubmit(e){
         //to prevent refreshing if page after submitting
         e.preventDefault()
@@ -68,7 +69,7 @@ function EditedProfile() {
         <div className="main1">
             <form action="" onSubmit={handleSubmit} >
             <div className='Back1'>
-
+            
                 <div className='profile-img'>
                     <img src={logo} alt="Logo" className='img'/>
                 </div>
