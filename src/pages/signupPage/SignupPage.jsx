@@ -35,9 +35,15 @@ function SignupPage() {
       },
       body: JSON.stringify(userData)
     })
+<<<<<<< HEAD
     .then((res) => {
       // console.log(res)
       if (res.ok) navigate("/login")
+=======
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) navigate("/login")
+>>>>>>> 82ce84b63a9430031de8b5be63b96ce994141dcd
     })
    }
 

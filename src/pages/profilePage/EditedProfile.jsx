@@ -20,6 +20,23 @@ function EditedProfile() {
             ...initialEdit, [name]:value
         }))
     }
+<<<<<<< HEAD
+=======
+    function getEditedProfile(e){
+        e.preventDefault()
+        fetch('http://192.168.1.2:5000/auth/user/update-profile', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userEditedProfile)
+        })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) navigate("/profile-page")
+        })
+       }
+>>>>>>> 82ce84b63a9430031de8b5be63b96ce994141dcd
 
   return (
     <div className="mainone">
@@ -54,6 +71,7 @@ function EditedProfile() {
 
     </div> 
     <div className="main1">
+        <form action="" onSubmit={getEditedProfile}>
           <div className='Back1'>
 
              <div className='profile-img'>
@@ -62,12 +80,20 @@ function EditedProfile() {
 
             <div className="border2" >
                 <p>Fullname</p>
+<<<<<<< HEAD
                 <CustomInput   placeholder='Maryam Suleiman' name="fullname" style={{width:'100%',height:'1rem'}}/>
+=======
+                <CustomInput   placeholder='Maryam Suleiman' name="fullname" style={{width:'100%',height:'1rem'}} onChange={updateEditedprofile}/>
+>>>>>>> 82ce84b63a9430031de8b5be63b96ce994141dcd
             </div>
 
             <div className="border2">
                 <p>Phone number</p>
+<<<<<<< HEAD
                 <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}/>
+=======
+                <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}} onChange={updateEditedprofile}/>
+>>>>>>> 82ce84b63a9430031de8b5be63b96ce994141dcd
             </div>
             <div className="border2">
                 <p>Other Links</p>
@@ -82,6 +108,7 @@ function EditedProfile() {
             </div> 
             </Link>
         </div>
+        </form>
     </div>
     </div>
           
