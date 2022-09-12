@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './SideBar.css'
 import { Link } from 'react-router-dom';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 
 function SideBar() {
-
+    const [userData, setUserData] = useState(null);
     function logoutUser(params) {
         localStorage.setItem('userData', null);
         setUserData(null)
