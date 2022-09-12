@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
@@ -9,12 +9,22 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 function LoginPage() {
+  const navigate = useNavigate()
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
   })
 
-  const navigate = useNavigate()
+  const[userData,setUserData] = useState(null)
+
+  useEffect(()=>{
+    setUserData(JSON.parse(localStorage.getItem('userData')))
+  },[])
+
+  if(userData !== null){
+    navigate("/dash-board")
+  }
+
 
   function updateLoginPage(e){
     const {name, value} = e.target
@@ -22,21 +32,25 @@ function LoginPage() {
       ...intitialUserInfo, [name]:value
     }))
   }
+  // 
+  
 
   function getUserData(e){
     e.preventDefault()
-    fetch('http://192.168.1.2:5000/auth/user/login', {
+      fetch('http://192.168.1.2:5000/auth/user/login', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(userInfo)
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) navigate("/dash-board")
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success)
+        localStorage.setItem("userData", JSON.stringify(data.user))
+        navigate("/dash-board")
 
-    })
+      })
   }
 
   return (
