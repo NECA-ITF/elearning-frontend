@@ -80,6 +80,41 @@ function AdminDashBoardOutlines() {
                             </div>
                         </div>
                         
+                        <div className='videoContainer'>
+                            <video src={Movie}  controls/>
+                            <p>HTML course II</p>
+                            <div className='videoButtons'>
+                            <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px' }}/>
+                            <CustomButton title='Delete' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            </div>
+                        </div>
+
+                        <div className='videoContainer'>
+                            <video src={Movie}  controls/>
+                            <p>HTML course II</p>
+                            <div className='videoButtons'>
+                            <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px' }}/>
+                            <CustomButton title='Delete' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            </div>
+                        </div>
+
+                        <div className='videoContainer'>
+                            <video src={Movie}  controls/>
+                            <p>HTML course II</p>
+                            <div className='videoButtons'>
+                            <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px' }}/>
+                            <CustomButton title='Delete' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            </div>
+                        </div>
+
+                        <div className='videoContainer'>
+                            <video src={Movie}  controls/>
+                            <p>HTML course II</p>
+                            <div className='videoButtons'>
+                            <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px' }}/>
+                            <CustomButton title='Delete' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            </div>
+                        </div>
                      </div>
                 </div>
     </div>

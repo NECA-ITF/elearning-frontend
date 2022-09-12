@@ -1,121 +1,105 @@
 import React from 'react'
-import './AdminUsers.css'
 import CustomButton from '../../components/customButton/CustomButton'
-import gith from './adminAssets/gith.png'
-import linkd from './adminAssets/linkd.png'
-import ebenezer from './adminAssets/ebenezer.JPG'
-import aboutpix from './adminAssets/aboutpix.JPG'
+import Movie from '../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4'
+import { Link } from 'react-router-dom'
+import './AdminUsers.css'
 
-
-function adminUsers() {
+function AdminDashBoardOutlines() {
   return (
-    <div id='adminDash'>
-            <div id='adminDash-left'>
+    <div className='adminusers'>
+        <div id='adminDash-left'>
                 <div id='admDashmarginTop'> 
-                    <span className='sectiontabs'>All Courses</span>
-                    <span className='sectiontabs'>All Outline</span>
-                    <span className='sectiontabs'>All Users</span>
+                     <CustomButton title="All Courses" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                     <CustomButton title="All Outline" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                     <CustomButton title="All Users" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
                 </div>
-            </div> 
+                
+            </div>
+           <div id ='adminDash-right'>
+           <div id='dr'>
+                    <select name='Users'>
+                        <option value="Courses" disabled selected>Users</option>
+                        <option value={"pumpernickel"}>Ajibade Hamidat</option>
+                        <option value="reeses">Daniel Uchenna</option>
+                        <option value="reeses">Maryam Suleiman</option>
+                        <option value="dave">Alexander Gabrielle</option>
+                        <option value="dave">Daubry Martins</option>
+                    </select>
 
-        <div className='ab'>
-            <h2>All Users</h2>
-        {/* <div className='about'></div> */}
-        </div>
+                </div>
+                
+                 <div id='adminDash-right-container'>
+                     <div id='adminDash-right-container-outlines'>
+                        <div className='outlinedetails1'>
+                            <span>Ajibade Hamidat</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Daniel Uchenna</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Maryam Suleiman</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Alexander Gabrielle</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Daubry Martins</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Rabo Abdulsammad</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                        <div className='outlinedetails1'>
+                            <span>Aluya Ebenezer</span> 
+                            <div className='outineButtons'>
+                                <CustomButton title="Delete" style={{width: '70px', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
+                               
+                            </div>
+                        </div>
+                     </div>
+                     <div id='adminDash-right-container-videos'>
+                        <div className='videoContainer1'>
+                            <video src={Movie}  controls/>
+                            <p>Ajibade Hamidat </p>
+                            <p>hamidat@gmail.com </p>
+                            <p>08089453241</p>
+                            <p></p>
+                            <div className='videoButtons'>
+                            <CustomButton title='Edit' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            <CustomButton title='Delete' style={{width:'70px', height:'30px',padding:'10px',fontSize:'10px'}}/>
+                            </div>
 
-    <div className='users'>
-        <div className='aboutpage'>
-                <div className='ebenezer'>
-                    <img src={ebenezer} alt="logo" width={300} height={300}/>
+                        </div>
+                        
+                     </div>
                 </div>
-                <div className='font'><h2>Aluya Ebenezer</h2></div>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="g-icon" />
-                    <img className='linkdpix' src={linkd} alt="l-icon"/>
-                </div>
-        </div>
-        
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-        
-        <div className='aboutpage1'>
-                <div className='rasheed'>
-                    <img src={aboutpix} alt="pics" width={300} height={300} />
-                </div>
-                <h2>Abdul Rasheed</h2>
-                <div className='socials'>
-                    <img className='gitpix' src={gith} alt="" />
-                    <img className='linkdpix' src={linkd} alt="" />
-                </div>
-        </div>
-
-    </div> 
-
-    </div>
+            </div>
+       </div>
+            
   )
 }
 
-export default adminUsers
+export default AdminDashBoardOutlines

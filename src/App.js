@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/homePage/HomePage';
+// import HomePage from './pages/homePage/HomePage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import About from './pages/about/AboutPage';
 import SignupPage from './pages/signupPage/SignupPage';
@@ -15,6 +15,7 @@ import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
+import AdminUsers from './pages/adminDashBoard/AdminUsers'
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CourseOutline />} />
+        <Route path="/admin-users" element={<AdminUsers />} />
         </Routes>
       </Router>
     </div>

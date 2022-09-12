@@ -11,8 +11,6 @@ function AdminDashBoard() {
     const [searchInput, setSearchInput]= useState("")
   const [searchCourse, setSearchCourse]= useState(courses)
   const input= (event)=>{
-    
-    // const inp =  
     setSearchInput(event.target.value)
 
   }
@@ -24,19 +22,21 @@ function AdminDashBoard() {
     setSearchCourse([...filteredCourses])
   }
   return (
+    //Overall admin dashboard
     <div id='adminDash'>
-            <div id='adminDash-left'>
+        {/* admin-dashboard left */}
+        <div id='adminDash-left'>
                 <div id='admDashmarginTop'> 
                <CustomButton title="All Courses" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
-                     <Link to ='/admin-dashboard'> <CustomButton title="All Outline" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/></Link>
-                     <CustomButton title="All Users" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/>
-                </div>
-                
-            </div>
-            <div id='adminDash-right'>
-            <DashCourseList courses= {searchCourse} isAdmin= {true}/>
+                    <Link to ='/admin-dashboard'> <CustomButton title="All Outline" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/></Link>
+                    <Link to ='/admin-users'><CustomButton title="All Users" style={{width: '90%', padding:'8px', textAlign : 'center' , fontSize:" 15px", display:'block'}}/></Link>
+                </div> 
+        </div>
+            {/* admin-dashboard-right */}
+              <div id='adminDash-right'>
+               <DashCourseList courses= {searchCourse} isAdmin= {true}/>
         
-             </div>
+              </div>
     </div>
   )
 }
