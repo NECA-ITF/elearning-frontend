@@ -8,12 +8,14 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
+
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import AboutPage from './pages/about/AboutPage';
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
-
+import AdminProfile from './pages/adminLogin/AdminProfile';
 
 function App() {
   
@@ -23,6 +25,7 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/admin-dash" element={<AdminDashBoard />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

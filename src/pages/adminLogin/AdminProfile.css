@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.Back1 h2{text-align: center;
+font-size: 2rem;}
+.border3{
+    width:70%;
+    margin-left: 7rem;
+}
+.bb{
+    border-bottom: 1px solid black;
+    margin-left: 7rem;
+    
+}
