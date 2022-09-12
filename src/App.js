@@ -1,6 +1,7 @@
 import React from 'react';
-import HomePage from './pages/homePage/HomePage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
+import AboutPage from './pages/about/AboutPage';
 import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
@@ -8,7 +9,6 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
-
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';

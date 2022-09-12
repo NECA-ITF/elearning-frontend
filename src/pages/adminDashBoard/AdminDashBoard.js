@@ -1,9 +1,9 @@
 import React from 'react'
 import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
-import Movie from '../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4'
+import AdminDashBoardOutlines from '../adminDashBoard/AdminDashBoardOutlines'
 
-function adminDashBoard() {
+function AdminDashBoard() {
   return (
     <div id='adminDash'>
             <div id='adminDash-left'>
@@ -75,6 +75,10 @@ function adminDashBoard() {
                 </div>
         
             </div>
+
+            <div id='adminDash-right'>
+             <AdminDashBoardOutlines/>
+             </div>
     </div>
   )
 }
