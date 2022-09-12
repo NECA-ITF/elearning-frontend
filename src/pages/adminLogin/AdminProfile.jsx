@@ -9,32 +9,32 @@ import { Link } from 'react-router-dom';
 function AdminProfile() {
   return (
     
-      <div className="mainone">
-        <div className="main3">
-        <Link to='/profile-page'className='links'>        
-            <div  className='veiw2'>
-            <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p> Dashboard</p>
-            </div>
-        </Link>
+      <div className="Admin-profile">
+            <div className="Admin-sidebar">
+                <Link to='/profile-page'className='links'>        
+                   <div  className='Admin-icon'>
+                   <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
+                   <p> Dashboard</p>
+                   </div>
+               </Link>
 
-            <div  className='veiw2' >
-            <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
+            <div  className='Admin-icon' >
+                <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p> Admin Profile</p>
             </div>
             <Link to='/change-password'className='links'> 
-            <div  className='veiw2'>
+            <div  className='Admin-icon'>
             <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Change password</p>
             </div>
             </Link>
 
-            <div  className='veiw2'>
+            <div  className='Admin-icon'>
             <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Privacy</p>
             </div>
             <Link to='/login'className='links'> 
-            <div  className='veiw2'>
+            <div  className='Admin-icon'>
             <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin"  />
                 <p>Log Out</p>
             </div>

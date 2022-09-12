@@ -1,13 +1,10 @@
-import React, {useState, useNavigate} from 'react';
+import React from 'react';
 import'./ProfilePage.css';
 import logo from '../../assets/itf_log.png'
 import SideBar from './SideBar';
 
 
 function ProfilePage() {
-    const [userProfile, setUserProfile] = useState({
-        
-    })
 
   return (
     <div className="mainone">
