@@ -3,7 +3,7 @@ import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
-import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
+import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
 
 function EditedProfile() {
@@ -64,7 +64,7 @@ function EditedProfile() {
 
   return (
     <div className="mainone">
-        <div className="main3 ">
+        {/* <div className="main3 ">
         <Link to='/profile-page'className='links'>        
             <div  className='veiw2'>
             <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
@@ -94,7 +94,9 @@ function EditedProfile() {
             </div>
             </Link>
 
-        </div> 
+        </div>  */}
+
+        <SideBar />
         <div className="main1">
             <form action="" onSubmit={handleSubmit} >
             <div className='Back1'>
