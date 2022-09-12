@@ -15,7 +15,6 @@ import CourseOutline from './pages/courseOutline/CourseOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
-import AdminProfile from './pages/adminLogin/AdminProfile';
 
 function App() {
   
