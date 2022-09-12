@@ -1,0 +1,12 @@
+.modal{   
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    margin: 5% auto;
+}
+
+.modal-form {
+    width: 80%;
+    padding: 20px;
+}
