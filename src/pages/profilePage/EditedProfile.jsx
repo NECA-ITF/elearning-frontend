@@ -64,38 +64,6 @@ function EditedProfile() {
 
   return (
     <div className="mainone">
-        {/* <div className="main3 ">
-        <Link to='/profile-page'className='links'>        
-            <div  className='veiw2'>
-            <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p>Profile</p>
-            </div>
-        </Link>
-
-            <div  className='veiw2' >
-            <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p>Edit Profile</p>
-            </div>
-            <Link to='/change-password'className='links'> 
-            <div  className='veiw2'>
-            <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p>Change password</p>
-            </div>
-            </Link>
-
-            <div  className='veiw2'>
-            <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
-                <p>Privacy</p>
-            </div>
-            <Link to='/login'className='links'> 
-            <div  className='veiw2'>
-            <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin"  />
-                <p>Log Out</p>
-            </div>
-            </Link>
-
-        </div>  */}
-
         <SideBar />
         <div className="main1">
             <form action="" onSubmit={handleSubmit} >

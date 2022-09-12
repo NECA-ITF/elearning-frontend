@@ -1,18 +1,4 @@
 
-/* .mainone{
-    position: fixed;
-    width: 100vw;
-    min-height: 100vh;
-    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46); 
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    
-    
-} */
 .main3{
     border:none;
     border-right: 1px solid rgba(255, 255, 255, 0.309);
