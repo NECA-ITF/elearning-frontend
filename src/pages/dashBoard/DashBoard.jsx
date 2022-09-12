@@ -6,13 +6,14 @@ import CustomButton from '../../components/customButton/CustomButton';
 import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
   const [courses, setCourses]= useState([])
   const [searchCourse, setSearchCourse]= useState([])
   const [userData, setUserData] = useState(null);
+  const navigate = useNavigate()
 
   const input= (event)=>{
     
@@ -32,6 +33,7 @@ function DashBoard() {
   function logoutUser(params) {
     localStorage.setItem('userData', null);
     setUserData(null)
+    navigate('/')
   }
 
   useEffect(() => {
