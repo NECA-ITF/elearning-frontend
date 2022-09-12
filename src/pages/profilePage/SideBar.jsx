@@ -15,7 +15,8 @@ function SideBar() {
         const user = localStorage.getItem('userData');
         setUserData(JSON.parse(user));
     }, [])
-
+    //to avoid command never used prompt 
+    console.log(userData ? 'user': 'no user')
   return (
     <div className="main3 ">
         <Link to='/profile-page' className='links'>        
