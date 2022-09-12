@@ -44,14 +44,18 @@
     flex-direction: column;
     margin: 4% auto;
 }
+.col > *{
+    margin-top: 0;
+}
 .col h2{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 .form{
     width: 35%;
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     border: 1px solid black;
     padding: 10px 30 0;
+    height: 100vh;
 }
 .form p{
     font-size: 1.2rem;
