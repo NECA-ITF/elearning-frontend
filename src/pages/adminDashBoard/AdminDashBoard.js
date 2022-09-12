@@ -2,6 +2,7 @@ import React from 'react'
 import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
 import Movie from '../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4'
+import CustomModal from '../../components/customModal/CustomModal'
 
 function adminDashBoard() {
   return (
@@ -23,7 +24,7 @@ function adminDashBoard() {
                         <option value="dave">Introduction to Python</option>
                         <option value="dave">Node JS</option>
                     </select>
-                    <CustomButton title="+ Create" style={{width: '120px', padding:'8px', textAlign : 'center' }}/>
+                    <CustomButton  title="+ Create" style={{width: '120px', padding:'8px', textAlign : 'center' }}/>
                 </div>
                 
                  <div id='adminDash-right-container'>
