@@ -4,6 +4,18 @@ import { Link } from 'react-router-dom';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 
 function SideBar() {
+
+    function logoutUser(params) {
+        localStorage.setItem('userData', null);
+        setUserData(null)
+    }
+    
+    
+    useEffect(() => {
+        const user = localStorage.getItem('userData');
+        setUserData(JSON.parse(user));
+    }, [])
+
   return (
     <div className="main3 ">
         <Link to='/profile-page' className='links'>        
@@ -30,7 +42,7 @@ function SideBar() {
             <p>Privacy</p>
         </div>
         
-        <Link to='/login'className='links'> 
+        <Link to='/login'className='links' onClick={logoutUser}> 
             <div  className='veiw2'>
                 <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin"  />
                 <p>Log Out</p>
