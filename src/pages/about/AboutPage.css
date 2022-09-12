@@ -16,7 +16,7 @@
 }
 .sec-page{
     margin-top: 10px;
-    background-color: cadetblue
+    background-color: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
 
 }
 
@@ -24,7 +24,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     /* cursor: pointer; */
-    background-color:cadetblue;
+    background-color:-webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
 }
 .ab h2{
     margin-left: 50px;
@@ -34,11 +34,16 @@
 .about h3{
     /* color: aquamarine; */
     cursor: pointer;
+    background: -webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: cadetblue;
     /* width: 50%; */
 }
 .about h3:hover{
     /* background-color: plum; */
     border-bottom: 1px solid red;
+    
     /* width: px; */
 }
 .chris img{
