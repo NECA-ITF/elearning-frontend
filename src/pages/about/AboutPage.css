@@ -1,15 +1,30 @@
-body{
-    background-color:white;
-}
+
 .about{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    /* margin-top: 30px; */
     gap: 15px;
-    background-color: rgb(103, 175, 201);
+    background-color: cadetblue;
     padding-top: 30px;
     padding-bottom: 10px;
+}
+.abouthead{
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    border: 2px rgb(231, 228, 226) solid;
+    height: 130px;
+}
+.sec-page{
+    margin-top: 10px;
+    background-color: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+
+}
+
+.third-page{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* cursor: pointer; */
+    background-color:-webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
 }
 .ab h2{
     margin-left: 50px;
@@ -19,10 +34,17 @@ body{
 .about h3{
     /* color: aquamarine; */
     cursor: pointer;
+    background: -webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: cadetblue;
+    /* width: 50%; */
 }
 .about h3:hover{
     /* background-color: plum; */
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
+    
+    /* width: px; */
 }
 .chris img{
     object-fit: cover;
@@ -30,7 +52,7 @@ body{
 
 }
 .mart img{
-    object-fit: fill
+    object-fit: fill;
     /* padding: -5px; */
     /* width: 400px; */
 }

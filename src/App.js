@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/homePage/HomePage';
-import About from './pages/about/AboutPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
@@ -13,6 +12,7 @@ import EditedProfile from './pages/profilePage/EditedProfile'
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
+import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
 import AdminProfile from './pages/adminLogin/AdminProfile';
@@ -24,8 +24,8 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/admin-dash" element={<AdminDashBoard />} />
-        <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
