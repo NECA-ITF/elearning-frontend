@@ -7,16 +7,24 @@
     overflow: hidden;
     position: fixed;
     top: 0;
+    height: 14.4%;
     z-index: 3;
     padding: 6px;
 }
 .apply {
-    border: 1px solid #151D3B;
     background-color:#151D3B;
-    color: white;
-    padding: .9rem;
+    color: white; 
     text-align: center;
     cursor: pointer;
+    margin-left: 10%;
+    border: 1px solid blue;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    align-items: center;
+    width: 100%;
 }
 
 .nav{
@@ -53,5 +61,6 @@
 .apply:hover{
     background-color:#D82148;
     color: white;
+    transition: ease-in .5s;
 }
 
