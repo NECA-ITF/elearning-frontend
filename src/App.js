@@ -14,7 +14,6 @@ import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
-import AdminProfile from './pages/adminLogin/AdminProfile';
 
 function App() {
   
