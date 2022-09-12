@@ -16,7 +16,6 @@ import CourseOutline from './pages/courseOutline/CourseOutline';
 import './App.css';
 import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
 
-
 function App() {
   
   return (
