@@ -12,6 +12,7 @@ import EditedProfile from './pages/profilePage/EditedProfile'
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/admin-dash" element={<AdminDashBoard />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
