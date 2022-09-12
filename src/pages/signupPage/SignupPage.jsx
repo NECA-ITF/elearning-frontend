@@ -47,10 +47,10 @@ function SignupPage() {
             <div className="col">          
               <h2>Sign up and start learning today</h2>
               <CustomInput placeholder='FullName*' name="fullName" style = {{width: ' 100%', margin: '0 0 0 0'}} onChange={updateUserdata} />
-              <CustomInput placeholder='Email*' name="email" style = {{width: '100%', margin: '3% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Phone Number' name="phoneNumber" style = {{width: '100%', margin: '3% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%', margin: '3% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {{width: '100%', margin: '3% 0 0 0'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Email*' name="email" style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Phone Number' name="phoneNumber" style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
             {/* <Link to='/login' className='links'> */}
               <CustomButton title = 'SIGN UP' style = {{width: '100%', margin: '8px 0% auto'}} />
             {/* </Link> */}
