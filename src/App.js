@@ -20,7 +20,7 @@ import PrivacyPolicy from '../src/pages/policy/privacyPolicy/PrivacyPolicy'
 
 
 function App() {
-  const API_URL = "http://192.168.1.4:5000";
+  const API_URL = "http://192.168.0.109:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
@@ -29,7 +29,7 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/admin-dash" element={<AdminDashBoard />} />
+        <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL}/>} />
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
         <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />

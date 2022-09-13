@@ -22,6 +22,7 @@ function AdminDashBoard({ API_URL}) {
     {description: ""},
     {thumbnail: ""},
     {totalHours: ""},
+    {requirements: ""},
     {ratings: ""}
   ]
   const mode = 'course'
