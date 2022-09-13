@@ -6,9 +6,10 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({data,route}) {
-  const [userData, setUserData] = useState({})
-  const [userDataKeys,setUserDataKeys] = useState([])
+function CustomModal({data, route, API_URL}) {
+  const [thumbnail, setThumbnail] = useState(null)
+  const [courseData, setCourseData] = useState({})
+  const [userDataKeys,setCourseDataKeys] = useState([])
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -17,36 +18,44 @@ function CustomModal({data,route}) {
 
   useEffect(()=>{
     const newData = {...finalObj}
-    setUserData(newData)
-    setUserDataKeys([...Object.keys(newData)])
+    setCourseData(newData)
+    setCourseDataKeys([...Object.keys(newData)])
   },[])
 
-  // console.log(userData)
-  // console.log(userDataKeys)
-
-
-
-
-
-  // const [userData, setUserData] = useState({
-  //   Title: "",
-  //   Instructor: "",
-  //   Description: "",
-  //   PhotoUrl: "",
-  //   TotalHours: "",
-  //   Ratings: ""
-  // })
-
-
-  
-  function updateUserdata(e){
-    const {value, name} = e.target
-    setUserData(initialUserData => ({
+  function updateCoursedata(e){
+    const { value, name } = e.target
+    setCourseData(initialUserData => ({
       ...initialUserData,
       [name]: value
     }))
-    console.log(userData)
+    // console.log(courseData)
   }
+  
+  function handleFileChange(e){
+    const { files } = e.target;
+    setThumbnail(files);
+    console.log(files);
+  }
+  
+  function createCourse(e){
+    e.preventDefault();
+    const course = new FormData();
+    course.append("courseData", courseData);
+    course.append("file", thumbnail[0]);
+    // console.log(Object.fromEntries(course));
+
+    // fetch(`${API_URL}/api/course`, {
+    //   // headers: {
+    //   //   'Content-Type': 'application/json'
+    //   // },
+    //   method: "POST",
+    //   // body: JSON.stringify(course)
+    //   body: JSON.stringify(JSON.stringify(Object.fromEntries(course)))
+    // })
+    // .then(res => res.json())
+    // .then(res => console.log(res))
+  }
+
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -79,23 +88,26 @@ function CustomModal({data,route}) {
         ariaHideApp={false}
       >
         <div className="modal-form">
-          <form>
-            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateUserdata} />
-            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateUserdata}/>
-            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateUserdata}/>
-            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/>
-            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/> */}
-            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/> */}
+          <form onSubmit={createCourse}>
+            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
+            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
+            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
+            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/>
+            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
+            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
             {
               userDataKeys.map((button,index)=>(
+                <>
+                {button.toLowerCase() === "thumbnail" ? <p style={{color: "white"}}>Thumbnail</p> : ""}
                 <CustomInput
                 key={index}
                 placeholder={button.toUpperCase()}
                 name={button}
-                type ='text' 
+                type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
                 style = {{width: '100%'}} 
-                onChange={updateUserdata}
+                onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
                 />
+                </>
               ))
             }
 
