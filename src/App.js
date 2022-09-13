@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HomePage from './pages/homePage/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignupPage from './pages/signupPage/SignupPage';
@@ -17,7 +17,9 @@ import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
 
 function App() {
-  const API_URL = "http://192.168.1.3:5000"
+  const API_URL = "http://192.168.1.3:5000";
+  const [currentCourse, setCurrentCourse] = useState({});
+  const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
     <div>
       <Router>
@@ -28,13 +30,13 @@ function App() {
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
         <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/dash-board" element={<DashBoard API_URL={API_URL} />} />
+        <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
         <Route path="/play-courses" element={<PlayCourses />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} />} />
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} />} />
         </Routes>
       </Router>
     </div>
