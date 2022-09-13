@@ -5,52 +5,9 @@ import OutlineList from './OutlineList';
 import { Link } from 'react-router-dom';
 
 
-function DashCourseOutline({ API_URL, currentCourse }) {
+function DashCourseOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
   const [courseOutline, setCourseOutline] = useState([]);
-    const outlineData = [
-        {
-          title: 'Getting Started',
-          content: ['Welcome to the Course', 'What is React.js?','Why React instead of "Just Javascript"'],
-          lectures: '2 lectures',
-          time: '6hrs'
-        },
-        {
-          title: 'Javascript Refresher',
-          content: ['Module Introduction', 'Understanding "let" and "const"', 'Arrow Functions'],
-          lectures: '3 lectures',
-          time: '9hrs'
-        },
-        {
-          title: 'React Basics & Working with Components',
-          content:['Module Introduction', 'What are Components?', 'Why is React All About Them?'],
-          lectures: '4 lectures',
-          time: '11hrs'
-        },
-        {
-          title: 'React State & Working with Events',
-          content: ['Module Introduction', 'Listening to Events & Working with Event Handlers'],
-          lectures: '2 lectures',
-          time: '1hr'
-        },
-        {
-          title: 'Rendering Lists and Conditional Content',
-          content: ['Module introduction', 'Rendering Lists of Data', 'Using Stateful Lists'],
-          lectures: '1 lecture',
-          time: '30mins'
-        },
-        {
-          title: 'Styling React Component',
-          content: ['Module Introduction', 'Setting Dynamic Inline styles', 'Setting CSS Classes Dynamically'],
-          lectures: '4 lectures',
-          time: '5hrs'
-        },
-        {
-          title: 'A Complete Practice Project',
-          content:['Module Introduction', 'Adding a "User" Component', 'Adding a re-usable "Card" Component'],
-          lectures: '4 lectures',
-          time: '5hrs'
-        }
-      ];
+   
       
   useEffect(() => {
     // console.log(currentCourse.requirements)
@@ -64,11 +21,11 @@ function DashCourseOutline({ API_URL, currentCourse }) {
       <div className='accord-wrapper'>
         <div className='accord-container'>
           <h1>Course Outline</h1>
-          <div className="accordion">
-            {courseOutline.map(({ title, content, lectures, time }) => (
-              <OutlineList title={title} content={content} lectures={lectures} time={time}/>
-            ))}
-          </div>
+            <div className="accordion">
+              {courseOutline.map((outline) => (
+                <OutlineList title={outline.title} content={outline.content} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline} />
+              ))}
+            </div>
           <h2>{currentCourse.title} Requirements</h2>
           <ul>
             {
