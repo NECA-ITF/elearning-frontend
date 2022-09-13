@@ -12,9 +12,10 @@ import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
-import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
-import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
-import AdminUsers from './pages/adminDashBoard/AdminUsers';
+import AdminDashBoard from './pages/adminPage/adminDashBoard/AdminDashBoard';
+import AdminAllOutline from './pages/adminPage/adminDashBoard/AdminAllOutline';
+import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
+import AdminProfile from './pages/adminPage/adminProfile/AdminProfile';
 import './App.css';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+        <Route path="/admin-profile" element={<AdminProfile />} />
         </Routes>
       </Router>
     </div>

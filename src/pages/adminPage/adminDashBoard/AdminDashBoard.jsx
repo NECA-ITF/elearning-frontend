@@ -1,6 +1,6 @@
 import React,{ useState, useEffect }  from 'react'
 import './AdminDashBoard.css'
-import DashCourseList from '../dashBoard/DashCourseList'
+import DashCourseList from '../../dashBoard/DashCourseList'
 import AdminDashSide from './AdminDashSide/AdminDashSide'
 import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHeader'
 

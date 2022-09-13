@@ -1,6 +1,7 @@
 import React from 'react'
 import './AdminDashContentHeader.css'
-import CustomModal from '../../../components/customModal/CustomModal'
+import CustomModal from '../../../../components/customModal/CustomModal'
+
 function adminDashContentHeader() {
   return (
     <div class="adminDashContentHeader">

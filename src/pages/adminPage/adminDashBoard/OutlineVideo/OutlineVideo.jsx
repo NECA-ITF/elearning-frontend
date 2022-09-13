@@ -1,6 +1,6 @@
 import React from 'react'
-import video from "../../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4"
-import CustomButton from '../../../components/customButton/CustomButton'
+import video from "../../../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4"
+import CustomButton from '../../../../components/customButton/CustomButton'
 import './OutlineVideo.css'
 function OutlineVideo( {title}) {
   return (

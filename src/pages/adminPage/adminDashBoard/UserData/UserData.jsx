@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from '../../../components/customButton/CustomButton'
+import CustomButton from '../../../../components/customButton/CustomButton'
 import './UserData.css'
 function UserData( {fullName,email,phoneNumber}) {
   return (
