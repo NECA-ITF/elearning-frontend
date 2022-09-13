@@ -4,7 +4,9 @@ import aboutpix from './aboutAssets/aboutpix.JPG'
 import pix from '../../assets/mart.jpeg'
 import fiki from '../../assets/fiki.jpeg'
 import victor from '../../assets/victor.jpeg'
-// import mj from '../../assets/mj.jpeg'
+import mj from '../../assets/mj.jpeg'
+import laz from '../../assets/laz.jpeg'
+import harry from '../../assets/harry.jpeg'
 import gabbie from '../../assets/gabbie.jpeg'
 import bigi from '../../assets/bigi.jpeg'
 import eb from '../../assets/eb.jpeg'
@@ -25,8 +27,8 @@ function AboutPage() {
         <div className='about'>
             
             <div className='aboutpage'>
-                <div className='rash'>
-                    <img src={aboutpix} alt="logo" width={300}/>
+                <div className='social'>
+                    <img className='me' src={aboutpix} alt="logo"/>
                 </div>
                 <h3>Abdulrasheed Momoh</h3>
                 <div className='socials'>
@@ -35,8 +37,8 @@ function AboutPage() {
                 </div>
             </div>
             <div className='secondsec'>
-                <div className='chris'>
-                    <img src={meda} alt="pics" width={300} height={300} />
+                <div className='social'>
+                    <img className='me' src={meda} alt="pics" />
                 </div>
                 <h3>Ajibade Hamidat</h3>
                 <div className='socmed'>
@@ -45,8 +47,8 @@ function AboutPage() {
                 </div>
             </div>
             <div className='thirdsec'>
-                <div className='mart'>
-                    <img src={pix} alt="pic" width={300} height={300} backgroundColor="blue"/>
+                <div className='social'>
+                    <img className='me' src={pix} alt="pic"/>
                 </div>
                 <h3>Martins Daubry</h3>
                 <div className='socmed-icons'>
@@ -54,12 +56,24 @@ function AboutPage() {
                     <img className='linkdpix' src={linkd} alt="" />
                 </div>
             </div>
+            <div>
+            <div className='thirdsec'>
+                <div className='social'>
+                    <img className='me' src={laz} alt="pic"/>
+                </div>
+                <h3>Lazarus</h3>
+                <div className='socmed-icons'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+            </div>
+            </div>
         </div>
         <div className='about sec-page'>
             
             <div className='aboutpage'>
-                <div className='rash'>
-                    <img src={fiki} alt="logo" width={300} height={300} object-fit={'cover'}/>
+                <div className='social'>
+                    <img className='others' src={fiki} alt="logo" width={300} height={300} object-fit={'cover'}/>
                 </div>
                 <h3>Olumiyiwa Fiki</h3>
                 <div className='socials'>
@@ -68,8 +82,8 @@ function AboutPage() {
                 </div>
             </div>
             <div className='secondsec'>
-                <div className='chris'>
-                    <img src={victor} alt="pics" width={300} height={300} />
+                <div className='social'>
+                    <img className='others' src={victor} alt="pics" width={300} height={300} />
                 </div>
                 <h3>Victor Okechukwu</h3>
                 <div className='socmed'>
@@ -78,8 +92,8 @@ function AboutPage() {
                 </div>
             </div>
             <div className='thirdsec'>
-                <div className='mart'>
-                    <img src={wasiu} alt="pic" width={300} height={300} backgroundColor="blue"/>
+                <div className='social'>
+                    <img className='others' src={wasiu} alt="pic" width={300} height={300} backgroundColor="blue"/>
                 </div>
                 <h3>Abdul-wasiu</h3>
                 <div className='socmed-icons'>
@@ -87,12 +101,24 @@ function AboutPage() {
                     <img className='linkdpix' src={linkd} alt="" />
                 </div>
             </div>
+            <div>
+            <div className='thirdsec'>
+                <div className='social'>
+                    <img className='others' src={harry} alt="pic" width={300} height={300} backgroundColor="blue"/>
+                </div>
+                <h3>Harison</h3>
+                <div className='socmed-icons'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+            </div>
+            </div>
         </div>
         <div className='about third-page'>
             
             <div className='aboutpage'>
-                <div className='rash'>
-                    <img src={gabbie} alt="logo" width={300} height={300} object-fit={'cover'}/>
+                <div className='social'>
+                    <img className='others' src={gabbie} alt="logo" width={300} height={300} object-fit={'cover'}/>
                 </div>
                 <h3>Gabrielle Khoinom</h3>
                 <div className='socials'>
@@ -101,8 +127,8 @@ function AboutPage() {
                 </div>
             </div>
             <div className='secondsec'>
-                <div className='chris'>
-                    <img src={bigi} alt="pics" width={300} height={300} />
+                <div className='social'>
+                    <img className='others' src={bigi} alt="pics" width={300} height={300} />
                 </div>
                 <h3>Abdulsammad Rabo</h3>
                 <div className='socmed'>
@@ -111,14 +137,26 @@ function AboutPage() {
                 </div>
             </div>
             <div className='thirdsec'>
-                <div className='mart'>
-                    <img src={eb} alt="pic" width={300} height={300} backgroundColor="blue"/>
+                <div className='social'>
+                    <img className='others' src={eb} alt="pic" width={300} height={300} backgroundColor="blue"/>
                 </div>
                 <h3>Ebenezer </h3>
                 <div className='socmed-icons'>
                     <img className='gitpix' src={gith} alt="" />
                     <img className='linkdpix' src={linkd} alt="" />
                 </div>
+            </div>
+            <div>
+            <div className='thirdsec'>
+                <div className='social'>
+                    <img className='others' src={mj} alt="pic" width={300} height={300} backgroundColor="blue"/>
+                </div>
+                <h3>MJ Damos</h3>
+                <div className='socmed-icons'>
+                    <img className='gitpix' src={gith} alt="" />
+                    <img className='linkdpix' src={linkd} alt="" />
+                </div>
+            </div>
             </div>
         </div>
     </div>

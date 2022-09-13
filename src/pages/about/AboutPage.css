@@ -5,7 +5,7 @@
     align-items: center;
     /* margin-top: 30px; */
     gap: 15px;
-    background-color: cadetblue;
+    background-color: white;
     padding-top: 30px;
     padding-bottom: 10px;
 }
@@ -28,7 +28,7 @@
 }
 .ab h2{
     margin-left: 50px;
-    color: wheat;
+    color: white;
     cursor: pointer;
 }
 .about h3{
@@ -37,7 +37,7 @@
     background: -webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: cadetblue;
+  color: whitesmoke;
     /* width: 50%; */
 }
 .about h3:hover{
@@ -86,4 +86,18 @@
     /* gap: 80px; */
     /* margin: auto; */
     margin-top: 0px;
+}
+.social img{
+    border-radius: 10px;
+    /* width: 75%; */
+    /* height: 15%; */
+}
+.me{
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid white; */
+}
+.others{
+    width: 200px;
+    height: 200px;
 }
