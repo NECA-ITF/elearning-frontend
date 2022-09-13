@@ -11,7 +11,7 @@ import EditedProfile from './pages/profilePage/EditedProfile'
 
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
-import CourseOutline from './pages/courseOutline/CourseOutline';
+import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
 import './App.css';
@@ -35,7 +35,7 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CourseOutline />} />
+        <Route path="/course-outline" element={<CoursesOutline />} />
         </Routes>
       </Router>
     </div>
