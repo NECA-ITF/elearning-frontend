@@ -1,10 +1,26 @@
 import React from 'react'
 import AdminDashSide from './AdminDashSide/AdminDashSide'
 import CustomButton from '../../components/customButton/CustomButton'
+//import courses from '../dashBoard/data.json'
 import './AdminAllOutline.css'
 import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
 function AdminAllOutline() {
+    // const [searchInput, setSearchInput]= useState("")
+    // const [searchCourse, setSearchCourse]= useState(courses)
+    // const input= (event)=>{
+      
+    //   // const inp =  
+    //   setSearchInput(event.target.value)
+  
+    // }
+    // const searchClicked = (event) => {
+    //   event.preventDefault();
+    //   const filteredCourses = courses.filter(course=>(
+    //     course.title.toLowerCase().includes(searchInput.toLowerCase())
+    //   ))
+    //   setSearchCourse([...filteredCourses])
+    // }
   return (
     <div class="adminDashContainer">
         <AdminDashSide />

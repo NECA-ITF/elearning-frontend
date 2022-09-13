@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// import HomePage from './pages/homePage/HomePage';
+import HomePage from './pages/homePage/HomePage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import About from './pages/about/AboutPage';
 import SignupPage from './pages/signupPage/SignupPage';
@@ -13,11 +13,10 @@ import EditedProfile from './pages/profilePage/EditedProfile'
 
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
-import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
-import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
+//import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
+import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
 import './App.css';
-import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
 import AdminUsers from './pages/adminDashBoard/AdminUsers'
 
 function App() {
@@ -26,20 +25,20 @@ function App() {
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/dash-board" element={<DashBoard />} />
-        <Route path="/play-courses" element={<PlayCourses />} />
-        <Route path="/profile-page" element={<ProfilePage />} />
-        <Route path="/edited-profile" element={<EditedProfile />} />
-        <Route path="/change-password" element={<ChangePassword />} />
-        <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} />
-        <Route path="/contact-page" element={<ContactPage />} />
-        {/* <Route path="/course-outline" element={<CourseOutline />} /> */}
-        <Route path="/admin-users" element={<AdminUsers />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/dash-board" element={<DashBoard />} />
+          <Route path="/play-courses" element={<PlayCourses />} />
+          <Route path="/profile-page" element={<ProfilePage />} />
+          <Route path="/edited-profile" element={<EditedProfile />} />
+          <Route path="/change-password" element={<ChangePassword />} />
+          {/* <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} /> */}
+          <Route path="/contact-page" element={<ContactPage />} />
+          <Route path="/admin-course-outline" element={<AdminAllOutline />} />
+          <Route path="/admin-users" element={<AdminUsers />} />
         </Routes>
       </Router>
     </div>

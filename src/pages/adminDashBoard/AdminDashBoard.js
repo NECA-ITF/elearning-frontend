@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './AdminDashBoard.css'
 import CustomButton from '../../components/customButton/CustomButton'
-import courses from '../dashBoard/data.json'
+//import courses from '../dashBoard/data.json'
 import DashCourseList from '../dashBoard/DashCourseList'
 import { Link } from 'react-router-dom'
 // import Movie from '../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4'
@@ -10,19 +10,19 @@ import { Link } from 'react-router-dom'
 
 
 function AdminDashBoard() {
-    const [searchInput, setSearchInput]= useState("")
-  const [searchCourse, setSearchCourse]= useState(courses)
-  const input= (event)=>{
-    setSearchInput(event.target.value)
+//     const [searchInput, setSearchInput]= useState("")
+//   const [searchCourse, setSearchCourse]= useState(courses)
+//   const input= (event)=>{
+//     setSearchInput(event.target.value)
 
-  }
-  const searchClicked = (event) => {
-    event.preventDefault();
-    const filteredCourses = courses.filter(course=>(
-      course.title.toLowerCase().includes(searchInput.toLowerCase())
-    ))
-    setSearchCourse([...filteredCourses])
-  }
+//   }
+//   const searchClicked = (event) => {
+//     event.preventDefault();
+//     const filteredCourses = courses.filter(course=>(
+//       course.title.toLowerCase().includes(searchInput.toLowerCase())
+//     ))
+//     setSearchCourse([...filteredCourses])
+//   }
   return (
     //Overall admin dashboard
     <div id='adminDash'>
@@ -36,7 +36,7 @@ function AdminDashBoard() {
         </div>
             {/* admin-dashboard-right */}
               <div id='adminDash-right'>
-               <DashCourseList courses= {searchCourse} isAdmin= {true}/>
+               {/* <DashCourseList courses= {searchCourse} isAdmin= {true}/> */}
     {/* //overall dashboaard container */}
     <div id='adminDash'>
         {/* //left panel of the dashBoard */}
