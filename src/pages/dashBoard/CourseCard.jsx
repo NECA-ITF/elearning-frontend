@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, isAdmin, API_URL, ...otherProps}) {
+function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, ...otherProps}) {
 
   return (
     <div className='coursecard'{...otherProps}>
@@ -50,7 +50,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, ...otherProps}) 
           {
             isAdmin ? <CustomButton title='edit course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>:
             <Link to='/course-outline' className='links'>
-              <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
+              <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {setCurrentCourse(course)}} /> 
             </Link>
           }
          
