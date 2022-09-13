@@ -33,12 +33,12 @@ function App() {
         <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
-        <Route path="/play-courses" element={<PlayCourses />} />
+        <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourseOutline={currentCourseOutline} />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} />} />
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         </Routes>
       </Router>
     </div>
