@@ -31,11 +31,11 @@ function NavBar() {
                     </Link>    
                     </ul>
                 </nav>
-                <div className='apply'>
-                    <Link to='/login' className='links'>
-                        <p> LOGIN </p>
-                    </Link>
+                <Link to='/login' className='links'>
+                    <div className='apply'>
+                    <p> LOGIN </p>
                 </div>
+                </Link>
         </div>
      )
 }

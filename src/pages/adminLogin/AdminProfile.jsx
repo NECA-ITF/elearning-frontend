@@ -1,7 +1,9 @@
 import React from 'react'
-import logo from '../../../assets/itf_log.png';
+import CustomInput from '../../components/customInput/CustomInput';
+import CustomButton from '../../components/customButton/CustomButton'
+import logo from '../../assets/itf_log.png';
 import './AdminProfile.css'
-import { Password,Gear,User,SignOut,Lock,IdentificationBadge,Envelope,Phone} from "phosphor-react"
+import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 import { Link } from 'react-router-dom';
 
 function AdminProfile() {
@@ -9,7 +11,7 @@ function AdminProfile() {
     
       <div className="Admin-profile">
             <div className="Admin-sidebar">
-                <Link to='/admin-dash'className='links'>        
+                <Link to='/profile-page'className='links'>        
                    <div  className='Admin-icon'>
                    <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                    <p> Dashboard</p>
@@ -39,42 +41,25 @@ function AdminProfile() {
             </Link>
 
         </div> 
-        <div className="Admin-form">
+        <div className="main1">
             <form action="" >
-            <div className='Admin-innercon'>
+            <div className='Back1'>
 
                 <div className='profile-img'>
                     <img src={logo} alt="Logo" className='img'/>
                 </div>
-
-                <div className='h2'>
                 <h2>ADMIN</h2>
-                </div>
 
-                <div className="Admin-main" >
-                   <IdentificationBadge size={30} color='black' style={{ marginRight: '1rem'}} weight="thin" />
+                <div className="border3" >
+                <User size={40} color='black' style={{ marginRight: '1rem'}} weight="thin" />
                  <p>Name</p> 
-                 <div className='adminborder'> </div>
-    
-                </div>
-                <div className="Admin-main" >
-                   <Envelope size={30} style={{ marginRight: '1rem'}} weight="thin" />
-                 <p>Email</p> 
-                 <div className='adminborder'> </div>
-                </div>
+                 <div className='bb'>
 
-                <div className="Admin-main" >
-                   <User size={30} color='black' style={{ marginRight: '1rem'}} weight="thin" />
-                 <p>Title</p> 
-                 <div className='adminborder'> </div>
-                </div>
-                <div className="Admin-main" >
-                   <Phone size={30}  color='black' style={{ marginRight: '1rem'}} weight="thin" />
-                 <p>Phone Number</p> 
-                 <div className='adminborder'> </div>
+                 </div>
                 </div>
                
-            
+
+                
               
             </div>
             </form>

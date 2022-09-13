@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, ...otherProps}) {
+function DashBoardCourse({name, title, image, isAdmin, ...otherProps}) {
 
   return (
     <div className='coursecard'{...otherProps}>
       <div className='course-inn-div'>
-        <img src={`${API_URL}/${image}`} alt="thumb" className='thumb'/>
+        <img src={image} alt="thumb" className='thumb'/>
         <div className='bottom-sec'>
           <div className='stardiv'>
             <div className='initials'>{name.split(' ')[0].split('')[0]} {name.split(' ')[1].split('')[0]}</div>
@@ -50,7 +50,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
           {
             isAdmin ? <CustomButton title='edit course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>:
             <Link to='/course-outline' className='links'>
-              <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {setCurrentCourse(course)}} /> 
+              <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/> 
             </Link>
           }
          
