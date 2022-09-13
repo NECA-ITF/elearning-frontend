@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import courses from './data.json'
+import React, { useState, useEffect } from 'react';
 import itflogo from '../../assets/itf_log.png';
 import profile from '../../assets/dashboard/profile.svg'
 import './DashBoard.css'
@@ -7,32 +6,43 @@ import CustomButton from '../../components/customButton/CustomButton';
 import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
-  const [searchCourse, setSearchCourse]= useState(courses)
+  const [courses, setCourses]= useState([])
+  const [searchCourse, setSearchCourse]= useState([])
   const [userData, setUserData] = useState(null);
+  const navigate = useNavigate()
 
   const input= (event)=>{
     
     // const inp =  
     setSearchInput(event.target.value)
-
+    
   }
   const searchClicked = (event) => {
     event.preventDefault();
     const filteredCourses = courses.filter(course=>(
       course.title.toLowerCase().includes(searchInput.toLowerCase())
-    ))
+      ))
+      // console.log(filteredCourses)
     setSearchCourse([...filteredCourses])
   }
 
   function logoutUser(params) {
     localStorage.setItem('userData', null);
     setUserData(null)
+    navigate('/')
   }
 
+  useEffect(() => {
+    fetch('http://192.168.1.2:5000/api/courses')
+    .then(response => response.json())
+    // .then(data => console.log(data))
+    .then(data => setCourses(data.courses))
+    .catch((err) => console.log(err))
+  }, [])
 
   useEffect(() => {
     const user = localStorage.getItem('userData');
@@ -87,7 +97,7 @@ function DashBoard() {
       <div className='titlediv'>
         <h1>All Courses</h1>
       </div>
-      <DashCourseList courses= {searchCourse} />
+      <DashCourseList courses= {searchCourse.length ? searchCourse :  courses} />
     </div>
   )
 }

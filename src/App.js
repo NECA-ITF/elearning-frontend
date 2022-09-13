@@ -10,9 +10,12 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
+
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
-import CourseOutline from './pages/courseOutline/CourseOutline';
+import CoursesOutline from './pages/courseOutline/CoursesOutline';
+import AboutPage from './pages/about/AboutPage';
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
 import './App.css';
 import AdminDashBoardOutlines from './pages/adminDashBoard/AdminDashBoardOutline';
 import AdminUsers from './pages/adminDashBoard/AdminUsers'
@@ -23,7 +26,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<AdminDashBoard />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -35,7 +38,7 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/admin-dashboard" element={<AdminDashBoardOutlines />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CourseOutline />} />
+        {/* <Route path="/course-outline" element={<CourseOutline />} /> */}
         <Route path="/admin-users" element={<AdminUsers />} />
         </Routes>
       </Router>

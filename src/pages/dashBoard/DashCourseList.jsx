@@ -9,11 +9,11 @@ function DashCourseList({courses, isAdmin}) {
         {courses.map((course)=>(
           <CourseCard
           isAdmin={isAdmin}
-          key={course.id}
+          key={course._id}
           name = {course.instructor}
           title = {course.title}
           image ={course.thumbnail}
-          icons ={course.proficons}
+          // icons ={course.proficons}
           />
         ))}
       </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CustomButton from '../../components/customButton/CustomButton'
 import './CourseCard.css'
 // import RatingImage from '../../assets/images/star-grey.png'
@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, icons, isAdmin = false, ...otherProps}) {
- 
+function DashBoardCourse({name, title, image, isAdmin, ...otherProps}) {
+
   return (
     <div className='coursecard'{...otherProps}>
       <div className='course-inn-div'>
