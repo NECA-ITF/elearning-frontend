@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CustomButton from '../../components/customButton/CustomButton';
-import NavBar from '../homePage/NavBar';
 import './CourseOutline.css'
 import OutlineList from './OutlineList';
 import { Link } from 'react-router-dom';
 
 
-function DashCourseOutline() {
-    const accordionData = [
+function DashCourseOutline({ API_URL, currentCourse }) {
+  const [courseOutline, setCourseOutline] = useState([]);
+    const outlineData = [
         {
           title: 'Getting Started',
           content: ['Welcome to the Course', 'What is React.js?','Why React instead of "Just Javascript"'],
@@ -52,26 +52,36 @@ function DashCourseOutline() {
         }
       ];
       
-        
+  useEffect(() => {
+    // console.log(currentCourse.requirements)
+    fetch(`${API_URL}/api/outlines/${currentCourse._id}`)
+    .then(response => response.json())
+    // .then(data => console.log(data))
+    .then(data => setCourseOutline(data.outline.outlines))
+    .catch((err) => console.log(err))
+  }, []);
   return (
       <div className='accord-wrapper'>
         <div className='accord-container'>
           <h1>Course Outline</h1>
           <div className="accordion">
-            {accordionData.map(({ title, content, lectures, time }) => (
+            {courseOutline.map(({ title, content, lectures, time }) => (
               <OutlineList title={title} content={content} lectures={lectures} time={time}/>
             ))}
           </div>
-          <h2>Requirements</h2>
+          <h2>{currentCourse.title} Requirements</h2>
           <ul>
-            <li>Basic math skills</li>
-            <li>Knowledge of HTML and CSS</li>
+            {
+              currentCourse.requirements.map((requirement, index) => (
+                <li key={index}>{requirement}</li>
+              ))
+            }
+            {/* <li>Knowledge of HTML and CSS</li>
             <li>Knowledge of Javascript</li>
-            <li>Desire to learn!</li>
+            <li>Desire to learn!</li> */}
           </ul>
           <h3>Description</h3>
-          <h5 className='description-text'>This course is fully up-to-date with React 18 (the latest version of React)!
-          it was completely updated and re-recorded from the ground up - it teaches the very latest version of React with all the core, modern features you need to know!</h5>
+          <h5 className='description-text'>{currentCourse.description}</h5>
           <div>
           <Link to='/play-courses' className='links'>
             <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>
