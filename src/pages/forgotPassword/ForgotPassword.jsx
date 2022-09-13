@@ -24,9 +24,10 @@ function ForgotPassword() {
               <CustomButton title='Reset Password ' style = {{width: '100%', marginTop: '20px'}} />
               </Link>
             </div>
-            <div className='bottomf'>  
+            <div className='bottomf'>
+             
               <Link to='/login' className='links'>
-                <h5> Log In?</h5>
+              <h5> Log In?</h5>
               </Link>
             </div>
 

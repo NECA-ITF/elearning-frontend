@@ -17,8 +17,7 @@ body{
 
 }
 .Admin-sidebar{
-    border:none;
-    border-right: 1px solid rgba(255, 255, 255, 0.535);
+    border: 1px solid white;
     min-height: 100vh;
     width: 20%;
     padding-left: 1rem;
@@ -38,38 +37,14 @@ body{
     cursor: pointer
 
 }
-.Admin-form{
-    min-height: 100vh;
-    width: 80%;
-    font-size: 0.7rem;
-    padding: 6rem;
-    line-height: 0.3rem;
-
-}
-.Admin-innercon{background: white;
-    border-radius: 5px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 75%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.Back1 h2{text-align: center;
+font-size: 2rem;}
+.border3{
+    width:70%;
     margin-left: 7rem;
-
 }
-.h2{
-    text-align: center;
-    font-size: 2rem;
-}
-.Admin-main{display: flex;
-    border-bottom:1px solid #202c46;
-    width: 90%;
-    padding: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-
-}
- 
-.Admin-main p{
-    font-size: 0.9rem;
+.bb{
+    border-bottom: 1px solid black;
+    margin-left: 7rem;
     
 }

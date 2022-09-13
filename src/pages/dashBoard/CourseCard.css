@@ -88,8 +88,7 @@
 }
 .case-div p{
     /* width: 50%; */
-    min-width: 7rem;
-    /* border: 1px solid blue; */
+    min-width: 5rem;
 }
 .case-div, .clock-div{
     display: flex;

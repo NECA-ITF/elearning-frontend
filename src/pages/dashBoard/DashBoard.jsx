@@ -6,14 +6,13 @@ import CustomButton from '../../components/customButton/CustomButton';
 import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
-import { Link, useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function DashBoard({ API_URL, setCurrentCourse }) {
+function DashBoard() {
   const [searchInput, setSearchInput]= useState("")
   const [courses, setCourses]= useState([])
   const [searchCourse, setSearchCourse]= useState([])
   const [userData, setUserData] = useState(null);
-  const navigate = useNavigate()
 
   const input= (event)=>{
     
@@ -33,11 +32,10 @@ function DashBoard({ API_URL, setCurrentCourse }) {
   function logoutUser(params) {
     localStorage.setItem('userData', null);
     setUserData(null)
-    navigate('/')
   }
 
   useEffect(() => {
-    fetch(`${API_URL}/api/courses`)
+    fetch('http://192.168.1.2:5000/api/courses')
     .then(response => response.json())
     // .then(data => console.log(data))
     .then(data => setCourses(data.courses))
@@ -97,7 +95,7 @@ function DashBoard({ API_URL, setCurrentCourse }) {
       <div className='titlediv'>
         <h1>All Courses</h1>
       </div>
-      <DashCourseList courses= {searchCourse.length ? searchCourse :  courses} API_URL={API_URL} setCurrentCourse={setCurrentCourse} />
+      <DashCourseList courses= {searchCourse.length ? searchCourse :  courses} />
     </div>
   )
 }

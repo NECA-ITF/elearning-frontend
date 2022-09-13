@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function SignupPage({ API_URL }) {
+function SignupPage() {
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -28,7 +28,7 @@ function SignupPage({ API_URL }) {
   }
    function sendNewUserData(e){
     e.preventDefault()
-    fetch(`${API_URL}/auth/user/register`, {
+    fetch('http://192.168.1.2:5000/auth/user/register', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -46,11 +46,11 @@ function SignupPage({ API_URL }) {
           <form className='form' onSubmit={sendNewUserData}>
             <div className="col">          
               <h2>Sign up and start learning today</h2>
-              <CustomInput placeholder='FullName*' name="fullName" style = {{width: ' 100%', margin: '0 0 0 0'}} onChange={updateUserdata} />
-              <CustomInput placeholder='Email*' name="email" style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Phone Number' name="phoneNumber" style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
-              <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {{width: '100%', margin: '2% 0 0 0'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='FullName*' name="fullName" style = {{width: ' 100%'}} onChange={updateUserdata} />
+              <CustomInput placeholder='Email*' name="email" style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Phone Number' name="phoneNumber" style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%'}} onChange={updateUserdata}/>
+              <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {{width: '100%'}} onChange={updateUserdata}/>
             {/* <Link to='/login' className='links'> */}
               <CustomButton title = 'SIGN UP' style = {{width: '100%', margin: '8px 0% auto'}} />
             {/* </Link> */}
