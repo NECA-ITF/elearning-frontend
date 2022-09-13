@@ -54,8 +54,6 @@ function DashCourseOutline() {
       
         
   return (
-    <div className='accordion-container'>
-      <NavBar/>
       <div className='accord-wrapper'>
         <div className='accord-container'>
           <h1>Course Outline</h1>
@@ -81,7 +79,6 @@ function DashCourseOutline() {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 
