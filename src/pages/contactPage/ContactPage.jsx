@@ -3,7 +3,7 @@ import img from '../../assets/image4.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton';
-import { MapPin, Phone, EnvelopeSimple } from 'phosphor-react'
+import { MapPin, Phone, EnvelopeSimple, FacebookLogo, LinkedinLogo, InstagramLogo } from 'phosphor-react'
 import './ContactPage.css'
 import { Link } from "react-router-dom";
 
@@ -41,7 +41,12 @@ function ContactPage(){
                 <EnvelopeSimple size={32} />
                 <span>General Support</span>
             </div>
-            <span className="movec">contact@example.com</span><br /><br />
+            <span className="movec">contact@example.com</span>
+            <div className="groupc2">
+              <p><FacebookLogo size={37} className = 'bluei' /></p>
+              <p><LinkedinLogo size={37} className = 'bluei' /></p>
+              <p><InstagramLogo size={37} className = 'pinki'  /></p>
+            </div>
           </div>
         </div>
       </div>  
