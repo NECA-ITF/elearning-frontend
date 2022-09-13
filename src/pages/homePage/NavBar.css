@@ -2,29 +2,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     overflow: hidden;
     position: fixed;
     top: 0;
     height: 14.4%;
     z-index: 3;
-    padding: 6px;
 }
 .apply {
     background-color:#151D3B;
     color: white; 
     text-align: center;
     cursor: pointer;
-    margin-left: 10%;
-    border: 1px solid blue;
-    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 30px;
     align-items: center;
-    width: 100%;
+    height: 100%;
+    width: 10%;
 }
 
 .nav{
@@ -56,6 +52,7 @@
 }
 .apply p {
     text-decoration: none;
+    color: white;
 }
 
 .apply:hover{
