@@ -7,7 +7,8 @@ import './LoginPage.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 
-function LoginPage() {
+
+function LoginPage({ API_URL }) {
   const navigate = useNavigate()
   const [userInfo, setUserInfo] = useState({
     email: "",
@@ -36,7 +37,7 @@ function LoginPage() {
 
   function getUserData(e){
     e.preventDefault()
-      fetch('http://192.168.1.2:5000/auth/user/login', {
+      fetch(`${API_URL}/auth/user/login`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -45,9 +46,10 @@ function LoginPage() {
       })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success)
-        localStorage.setItem("userData", JSON.stringify(data.user))
-        navigate("/dash-board")
+        if (data.success){
+          localStorage.setItem("userData", JSON.stringify(data.user))
+          navigate("/dash-board")
+        }
 
       })
   }

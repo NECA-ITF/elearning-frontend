@@ -1,113 +1,29 @@
-#adminDash{
-    display: flex;
-}
-#dropDownContainer{
-    position:static
-}
-#admDashmarginTop{
-     margin-top: 20px;
-}
-#admDashmarginTop button{
-    margin: 0 auto 10px
-}
-#adminDash-rightdrpdwn{
-    border: 1px solid black;
-}
-#adminDash-left{
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    position: fixed;
-    min-width: 15%;
-    min-height: 95%;
-    border: 1px solid black;
-    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46)
-}
-.sectiontabs{
-    display: block;
-    width: 80%;
-    padding: 10px;
-    background-color: whitesmoke;
-    color: black;
-    margin-top: 5px;
-    border-radius: .5rem;
-    margin: 2rem auto 0 auto;
-}
-#adminDash-right{
-    margin: 3% auto auto 17%;
-    width:100%;  
- 
-}
-#adminDash-right-container1{
-    display: flex;
-}
-#adminDash-right-container-outlines{
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    min-height: 87vh;
-    min-width: 49%;
-    padding: 0.5rem 0;
-}
 
-.outlinedetails1{
-    margin-bottom:10px ;
-    align-items: center;
-    padding: 10px;
-    color: white;
-    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46) ;
+.adminDashContainer{
     display: flex;
+    position: relative;
+}
+.adminDashContent{
+    width: 82%;
+    margin-left: auto;
+}
+.adminDashContentContainer{
+    width: 96%;
+    margin: 0 auto;
+}
+.adminDashContentBody{
+    display: flex;
+    padding-top: 10px;
+    align-items: flex-start;
     justify-content: space-between;
-    width:85%;
 }
-
-/* .outlinedetails1:hover > .outineButtons{
-    display:flex
-} */
-
-.outineButtons{
-    display: flex;
-    gap:10px;
+.adminDashCourseOutlines{
+    width: 45%;
+    padding: 0 10px;
 }
-#adminDash-right-container-videos{
-    border-top: 1px solid black;
-    width: 50%;
+.adminDashCourseOutlinesVideos{
+    width:45% ;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    /* gap: 20px; */
-   }
-.videoContainer1{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46) ;
-    width: 70%;
-    height: max-content;
-    border-radius: 1rem;
-    padding-bottom: 1rem;
-}
-.videoContainer1 video{
- max-width:100%;
-}
-.videoButtons{
-    display: flex;
-    align-items: space-between;
-    gap: 20px;
-}
-
-
-/* .userscontainer{   
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    position:static
-} */
-
-.adminusers{
-    display: flex;
+    justify-content: space-around;
 }
