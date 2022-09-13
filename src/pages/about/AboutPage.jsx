@@ -16,6 +16,8 @@ import './AboutPage.css'
 import gith from './aboutAssets/gith.png'
 import linkd from './aboutAssets/linkd.png'
 
+import item.json 
+
 
 
 function AboutPage() {
