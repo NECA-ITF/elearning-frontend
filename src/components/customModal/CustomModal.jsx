@@ -37,7 +37,18 @@ function CustomModal() {
 
   return (
     <div>
-      <CustomButton onClick={openModal}  title = 'Create +' style = {{width: '20%', margin: '8px 0% auto'}} />
+      {/* <CustomButton onClick={openModal}  title = 'Create +' style = {{width: '20%', margin: '8px 0% auto'}} /> */}
+      <CustomButton 
+        onClick={openModal}  
+        title = 'Create +' 
+        style = {{
+          marginRight: '20px',
+          background: '#151D3B',
+          color: 'white',
+          padding: '10px 20px',
+          width: '100px'
+        }} 
+      />
       <Modal className={'modal'}
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
