@@ -50,7 +50,10 @@
     min-width: 49%;
     padding: .5rem 0;
 }
-
+.adminDashContentContainer{
+    width: 96%;
+    margin: 0 auto;
+}
 .outlinedetails{
     margin-bottom:10px ;
     align-items: center;
