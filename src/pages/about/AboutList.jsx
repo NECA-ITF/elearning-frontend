@@ -4,12 +4,12 @@ import './AboutPage.css'
 
 function AboutList({userss}) {
   return (
-    <div>
+    <div className='aboutlistgenpics'>
         {userss.map((userz) =>(
             <AboutCard
             key={userz.id.toString()}
             img={userz.img}
-            // github={userz.github_link}
+            github={userz.github_link}
             name={userz.name}
             />
         ))}

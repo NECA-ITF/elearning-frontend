@@ -59,7 +59,7 @@ function SignupPage({ API_URL }) {
             {/* </Link> */}
             </div>
             <div className='bottoms'>
-              <h5>By signing up, you agree to our <span>Terms of Use</span> and <span>Privacy Policy </span></h5>
+              <h5>By signing up, you agree to our <Link to='/terms' className='links'><span>Terms of Use</span></Link> and <Link to='/policy' className='links'><span>Privacy Policy </span></Link></h5>
               <p>Already have an account? <span> <Link to='/login' className='links'> Login </Link> </span></p>
             </div>
 
