@@ -1,5 +1,5 @@
 
-.main{
+.Profile-main{
     min-height: 100vh;
     width: 80%;
     font-size: 0.7rem;
@@ -8,7 +8,7 @@
 
 }
 
-.mainone{
+.Profile-con{
     position: fixed;
     width: 100vw;
     min-height: 100vh;
@@ -22,40 +22,18 @@
     
     
 }
-.main2{
-    border: 1px solid white;
-    min-height: 100vh;
-    width: 20%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 10rem;
-    
 
-}
 
-.veiw{
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    margin: 3px;
-    
-}
 
-.veiw p {
-    font-size: 0.8rem;
-    color: white;
-    cursor: pointer;
-}
-
-.border{
+.profile-border{
     border-bottom: 1px solid #202c46;
     padding: 1rem;
 }
-.border p{
+.profile-border p{
     color:#202c46;
     
 }
-.Back{
+.Profile{
     background: white;
     border-radius: 5px;
     padding-bottom: 3rem;
