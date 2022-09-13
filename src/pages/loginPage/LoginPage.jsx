@@ -46,9 +46,10 @@ function LoginPage({ API_URL }) {
       })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success)
-        localStorage.setItem("userData", JSON.stringify(data.user))
-        navigate("/dash-board")
+        if (data.success){
+          localStorage.setItem("userData", JSON.stringify(data.user))
+          navigate("/dash-board")
+        }
 
       })
   }
