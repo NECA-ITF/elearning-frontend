@@ -11,8 +11,8 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 function PlayCourses({ API_URL, currentCourseOutline }) {
-  const [currentVideo, setCurrentVideo] = useState({});
   const [outlineVideos, setOutlineVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState({}); 
 
 
   useEffect(() => {
@@ -24,6 +24,7 @@ function PlayCourses({ API_URL, currentCourseOutline }) {
     .catch((err) => console.log(err))
 
     setCurrentVideo(outlineVideos[0]);
+    // console.log(Object.keys(currentVideo).length);
   }, []);
 
   return (
@@ -40,7 +41,7 @@ function PlayCourses({ API_URL, currentCourseOutline }) {
             <li>External Links</li>
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>{currentVideo ? currentVideo.title : ""}</h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
+            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
             <p className='rates'>Ratings</p>
             <Ratings
             placeholderRating={3.5}
