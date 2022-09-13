@@ -1,17 +1,3 @@
-#adminDash-right{
-    margin: 3% auto auto 17%;
-    width:100%;   
-}
-#adminDash-right-container{
-    display: flex;
-}
-#adminDash-right-container-outlines{
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    min-height: 87vh;
-    min-width: 49%;
-    padding: .5rem 0;
-}
 .adminDashContainer{
     display: flex;
     position: relative;
@@ -23,6 +9,13 @@
 .adminDashContentContainer{
     width: 96%;
     margin: 0 auto;
+}
+
+.btnCreate{
+    margin-right: 20px;
+    background: #151D3B;
+    color: white;
+    padding: 10px 20px;
 }
 .adminDashContentBody{
     display: flex;
