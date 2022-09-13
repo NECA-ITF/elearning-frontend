@@ -8,13 +8,13 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
-
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
+
 
 function App() {
   const API_URL = "http://192.168.1.3:5000";
@@ -24,7 +24,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin-dash" element={<AdminDashBoard />} />
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
