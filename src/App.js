@@ -13,7 +13,7 @@ import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CourseOutline from './pages/courseOutline/CourseOutline';
 import AboutPage from './pages/about/AboutPage';
-import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
+import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
 import './App.css';
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin-dash" element={<AdminDashBoard />} />
+        <Route path="/admin-all-outline" element={<AdminAllOutline />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

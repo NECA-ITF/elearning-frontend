@@ -6,7 +6,9 @@ import CustomModal from '../../components/customModal/CustomModal'
 
 function adminDashBoard() {
   return (
+    //overall dashboaard container
     <div id='adminDash'>
+        {/* //left panel of the dashBoard */}
             <div id='adminDash-left'>
                 <div id='admDashmarginTop'> 
                     <span className='sectiontabs'>All Courses</span>
@@ -14,7 +16,9 @@ function adminDashBoard() {
                     <span className='sectiontabs'>All Users</span>
                 </div>
             </div> 
+            {/* //right hand side of the dash board */}
             <div id='adminDash-right'>
+                {/* //dashboard header container */}
                 <div id='dropDownContainer'>
                     <select name='Courses'>
                         <option value="Courses" disabled selected>Courses</option>
