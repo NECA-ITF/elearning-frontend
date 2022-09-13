@@ -7,29 +7,29 @@ import SideBar from './SideBar';
 function ProfilePage() {
 
   return (
-    <div className="mainone">
+    <div className="Profile-con">
         <SideBar />
-        <div className="main">
-          <div className='Back'>
+        <div className=" Profile-main">
+          <div className='Profile'>
             
             <div className='profile-img'>
                  <img src={logo} alt="Logo" className='img'/>
              </div>
             
 
-            <div className="border" >
+            <div className=" profile-border" >
                 <p>Fullname</p>
             </div>
-            <div className="border">
+            <div className=" profile-border">
                 <p>Email</p>
             </div>
-            <div className="border">
+            <div className=" profile-border">
                 <p>Phone number</p>
             </div>
-            <div className="border">
+            <div className=" profile-border">
                 <p>Gender</p>
             </div>
-            <div className="border">
+            <div className=" profile-border">
                 <p>GitHub Link</p>
             </div> 
         </div>
