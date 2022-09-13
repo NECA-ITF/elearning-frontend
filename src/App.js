@@ -14,6 +14,8 @@ import ChangePassword from './pages/profilePage/ChangePassword';
 import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
+import AdminAllOutline from './pages/adminDashBoard/AdminAllOutline';
+import AdminUsers from './pages/adminDashBoard/AdminUsers';
 import './App.css';
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/admin-dash" element={<AdminDashBoard />} />
+        <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} />} />
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
         <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

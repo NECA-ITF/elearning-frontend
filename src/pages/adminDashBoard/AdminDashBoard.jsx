@@ -1,32 +1,30 @@
-import React,{useState} from 'react'
+import React,{ useState, useEffect }  from 'react'
 import './AdminDashBoard.css'
-import courses from '../dashBoard/data.json'
+// import courses from '../dashBoard/data.json'
 import DashCourseList from '../dashBoard/DashCourseList'
 import AdminDashSide from './AdminDashSide/AdminDashSide'
 import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHeader'
 
 
-function AdminDashBoard() {
-    const [searchInput, setSearchInput]= useState("")
-    const [searchCourse, setSearchCourse]= useState(courses)
-    const input= (event)=>{
-    setSearchInput(event.target.value)
+function AdminDashBoard({ API_URL}) {
+  const [courses, setCourses]= useState([])
 
-  }
-  const searchClicked = (event) => {
-    event.preventDefault();
-    const filteredCourses = courses.filter(course=>(
-      course.title.toLowerCase().includes(searchInput.toLowerCase())
-    ))
-    setSearchCourse([...filteredCourses])
-  }
+  useEffect(() => {
+    fetch(`${API_URL}/api/courses`)
+    .then(response => response.json())
+    // .then(data => console.log(data))
+    .then(data => setCourses(data.courses))
+    .catch((err) => console.log(err))
+  }, [])
   return (
 
     <div className='adminDashContainer'>
         <AdminDashSide />
         <div id='adminDash-right'>
-          <AdminDashContentHeader />
-          <DashCourseList courses= {searchCourse} isAdmin= {true}/>
+          <div className="adminDashContentContainer">
+            <AdminDashContentHeader />
+            <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL}/>
+          </div>
         </div>
     </div>
   )
