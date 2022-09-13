@@ -10,7 +10,7 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses({ API_URL, currentCourseOutline }) {
+function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
 
@@ -33,7 +33,7 @@ function PlayCourses({ API_URL, currentCourseOutline }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video controls src={video} alt="video" id='course-vid' style={{ width: '100%'}} poster={thumbnails}/>
+            <video controls src={`${API_URL}/currentVideo.url`} alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/currentCourse.thumbnail`}/>
           </div>
           <ul>
             <li>Course Materials</li>
