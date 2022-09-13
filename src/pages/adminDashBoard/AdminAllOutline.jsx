@@ -1,9 +1,9 @@
 import React from 'react'
-import AdminDashSide from './AdminDashSide'
+import AdminDashSide from './AdminDashSide/AdminDashSide'
 import CustomButton from '../../components/customButton/CustomButton'
 import './AdminAllOutline.css'
-import OutlineVideo from './OutlineVideo'
-import Outline from './Outline'
+import OutlineVideo from './OutlineVideo/OutlineVideo'
+import Outline from './Outline/Outline'
 function AdminAllOutline() {
   return (
     <div class="adminDashContainer">

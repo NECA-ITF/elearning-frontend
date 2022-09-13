@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from '../../components/customButton/CustomButton'
+import CustomButton from '../../../components/customButton/CustomButton'
 import './Outline.css'
 
 function Outline({title}) {
@@ -23,7 +23,8 @@ function Outline({title}) {
                 color: 'white',
                 padding: "8px 10px",
                 borderRadius: '8px',
-                width: '76px'
+                width: '90px',
+                textAlign: 'center'
             }} />
         </div>
     </div>

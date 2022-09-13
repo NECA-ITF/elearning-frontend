@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from '../../components/customButton/CustomButton'
+import CustomButton from '../../../components/customButton/CustomButton'
 import './AdminDashSide.css'
 function AdminDashSide() {
   return (
