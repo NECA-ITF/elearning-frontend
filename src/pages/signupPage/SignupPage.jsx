@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function SignupPage() {
+function SignupPage({ API_URL }) {
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -28,7 +28,7 @@ function SignupPage() {
   }
    function sendNewUserData(e){
     e.preventDefault()
-    fetch('http://192.168.1.2:5000/auth/user/register', {
+    fetch(`${API_URL}/auth/user/register`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'

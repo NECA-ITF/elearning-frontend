@@ -8,7 +8,7 @@ import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
 import { Link, useNavigate} from 'react-router-dom';
 
-function DashBoard() {
+function DashBoard({ API_URL }) {
   const [searchInput, setSearchInput]= useState("")
   const [courses, setCourses]= useState([])
   const [searchCourse, setSearchCourse]= useState([])
@@ -37,7 +37,7 @@ function DashBoard() {
   }
 
   useEffect(() => {
-    fetch('http://192.168.1.2:5000/api/courses')
+    fetch(`${API_URL}/api/courses`)
     .then(response => response.json())
     // .then(data => console.log(data))
     .then(data => setCourses(data.courses))
@@ -97,7 +97,7 @@ function DashBoard() {
       <div className='titlediv'>
         <h1>All Courses</h1>
       </div>
-      <DashCourseList courses= {searchCourse.length ? searchCourse :  courses} />
+      <DashCourseList courses= {searchCourse.length ? searchCourse :  courses} API_URL={API_URL} />
     </div>
   )
 }

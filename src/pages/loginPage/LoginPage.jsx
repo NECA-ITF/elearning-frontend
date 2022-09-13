@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function LoginPage() {
+function LoginPage({ API_URL }) {
   const navigate = useNavigate()
   const [userInfo, setUserInfo] = useState({
     email: "",
@@ -37,7 +37,7 @@ function LoginPage() {
 
   function getUserData(e){
     e.preventDefault()
-      fetch('http://192.168.1.2:5000/auth/user/login', {
+      fetch(`${API_URL}/auth/user/login`, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'

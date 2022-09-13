@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, isAdmin, ...otherProps}) {
+function DashBoardCourse({name, title, image, isAdmin, API_URL, ...otherProps}) {
 
   return (
     <div className='coursecard'{...otherProps}>
       <div className='course-inn-div'>
-        <img src={image} alt="thumb" className='thumb'/>
+        <img src={`${API_URL}/api/static/images/${image}`} alt="thumb" className='thumb'/>
         <div className='bottom-sec'>
           <div className='stardiv'>
             <div className='initials'>{name.split(' ')[0].split('')[0]} {name.split(' ')[1].split('')[0]}</div>

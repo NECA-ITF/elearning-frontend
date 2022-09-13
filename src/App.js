@@ -17,7 +17,7 @@ import AdminDashBoard from './pages/adminDashBoard/AdminDashBoard';
 import './App.css';
 
 function App() {
-  
+  const API_URL = "http://192.168.1.3:5000"
   return (
     <div>
       <Router>
@@ -25,16 +25,16 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin-dash" element={<AdminDashBoard />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
+        <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/dash-board" element={<DashBoard />} />
+        <Route path="/dash-board" element={<DashBoard API_URL={API_URL} />} />
         <Route path="/play-courses" element={<PlayCourses />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CoursesOutline />} />
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} />} />
         </Routes>
       </Router>
     </div>
