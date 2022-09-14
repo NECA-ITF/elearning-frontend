@@ -11,7 +11,6 @@ function AboutPage() {
         <div className='abouthead'>
         <h2>About us</h2>
         </div>
-        <h5>hellodcasd</h5>
         <AboutList userss={users}/> 
         
     </div>
