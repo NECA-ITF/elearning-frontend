@@ -1,32 +1,57 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import './CustomModal.css'
+import {useState,useEffect} from 'react';
 import Modal from 'react-modal';
+import CustomInput from '../customInput/CustomInput'
+import CustomButton from '../customButton/CustomButton'
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement('#yourAppElement');
+function CustomModal({data,route}) {
+  const [userData, setUserData] = useState({})
+  const [userDataKeys,setUserDataKeys] = useState([])
 
-function App() {
-  let subtitle;
+  const finalObj = {};
+  for(let i = 0; i < data.length; i++ ) {
+    Object.assign(finalObj, data[i]);
+  }
+
+  useEffect(()=>{
+    const newData = {...finalObj}
+    setUserData(newData)
+    setUserDataKeys([...Object.keys(newData)])
+  },[])
+
+  // console.log(userData)
+  // console.log(userDataKeys)
+
+
+
+
+
+  // const [userData, setUserData] = useState({
+  //   Title: "",
+  //   Instructor: "",
+  //   Description: "",
+  //   PhotoUrl: "",
+  //   TotalHours: "",
+  //   Ratings: ""
+  // })
+
+
+  
+  function updateUserdata(e){
+    const {value, name} = e.target
+    setUserData(initialUserData => ({
+      ...initialUserData,
+      [name]: value
+    }))
+    console.log(userData)
+  }
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
     setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -35,29 +60,51 @@ function App() {
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
+      {/* <CustomButton onClick={openModal}  title = 'Create +' style = {{width: '20%', margin: '8px 0% auto'}} /> */}
+      <CustomButton 
+        onClick={openModal}  
+        title = 'Create +' 
+        style = {{
+          marginRight: '20px',
+          background: '#151D3B',
+          color: 'white',
+          padding: '10px 20px',
+          width: '100px'
+        }} 
+      />
+      <Modal className={'modal'}
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
         contentLabel="Example Modal"
+        ariaHideApp={false}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
+        <div className="modal-form">
+          <form>
+            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateUserdata} />
+            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateUserdata}/>
+            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateUserdata}/>
+            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/>
+            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/> */}
+            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateUserdata}/> */}
+            {
+              userDataKeys.map((button,index)=>(
+                <CustomInput
+                key={index}
+                placeholder={button.toUpperCase()}
+                name={button}
+                type ='text' 
+                style = {{width: '100%'}} 
+                onChange={updateUserdata}
+                />
+              ))
+            }
+
+            <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
         </form>
+        </div>
       </Modal>
     </div>
   );
 }
 
-ReactDOM.render(<App />, appElement);
-
-export default Modal
+export default CustomModal

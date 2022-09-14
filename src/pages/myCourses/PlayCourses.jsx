@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import video from './courseAssets/vid1.mp4'
 import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import star from '../myCourses/courseAssets/rating.svg'
@@ -10,7 +10,22 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses() {
+function PlayCourses({ API_URL, currentCourseOutline }) {
+  const [outlineVideos, setOutlineVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState({}); 
+
+
+  useEffect(() => {
+    // console.log(currentCourseOutline)
+    fetch(`${API_URL}/api/videos/${currentCourseOutline._id}`)
+    .then(response => response.json())
+    // .then(data => console.log(data))
+    .then(data => setOutlineVideos(data.resData.videos))
+    .catch((err) => console.log(err))
+
+    setCurrentVideo(outlineVideos[0]);
+    // console.log(Object.keys(currentVideo).length);
+  }, []);
 
   return (
     <div>
@@ -26,7 +41,7 @@ function PlayCourses() {
             <li>External Links</li>
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>Introduction to <span>React.</span></h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
+            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
             <p className='rates'>Ratings</p>
             <Ratings
             placeholderRating={3.5}
@@ -40,31 +55,12 @@ function PlayCourses() {
         <div className='course-head'>
           <h4>Course Videos</h4>
         </div>  
-          <div className='styky'></div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
-          <div className='course-list'> Components</div>
-          <div className='course-list'>  Hooks</div>
-          <div className='course-list'>  Props</div>
-          <div className='course-list'>  State</div>
+          {/* <div className='styky'></div> */}
+          {
+            outlineVideos.map((video) => (
+              <div key={video._id} className='course-list' onClick={() => {setCurrentVideo(video)}} >{video.title}</div>
+            ))
+          }
           
       </div>
     </div>
