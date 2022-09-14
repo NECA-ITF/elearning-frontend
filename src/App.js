@@ -16,15 +16,16 @@ import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminPage/adminDashBoard/AdminDashBoard';
 import './App.css';
 
+
 function App() {
-  const API_URL = "http://192.168.1.3:5000";
+  const API_URL = "http://192.168.1.4:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin-dash" element={<AdminDashBoard />} />
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
