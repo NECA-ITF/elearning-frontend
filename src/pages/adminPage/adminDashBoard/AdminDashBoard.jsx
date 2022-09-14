@@ -15,13 +15,23 @@ function AdminDashBoard({ API_URL}) {
     .then(data => setCourses(data.courses))
     .catch((err) => console.log(err))
   }, [])
+
+  const data =[
+    {title: ""},
+    {instructor: ""},
+    {description: ""},
+    {thumbnail: ""},
+    {totalHours: ""},
+    {ratings: ""}
+  ]
+  const mode = 'course'
   return (
 
     <div className='adminDashContainer'>
         <AdminDashSide />
         <div id='adminDash-right'>
           <div className="adminDashContentContainer">
-            <AdminDashContentHeader />
+            <AdminDashContentHeader mData={data} mMode ={mode}/>
             <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL}/>
           </div>
         </div>
