@@ -28,6 +28,9 @@ function SignupPage({ API_URL }) {
   }
    function sendNewUserData(e){
     e.preventDefault()
+    const {password, confirmPassword} = userData;
+    if (password !== confirmPassword)
+      return alert("passwords don't match");
     fetch(`${API_URL}/auth/user/register`, {
       method: 'POST',
       headers: {

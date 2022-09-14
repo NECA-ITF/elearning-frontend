@@ -10,30 +10,35 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses({ API_URL, currentCourseOutline }) {
+function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
-
-
+  
+  // const currentVideo1 = {_id: "iniovr", title: "were here", url: "api/static/videos/vid1.mp4"}; 
+  
   useEffect(() => {
     // console.log(currentCourseOutline)
-    fetch(`${API_URL}/api/videos/${currentCourseOutline._id}`)
-    .then(response => response.json())
-    // .then(data => console.log(data))
-    .then(data => setOutlineVideos(data.resData.videos))
-    .catch((err) => console.log(err))
-
-    setCurrentVideo(outlineVideos[0]);
-    // console.log(Object.keys(currentVideo).length);
+    async function getVideos(){
+      let response = await fetch(`${API_URL}/api/videos/${currentCourseOutline._id}`);
+      response = await response.json();
+      setOutlineVideos(response.resData.videos);
+      
+      setCurrentVideo(response.resData.videos[0]);
+    }
+    getVideos();
   }, []);
+  
 
   return (
+    
+      outlineVideos.length ? 
+      
     <div>
       <PlayCourseNav/>
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video controls src={video} alt="video" id='course-vid' style={{ width: '100%'}} poster={thumbnails}/>
+            <video controls src={`${API_URL}/${currentVideo.url}`} alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}/>
           </div>
           <ul>
             <li>Course Materials</li>
@@ -65,6 +70,9 @@ function PlayCourses({ API_URL, currentCourseOutline }) {
       </div>
     </div>
     </div>
+    :
+    <h1>No videos available</h1>
+    
     
   )
 }

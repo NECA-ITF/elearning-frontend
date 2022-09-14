@@ -22,6 +22,7 @@ function AdminDashBoard({ API_URL}) {
     {description: ""},
     {thumbnail: ""},
     {totalHours: ""},
+    {requirements: ""},
     {ratings: ""}
   ]
   const mode = 'course'
@@ -31,7 +32,7 @@ function AdminDashBoard({ API_URL}) {
         <AdminDashSide />
         <div id='adminDash-right'>
           <div className="adminDashContentContainer">
-            <AdminDashContentHeader mData={data} mMode ={mode}/>
+            <AdminDashContentHeader mData={data} mMode ={mode} API_URL={API_URL} />
             <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL}/>
           </div>
         </div>
