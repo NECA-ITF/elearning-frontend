@@ -6,7 +6,7 @@ import '../homePage/NavBar.css';
 import '../dashBoard/DashBoard.css'
 import { Link, useNavigate } from 'react-router-dom';
 
-
+//about the functional component
 function PlayCourseNav() {
     const navigate = useNavigate();
   const [userData, setUserData] = useState(null);

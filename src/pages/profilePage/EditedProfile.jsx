@@ -5,14 +5,34 @@ import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function EditedProfile() {
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
-        phoneNumber:'',
-        twitter:null,
-        linkedIn:null
+        phoneNumber:''
     })
+    const [localStorageData,setLocalStorageData] = useState({})
+
+    useEffect(()=>{
+        //COLLECTING THE DATA FROM LOCAL STORAGE AND CONVERTING TO AN OBJECT
+        const stData = JSON.parse(localStorage.getItem('userData'))
+        //SETTING THE DATE COLLECTED INTO THIS STATE
+        setLocalStorageData(stData)
+        const {fullName,phoneNumber} = stData
+        setUserEditedprofile(
+            (initialprofile) =>(
+                {
+                    ...initialprofile,
+                    fullName:fullName,
+                    phoneNumber:phoneNumber
+                }
+            )
+        )
+    },[])
+    
+    console.log(userEditedProfile)
+
    // const navigate = useNavigate()
     function updateEditedprofile(e){
         const {name, value} = e.target
@@ -26,22 +46,10 @@ function EditedProfile() {
     function handleSubmit(e){
         //to prevent refreshing if page after submitting
         e.preventDefault()
-        const{fullName,phoneNumber,twitter,linkedIn} = userEditedProfile
+        const{fullName,phoneNumber} = userEditedProfile
 
         if(fullName.trim() === '' || phoneNumber.trim() === ''){
             return  console.log('you cannot use empty space')
-        }
-        if(twitter.trim()===""){
-            setUserEditedprofile((intialState) => ({
-                ...intialState,
-                twitter: null,
-            }))
-            }
-        if(linkedIn.trim()===""){
-            setUserEditedprofile((intialState) => ({
-                ...intialState,
-                linkedIn: null,
-            }))
         }
 
         /// Run your Post fetch
@@ -76,19 +84,12 @@ function EditedProfile() {
 
                 <div className="border2" >
                     <p>Fullname</p>
-                    <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem'}} onChange = {updateEditedprofile}/>
+                    <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem'}} value={userEditedProfile.fullName} onChange = {updateEditedprofile}/>
                 </div>
 
                 <div className="border2">
                     <p>Phone number</p>
-                    <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}  onChange = {updateEditedprofile} />
-                </div>
-                <div className="border2">
-                    <p>Other Links</p>
-                    <CustomInput  placeholder='Twitter' name="twitter" style={{width:'100%',height:'1rem'}} onChange = {updateEditedprofile}/>
-                    <CustomInput   placeholder='LinkedIn' name="linkedIn"style={{width:'100%',height:'1rem'}} onChange = {updateEditedprofile}/>
-            
-        
+                    <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
                 </div>
                 <Link to='/profile-page' className='links'>        
                 <div className="border2">
@@ -99,8 +100,6 @@ function EditedProfile() {
             </form>
         </div>
     </div>
-          
-          
             
     )
 }

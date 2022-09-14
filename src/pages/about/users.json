@@ -1,0 +1,130 @@
+[
+    {
+      "id": 1,
+      "name": " Ajibade Hamidat Abisola",
+      "skills": "HTML,CSS,Javascript.",
+      "github_link": "https://github.com/Hameedarh",
+      "img":"Pictures/1.jpg",
+      "about": "I am currently a front end developer. I am good with HTML, CSS, JavaScript. I can create very awesome and responsive websites. I take hobbies in reading, listening to music, watching movies, traveling and designing websites."
+    },
+    {
+        "id": 2,
+        "name": "Abdulwasiu Saliman",
+        "skills": "Javascript, PHP, Python, React.",
+        "github_link": "https://github.com/Oladimeji-Dev",
+        "img":"Pictures/2.jpg",
+        "about": ""
+      },
+      {
+        "id": 3,
+        "name": "Daniel Uchenna Achilihu",
+        "skills": "Javascript, HTML,CSS, React.",
+        "github_link": "https://github.com/Achilihudaniel07",
+        "img":"Pictures/3.jpg",
+        "about": "I am currently a front end developer. I am good with HTML and CSS. My Javascript needs work though. But I can create an awesome landing page. I take hobbies in watching football."
+      },
+      {
+        "id": 4,
+        "name": "Oluniyi Israel",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/Oluniyisrael",
+        "img":"Pictures/4.jpg",
+        "about": "I am currently a front end developer. I am good with HTML and CSS. My Javascript needs work though. But I can create an awesome landing page. I take hobbies in designing websites, reading novels and playing games."
+      },
+      {
+        "id": 5,
+        "name": "Damos Muelji",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/muelji",
+        "img":"Pictures/5.jpg",
+        "about": " I am currently a front end developer. I am good with HTML, CSS,JavaScript and Kotlin. I can create very awesome and responsive UI/UX  I take hobbies in designing websites, listening to music, and playing games."
+      },
+      {
+        "id": 6,
+        "name": "Maryam Suleiman",
+        "skills": "HTML, Javascript and React ",
+        "github_link": "https://github.com/MaryamSuleiman",
+        "img":"Pictures/6.jpg",
+        "about": ""
+      },
+      {
+        "id": 7,
+        "name": "Rabo Abdulsamad",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/biggieCodes",
+        "img":"Pictures/7.jpg",
+        "about": ""
+      },
+      {
+        "id": 8,
+        "name": "Momoh Abdulrasheed",
+        "skills": "HTML, CSS, Javascript, Phython and React.",
+        "github_link": "https://github.com/momohrasheed06",
+        "img":"Pictures/8.jpg",
+        "about": "Hello everyone! I’m a Software developer. I spend my whole day, practically every day, experimenting with HTML, CSS, and JavaScript. I build, design and develop websites."
+      },
+      {
+        "id": 9,
+        "name": "Olaniyi Israel Olufunmi",
+        "skills": "HTML and Javascript",
+        "github_link": "https://github.com/",
+        "img":"Pictures/9.jpg",
+        "about": ""
+      },
+      {
+        "id": 10,
+        "name": "Lazarus B. Umeh",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/lazumeh",
+        "img":"Pictures/10.jpg",
+        "about": ""
+      },
+      {
+        "id": 11,
+        "name": "Daubry Martins",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/Daumatt",
+        "img":"Pictures/11.jpg",
+        "about": "I am a frontend developer, my strength are HTML, CSS and JavaScript. My hobbies are reading, traveling and movies."
+      },
+      {
+        "id": 12,
+        "name": "Alexander Gabrielle Khoinom",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/Gabbie99",
+        "img":"Pictures/12.jpg",
+        "about": ""
+      },
+      {
+        "id": 13,
+        "name": "Aluya Ebenezer",
+        "skills": "HTML, CSS , React and Javascript",
+        "github_link": "https://github.com/Ebenezeraluya",
+        "img":"Pictures/13.jpg",
+        "about": ""
+      },
+      {
+        "id": 14,
+        "name": "Okechukwu Victor",
+        "skills": "HTML, CSS and Javascript",
+        "github_link": "https://github.com/IamVICtheCG",
+        "img":"Pictures/14.jpg",
+        "about": ""
+      },
+      {
+        "id": 15,
+        "name": "Harrison Akunne",
+        "skills": "React, React Native",
+        "github_link": "https://github.com/Harry654",
+        "img":"Pictures/15.jpg",
+        "about": "I'm an intermediate React and React native developer aspiring to achieve the MERN stack."
+      },
+      {
+        "id": 16,
+        "name": "Fiki Mayomikun",
+        "skills": "React, UI/UX Designer",
+        "github_link": "https://github.com/Fiki-josh",
+        "img":"Pictures/16.jpg",
+        "about": ""
+      }
+]

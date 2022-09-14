@@ -9,7 +9,7 @@ function NavBar() {
           
                 <div className='mylogo'>
                 <Link to='/' className='links'>
-                    <img src={itflogo} alt="itflogo" style={{width:'70px', height:'70px', padding:'5px 5px'}}/>
+                    <img src={itflogo} alt="itflogo" style={{width:'90%', height:'80%', padding:'5px 5px'}}/>
                 </Link>
                 </div>
                 <nav className='nav'>

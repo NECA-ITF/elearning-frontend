@@ -1,89 +1,35 @@
-
-.about{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-top: 30px; */
-    gap: 15px;
-    background-color: cadetblue;
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
 .abouthead{
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     border: 2px rgb(231, 228, 226) solid;
     height: 130px;
+    color: white;
 }
-.sec-page{
-    margin-top: 10px;
-    background-color: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+
+.pics{
+
+    width: 290px;
+    height: 290px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.aboutlistgenpics{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 98%;
+
+}
+.ab{margin: auto;}
+
+.cardpics{
+       margin: 5px;
+       margin-top: 20px;
+       margin-right: 10px;
+       background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+       border-radius: 10px;
+       text-align: center;
+       color: white;
 
 }
 
-.third-page{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    /* cursor: pointer; */
-    background-color:-webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
-}
-.ab h2{
-    margin-left: 50px;
-    color: wheat;
-    cursor: pointer;
-}
-.about h3{
-    /* color: aquamarine; */
-    cursor: pointer;
-    background: -webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
-    /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  color: cadetblue;
-    /* width: 50%; */
-}
-.about h3:hover{
-    /* background-color: plum; */
-    border-bottom: 1px solid red;
-    
-    /* width: px; */
-}
-.chris img{
-    object-fit: cover;
-    /* margin-top: 40px; */
-
-}
-.mart img{
-    object-fit: fill;
-    /* padding: -5px; */
-    /* width: 400px; */
-}
-/* .aboutpage{ */
-    /* width: 90%; */
-    /* margin: 0 auto; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* margin-top: 50px; */
-    /* gap: 50px; */
-/* } */
-.rashdetail{
-    margin: 0;
-    /* background-color: aqua; */
-    /* margin-top: 10px; */
-}
-.gitpix{
-    width: 25px;
-    cursor: pointer;
-
-}
-.linkdpix{
-    width: 25px;
-    margin-left: 20px;
-    /* background-color: whit; */
-    cursor: pointer;
-}
-.socials{
-    /* background-color: azure; */
-    align-items: center;
-    /* gap: 80px; */
-    /* margin: auto; */
-    margin-top: 0px;
-}
