@@ -4,15 +4,17 @@ import profile from '../../assets/dashboard/profile.svg'
 import arrow from '../../assets/dashboard/arrow.svg'
 import '../homePage/NavBar.css';
 import '../dashBoard/DashBoard.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function PlayCourseNav() {
+    const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
 
   function logoutUser(params) {
     localStorage.setItem('userData', null);
     setUserData(null)
+    navigate('/')
   }
 
 
