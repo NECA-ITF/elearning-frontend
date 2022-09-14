@@ -11,6 +11,25 @@
     height: 290px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
+}
+.aboutlistgenpics{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 98%;
 
 }
+.ab{margin: auto;}
+
+.cardpics{
+       margin: 5px;
+       margin-top: 20px;
+       margin-right: 10px;
+       background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+       border-radius: 10px;
+       text-align: center;
+       color: white;
+
+}
+
