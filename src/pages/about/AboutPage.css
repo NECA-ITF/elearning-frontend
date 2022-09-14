@@ -1,31 +1,28 @@
 
 .about{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     /* margin-top: 30px; */
+    /* flex-wrap: wrap; */
     gap: 15px;
     background-color: white;
     padding-top: 30px;
     padding-bottom: 10px;
 }
+
+.aboutpage{
+    flex-wrap: nowrap;
+    background-color: green;
+}
+
+
 .abouthead{
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     border: 2px rgb(231, 228, 226) solid;
     height: 130px;
 }
-.sec-page{
-    margin-top: 10px;
-    background-color: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
 
-}
-
-.third-page{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    /* cursor: pointer; */
-    background-color:-webkit-linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
-}
 .ab h2{
     margin-left: 50px;
     color: white;
@@ -46,16 +43,7 @@
     
     /* width: px; */
 }
-.chris img{
-    object-fit: cover;
-    /* margin-top: 40px; */
 
-}
-.mart img{
-    object-fit: fill;
-    /* padding: -5px; */
-    /* width: 400px; */
-}
 /* .aboutpage{ */
     /* width: 90%; */
     /* margin: 0 auto; */
@@ -64,11 +52,7 @@
     /* margin-top: 50px; */
     /* gap: 50px; */
 /* } */
-.rashdetail{
-    margin: 0;
-    /* background-color: aqua; */
-    /* margin-top: 10px; */
-}
+
 .gitpix{
     width: 25px;
     cursor: pointer;
@@ -80,13 +64,20 @@
     /* background-color: whit; */
     cursor: pointer;
 }
-.socials{
-    /* background-color: azure; */
+/* .socials{
+    background-color: azure;
     align-items: center;
-    /* gap: 80px; */
-    /* margin: auto; */
+    gap: 80px;
+    margin: auto;
     margin-top: 0px;
+} */
+
+.cards{
+    display:flex ;
+flex-wrap: wrap;
+/* background-color: #bd1c4d; */
 }
+
 .social img{
     border-radius: 10px;
     /* width: 75%; */
@@ -96,8 +87,4 @@
     width: 200px;
     height: 200px;
     /* border: 1px solid white; */
-}
-.others{
-    width: 200px;
-    height: 200px;
 }

@@ -8,14 +8,12 @@ import DashBoard from './pages/dashBoard/DashBoard';
 import PlayCourses from './pages/myCourses/PlayCourses';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import EditedProfile from './pages/profilePage/EditedProfile'
+
 import ContactPage from './pages/contactPage/ContactPage';
 import ChangePassword from './pages/profilePage/ChangePassword';
 import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminPage/adminDashBoard/AdminDashBoard';
-import AdminAllOutline from './pages/adminPage/adminDashBoard/AdminAllOutline';
-import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
-import AdminProfile from './pages/adminPage/adminProfile/AdminProfile';
 import './App.css';
 
 function App() {
@@ -28,20 +26,17 @@ function App() {
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} />} />
-        <Route path="/admin-outline" element={<AdminAllOutline API_URL={API_URL} />} />
-        <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
+        <Route path="/admin-dash" element={<AdminDashBoard />} />
         <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
         <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
-        <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourseOutline={currentCourseOutline} />} />
+        <Route path="/play-courses" element={<PlayCourses />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/admin-profile" element={<AdminProfile />} />
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} />} />
         </Routes>
       </Router>
     </div>
