@@ -4,6 +4,7 @@ import CustomButton from '../../components/customButton/CustomButton';
 import image from '../../assets/newlogo.png';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
+import TermsOfUse from '../policy/termsOfUse/TermsOfUse';
 
 
 function HomePage() {

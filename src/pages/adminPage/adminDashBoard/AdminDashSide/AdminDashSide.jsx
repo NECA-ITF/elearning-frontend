@@ -40,17 +40,6 @@ function AdminDashSide() {
                 }}
             />
         </Link>
-        <Link to='/admin-profile' className='links'>
-            <CustomButton  
-                title="Admin Profile" 
-                style={{ 
-                    marginBottom: "10px",
-                    padding: "10px 5px",
-                    display:"block",
-                    width:'100%'
-                }}
-            />
-        </Link>
         </div>
     </div>
   )
