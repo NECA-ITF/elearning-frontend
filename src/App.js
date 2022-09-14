@@ -15,6 +15,8 @@ import CoursesOutline from './pages/courseOutline/CoursesOutline';
 import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminPage/adminDashBoard/AdminDashBoard';
 import './App.css';
+import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
+import PrivacyPolicy from '../src/pages/policy/privacyPolicy/PrivacyPolicy'
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} />} />
+        <Route path="/policy" element={<PrivacyPolicy/>} />
+        <Route path="/terms" element={<TermsOfUse />} />
         </Routes>
       </Router>
     </div>
