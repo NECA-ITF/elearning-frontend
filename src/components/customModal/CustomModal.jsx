@@ -21,8 +21,8 @@ function CustomModal({data,route}) {
     setUserDataKeys([...Object.keys(newData)])
   },[])
 
-  console.log(userData)
-  console.log(userDataKeys)
+  // console.log(userData)
+  // console.log(userDataKeys)
 
 
 
@@ -76,6 +76,7 @@ function CustomModal({data,route}) {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
+        ariaHideApp={false}
       >
         <div className="modal-form">
           <form>
