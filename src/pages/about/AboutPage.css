@@ -1,0 +1,6 @@
+.abouthead{
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    border: 2px rgb(231, 228, 226) solid;
+    height: 130px;
+    color: white;
+}
