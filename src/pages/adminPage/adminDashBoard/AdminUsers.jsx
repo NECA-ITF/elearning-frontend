@@ -6,12 +6,19 @@ import UserCard from './UserCard/UserCard'
 import UserData from './UserData/UserData'
 
 function AdminUsers() {
+    const data =[
+        {fullName: ""},
+        {email: ""},
+        {phoneNumber: ""},
+        {password: ""},
+      ]
+      const mode = 'user'
   return (
-    <div class="adminDashContainer">
+    <div className="adminDashContainer">
         <AdminDashSide />
-        <div class="adminDashContent">
-            <div class="adminDashContentContainer">
-                <AdminDashContentHeader />
+        <div className="adminDashContent">
+            <div className="adminDashContentContainer">
+                <AdminDashContentHeader mData={data} mMode={mode}/>
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         <UserCard title='HAMIDAT'/>

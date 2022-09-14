@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 function AdminDashSide() {
   return (
-    <div class="adminDashSide">
-        <div class="dashSideBtn">
+    <div className="adminDashSide">
+        <div className="dashSideBtn">
         <Link to='/admin-dash' className='links'>
             <CustomButton  
                 title="All Courses" 
