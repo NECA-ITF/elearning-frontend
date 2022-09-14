@@ -8,8 +8,12 @@ import { Link,} from 'react-router-dom';
 function AboutCard({img, github, name}) {
   return (
     <div>
+           <div className='cardpics'>
+               <img className='pics' src={img} alt="image" />
+                   <h3>{name}</h3>
+                  
+          </div>
 
-  
     </div>
   )
 }
