@@ -2163,7 +2163,11 @@
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
+<<<<<<< Updated upstream
     "csstype" "^3.0.2"
+=======
+    csstype "^3.0.2"
+>>>>>>> Stashed changes
 
 "@types/resolve@1.17.1":
   "integrity" "sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw=="
