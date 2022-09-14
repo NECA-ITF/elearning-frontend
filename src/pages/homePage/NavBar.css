@@ -7,7 +7,7 @@
     overflow: hidden;
     position: fixed;
     top: 0;
-    height: 14.4%;
+    height: 70px;
     z-index: 3;
 }
 .apply {
@@ -21,6 +21,15 @@
     align-items: center;
     height: 100%;
     width: 10%;
+}
+.mylogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.mylogo img {
+    object-fit: contain;
 }
 
 .nav{
