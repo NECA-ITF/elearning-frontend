@@ -1,12 +1,12 @@
 import React from 'react'
-import CustomButton from '../../../components/customButton/CustomButton'
+import CustomButton from '../../../../components/customButton/CustomButton'
 import './AdminDashSide.css'
 import { Link } from 'react-router-dom'
 
 function AdminDashSide() {
   return (
-    <div class="adminDashSide">
-        <div class="dashSideBtn">
+    <div className="adminDashSide">
+        <div className="dashSideBtn">
         <Link to='/admin-dash' className='links'>
             <CustomButton  
                 title="All Courses" 
@@ -32,6 +32,17 @@ function AdminDashSide() {
         <Link to='/admin-users' className='links'>
             <CustomButton  
                 title="All Users" 
+                style={{ 
+                    marginBottom: "10px",
+                    padding: "10px 5px",
+                    display:"block",
+                    width:'100%'
+                }}
+            />
+        </Link>
+        <Link to='/admin-profile' className='links'>
+            <CustomButton  
+                title="Admin Profile" 
                 style={{ 
                     marginBottom: "10px",
                     padding: "10px 5px",

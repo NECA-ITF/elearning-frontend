@@ -1,21 +1,12 @@
 import React from 'react'
-import CustomButton from '../../../components/customButton/CustomButton'
-import './Outline.css'
+import CustomButton from '../../../../components/customButton/CustomButton'
+import './UserCard.css'
 
 function Outline({title}) {
   return (
-    <div className="outline">
+    <div className="usercard">
         <p>{title}</p>
-        <div className="outlineBtns">
-            <CustomButton title='ADD' 
-            style={{
-                marginRight: '20px',
-                background: '#151D3B',
-                color: 'white',
-                padding: "8px 10px",
-                borderRadius: '8px',
-                width: '76px'
-            }} />
+        <div className="usercardBtns">
            <CustomButton title='DELETE' 
             style={{
                 marginRight: '20px',

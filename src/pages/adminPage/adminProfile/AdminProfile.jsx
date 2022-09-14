@@ -1,7 +1,5 @@
 import React from 'react'
-import CustomInput from '../../components/customInput/CustomInput';
-import CustomButton from '../../components/customButton/CustomButton'
-import logo from '../../assets/itf_log.png';
+import logo from '../../../assets/itf_log.png';
 import './AdminProfile.css'
 import { Password,Gear,User,SignOut,Lock,IdentificationBadge,Envelope,Phone} from "phosphor-react"
 import { Link } from 'react-router-dom';
@@ -11,7 +9,7 @@ function AdminProfile() {
     
       <div className="Admin-profile">
             <div className="Admin-sidebar">
-                <Link to='/profile-page'className='links'>        
+                <Link to='/admin-dash'className='links'>        
                    <div  className='Admin-icon'>
                    <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                    <p> Dashboard</p>

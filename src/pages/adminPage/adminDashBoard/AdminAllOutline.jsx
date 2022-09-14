@@ -5,13 +5,17 @@ import './AdminAllOutline.css'
 import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
 function AdminAllOutline() {
+    const data =[
+        {title: ""},
+      ]
+      const mode = 'outline'
     
   return (
-    <div class="adminDashContainer">
+    <div className="adminDashContainer">
         <AdminDashSide />
-        <div class="adminDashContent">
-            <div class="adminDashContentContainer">
-                <AdminDashContentHeader />
+        <div className="adminDashContent">
+            <div className="adminDashContentContainer">
+                <AdminDashContentHeader mData={data} mMode={mode}  />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         <Outline title='Introduction to HTML'/>
