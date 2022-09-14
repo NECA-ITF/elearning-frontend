@@ -18,7 +18,7 @@ function AdminSideBar() {
     //to avoid command never used prompt 
     console.log(userData ? 'user': 'no user')
   return (
-    <div className="main3 ">
+    <div className="Admin-Con">
         <Link to='/profile-page' className='links'>        
             <div  className='veiw2'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
