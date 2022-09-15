@@ -34,7 +34,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
                     <div className="adminDashCourseOutlines">
                         {
                             courseOutline.map((outline) => (
-                                <Outline key={outline._id} title={outline.title} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />
+                                <Outline key={outline._id} title={outline.title} API_URL={API_URL} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />
                             ))
                         }
                     </div>

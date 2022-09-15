@@ -4,6 +4,7 @@ import './Outline.css'
 // import CustomModal from '../../../../components/customModal/CustomModal'
 
 function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline}) {
+    // console.log(API_URL)
     function deleteOutline(){
         fetch(`${API_URL}/api/outline`,{
             headers: {
@@ -13,7 +14,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
             body: JSON.stringify({courseId: currentCourse, outlineId: outline._id})
         })
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => alert(res.message))
     }
   return (
     <div className="outline">
