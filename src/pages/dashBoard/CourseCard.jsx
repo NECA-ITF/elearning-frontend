@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, ...otherProps}) {
+function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, ...otherProps}) {
 
   return (
     <div className='coursecard'{...otherProps}>
@@ -28,7 +28,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
                 fullSymbol={<img src={over} className="icon" alt='#'style={{width:'20px'}}/>}
               />
               <div className='rate'>
-                <h5> 4.9</h5>
+                <h5>{ratings}</h5>
                 <h6>180</h6>
               </div>
             </div>
@@ -37,7 +37,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
           <div className='svg-div'>
             <div className='clock-div'>
               <img src={clock} alt='clock'/>
-              <p>10 hours</p>
+              <p>{`${time} hours`}</p>
             </div>
             <div className='case-div'>
               <img src={bcase} alt='case'/>
