@@ -90,37 +90,10 @@
 .titlediv h1{
     margin-left: 6rem;
 }
-.res-nav{
-    display: none;
-}
 @media screen and (max-width:850px) {
     .dashnav-bar{
         width: 80%;
     }
 }
-@media screen and (max-width:500px) {
-    .dashnav-bar{
-        display: none;
-    }
-    .res-nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .res-content li{
-        list-style: none;
-    }
-    .res-dropcontent li {
-        display: none;
-        /* position: absolute;
-        z-index: 2;
-        margin-top: 2%; */
-    }
 
-    .hamburger:hover + .res-dropcontent li{
-        display: block;
-        color: aqua;
-    }
-   
-}
 
