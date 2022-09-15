@@ -4,13 +4,13 @@ import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHea
 import './AdminAllOutline.css'
 import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
-function AdminAllOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
+function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourseOutline }) {
     const [courseOutline, setCourseOutline] = useState([]);
     const data =[
         {title: ""},
       ]
       const mode = 'outline';
-    // console.log(currentCourse.title);
+    // console.log(API_URL);
 
       
   useEffect(() => {
@@ -18,7 +18,7 @@ function AdminAllOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
     fetch(`${API_URL}/api/outlines/${currentCourse._id}`)
     .then(response => response.json())
     .then(data => setCourseOutline(data.outline.outlines))
-    .then(data => console.log(data))
+    // .then(data => console.log(data))
     // .then(data => setCurrentCourseOutline(data.outline.outlines[0]))
     .catch((err) => console.log(err))
   }, []);
@@ -29,12 +29,12 @@ function AdminAllOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode}  />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse}  />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
                             courseOutline.map((outline) => (
-                                <Outline key={outline._id} title={outline.title} />
+                                <Outline key={outline._id} title={outline.title} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />
                             ))
                         }
                     </div>

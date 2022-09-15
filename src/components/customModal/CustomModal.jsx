@@ -6,7 +6,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({data, route, API_URL}) {
+function CustomModal({data, mode, API_URL, currentCourse}) {
   const [thumbnail, setThumbnail] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
@@ -43,10 +43,11 @@ function CustomModal({data, route, API_URL}) {
     formData.append("courseData", JSON.stringify(courseData));
     formData.append("file", thumbnail);
     // console.log(Object.fromEntries(course));
-    // console.log((course));
-
-    fetch(`${API_URL}/api/course`, {
-      // headers: {
+    
+    
+    if(mode === "course"){
+      fetch(`${API_URL}/api/course`, {
+        // headers: {
       //   'Content-Type': 'application/json'
       // },
       method: "POST",
@@ -56,6 +57,25 @@ function CustomModal({data, route, API_URL}) {
     })
     .then(res => res.json())
     .then(res => console.log(res))
+  }
+  
+  if(mode === "outline"){
+    // console.log(API_URL)
+    console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
+    fetch(`${API_URL}/api/outlines`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      // body: JSON.stringify(Object.fromEntries(course))
+      body:JSON.stringify({courseId: currentCourse._id, ...courseData})
+      // file: JSON.stringify({name: ""})
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+
+  }
+
   }
 
 
