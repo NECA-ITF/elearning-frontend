@@ -40,7 +40,11 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
+<<<<<<< HEAD
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline}/>} />
+=======
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+>>>>>>> 010bfe68fa9bac34418006f78350714feac08aec
         <Route path="/admin-outline" element={<AdminOutline />} />
         <Route path="/admin-users" element={<AdminUsers />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
