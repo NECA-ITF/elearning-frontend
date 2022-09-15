@@ -90,4 +90,10 @@
 .titlediv h1{
     margin-left: 6rem;
 }
+@media screen and (max-width:850px) {
+    .dashnav-bar{
+        width: 80%;
+    }
+}
+
 
