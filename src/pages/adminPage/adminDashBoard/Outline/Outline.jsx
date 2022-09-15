@@ -3,7 +3,7 @@ import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
 // import CustomModal from '../../../../components/customModal/CustomModal'
 
-function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline}) {
+function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentCourseOutline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
     function deleteOutline(){
         fetch(`${API_URL}/api/outline`,{
@@ -14,10 +14,21 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
             body: JSON.stringify({courseId: currentCourse, outlineId: outline._id})
         })
         .then(res => res.json())
-        .then(res => alert(res.message))
+        .then(res => {
+            if(res.success) getOutline();
+            alert(res.message);
+        })
     }
   return (
-    <div className="outline">
+    <div className="outline" style={{
+        boxShadow: currentCourseOutline._id === outline._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
+        cursor: "pointer"
+    }}
+    onClick={() => { 
+        setCurrentCourseOutline(outline);
+        getVideos(outline);
+    }}
+    >
         <p>{title}</p>
         <div className="outlineBtns">
         {/* <CustomModal data = {mData} mode ={mMode} API_URL={API_URL} /> */}
@@ -30,7 +41,6 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
                 borderRadius: '8px',
                 width: '76px'
             }} 
-            onClick={() => { setCurrentCourseOutline(outline) }}
             />
            <CustomButton title='DELETE' 
             style={{
