@@ -7,6 +7,7 @@ import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
 import { Link, useNavigate} from 'react-router-dom';
+import {List} from 'phosphor-react'
 
 function DashBoard({ API_URL, setCurrentCourse }) {
   const [searchInput, setSearchInput]= useState("")
@@ -85,6 +86,33 @@ function DashBoard({ API_URL, setCurrentCourse }) {
               <h4 onClick={logoutUser} style={{cursor: 'pointer'}}>Logout</h4>
             </div>
             
+          </div>
+        </div>
+      </div>
+      <div className='res-nav'>
+        <div className='dashmylogo'>
+          <img src={itflogo} alt="itflogo" style={{width:'60px', height:'60px', padding:'5px 5px'}}/>
+        </div>
+        <div className='list-display'>
+          <List size={20} color="#800a0a" weight="fill" className='hamburger'/>
+          <div className='res-dropcontent'>
+            <ul className='res-content'>
+                      <Link to='/' className='links'>
+                          <li className='ho'> Home</li>
+                      </Link>
+                      <Link to='/about' className='links'>        
+                          <li>About</li>
+                      </Link>
+                      <Link to='/dash-board' className='links'>        
+                          <li>Course</li>
+                      </Link>
+                      <Link to='/profile-page' className='links'>        
+                          <li>Profile</li>
+                      </Link>
+                      <Link to='/contact-page' className='links'>
+                        <li>Contact</li>
+                      </Link>   
+              </ul>
           </div>
         </div>
       </div>

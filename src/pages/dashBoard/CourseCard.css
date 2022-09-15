@@ -108,5 +108,6 @@
 @media screen and (max-width:700px) {
     .coursecard{
         width: 80%;
+        margin: 0 auto;
     }
 }
