@@ -46,7 +46,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 10% auto 0;
 }
 .colc h2{
     text-align: center;
@@ -66,7 +66,6 @@
 .formc{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 35%;
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
 }
