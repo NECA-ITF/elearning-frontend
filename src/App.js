@@ -21,7 +21,7 @@ import PrivacyPolicy from '../src/pages/policy/privacyPolicy/PrivacyPolicy';
 
 
 function App() {
-  const API_URL = "http://192.168.0.109:5000";
+  const API_URL = "http://192.168.1.2:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
