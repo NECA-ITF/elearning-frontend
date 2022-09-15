@@ -21,7 +21,7 @@ import PrivacyPolicy from '../src/pages/policy/privacyPolicy/PrivacyPolicy';
 
 
 function App() {
-  const API_URL = "http://192.168.0.109:5000";
+  const API_URL = "http://192.168.1.2:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
@@ -40,7 +40,7 @@ function App() {
         <Route path="/edited-profile" element={<EditedProfile />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
-        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} />} />
+        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline}/>} />
         <Route path="/admin-outline" element={<AdminOutline />} />
         <Route path="/admin-users" element={<AdminUsers />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
