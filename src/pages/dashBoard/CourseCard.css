@@ -97,6 +97,10 @@
     gap: 5px;
     /* border: 1px solid blue; */
 }
+.case-div p{
+    width: fit-content;
+    border: 1px solid yellow;
+}
 
 .course-title{
     text-align: center;
