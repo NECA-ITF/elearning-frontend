@@ -100,15 +100,15 @@ function CustomModal({data, route, API_URL}) {
             {
               courseDataKeys.map((button,index)=>(
                 <>
-                {button.toLowerCase() === "thumbnail" ? <p style={{color: "white"}}>Thumbnail</p> : ""}
-                <CustomInput
-                key={index}
-                placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
-                name={button}
-                type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
-                style = {{width: '100%'}} 
-                onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
-                />
+                  {button.toLowerCase() === "thumbnail" ? <p style={{color: "white"}}>Thumbnail</p> : ""}
+                  <CustomInput
+                  key={index}
+                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
+                  name={button}
+                  type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
+                  style = {{width: '100%'}} 
+                  onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
+                  />
                 </>
               ))
             }

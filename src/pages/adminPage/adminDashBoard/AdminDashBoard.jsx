@@ -5,7 +5,7 @@ import AdminDashSide from './AdminDashSide/AdminDashSide'
 import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHeader'
 
 
-function AdminDashBoard({ API_URL}) {
+function AdminDashBoard({ API_URL, setCurrentCourse}) {
   const [courses, setCourses]= useState([])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function AdminDashBoard({ API_URL}) {
     {thumbnail: ""},
     {totalHours: ""},
     {requirements: ""},
-    {ratings: ""}
+    {rating: ""}
   ]
   const mode = 'course'
   return (
@@ -33,7 +33,7 @@ function AdminDashBoard({ API_URL}) {
         <div id='adminDash-right'>
           <div className="adminDashContentContainer">
             <AdminDashContentHeader mData={data} mMode ={mode} API_URL={API_URL} />
-            <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL}/>
+            <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL} setCurrentCourse={setCurrentCourse} />
           </div>
         </div>
     </div>
