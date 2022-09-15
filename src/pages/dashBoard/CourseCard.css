@@ -74,32 +74,30 @@
     margin-left: 0.2rem;
     padding: 0.2rem;
 }
-.svg-div, .case-div, .clock-div{
-    display: flex;
-}
+  
 .svg-div{
+    justify-content: space-around;
     /* border: 1px solid pink; */
+    display: flex;
     border-bottom: 1px solid #7d8492;
     margin-bottom: 1rem;
-    gap:5rem;
+    /* gap:rem; */
+    width: 100%;
 }
-.case-div, .clock-div img{
+.svg-div img{
     width: 1rem;
 }
-.case-div p{
-    /* width: 50%; */
-    min-width: 7rem;
+.clock-div{
+    display: flex;
+    gap: 5px;
+    /* border: 1px solid brown; */
+}
+.case-div{
+    display: flex;
+    gap: 5px;
     /* border: 1px solid blue; */
 }
-.case-div, .clock-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:5px
-}
-.case-div, .clock-div p{
-    font-size: 0.7rem;
-}
+
 .course-title{
     text-align: center;
 }
