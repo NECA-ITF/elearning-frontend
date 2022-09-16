@@ -48,24 +48,24 @@ function ChangePassword(){
              </div>
              <div className="border2" >
                 <p>Enter Old Password</p>
-                <CustomInput type="password" name= 'oldPassword'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}
+                <CustomInput type="password" name= 'oldPassword'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem', borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}
                 onChange={handleChangePassword}/>
             </div>
 
             <div className="border2" >
                 <p>Create New Password</p>
-                <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem'}}
+                <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}
                 onChange={handleChangePassword}/>
             </div>
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem'}}  onChange={handleChangePassword}/>
+                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}  onChange={handleChangePassword}/>
             </div>
             
             <Link to='/profile-page' className='links'>        
             <div className="border2">
-                <CustomButton title={'Confirm Password'} style={{width:'100%', height:'1rem'}}/>
+                <CustomButton title={'Confirm Password'} style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
             </div> 
             </Link>
         </div>

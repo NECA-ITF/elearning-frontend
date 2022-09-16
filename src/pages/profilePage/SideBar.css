@@ -1,4 +1,4 @@
-.main3{
+.Sidebar-con {
     border:none;
     border-right: 1px solid rgba(255, 255, 255, 0.309);
     min-height: 100vh;
@@ -8,15 +8,16 @@
     padding-top:10rem;
 }
 
-.veiw2{
+.sidebar-icon{
     display: flex;
     align-items: center;
     padding: 1rem;
     margin: 3px;
     
+    
 }
 
-.veiw2 p {
+.sidebar-icon p {
     font-size: 0.8rem;
     color: white;
     cursor: pointer;
