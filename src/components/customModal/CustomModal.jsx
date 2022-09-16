@@ -6,7 +6,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({data, mode, API_URL, currentCourse, getCourses, getOutline}) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline }) {
   const [thumbnail, setThumbnail] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
@@ -71,7 +71,7 @@ function CustomModal({data, mode, API_URL, currentCourse, getCourses, getOutline
   
   if(mode === "outline"){
     // console.log(API_URL)
-    console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
+    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     fetch(`${API_URL}/api/outlines`, {
       headers: {
         'Content-Type': 'application/json'

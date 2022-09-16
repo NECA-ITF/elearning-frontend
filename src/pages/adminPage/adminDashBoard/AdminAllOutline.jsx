@@ -4,7 +4,11 @@ import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHea
 import './AdminAllOutline.css'
 import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
+import { useNavigate } from 'react-router-dom';
+
 function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourseOutline }) {
+    const navigate = useNavigate();
+    if(!Object.keys(currentCourse).length) navigate('/admin-dash', {replace: true});
     const [courseOutline, setCourseOutline] = useState([]);
     const [courseOutlineVideos, setCourseOutlineVideos] = useState([]);
     const data =[
@@ -28,8 +32,8 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         fetch(`${API_URL}/api/outlines/${currentCourse._id}`)
         .then(response => response.json())
         .then(data => {
-            setCourseOutline(data.outline.outlines);
-            if(data.outline.outlines.length) {
+            setCourseOutline(data.outline ? data.outline.outlines : []);
+            if(data.outline) {
                 setCurrentCourseOutline(data.outline.outlines[0]);
                 getVideos(data.outline.outlines[0])
             }
@@ -40,10 +44,6 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
     useEffect(() => {
         getOutline();
     }, []);
-
-    // useEffect(() => {
-    //     getVideos();
-    // }, []);
 
 
   return (
@@ -64,9 +64,9 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
                         {
                             courseOutlineVideos.length ? 
                             courseOutlineVideos.map(video => (
-                                <OutlineVideo API_URL={API_URL} video={video} currentCourse={currentCourse} />
+                                <OutlineVideo API_URL={API_URL} video={video} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getVideos={getVideos} />
                             )) : 
-                            <h1>No videos for {currentCourseOutline.title}</h1>
+                            courseOutline.length !== 0 ? <h1>No videos for {currentCourseOutline.title}</h1> : ""
                         }
                     </div>
                 </div>
