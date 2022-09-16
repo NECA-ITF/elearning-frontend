@@ -18,7 +18,7 @@ function AdminDashSide() {
                 }}
             />
         </Link>
-        <Link to='/admin-outline' className='links'>
+        {/* <Link to='/admin-outline' className='links'>
             <CustomButton  
                 title="All Outline" 
                 style={{ 
@@ -28,7 +28,7 @@ function AdminDashSide() {
                     width:'100%'
                 }}
             />
-        </Link>
+        </Link> */}
         <Link to='/admin-users' className='links'>
             <CustomButton  
                 title="All Users" 
