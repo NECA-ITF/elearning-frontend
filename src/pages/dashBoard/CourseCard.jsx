@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, ...otherProps}) {
+function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, getCourses, ...otherProps}) {
   function deleteCourse(course){
     fetch(`${API_URL}/api/course`,{
         headers: {
@@ -21,11 +21,11 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
         body: JSON.stringify({ courseId: course._id })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
-    // .then(res => {
-    //     if(res.success) getOutline();
-    //     alert(res.message);
-    // })
+    // .then(res => console.log(res.success))
+    .then(res => {
+        if(res.success) getCourses();
+        alert(res.message);
+    })
 }
 
   return (
