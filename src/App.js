@@ -17,8 +17,7 @@ import AdminOutline from './pages/adminPage/adminDashBoard/AdminAllOutline';
 import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
-import PrivacyPolicy from '../src/pages/policy/privacyPolicy/PrivacyPolicy';
-
+import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 
 function App() {
   const API_URL = "http://192.168.1.2:5000";
