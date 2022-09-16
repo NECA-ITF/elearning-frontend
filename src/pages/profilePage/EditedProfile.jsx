@@ -67,9 +67,6 @@ function EditedProfile() {
         
     }
 
-        
-
-    
 
   return (
     <div className="mainone">

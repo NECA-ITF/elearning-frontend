@@ -16,38 +16,41 @@ function SideBar() {
         setUserData(JSON.parse(user));
     }, [])
     //to avoid command never used prompt 
+
     console.log(userData ? 'user': 'no user')
   return (
-    <div className="main3 ">
+    <div className="Sidebar-con ">
         <Link to='/profile-page' className='links'>        
-            <div  className='veiw2'>
+            <div  className='sidebar-icon'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Profile</p>
             </div>
         </Link>
+
         <Link to="/edited-profile" className='links' >
-            <div  className='veiw2' >
+            <div  className='sidebar-icon' >
                 <Gear size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Edit Profile</p>
             </div>
-        </Link>
-        <Link to='/change-password' className='links'>
-            <div  className='veiw2'>
+         </Link>
+
+         <Link to='/change-password' className='links'>
+             <div  className='sidebar-icon'>
                 <Password size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>Change password</p>
             </div>
         </Link>
         
-        <div  className='veiw2'>
+             <div  className='sidebar-icon'>
             <Lock size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
             <p>Privacy</p>
-        </div>
+             </div>
         
         <Link to='/login'className='links' onClick={logoutUser}> 
-            <div  className='veiw2'>
+                <div  className='sidebar-icon'>
                 <SignOut size={18} color='white' style={{ marginRight: '1rem'}} weight="thin"  />
                 <p>Log Out</p>
-            </div>
+                  </div>
         </Link>
     </div> 
 
