@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import CustomButton from '../../components/customButton/CustomButton'
 import './CourseCard.css'
 // import RatingImage from '../../assets/images/star-grey.png'
@@ -52,7 +52,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
           <div className='svg-div'>
             <div className='clock-div'>
               <img src={clock} alt='clock'/>
-              <p>{`${time} hours`}</p>
+              <p>{`${time} hrs`}</p>
             </div>
             <div className='case-div'>
               <img src={bcase} alt='case'/>
