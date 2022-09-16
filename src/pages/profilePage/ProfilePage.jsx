@@ -2,6 +2,8 @@ import React from 'react';
 import'./ProfilePage.css';
 import logo from '../../assets/itf_log.png'
 import SideBar from './SideBar';
+import {IdentificationBadge} from "phosphor-react"
+
 
 
 function ProfilePage() {
@@ -16,6 +18,7 @@ function ProfilePage() {
              </div>
 
             <div className=" profile-border" >
+               <IdentificationBadge size={28} weight="thin" />
                 <p>Fullname</p>
             </div>
 
