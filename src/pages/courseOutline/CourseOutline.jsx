@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import CustomButton from '../../components/customButton/CustomButton';
 import './CourseOutline.css'
 import OutlineList from './OutlineList';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function DashCourseOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
+  // const navigate = useNavigate();
+  // if(!Object.keys(currentCourse).length) navigate('/dash-board', {replace: true});
+  // console.log(Object.keys(currentCourse))
+
   const [courseOutline, setCourseOutline] = useState([]);
    
       

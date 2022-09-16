@@ -12,6 +12,21 @@ import { Link } from 'react-router-dom';
 
 
 function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, ...otherProps}) {
+  function deleteCourse(course){
+    fetch(`${API_URL}/api/course`,{
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: "DELETE",
+        body: JSON.stringify({ courseId: course._id })
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+    // .then(res => {
+    //     if(res.success) getOutline();
+    //     alert(res.message);
+    // })
+}
 
   return (
     <div className='coursecard'{...otherProps}>
@@ -51,6 +66,9 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
             <Link to={isAdmin ? "/admin-outline" : "/course-outline"} className='links'>
               <CustomButton title={isAdmin ? "edit course" : "start course"} style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {setCurrentCourse(course)}} />
             </Link>
+            {isAdmin && 
+              <CustomButton title="delete course" style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {deleteCourse(course)}} />
+            }
          
           
         </div>
