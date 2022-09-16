@@ -1,13 +1,20 @@
 import React from 'react'
 import './PrivacyPolicy.css'
+import itflogo from '../../../assets/itf_log.png';
+import { Link } from 'react-router-dom';
 
 
 function PrivacyPolicy() {
 
     return (
       <div className='abouthead'>
-        <h1>PRIVACY POLICY</h1>
+        <div className='mylogo'>
+                <Link to='/' className='links'>
+                    <img src={itflogo} alt="itflogo" style={{width:'90%', height:'80%', padding:'5px 5px'}}/>
+                </Link>
+        </div>
         <div className='policy'>
+          <h1>Privacy Policy</h1>
           <p>This Eduspot privacy policy collects, uses, consults or otherwise processes an individual's Personal Data. For the purposes of this policy, "ITF" refers to Eduspot, a Web Development Project incorporated into ITF-NECA program, having its courses at ITF House. In all cases described in this Policy, Eduspot will process your personal data as a data Controller.
           </p>
           <p>We are committed to protecting the privacy of our users and customers. This Privacy Policy is especially directed at:

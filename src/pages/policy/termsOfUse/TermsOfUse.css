@@ -1,20 +1,15 @@
-.abouthead{
-
+.terms h1{
+    text-align: center;
 }
 
 .abouthead h1{
-    text-align: justify;
+    text-align: center;
     justify-content: center;
-    display: flex;
-    padding: 20px;
-    color: white;
     }
 
 .terms{
     text-align: justify;
     margin-left: 10rem;
     margin-right: 10rem;
-    /* margin-bottom: 10rem; */
     font-size: larger;
-    /* font-family: 'Arial Narrow'; */
 }

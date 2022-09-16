@@ -1,10 +1,7 @@
 
-.abouthead h1{
-    text-align: justify;
-    justify-content: center;
-    display: flex;
-    padding: 20px;
-    color: white;
+.policy h1{
+    text-align: center;
+    color: black;
     }
 
 .policy{

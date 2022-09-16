@@ -1,14 +1,21 @@
 import React from 'react'
 import './TermsOfUse.css'
+import itflogo from '../../../assets/itf_log.png';
+import { Link } from 'react-router-dom';
 
 function TermsOfUse() {
   return (
     <div>
       <div>
         <div className='abouthead'>
-          <h1>TERMS OF USE</h1>
+        <div className='mylogo'>
+                <Link to='/' className='links'>
+                    <img src={itflogo} alt="itflogo" style={{width:'90%', height:'80%', padding:'5px 5px'}}/>
+                </Link>
+        </div>
         </div>
         <div className='terms'>
+          <h1>TERMS OF USE</h1>
           <p>Our Terms of use was last updated on the 14th of September, 2022.
 Your access to and use of the Service is also conditioned on your acceptance of and compliance with these Terms of Use.
           </p>
