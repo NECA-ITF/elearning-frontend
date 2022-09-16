@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourseOutline }) {
     const navigate = useNavigate();
     if(!Object.keys(currentCourse).length) navigate('/admin-dash', {replace: true});
-    
+
     const [courseOutline, setCourseOutline] = useState([]);
     const [courseOutlineVideos, setCourseOutlineVideos] = useState([]);
     const data =[
@@ -52,7 +52,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} getOutline={getOutline} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {

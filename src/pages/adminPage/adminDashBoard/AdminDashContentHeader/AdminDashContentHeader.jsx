@@ -2,7 +2,7 @@ import React from 'react'
 import './AdminDashContentHeader.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 
-function adminDashContentHeader({mData, mMode, API_URL, currentCourse, getCourses, getOutline, }) {
+function adminDashContentHeader({mData, mMode, API_URL, currentCourse, getCourses, getOutline, currentCourseOutline }) {
   return (
     <div className="adminDashContentHeader">
         <select defaultValue={'Courses'}>
@@ -13,7 +13,7 @@ function adminDashContentHeader({mData, mMode, API_URL, currentCourse, getCourse
             <option value="dave">Introduction to Python</option>
             <option value="dave">Node JS</option>
         </select>
-        <CustomModal data = {mData} mode ={mMode} API_URL={API_URL} currentCourse={currentCourse} getCourses={getCourses} getOutline={getOutline} />
+        <CustomModal data = {mData} mode ={mMode} API_URL={API_URL} currentCourse={currentCourse} getCourses={getCourses} getOutline={getOutline} currentCourseOutline={currentCourseOutline} />
     </div>
   )
 }
