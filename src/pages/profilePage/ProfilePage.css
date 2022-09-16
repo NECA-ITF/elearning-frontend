@@ -23,9 +23,8 @@
     
 }
 
-
-
 .profile-border{
+    display:flex;
     border-bottom: 1px solid #202c46;
     padding: 1rem;
 }
@@ -36,11 +35,12 @@
 .Profile{
     background: white;
     border-radius: 5px;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     padding-top: 0.3rem;
     width: 75%;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-left: 7rem;
+    margin-top: 5rem;
 
 }
