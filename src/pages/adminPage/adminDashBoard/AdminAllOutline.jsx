@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourseOutline }) {
     const navigate = useNavigate();
     if(!Object.keys(currentCourse).length) navigate('/admin-dash', {replace: true});
+    
     const [courseOutline, setCourseOutline] = useState([]);
     const [courseOutlineVideos, setCourseOutlineVideos] = useState([]);
     const data =[
