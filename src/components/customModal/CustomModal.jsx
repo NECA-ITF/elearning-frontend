@@ -6,7 +6,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({data, mode, API_URL, currentCourse}) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline }) {
   const [thumbnail, setThumbnail] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
@@ -46,6 +46,10 @@ function CustomModal({data, mode, API_URL, currentCourse}) {
     
     
     if(mode === "course"){
+      if(courseData.instructor.trim().split(" ").length < 2){
+        return alert("Instructor must have at least two names");
+      }
+      
       fetch(`${API_URL}/api/course`, {
         // headers: {
       //   'Content-Type': 'application/json'
@@ -56,12 +60,18 @@ function CustomModal({data, mode, API_URL, currentCourse}) {
       // file: JSON.stringify({name: ""})
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      alert(res.message)
+      if(res.success) {
+        closeModal();
+        getCourses();
+      }
+    })
   }
   
   if(mode === "outline"){
     // console.log(API_URL)
-    console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
+    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     fetch(`${API_URL}/api/outlines`, {
       headers: {
         'Content-Type': 'application/json'
@@ -72,7 +82,13 @@ function CustomModal({data, mode, API_URL, currentCourse}) {
       // file: JSON.stringify({name: ""})
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      alert(res.message)
+      if(res.success) {
+        closeModal();
+        getOutline();
+      } 
+    })
 
   }
 
@@ -125,6 +141,7 @@ function CustomModal({data, mode, API_URL, currentCourse}) {
                   key={index}
                   placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
                   name={button}
+                  value={courseData[button]}
                   type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
                   style = {{width: '100%'}} 
                   onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
