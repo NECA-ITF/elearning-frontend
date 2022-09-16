@@ -71,7 +71,7 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
     </div>
     </div>
     :
-    <h1>No videos available</h1>
+    <div className="videoerror"><h1 style={{textAlign:'center'}}>No videos available</h1></div>
     
     
   )

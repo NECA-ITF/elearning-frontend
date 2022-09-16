@@ -1,12 +1,26 @@
 import React from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
+// import CustomModal from '../../../../components/customModal/CustomModal'
 
-function Outline({title}) {
+function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline}) {
+    // console.log(API_URL)
+    function deleteOutline(){
+        fetch(`${API_URL}/api/outline`,{
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "DELETE",
+            body: JSON.stringify({courseId: currentCourse, outlineId: outline._id})
+        })
+        .then(res => res.json())
+        .then(res => alert(res.message))
+    }
   return (
     <div className="outline">
         <p>{title}</p>
         <div className="outlineBtns">
+        {/* <CustomModal data = {mData} mode ={mMode} API_URL={API_URL} /> */}
             <CustomButton title='ADD' 
             style={{
                 marginRight: '20px',
@@ -15,7 +29,9 @@ function Outline({title}) {
                 padding: "8px 10px",
                 borderRadius: '8px',
                 width: '76px'
-            }} />
+            }} 
+            onClick={() => { setCurrentCourseOutline(outline) }}
+            />
            <CustomButton title='DELETE' 
             style={{
                 marginRight: '20px',
@@ -25,7 +41,9 @@ function Outline({title}) {
                 borderRadius: '8px',
                 width: '90px',
                 textAlign: 'center'
-            }} />
+            }} 
+            onClick={() => { deleteOutline() }}
+            />
         </div>
     </div>
     )

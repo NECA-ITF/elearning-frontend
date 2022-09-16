@@ -16,6 +16,8 @@ function DashCourseList({courses, isAdmin, API_URL, setCurrentCourse}) {
           API_URL={API_URL}
           course={course}
           setCurrentCourse={setCurrentCourse}
+          time={course.totalHours}
+          ratings={course.rating}
           // icons ={course.proficons}
           />
         ))}
