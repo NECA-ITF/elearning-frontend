@@ -68,6 +68,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       }
     })
   }
+
   
   if(mode === "outline"){
     // console.log(API_URL)
@@ -110,7 +111,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       {/* <CustomButton onClick={openModal}  title = 'Create +' style = {{width: '20%', margin: '8px 0% auto'}} /> */}
       <CustomButton 
         onClick={openModal}  
-        title = 'Create +' 
+        title = {mode === 'outlinevid' ?'ADD':'Create +' }
         style = {{
           marginRight: '20px',
           background: '#151D3B',
@@ -137,12 +138,13 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
               courseDataKeys.map((button,index)=>(
                 <>
                   {button.toLowerCase() === "thumbnail" ? <p style={{color: "white"}}>Thumbnail</p> : ""}
+                  {button.toLowerCase() === "video" ? <p style={{color: "white"}}>video</p> : ""}
                   <CustomInput
                   key={index}
                   placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
                   name={button}
                   value={courseData[button]}
-                  type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
+                  type = {button.toLowerCase() === "thumbnail" || button.toLowerCase() === "video" ? 'file' : 'text' }
                   style = {{width: '100%'}} 
                   onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
                   />

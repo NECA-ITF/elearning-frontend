@@ -12,7 +12,9 @@ import { Link } from 'react-router-dom';
 
 
 function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, ...otherProps}) {
-
+  // function deleteCourse(course){
+  //   fetch
+  // }
   return (
     <div className='coursecard'{...otherProps}>
       <div className='course-inn-div'>
@@ -37,7 +39,7 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
           <div className='svg-div'>
             <div className='clock-div'>
               <img src={clock} alt='clock'/>
-              <p>{`${time} hours`}</p>
+              <p>{`${time} hrs`}</p>
             </div>
             <div className='case-div'>
               <img src={bcase} alt='case'/>
@@ -51,6 +53,9 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
             <Link to={isAdmin ? "/admin-outline" : "/course-outline"} className='links'>
               <CustomButton title={isAdmin ? "edit course" : "start course"} style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {setCurrentCourse(course)}} />
             </Link>
+            {/* {isAdmin && 
+                <CustomButton title="delete course" style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}} onClick={() => {deleteCourse(course)}} />
+            } */}
          
           
         </div>
