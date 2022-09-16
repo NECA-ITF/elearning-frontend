@@ -25,7 +25,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentC
         {title: ""},
         {video: ""}
       ]
-      const mode = 'outlinevid'
+      const mode = 'video'
 
 
   return (
@@ -40,7 +40,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentC
     >
         <p>{title}</p>
         <div className="outlineBtns">
-        <CustomModal data= {data} mode ={mode} API_URL={API_URL} />
+        <CustomModal data= {data} mode ={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />
             {/* <CustomButton title='ADD' 
             style={{
                 marginRight: '20px',
@@ -49,7 +49,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentC
                 padding: "8px 10px",
                 borderRadius: '8px',
                 width: '76px'
-            }} 
+            }}
             /> */}
            <CustomButton title='DELETE' 
             style={{
