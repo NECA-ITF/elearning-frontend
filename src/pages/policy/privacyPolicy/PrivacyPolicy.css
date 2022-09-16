@@ -1,6 +1,4 @@
-.abouthead{
 
-}
 .abouthead h1{
     text-align: justify;
     justify-content: center;
@@ -10,12 +8,11 @@
     }
 
 .policy{
+    color: black;
     text-align: justify;
     margin-left: 10rem;
     margin-right: 10rem;
-    /* margin-bottom: 10rem; */
     font-size: larger;
-    /* font-family: 'Arial Narrow'; */
 }
 .policy ul{
     margin-left: 12rem;
