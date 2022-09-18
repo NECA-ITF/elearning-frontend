@@ -6,10 +6,11 @@ import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
 import { useNavigate } from 'react-router-dom';
 
-function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourseOutline }) {
+function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourse, setCurrentCourseOutline }) {
     const navigate = useNavigate();
-    if(!Object.keys(currentCourse).length) navigate('/admin-dash', {replace: true});
+    if(!Object.keys(currentCourse).length) navigate('/admin-dash', { replace: true });
 
+    const [outlineCourses, setOutlineCourses] = useState([]);
     const [courseOutline, setCourseOutline] = useState([]);
     const [courseOutlineVideos, setCourseOutlineVideos] = useState([]);
     const data =[
@@ -19,7 +20,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
     // console.log(API_URL);
     
     function getVideos(outline){
-        // console.log(outline.title);
+        console.log(outline);
         // console.log(currentCourse.requirements)
         fetch(`${API_URL}/api/videos/${outline._id}`)
         .then(response => response.json())
@@ -28,22 +29,36 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         )
         .catch((err) => console.log(err))
     }
-    function getOutline(){
-        // console.log(currentCourse.requirements)
-        fetch(`${API_URL}/api/outlines/${currentCourse._id}`)
+    function getOutline(course){
+        // console.log(course ? course.title : currentCourse.title)
+        fetch(`${API_URL}/api/outlines/${course ? course._id : currentCourse._id}`)
         .then(response => response.json())
         .then(data => {
             setCourseOutline(data.outline ? data.outline.outlines : []);
             if(data.outline) {
                 setCurrentCourseOutline(data.outline.outlines[0]);
                 getVideos(data.outline.outlines[0])
+            }else{
+                setCourseOutlineVideos([]);
             }
+        })
+        .catch((err) => console.log(err))
+    }
+    function getOutlineCourses(){
+        // console.log(currentCourse.requirements)
+        // let courses;
+        fetch(`${API_URL}/api/courses`)
+        .then(response => response.json())
+        .then(response => { 
+            // console.log(response);
+            setOutlineCourses(response.courses);
         })
         .catch((err) => console.log(err))
     }
     
     useEffect(() => {
         getOutline();
+        getOutlineCourses();
     }, []);
 
 
@@ -52,7 +67,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} outlineCourses={outlineCourses} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
