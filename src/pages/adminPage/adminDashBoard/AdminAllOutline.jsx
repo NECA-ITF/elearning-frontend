@@ -20,7 +20,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
     // console.log(API_URL);
     
     function getVideos(outline){
-        console.log(outline);
+        // console.log(outline);
         // console.log(currentCourse.requirements)
         fetch(`${API_URL}/api/videos/${outline._id}`)
         .then(response => response.json())
