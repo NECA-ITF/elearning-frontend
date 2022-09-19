@@ -4,7 +4,7 @@ import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function EditedProfile() {
@@ -40,42 +40,43 @@ function EditedProfile() {
         setUserEditedprofile(initialEdit => ({
             ...initialEdit, [name]:value
         }))
-        console.log(userEditedProfile)
-        // console.log(userEditedProfile)
-        // console.log(localStorageData._id)
     }
 
 
     function handleSubmit(e){
         //to prevent refreshing if page after submitting
         e.preventDefault()
+        console.log(userEditedProfile)
+
         const{fullName,phoneNumber} = userEditedProfile
 
         if(fullName.trim() === '' || phoneNumber.trim() === ''){
             return  console.log('you cannot use empty space')
         }
+        setLocalStorageData(initialLC => ({
+            ...initialLC,
+            fullName:userEditedProfile.fullName,
+            phoneNumber:userEditedProfile.phoneNumber
+        }))
 
-            fetch(`http://192.168.1.2:5000/auth/user/update-profile/${localStorageData._id}`, { 
-              method: 'PUT',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(userEditedProfile)
+        localStorage.setItem('userData',JSON.stringify(localStorageData))
+
+        const id = localStorageData._id
+
+        fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userEditedProfile),
             })
-            .then((res) => res.json())
+            .then((response) => response.json())
             .then((data) => {
-              if (data.success){
-                setLocalStorageData((initialStorage) =>({
-                    ...initialStorage,
-                    fullName:userEditedProfile.fullName,
-                    phoneNumber:userEditedProfile.phoneNumber
-                }))
-                console.log(localStorage)
-                localStorage.setItem('userData',JSON.stringify(localStorageData))
-                //navigate("/profile-page")
-              } 
-
-            })
+                if(data.success){
+                    console.log('done')
+                }
+            }
+        )
         
     }
 
