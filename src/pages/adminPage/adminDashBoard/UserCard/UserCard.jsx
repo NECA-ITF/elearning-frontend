@@ -2,9 +2,13 @@ import React from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './UserCard.css'
 
-function Outline({title}) {
+function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
   return (
-    <div className="usercard">
+    <div className="usercard"
+    style={{
+        boxShadow: currentUser._id === user._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
+    }}
+    {...otherProps}>
         <p>{title}</p>
         <div className="usercardBtns">
            <CustomButton title='DELETE' 
@@ -16,7 +20,9 @@ function Outline({title}) {
                 borderRadius: '8px',
                 width: '90px',
                 textAlign: 'center'
-            }} />
+            }}
+            onClick={() => { deleteUser(currentUser._id) }}
+            />
         </div>
     </div>
     )
