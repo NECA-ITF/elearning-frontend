@@ -21,6 +21,7 @@ import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 
 function App() {
   const API_URL = "http://192.168.1.2:5000";
+
   // const API_URL = "http://192.168.10.103:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
@@ -41,8 +42,8 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/admin-users" element={<AdminUsers />} />
+        <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+        <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         </Routes>

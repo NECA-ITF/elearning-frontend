@@ -6,7 +6,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
@@ -120,7 +120,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       alert(res.message)
       if(res.success) {
         closeModal();
-        getOutline();
+        getVideos(currentCourseOutline);
       } 
     })
     .catch((err) => console.log(err))
