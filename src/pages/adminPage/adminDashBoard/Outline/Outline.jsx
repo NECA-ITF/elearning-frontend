@@ -40,7 +40,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentC
     >
         <p>{title}</p>
         <div className="outlineBtns">
-        <CustomModal data= {data} mode ={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />
+        <CustomModal data= {data} mode ={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getVideos={getVideos} />
             {/* <CustomButton title='ADD' 
             style={{
                 marginRight: '20px',

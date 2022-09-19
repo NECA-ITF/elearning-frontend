@@ -2,17 +2,24 @@ import React from 'react'
 import './AdminDashContentHeader.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 
-function adminDashContentHeader({mData, mMode, API_URL, currentCourse, getCourses, getOutline, currentCourseOutline }) {
+function adminDashContentHeader({mData, mMode, API_URL, currentCourse, setCurrentCourse, outlineCourses, courses, getCourses, getOutline, currentCourseOutline }) {
   return (
     <div className="adminDashContentHeader">
-        <select defaultValue={'Courses'}>
-            <option value="Courses" disabled>Courses</option>
-            <option value="pumpernickel">Introduction to HTML</option>
-            <option value="reeses">Introduction to CSS</option>
-            <option value="reeses">React I</option>
-            <option value="dave">Introduction to Python</option>
-            <option value="dave">Node JS</option>
+        {
+          mMode !== "outline" ? "" : 
+          <select value={ currentCourse._id } 
+            onChange={(event) => {
+              setCurrentCourse(outlineCourses.find(course => course._id === event.target.value));
+              getOutline(outlineCourses.find(course => course._id === event.target.value));   
+            }}
+          >
+          {
+            outlineCourses.map((course) => (
+              <option key={course._id} value={ course._id }>{course.title}</option>
+            ))
+          }
         </select>
+        }
         <CustomModal data = {mData} mode ={mMode} API_URL={API_URL} currentCourse={currentCourse} getCourses={getCourses} getOutline={getOutline} currentCourseOutline={currentCourseOutline} />
     </div>
   )
