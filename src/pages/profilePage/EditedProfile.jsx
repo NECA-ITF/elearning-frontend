@@ -4,10 +4,11 @@ import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function EditedProfile() {
+    const navigate = useNavigate()
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
         phoneNumber:''
@@ -54,7 +55,7 @@ function EditedProfile() {
 
         //Run your Post fetch
 
-            fetch(`http://192.168.1.2:5000/auth/user/update-profile/${}`, {
+            fetch(`http://192.168.1.2:5000/auth/user/update-profile/`, {
               method: 'PUT',
               headers: {
                   'Content-Type': 'application/json'
