@@ -20,27 +20,29 @@ function EditedProfile() {
         const stData = JSON.parse(localStorage.getItem('userData'))
         //SETTING THE DATE COLLECTED INTO THIS STATE
         setLocalStorageData(stData)
-        const {fullName,phoneNumber} = stData
+        const {fullName,phoneNumber,email} = stData
         setUserEditedprofile(
             (initialprofile) =>(
                 {
                     ...initialprofile,
                     fullName:fullName,
+                    email:email,
                     phoneNumber:phoneNumber
                 }
             )
         )
     },[])
     
-    console.log(userEditedProfile)
-
-   // const navigate = useNavigate()
+    
+    // const navigate = useNavigate()
     function updateEditedprofile(e){
         const {name, value} = e.target
         setUserEditedprofile(initialEdit => ({
             ...initialEdit, [name]:value
         }))
         console.log(userEditedProfile)
+        // console.log(userEditedProfile)
+        // console.log(localStorageData._id)
     }
 
 
@@ -53,9 +55,7 @@ function EditedProfile() {
             return  console.log('you cannot use empty space')
         }
 
-        //Run your Post fetch
-
-            fetch(`http://192.168.1.2:5000/auth/user/update-profile/`, {
+            fetch(`http://192.168.1.2:5000/auth/user/update-profile/${localStorageData._id}`, { 
               method: 'PUT',
               headers: {
                   'Content-Type': 'application/json'
@@ -64,7 +64,17 @@ function EditedProfile() {
             })
             .then((res) => res.json())
             .then((data) => {
-              if (data.success) navigate("/profile-page")
+              if (data.success){
+                setLocalStorageData((initialStorage) =>({
+                    ...initialStorage,
+                    fullName:userEditedProfile.fullName,
+                    phoneNumber:userEditedProfile.phoneNumber
+                }))
+                console.log(localStorage)
+                localStorage.setItem('userData',JSON.stringify(localStorageData))
+                //navigate("/profile-page")
+              } 
+
             })
         
     }
@@ -74,7 +84,7 @@ function EditedProfile() {
     <div className="mainone">
         <SideBar />
         <div className="main1">
-            <form action="" onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} >
             <div className='Back1'>
             
                 <div className='profile-img'>
@@ -90,11 +100,9 @@ function EditedProfile() {
                     <p>Phone number</p>
                     <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
                 </div>
-                <Link to='/profile-page' className='links'>        
                 <div className="border2">
                     <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem'}}/>
                 </div> 
-                </Link>
             </div>
             </form>
         </div>
