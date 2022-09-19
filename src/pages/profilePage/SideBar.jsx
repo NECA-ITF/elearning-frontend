@@ -20,10 +20,12 @@ function SideBar() {
     console.log(userData ? 'user': 'no user')
   return (
     <div className="Sidebar-con ">
+        <Link to='/dash-board' className='links'>        
          <div  className='sidebar-icon'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>DashBoard</p>
           </div>
+        </Link>
           
         <Link to='/profile-page' className='links'>        
             <div  className='sidebar-icon'>
