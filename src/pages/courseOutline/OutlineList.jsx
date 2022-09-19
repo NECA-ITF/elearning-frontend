@@ -2,7 +2,7 @@ import React from 'react'
 import './CourseOutline.css'
 import { useNavigate } from 'react-router-dom';
 
-function OutlineList({title, content, lectures, time, outline, setCurrentCourseOutline}) {
+function OutlineList({title, lectures, time, outline, setCurrentCourseOutline}) {
 
     const navigate = useNavigate() 
 
