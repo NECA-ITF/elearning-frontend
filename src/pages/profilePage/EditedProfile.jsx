@@ -52,18 +52,19 @@ function EditedProfile() {
             return  console.log('you cannot use empty space')
         }
 
-        /// Run your Post fetch
-        //     fetch('http://192.168.1.2:5000/auth/user/update-profile', {
-        //       method: 'PUT',
-        //       headers: {
-        //           'Content-Type': 'application/json'
-        //       },
-        //       body: JSON.stringify(userEditedProfile)
-        //     })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //       if (data.success) navigate("/profile-page")
-        //     })
+        //Run your Post fetch
+
+            fetch(`http://192.168.1.2:5000/auth/user/update-profile/${}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(userEditedProfile)
+            })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.success) navigate("/profile-page")
+            })
         
     }
 
