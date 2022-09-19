@@ -6,8 +6,8 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline }) {
-  const [thumbnail, setThumbnail] = useState(null)
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, currentCourseOutline }) {
+  const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
 
@@ -33,15 +33,14 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
   
   function handleFileChange(e){
     const { files } = e.target;
-    setThumbnail(files[0]);
+    setFile(files[0]);
     // console.log(files[0]);
   }
   
   function createCourse(e){
     e.preventDefault();
     const formData = new FormData();
-    formData.append("courseData", JSON.stringify(courseData));
-    formData.append("file", thumbnail);
+    
     // console.log(Object.fromEntries(course));
     
     
@@ -49,6 +48,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       if(courseData.instructor.trim().split(" ").length < 2){
         return alert("Instructor must have at least two names");
       }
+    formData.append("courseData", JSON.stringify(courseData));
+    formData.append("file", file);
       
       fetch(`${API_URL}/api/course`, {
         // headers: {
@@ -68,6 +69,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       }
     })
   }
+
   
   if(mode === "outline"){
     // console.log(API_URL)
@@ -92,8 +94,40 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
 
   }
 
-  }
+  if(mode === "video"){
+    formData.append("videoData", JSON.stringify({
+      courseId: currentCourse._id,
+      outlineId: currentCourseOutline._id,
+      ...courseData
+    }));
+    formData.append("file", file);
 
+    // return console.log(API_URL);
+    //  console.log(currentCourseOutline)
+    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
+    fetch(`${API_URL}/api/videos`, {
+      // headers: {
+      //   'Content-Type': 'application/json'
+      // },
+      method: "POST",
+      // body: JSON.stringify(Object.fromEntries(course))
+      body: formData
+      // file: JSON.stringify({name: ""})
+    })
+    .then(res => res.json())
+    // .then(res => console.log(res))
+    .then(res => {
+      alert(res.message)
+      if(res.success) {
+        closeModal();
+        getOutline();
+      } 
+    })
+    .catch((err) => console.log(err))
+
+  }
+  
+  }
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -110,7 +144,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       {/* <CustomButton onClick={openModal}  title = 'Create +' style = {{width: '20%', margin: '8px 0% auto'}} /> */}
       <CustomButton 
         onClick={openModal}  
-        title = 'Create +' 
+        title = {mode === 'video' ?'ADD':'Create +' }
         style = {{
           marginRight: '20px',
           background: '#151D3B',
@@ -136,15 +170,16 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
             {
               courseDataKeys.map((button,index)=>(
                 <>
-                  {button.toLowerCase() === "thumbnail" ? <p style={{color: "white"}}>Thumbnail</p> : ""}
+                  {button.toLowerCase() === "file" ? <p style={{color: "white"}}>file</p> : ""}
+                  {button.toLowerCase() === "video" ? <p style={{color: "white"}}>video</p> : ""}
                   <CustomInput
                   key={index}
                   placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
                   name={button}
                   value={courseData[button]}
-                  type = {button.toLowerCase() === "thumbnail" ? 'file' : 'text' }
+                  type = {button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? 'file' : 'text' }
                   style = {{width: '100%'}} 
-                  onChange={button.toLowerCase() === "thumbnail" ? handleFileChange : updateCoursedata}
+                  onChange={button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? handleFileChange : updateCoursedata}
                   />
                 </>
               ))

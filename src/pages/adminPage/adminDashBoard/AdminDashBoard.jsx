@@ -35,7 +35,7 @@ function AdminDashBoard({ API_URL, currentCourse, setCurrentCourse}) {
         <div id='adminDash-right'>
           <div className="adminDashContentContainer">
             <AdminDashContentHeader mData={data} mMode ={mode} API_URL={API_URL} currentCourse={currentCourse} getCourses={getCourses} />
-            <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL} setCurrentCourse={setCurrentCourse} />
+            <DashCourseList courses= {courses} isAdmin= {true} API_URL={API_URL} setCurrentCourse={setCurrentCourse} getCourses={getCourses} />
           </div>
         </div>
     </div>

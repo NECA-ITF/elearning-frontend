@@ -2,7 +2,7 @@ import React from 'react'
 import './DashCourseList.css'
 import CourseCard from './CourseCard'
 
-function DashCourseList({courses, isAdmin, API_URL, setCurrentCourse}) {
+function DashCourseList({courses, isAdmin, API_URL, setCurrentCourse, getCourses}) {
   return (
     <div>
       <div className='coursecontainer'>
@@ -18,6 +18,7 @@ function DashCourseList({courses, isAdmin, API_URL, setCurrentCourse}) {
           setCurrentCourse={setCurrentCourse}
           time={course.totalHours}
           ratings={course.rating}
+          getCourses={getCourses}
           // icons ={course.proficons}
           />
         ))}

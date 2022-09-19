@@ -36,13 +36,15 @@ function DashBoard({ API_URL, setCurrentCourse }) {
     setUserData(null)
     navigate('/')
   }
-
-  useEffect(() => {
+  function getCourses(){
     fetch(`${API_URL}/api/courses`)
     .then(response => response.json())
     // .then(data => console.log(data))
     .then(data => setCourses(data.courses))
     .catch((err) => console.log(err))
+  }
+  useEffect(() => {
+    getCourses();
   }, [])
 
   useEffect(() => {
