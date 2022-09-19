@@ -11,13 +11,13 @@ function DashCourseOutline({ API_URL, currentCourse, setCurrentCourseOutline }) 
   // console.log(Object.keys(currentCourse))
 
   const [courseOutline, setCourseOutline] = useState([]);
-  const navigate = useNavigate() 
-  function validateLogin(){
-    const user = localStorage.getItem('userData');
-    if(user !== null){
-      navigate("/play-courses")
-    }
-  }
+  // const navigate = useNavigate() 
+  // function validateLogin(){
+  //   const user = localStorage.getItem('userData');
+  //   if(user !== null){
+  //     navigate("/play-courses")
+  //   }
+  // }
   useEffect(() => {
     // console.log(currentCourse.requirements)
     fetch(`${API_URL}/api/outlines/${currentCourse._id}`)
@@ -32,7 +32,7 @@ function DashCourseOutline({ API_URL, currentCourse, setCurrentCourseOutline }) 
           <h1>Course Outline</h1>
             <div className="accordion">
               {courseOutline.map((outline) => (
-                <OutlineList title={outline.title} content={outline.content} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline} onClick={validateLogin}/>
+                <OutlineList title={outline.title} content={outline.content} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline}/>
               ))}
             </div>
           <h2>{currentCourse.title} Requirements</h2>
