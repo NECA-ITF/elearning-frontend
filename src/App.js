@@ -20,9 +20,9 @@ import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 
 function App() {
-  const API_URL = "http://192.168.1.2:5000";
+  // const API_URL = "http://192.168.1.2:5000";
 
-  // const API_URL = "http://192.168.137.42:5000";
+  const API_URL = "http://192.168.117.34:5000";
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   return (
