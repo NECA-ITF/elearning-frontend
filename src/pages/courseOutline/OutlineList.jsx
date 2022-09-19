@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function OutlineList({title, content, lectures, time, outline, setCurrentCourseOutline}) {
     const [isActive, setIsActive] = useState(false)
   return (
-    <Link to="/play-courses">
+    // <Link to="/play-courses">
         <div className="accordion-item" onClick={() => {setCurrentCourseOutline(outline)}}>
             <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{title}</div>
@@ -17,7 +17,7 @@ function OutlineList({title, content, lectures, time, outline, setCurrentCourseO
               <li>{content[2]}</li>
             </ul>} */}
         </div>
-    </Link>
+    // </Link>
   )
 }
 
