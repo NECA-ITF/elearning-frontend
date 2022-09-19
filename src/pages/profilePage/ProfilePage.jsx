@@ -2,7 +2,7 @@ import React from 'react';
 import'./ProfilePage.css';
 import logo from '../../assets/itf_log.png'
 import SideBar from './SideBar';
-import {IdentificationBadge} from "phosphor-react"
+import {IdentificationBadge,Envelope,Phone} from "phosphor-react"
 
 
 
@@ -23,10 +23,12 @@ function ProfilePage() {
             </div>
 
             <div className=" profile-border">
+            <Envelope size={28} weight="thin" />
                 <p>Email</p>
             </div>
             
             <div className=" profile-border">
+            <Phone size={28} weight="thin" />
                 <p>Phone number</p>
             </div>
             
