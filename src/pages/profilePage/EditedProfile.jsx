@@ -4,10 +4,11 @@ import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function EditedProfile() {
+    const navigate = useNavigate()
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
         phoneNumber:''
@@ -19,51 +20,63 @@ function EditedProfile() {
         const stData = JSON.parse(localStorage.getItem('userData'))
         //SETTING THE DATE COLLECTED INTO THIS STATE
         setLocalStorageData(stData)
-        const {fullName,phoneNumber} = stData
+        const {fullName,phoneNumber,email} = stData
         setUserEditedprofile(
             (initialprofile) =>(
                 {
                     ...initialprofile,
                     fullName:fullName,
+                    email:email,
                     phoneNumber:phoneNumber
                 }
             )
         )
     },[])
     
-    console.log(userEditedProfile)
-
-   // const navigate = useNavigate()
+    
+    // const navigate = useNavigate()
     function updateEditedprofile(e){
         const {name, value} = e.target
         setUserEditedprofile(initialEdit => ({
             ...initialEdit, [name]:value
         }))
-        console.log(userEditedProfile)
     }
 
 
     function handleSubmit(e){
         //to prevent refreshing if page after submitting
         e.preventDefault()
+        console.log(userEditedProfile)
+
         const{fullName,phoneNumber} = userEditedProfile
 
         if(fullName.trim() === '' || phoneNumber.trim() === ''){
             return  console.log('you cannot use empty space')
         }
+        setLocalStorageData(initialLC => ({
+            ...initialLC,
+            fullName:userEditedProfile.fullName,
+            phoneNumber:userEditedProfile.phoneNumber
+        }))
 
-        /// Run your Post fetch
-        //     fetch('http://192.168.1.2:5000/auth/user/update-profile', {
-        //       method: 'PUT',
-        //       headers: {
-        //           'Content-Type': 'application/json'
-        //       },
-        //       body: JSON.stringify(userEditedProfile)
-        //     })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //       if (data.success) navigate("/profile-page")
-        //     })
+        localStorage.setItem('userData',JSON.stringify(localStorageData))
+
+        const id = localStorageData._id
+
+        fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userEditedProfile),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if(data.success){
+                    console.log('done')
+                }
+            }
+        )
         
     }
 
@@ -72,7 +85,7 @@ function EditedProfile() {
     <div className="mainone">
         <SideBar />
         <div className="main1">
-            <form action="" onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} >
             <div className='Back1'>
             
                 <div className='profile-img'>
@@ -88,11 +101,9 @@ function EditedProfile() {
                     <p>Phone number</p>
                     <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
                 </div>
-                <Link to='/profile-page' className='links'>        
                 <div className="border2">
                     <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem'}}/>
                 </div> 
-                </Link>
             </div>
             </form>
         </div>
