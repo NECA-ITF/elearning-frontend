@@ -27,7 +27,6 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
     }
     getVideos();
   }, []);
-  
 
   return (
     
@@ -38,11 +37,13 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video controls autoplay={true} src={`${API_URL}/${currentVideo.url}`} alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`} />
+            <video key={currentVideo._id} controls alt="video" id='course-vid' autoPlay style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
+              <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4" />
+            </video>
           </div>
           <ul>
             <li>Course Materials</li>
-            <li>Resources</li>
+            <li>Resources</li> 
             <li>External Links</li>
           </ul>
           <div className="course-section">
@@ -63,7 +64,7 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
           {/* <div className='styky'></div> */}
           {
             outlineVideos.map((video) => (
-              <div key={video._id} className='course-list' onClick={() => {setCurrentVideo(video)}} >{video.title}</div>
+              <div key={video._id} className='course-list' onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
             ))
           }
           
