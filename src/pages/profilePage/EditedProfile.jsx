@@ -89,7 +89,7 @@ function EditedProfile() {
             <div className='Back1'>
             
                 <div className='profile-img'>
-                    <img src={logo} alt="Logo" className='img'/>
+                <User size={85} weight="thin" /> 
                 </div>
 
                 <div className="border2" >
