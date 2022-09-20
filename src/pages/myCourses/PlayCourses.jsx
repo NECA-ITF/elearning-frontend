@@ -38,7 +38,9 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video controls autoplay={true} src={`${API_URL}/${currentVideo.url}`} alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`} />
+            <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
+              <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4"/>
+              </video>
           </div>
           <ul>
             <li>Course Materials</li>
