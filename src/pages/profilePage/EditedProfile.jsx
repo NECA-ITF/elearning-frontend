@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
-import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
 import { useNavigate } from 'react-router-dom';
