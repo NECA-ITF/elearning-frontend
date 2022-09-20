@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
-import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
 import { useNavigate } from 'react-router-dom';
@@ -89,7 +88,7 @@ function EditedProfile() {
             <div className='Back1'>
             
                 <div className='profile-img'>
-                    <img src={logo} alt="Logo" className='img'/>
+                <User size={85} weight="thin" /> 
                 </div>
 
                 <div className="border2" >
