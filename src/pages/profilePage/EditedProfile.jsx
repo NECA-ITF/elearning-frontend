@@ -87,9 +87,9 @@ function EditedProfile() {
             <form onSubmit={handleSubmit} >
             <div className='Back1'>
             
-                <div className='profile-img'>
+                {/* <div className='profile-img'>
                 <User size={85} weight="thin" /> 
-                </div>
+                </div> */}
 
                 <div className="border2" >
                     <p>Fullname</p>
