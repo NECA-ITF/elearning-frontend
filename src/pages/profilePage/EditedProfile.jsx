@@ -53,30 +53,30 @@ function EditedProfile() {
         if(fullName.trim() === '' || phoneNumber.trim() === ''){
             return  console.log('you cannot use empty space')
         }
-        // setLocalStorageData(initialLC => ({
-        //     ...initialLC,
-        //     fullName:userEditedProfile.fullName,
-        //     phoneNumber:userEditedProfile.phoneNumber
-        // }))
+        setLocalStorageData(initialLC => ({
+            ...initialLC,
+            fullName:userEditedProfile.fullName,
+            phoneNumber:userEditedProfile.phoneNumber
+        }))
 
-        // localStorage.setItem('userData',JSON.stringify(localStorageData))
+        localStorage.setItem('userData',JSON.stringify(localStorageData))
 
-        // const id = localStorageData._id
+        const id = localStorageData._id
 
-        // fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(userEditedProfile),
-        //     })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         if(data.success){
-        //             console.log('done')
-        //         }
-        //     }
-        // )
+        fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userEditedProfile),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if(data.success){
+                    console.log('done')
+                }
+            }
+        )
         
     }
 
