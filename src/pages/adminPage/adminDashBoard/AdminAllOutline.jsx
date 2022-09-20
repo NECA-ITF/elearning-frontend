@@ -6,7 +6,9 @@ import OutlineVideo from './OutlineVideo/OutlineVideo'
 import Outline from './Outline/Outline'
 import { useNavigate } from 'react-router-dom';
 
-function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourse, setCurrentCourseOutline }) {
+function AdminAllOutline({ API_URL }) {
+    const currentCourse = JSON.parse(localStorage.getItem('currentCourse'));
+    const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
     const navigate = useNavigate();
     
     const [outlineCourses, setOutlineCourses] = useState([]);
@@ -35,7 +37,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         .then(data => {
             setCourseOutline(data.outline ? data.outline.outlines : []);
             if(data.outline) {
-                setCurrentCourseOutline(data.outline.outlines[0]);
+                localStorage.setItem('currentCourseOutline', JSON.stringify(data.outline.outlines[0]));
                 getVideos(data.outline.outlines[0])
             }else{
                 setCourseOutlineVideos([]);
@@ -67,12 +69,12 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} outlineCourses={outlineCourses} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} outlineCourses={outlineCourses} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
                             courseOutline.map((outline) => (
-                                <Outline key={outline._id} title={outline.title} API_URL={API_URL} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline}  getOutline={getOutline} getVideos={getVideos} />
+                                <Outline key={outline._id} title={outline.title} API_URL={API_URL} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} getOutline={getOutline} getVideos={getVideos} />
                             ))
                         }
                     </div>

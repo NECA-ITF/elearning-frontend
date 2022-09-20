@@ -2,14 +2,14 @@ import React from 'react'
 import './AdminDashContentHeader.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 
-function adminDashContentHeader({mData, mMode, API_URL, currentCourse, setCurrentCourse, outlineCourses, courses, getCourses, getOutline, currentCourseOutline }) {
+function adminDashContentHeader({mData, mMode, API_URL, currentCourse, outlineCourses, getCourses, getOutline, currentCourseOutline }) {
   return (
     <div className="adminDashContentHeader">
         {
           mMode !== "outline" ? "" : 
           <select value={ currentCourse._id } 
             onChange={(event) => {
-              setCurrentCourse(outlineCourses.find(course => course._id === event.target.value));
+              localStorage.setItem('currentCourse', JSON.stringify(outlineCourses.find(course => course._id === event.target.value)));
               getOutline(outlineCourses.find(course => course._id === event.target.value));   
             }}
           >
