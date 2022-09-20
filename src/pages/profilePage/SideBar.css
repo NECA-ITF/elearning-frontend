@@ -5,7 +5,9 @@
     width: 20%;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top:10rem;
+    padding-top:4rem;
+}
+.sidebar-img{margin-left: 2rem;
 }
 
 .sidebar-icon{
@@ -13,8 +15,7 @@
     align-items: center;
     padding: 1rem;
     margin: 3px;
-    
-    
+
 }
 
 .sidebar-icon p {
