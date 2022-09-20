@@ -21,9 +21,11 @@ function SideBar() {
     console.log(userData ? 'user': 'no user')
   return (
     <div className="Sidebar-con ">
+        <Link to='/' className='links'>
          <div className='sidebar-img'>
                  <img src={logo} alt="Logo" className='img'/>
-             </div>
+        </div>
+        </Link>
         <Link to='/dash-board' className='links'>        
          <div  className='sidebar-icon'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
