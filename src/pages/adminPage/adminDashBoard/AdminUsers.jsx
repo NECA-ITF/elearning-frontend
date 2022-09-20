@@ -45,7 +45,7 @@ function AdminUsers({ API_URL }) {
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode}/>
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
@@ -55,12 +55,16 @@ function AdminUsers({ API_URL }) {
                         }
                     </div>
                     <div className="adminDashCourseOutlinesVideos">
-                        <UserData 
-                            fullName = {currentUser.fullName} 
-                            email  = {currentUser.email}
-                            phoneNumber = {currentUser.phoneNumber}
-                            isAdmin = {currentUser.isAdmin}
-                        />
+                        {
+                            users.length ? 
+                                <UserData 
+                                fullName = {currentUser.fullName} 
+                                email  = {currentUser.email}
+                                phoneNumber = {currentUser.phoneNumber}
+                                isAdmin = {currentUser.isAdmin}
+                                /> : 
+                                ""
+                        }
                     </div>
                 </div>
             </div>

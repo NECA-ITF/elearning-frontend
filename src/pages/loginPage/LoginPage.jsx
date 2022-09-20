@@ -48,8 +48,9 @@ function LoginPage({ API_URL }) {
       .then((data) => {
         if (data.success){
           localStorage.setItem("userData", JSON.stringify(data.user))
-          navigate("/dash-board")
         }
+        if(data.user.isAdmin) return navigate('/admin-dash');
+        navigate("/dash-board")
 
       })
   }

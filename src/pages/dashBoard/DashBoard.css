@@ -93,7 +93,45 @@
 @media screen and (max-width:850px) {
     .dashnav-bar{
         width: 80%;
+        padding: 1px;
+        font-size: 12px;
     }
+    .dashcustominput{
+        width: 100%;
+    }
+    .userpro{
+        margin-right: 0.8rem;
+        padding: .1rem .3rem .3rem .3rem;
+    }
+    .dashcontent{
+        display: flex;
+        justify-content:left;
+        /* align-items: center; */
+        list-style: none;
+    }
+    .dashcontent li{
+        padding: .3rem .3rem .1rem;
+    }
+}
+@media screen and (max-width:350px){
+    .dashcustominput{
+        width: 100%;
+    }
+    .dashcontent{
+        display: grid;
+        /* justify-content:left; */
+        /* align-items: center; */
+        list-style: none;
+    }
+    .userpro h3{
+        display: none;
+    }
+    /* .dashinput{
+        width: 50px;
+    }
+    .dashbet{
+        width: 20px;
+    } */
 }
 
 
