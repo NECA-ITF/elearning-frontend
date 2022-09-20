@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import './SideBar.css'
+import logo from '../../assets/itf_log.png'
 import { Link } from 'react-router-dom';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 
@@ -20,6 +21,9 @@ function SideBar() {
     console.log(userData ? 'user': 'no user')
   return (
     <div className="Sidebar-con ">
+         <div className='sidebar-img'>
+                 <img src={logo} alt="Logo" className='img'/>
+             </div>
         <Link to='/dash-board' className='links'>        
          <div  className='sidebar-icon'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
