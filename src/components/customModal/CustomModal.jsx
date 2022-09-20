@@ -28,7 +28,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       ...initialUserData,
       [name]: value
     }))
-    // console.log(courseData)
+    // console.log(courseData);
   }
   
   function handleFileChange(e){
@@ -124,7 +124,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       } 
     })
     .catch((err) => console.log(err))
-
+  }
+  
+  if(mode === "user"){
+    console.log(courseData);
+    fetch(`${API_URL}/auth/user/register`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ ...courseData, isAdmin: true })
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
   }
   
   }
