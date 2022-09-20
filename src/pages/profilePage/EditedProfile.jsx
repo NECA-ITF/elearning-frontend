@@ -4,11 +4,10 @@ import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function EditedProfile() {
-    const navigate = useNavigate()
+   
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
         phoneNumber:''

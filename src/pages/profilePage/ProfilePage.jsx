@@ -4,6 +4,13 @@ import SideBar from './SideBar';
 import {IdentificationBadge,Envelope,Phone,User} from "phosphor-react"
 function ProfilePage() {
 
+  const[userEditedProfile, setUserEditedprofile] = useState({
+    fullName:'',
+    phoneNumber:''
+  })
+  const [localStorageData,setLocalStorageData] = useState({})
+  
+
   return (
     <div className="Profile-con">
         <SideBar />
