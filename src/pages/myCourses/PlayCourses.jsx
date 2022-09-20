@@ -10,7 +10,8 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
+function PlayCourses({ API_URL, currentCourse }) {
+  const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
   
@@ -39,7 +40,7 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
           <div style={{ width: '100%'}}>
             <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
               <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4"/>
-              </video>
+            </video>
           </div>
           <ul>
             <li>Course Materials</li>
