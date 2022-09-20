@@ -94,15 +94,15 @@ function EditedProfile() {
 
                 <div className="border2" >
                     <p>Fullname</p>
-                    <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem'}} value={userEditedProfile.fullName} onChange = {updateEditedprofile}/>
+                    <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}} value={userEditedProfile.fullName} onChange = {updateEditedprofile}/>
                 </div>
 
                 <div className="border2">
                     <p>Phone number</p>
-                    <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
+                    <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
                 </div>
                 <div className="border2">
-                    <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem'}}/>
+                    <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
                 </div> 
             </div>
             </form>

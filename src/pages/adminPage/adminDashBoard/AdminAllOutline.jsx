@@ -8,8 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurrentCourse, setCurrentCourseOutline }) {
     const navigate = useNavigate();
-    if(!Object.keys(currentCourse).length) navigate('/admin-dash', { replace: true });
-
+    
     const [outlineCourses, setOutlineCourses] = useState([]);
     const [courseOutline, setCourseOutline] = useState([]);
     const [courseOutlineVideos, setCourseOutlineVideos] = useState([]);
@@ -26,7 +25,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
         .then(response => response.json())
         .then(data => 
             setCourseOutlineVideos(data.resData ? data.resData.videos : [])
-        )
+            )
         .catch((err) => console.log(err))
     }
     function getOutline(course){
@@ -57,6 +56,7 @@ function AdminAllOutline({ API_URL, currentCourse, currentCourseOutline, setCurr
     }
     
     useEffect(() => {
+        if(!Object.keys(currentCourse).length) navigate('/admin-dash', { replace: true });
         getOutline();
         getOutlineCourses();
     }, []);

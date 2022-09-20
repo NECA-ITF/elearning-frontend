@@ -1,11 +1,7 @@
 import React from 'react';
 import'./ProfilePage.css';
-import logo from '../../assets/itf_log.png'
 import SideBar from './SideBar';
-import {IdentificationBadge} from "phosphor-react"
-
-
-
+import {IdentificationBadge,Envelope,Phone,User} from "phosphor-react"
 function ProfilePage() {
 
   return (
@@ -14,7 +10,7 @@ function ProfilePage() {
         <div className=" Profile-main">
           <div className='Profile'>  
             <div className='profile-img'>
-                 <img src={logo} alt="Logo" className='img'/>
+            <User size={85} weight="thin" />
              </div>
 
             <div className=" profile-border" >
@@ -23,10 +19,12 @@ function ProfilePage() {
             </div>
 
             <div className=" profile-border">
+            <Envelope size={28} weight="thin" />
                 <p>Email</p>
             </div>
             
             <div className=" profile-border">
+            <Phone size={28} weight="thin" />
                 <p>Phone number</p>
             </div>
             
