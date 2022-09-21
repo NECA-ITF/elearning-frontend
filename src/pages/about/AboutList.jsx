@@ -1,6 +1,6 @@
 // import React from 'react'
 import AboutCard from './AboutCard'
-import './AboutPage.css'
+import '../../pages/about/AboutPage.css'
 
 function AboutList({userss}) {
   return (
