@@ -65,7 +65,12 @@ function PlayCourses({ API_URL, currentCourse }) {
           {/* <div className='styky'></div> */}
           {
             outlineVideos.map((video) => (
-              <div key={video._id} className='course-list' onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
+              <div key={video._id} className='course-list' 
+              style={{
+                boxShadow: currentVideo._id === video._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
+                cursor: "pointer"
+            }}
+              onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
             ))
           }
           
