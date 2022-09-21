@@ -20,9 +20,9 @@ function PlayCourses({ API_URL, currentCourse }) {
   useEffect(() => {
     // console.log(currentCourseOutline)
     async function getVideos(){
-      let response = await fetch(`${API_URL}/api/videos/${currentCourseOutline._id}`);
+      let response = await fetch(`${API_URL}/api/videos/${currentCourse._id}`);
       response = await response.json();
-      setOutlineVideos(response.resData.videos);
+      setOutlineVideos(response.resData);
       
       setCurrentVideo(response.resData.videos[0]);
     }
@@ -64,13 +64,20 @@ function PlayCourses({ API_URL, currentCourse }) {
         </div>  
           {/* <div className='styky'></div> */}
           {
-            outlineVideos.map((video) => (
-              <div key={video._id} className='course-list' 
-              style={{
-                boxShadow: currentVideo._id === video._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
-                cursor: "pointer"
-            }}
-              onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
+            outlineVideos.map((vidObj) => (
+              <>
+              <p>{vidObj.outlineTitle}</p>
+              {
+                vidObj.videos.map((video) => (
+                  <div key={video._id} className='course-list' 
+                  style={{
+                    boxShadow: currentVideo._id === video._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
+                  ))
+              }
+              </>
             ))
           }
           
