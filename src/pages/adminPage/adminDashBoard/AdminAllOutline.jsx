@@ -28,8 +28,9 @@ function AdminAllOutline({ API_URL }) {
         .then(data => 
             setCourseOutlineVideos(data.resData ? data.resData.videos : [])
             )
-        .catch((err) => console.log(err))
-    }
+            .catch((err) => console.log(err))
+        }
+        // console.log([{"id": "zds"}, {"id": "er"}].sort((a, b) => a.id - b.id))
     function getOutline(course){
         // console.log(course ? course.title : currentCourse.title)
         fetch(`${API_URL}/api/outlines/${course ? course._id : currentCourse._id}`)
@@ -56,7 +57,18 @@ function AdminAllOutline({ API_URL }) {
         })
         .catch((err) => console.log(err))
     }
+    const sort = (a, b) => {
+        let fa = a.title.toLowerCase(),
+            fb = b.title.toLowerCase();
     
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+    }
     useEffect(() => {
         if(!Object.keys(currentCourse).length) navigate('/admin-dash', { replace: true });
         getOutline();
@@ -72,8 +84,8 @@ function AdminAllOutline({ API_URL }) {
                 <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} outlineCourses={outlineCourses} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
-                        {
-                            courseOutline.map((outline) => (
+                        {courseOutline &&
+                            courseOutline.sort(sort).map((outline) => (
                                 <Outline key={outline._id} title={outline.title} API_URL={API_URL} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} getOutline={getOutline} getVideos={getVideos} />
                             ))
                         }
@@ -81,8 +93,8 @@ function AdminAllOutline({ API_URL }) {
                     <div className="adminDashCourseOutlinesVideos">
                         {
                             courseOutlineVideos.length ? 
-                            courseOutlineVideos.map(video => (
-                                <OutlineVideo API_URL={API_URL} video={video} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getVideos={getVideos} />
+                            courseOutlineVideos.sort(sort).map(video => (
+                                <OutlineVideo key={video._id} API_URL={API_URL} video={video} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getVideos={getVideos} />
                             )) : 
                             courseOutline.length !== 0 ? <h1>No videos for {currentCourseOutline.title}</h1> : ""
                         }
