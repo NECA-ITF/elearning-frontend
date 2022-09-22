@@ -24,7 +24,7 @@ function PlayCourses({ API_URL, currentCourse }) {
       response = await response.json();
       setOutlineVideos(response.resData);
       
-      setCurrentVideo(response.resData.videos[0]);
+      setCurrentVideo(response ? response.resData.videos[0] : []);
     }
     getVideos();
   }, []);
