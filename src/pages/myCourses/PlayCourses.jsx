@@ -10,7 +10,8 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses({ API_URL, currentCourse }) {
+function PlayCourses({ API_URL }) {
+  const currentCourse = JSON.parse(localStorage.getItem('currentCourse'));
   const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
@@ -20,11 +21,13 @@ function PlayCourses({ API_URL, currentCourse }) {
   useEffect(() => {
     // console.log(currentCourseOutline)
     async function getVideos(){
-      let response = await fetch(`${API_URL}/api/videos/${currentCourse._id}`);
+      let response = await fetch(`${API_URL}/api/allvideos/${currentCourse._id}`);
       response = await response.json();
-      setOutlineVideos(response.resData);
-      
-      setCurrentVideo(response ? response.resData.videos[0] : []);
+      if(response.success){
+        setOutlineVideos(response.allData);
+        const clickedOutline = response.allData.find(videoObj => videoObj.outlineTitle === currentCourseOutline.title);
+        setCurrentVideo(clickedOutline.videos[0]);
+    }
     }
     getVideos();
   }, []);
@@ -48,7 +51,8 @@ function PlayCourses({ API_URL, currentCourse }) {
             <li>External Links</li>
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
+            <h1 className='course-header'>{currentCourse.title}</h1>
+            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1>
             <p className='rates'>Ratings</p>
             <Ratings
             placeholderRating={3.5}
@@ -68,12 +72,15 @@ function PlayCourses({ API_URL, currentCourse }) {
               <>
               <p>{vidObj.outlineTitle}</p>
               {
+
+                
+
                 vidObj.videos.map((video) => (
                   <div key={video._id} className='course-list' 
-                  style={{
-                    boxShadow: currentVideo._id === video._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
-                    cursor: "pointer"
-                  }}
+                  style={ currentVideo._id === video._id ? {
+                    background: "linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46)",
+                    color: "white"
+                  } : {} }
                   onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
                   ))
               }
