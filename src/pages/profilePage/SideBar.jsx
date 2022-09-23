@@ -1,14 +1,24 @@
+import React,{useState,useEffect} from 'react'
 import './SideBar.css'
 import logo from '../../assets/itf_log.png'
 import { Link } from 'react-router-dom';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
-function SideBar() {
 
-    function logoutUser() {
-        localStorage.removeItem('userData');
+function SideBar() {
+    const [userData, setUserData] = useState(null);
+    function logoutUser(params) {
+        localStorage.setItem('userData', null);
+        setUserData(null)
     }
     
-   
+    
+    useEffect(() => {
+        const user = localStorage.getItem('userData');
+        setUserData(JSON.parse(user));
+    }, [])
+    //to avoid command never used prompt 
+
+    console.log(userData ? 'user': 'no user')
   return (
     <div className="Sidebar-con ">
         <Link to='/' className='links'>
