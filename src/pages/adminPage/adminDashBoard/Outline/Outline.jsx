@@ -3,8 +3,9 @@ import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 
-function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentCourseOutline, setCurrentCourseOutline, getOutline, getVideos}) {
+function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
+    const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
     function deleteOutline(){
         fetch(`${API_URL}/api/outline`,{
             headers: {
@@ -34,7 +35,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, currentC
         cursor: "pointer"
     }}
     onClick={() => { 
-        setCurrentCourseOutline(outline);
+        localStorage.setItem('currentCourseOutline', JSON.stringify(outline));
         getVideos(outline);
     }}
     >

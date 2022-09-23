@@ -80,7 +80,7 @@ function DashBoard({ API_URL, setCurrentCourse }) {
             </ul>
         </nav>
         <div className='userpro'>
-          <h3>welcome, {userData?.fullName}</h3>
+          <h3>{userData ? `Welcome, ${userData.fullName}` : ""}</h3>
           <div className='prodiv'>
             <img src={profile} alt='profileicon' style={{width:'20px'}}/>
             <img src={arrow} alt='arrowdown' style={{width:'20px'}} className='arrowhov'/>

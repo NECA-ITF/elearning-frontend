@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../homePage/NavBar';
-import './CourseOutline.css'
-import CourseOutline from './CourseOutline'
+import './CourseOutline.css';
+import CourseOutline from './CourseOutline';
 
 function CoursesOutline({ API_URL, currentCourse, setCurrentCourseOutline }) {
   return (

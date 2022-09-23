@@ -10,7 +10,9 @@ import PlayCourseNav from './PlayCourseNav'
 
 
 
-function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
+function PlayCourses({ API_URL }) {
+  const currentCourse = JSON.parse(localStorage.getItem('currentCourse'));
+  const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
   
@@ -19,15 +21,16 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
   useEffect(() => {
     // console.log(currentCourseOutline)
     async function getVideos(){
-      let response = await fetch(`${API_URL}/api/videos/${currentCourseOutline._id}`);
+      let response = await fetch(`${API_URL}/api/allvideos/${currentCourse._id}`);
       response = await response.json();
-      setOutlineVideos(response.resData.videos);
-      
-      setCurrentVideo(response.resData.videos[0]);
+      if(response.success){
+        setOutlineVideos(response.allData);
+        const clickedOutline = response.allData.find(videoObj => videoObj.outlineTitle === currentCourseOutline.title);
+        setCurrentVideo(clickedOutline.videos[0]);
+    }
     }
     getVideos();
   }, []);
-  
 
   return (
     
@@ -38,15 +41,18 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video controls src={`${API_URL}/${currentVideo.url}`} alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}/>
+            <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
+              <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4"/>
+            </video>
           </div>
           <ul>
             <li>Course Materials</li>
-            <li>Resources</li>
+            <li>Resources</li> 
             <li>External Links</li>
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1><p className='course-p'> Learn everything about React, from the basics, to advanced topics like React components, props, hooks, among others.</p>
+            <h1 className='course-header'>{currentCourse.title}</h1>
+            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1>
             <p className='rates'>Ratings</p>
             <Ratings
             placeholderRating={3.5}
@@ -62,8 +68,23 @@ function PlayCourses({ API_URL, currentCourse, currentCourseOutline }) {
         </div>  
           {/* <div className='styky'></div> */}
           {
-            outlineVideos.map((video) => (
-              <div key={video._id} className='course-list' onClick={() => {setCurrentVideo(video)}} >{video.title}</div>
+            outlineVideos.map((vidObj) => (
+              <>
+              <p>{vidObj.outlineTitle}</p>
+              {
+
+                
+
+                vidObj.videos.map((video) => (
+                  <div key={video._id} className='course-list' 
+                  style={ currentVideo._id === video._id ? {
+                    background: "linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46)",
+                    color: "white"
+                  } : {} }
+                  onClick={() => { setCurrentVideo(video) }} >{video.title}</div>
+                  ))
+              }
+              </>
             ))
           }
           

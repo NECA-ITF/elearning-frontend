@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
-import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import SideBar from './SideBar';
 import { useEffect } from 'react';
@@ -87,9 +86,9 @@ function EditedProfile() {
             <form onSubmit={handleSubmit} >
             <div className='Back1'>
             
-                <div className='profile-img'>
-                    <img src={logo} alt="Logo" className='img'/>
-                </div>
+                {/* <div className='profile-img'>
+                <User size={85} weight="thin" /> 
+                </div> */}
 
                 <div className="border2" >
                     <p>Fullname</p>
