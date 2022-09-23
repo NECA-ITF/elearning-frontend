@@ -49,7 +49,7 @@ function NavBar() {
                     </ul>
                 </nav>
                 <div className='apply'>
-                    {/* {
+                    {
                     userData ? 
                     (<Link to='/dash-board' className='links'> 
                         <p> Dashboard </p> 
@@ -57,7 +57,7 @@ function NavBar() {
                     (<Link to='/login' className='links'>
                         <p> LOGIN </p>
                     </Link>)
-                    } */}
+                    }
                 </div>
         </div>
      )
