@@ -22,19 +22,19 @@ function ProfilePage() {
             <div className=" profile-border" >
                <IdentificationBadge size={28} weight="thin" />
                 <p>Fullname</p>
-                <p>{fullName}</p>
+                <p className='p-details'>{fullName}</p>
             </div>
 
             <div className=" profile-border">
             <Envelope size={28} weight="thin" />
                 <p>Email</p>
-                <p>{email}</p>
+                <p className='p-details p-email'>{email}</p>
             </div>
             
             <div className=" profile-border">
             <Phone size={28} weight="thin" />
                 <p>Phone number</p>
-                <p>{phoneNumber}</p>
+                <p className='p-details'>{phoneNumber}</p>
             </div>
             
         </div>
