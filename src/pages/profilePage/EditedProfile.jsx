@@ -5,7 +5,7 @@ import './EditedProfile.css'
 import SideBar from './SideBar';
 import { useEffect } from 'react';
 
-function EditedProfile() {
+function EditedProfile({API_URL}) {
    
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
@@ -61,7 +61,7 @@ function EditedProfile() {
 
         const id = localStorageData._id
 
-        fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
+        fetch(`${API_URL}/auth/user/updateprofile/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
