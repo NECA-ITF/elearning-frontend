@@ -28,7 +28,7 @@ function NavBar() {
                     <Link to='/dash-board' className='links'>        
                         <li>Course</li>
                     </Link>
-                    {/* {
+                    {
                         userData ? (
                             <Link to='/profile-page' className='links'>        
                                 <li>Profile</li>
@@ -39,7 +39,7 @@ function NavBar() {
                                 <li>Profile</li>
                             </Link>
                         )
-                    } */}
+                    }
                     {/* <Link to='/profile-page' className='links'>        
                         <li>Profile</li>
                     </Link> */}
