@@ -27,10 +27,18 @@
     display:flex;
     border-bottom: 1px solid #202c46;
     padding: 1rem;
+    align-items: center;
 }
 .profile-border p{
     color:#202c46;
-    
+    margin-right: 20px;
+    text-transform: capitalize;
+}
+.p-details{
+    font-size: 1.1rem;
+}
+.p-details.p-email{
+    text-transform: lowercase;
 }
 .Profile{
     background: white;
