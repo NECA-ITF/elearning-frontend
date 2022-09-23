@@ -3,11 +3,10 @@ import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import './EditedProfile.css'
 import SideBar from './SideBar';
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-function EditedProfile() {
-    const navigate = useNavigate()
+function EditedProfile({API_URL}) {
+   
     const[userEditedProfile, setUserEditedprofile] = useState({
         fullName:'',
         phoneNumber:''
@@ -62,7 +61,7 @@ function EditedProfile() {
 
         const id = localStorageData._id
 
-        fetch(`http://192.168.1.2:5000/auth/user/updateprofile/${id}`, {
+        fetch(`${API_URL}/auth/user/updateprofile/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
