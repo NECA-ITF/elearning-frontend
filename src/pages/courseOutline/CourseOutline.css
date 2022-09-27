@@ -28,10 +28,15 @@
     justify-content: space-between;
     cursor: pointer;
     color: white;
+    background: #2e2b48;
+    margin-bottom: 20px;
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
   }
   .accordion-title:hover {
-    background-color: white;
+    /* background: linear-gradient(70deg, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46, #cc1b4d, #bd1c4d); */
+    /* background-color: white; */
+    outline: 2px solid #bd1c4d;
+    font-size: large;
   }
   
   .accordion-title,
