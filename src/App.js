@@ -22,7 +22,7 @@ import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 
 function App() {
   // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://192.168.1.3:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
@@ -39,7 +39,7 @@ function App() {
         <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
         <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
         <Route path="/profile-page" element={<ProfilePage />} />
-        <Route path="/edited-profile" element={<EditedProfile />} />
+        <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
