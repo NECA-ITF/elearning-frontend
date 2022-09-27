@@ -19,6 +19,7 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 
+
 function App() {
   const API_URL = "http://localhost:5000";
   // const API_URL = "http://192.168.1.2:5000";
