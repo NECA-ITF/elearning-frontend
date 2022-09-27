@@ -7,6 +7,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
     // console.log(API_URL)
     const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
     function deleteOutline(){
+        if(!window.confirm("Are you sure you want to delete this outline?")) return;
         fetch(`${API_URL}/api/outline`,{
             headers: {
                 'Content-Type': 'application/json'
@@ -40,6 +41,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
     }}
     >
         <p>{title}</p>
+
         <div className="outlineBtns">
         <CustomModal data= {data} mode ={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getVideos={getVideos} />
             {/* <CustomButton title='ADD' 
