@@ -9,7 +9,6 @@
 }
 
 .pics{
-
     width: 290px;
     height: 290px;
     border-top-left-radius: 10px;
@@ -23,7 +22,9 @@
     width: 98%;
 
 }
-.ab{margin: auto;}
+.ab{
+    margin: auto;
+}
 
 .cardpics{
        margin: 5px;
@@ -36,3 +37,7 @@
 
 }
 
+/* p{
+    width:300px;
+    display: none;
+} */
