@@ -9,9 +9,11 @@ function AboutCard({img, github, name, about}) {
     <div>
         <div className='cardpics'>
             <img className='pics' src={img} alt="image" />
-            <div class="service-hover-text">
-              <h3>Jane Doe</h3>
-              <p>{about}</p>
+            <div className="pix">
+              <div className='text'>
+                <h3>{name}</h3>
+                <p>{about}</p>
+              </div>
             </div>
                 <h3>{name}</h3>               
             <Link to={github}><img src={gitlogo} alt="" style={{width:"30px"}}/></Link> 
