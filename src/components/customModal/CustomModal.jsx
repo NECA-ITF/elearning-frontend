@@ -66,6 +66,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then(res => {
       if(res.success) {
         setMessage(res.message)
+        console.log(message)
         closeModal();
         getCourses();
       }
@@ -83,8 +84,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // .then(res => res.json())
     .then(res => {
       // console.log(res)
+        alert(res.data.message)
       if(res.data.success) {
-        setMessage(res.data.message)
         closeModal();
         getOutline();
       } 
@@ -115,8 +116,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then(res => res.json())
     // .then(res => console.log(res))
     .then(res => {
-      setMessage(res.message)
       if(res.success) {
+        setMessage(res.message)
         closeModal();
         getVideos(currentCourseOutline);
       } 
@@ -136,8 +137,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then(res => res.json())
     .then(res => {
       if (!res.success) return alert(res.message);
-      closeModal();
       alert(res.message);
+      // console.log(message)
+      closeModal();
       getUsers();
     })
   }

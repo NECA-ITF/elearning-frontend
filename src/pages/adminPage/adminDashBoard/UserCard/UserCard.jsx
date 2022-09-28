@@ -1,8 +1,18 @@
 import React from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
+import CustomToast from '../../../../components/customToast/CustomToast'
 import './UserCard.css'
 
 function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
+    const toastStyle={
+        marginRight: '20px',
+        background: '#151D3B',
+        color: 'white',
+        padding: "8px 10px",
+        borderRadius: '8px',
+        width: '90px',
+        textAlign: 'center'
+    }
   return (
     <div className="usercard"
     style={{
@@ -11,7 +21,8 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
     {...otherProps}>
         <p>{title}</p>
         <div className="usercardBtns">
-           <CustomButton title='DELETE' 
+        <CustomToast content="deleted Sucessfully" status='success' title='DELETE' style={toastStyle} payload={deleteUser(user._id)}/>
+           {/* <CustomButton title='DELETE' 
             style={{
                 marginRight: '20px',
                 background: '#151D3B',
@@ -22,7 +33,7 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
                 textAlign: 'center'
             }}
             onClick={() => { deleteUser(user._id) }}
-            />
+            /> */}
         </div>
     </div>
     )
