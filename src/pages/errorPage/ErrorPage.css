@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    overflow: hidden;
+}
+
+.errortext {
+    width: 50%;
+    height: 85vh;
+    margin: 0 auto;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+.error span {
+    font-size: 12rem;
+    /* border: 1px solid white; */
+}
+.error p {
+    font-size: 1.8rem;
+    /* border: 1px solid white; */
+}
