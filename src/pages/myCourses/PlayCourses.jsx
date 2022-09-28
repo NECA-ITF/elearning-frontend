@@ -5,6 +5,8 @@ import '../../App.css'
 import Ratings from 'react-rating'
 import './PlayCourses.css'
 import PlayCourseNav from './PlayCourseNav'
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 
 
@@ -15,7 +17,7 @@ function PlayCourses({ API_URL }) {
   const [currentVideo, setCurrentVideo] = useState({}); 
   
   // const currentVideo1 = {_id: "iniovr", title: "were here", url: "api/static/videos/vid1.mp4"}; 
-  
+  const [percentage, setPercent] = useState(80);
   useEffect(() => {
     // console.log(currentCourseOutline)
     async function getVideos(){
@@ -44,34 +46,40 @@ function PlayCourses({ API_URL }) {
             </video>
           </div>
           <ul>
-            <li>Course Materials</li>
-            <li>Resources</li> 
-            <li>External Links</li>
+            <Link to='/course-materials'>
+              <li className='my-course'>Course Materials</li>
+            </Link>
+            <li>Resources and External Links</li> 
           </ul>
           <div className="course-section">
-            <h1 className='course-header'>{currentCourse.title}</h1>
-            <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1>
-            <p className='rates'>Ratings</p>
-            <Ratings
-            placeholderRating={3.5}
-            emptySymbol={<img src={star} className="icon" alt='#' style={{width:'23px'}} />}
-            placeholderSymbol={<img src={star} className="icon" alt='#' style={{width:'23px'}} />}
-            fullSymbol={<img src={hover} className="icon" alt='#' style={{width:'23px'}} />}
-            />
+            <div className="course-sectionFlex">
+              <h1 className='course-header'>{currentCourse.title}</h1>
+              <h1 className='course-header'>{typeof(currentVideo) === "undefined" ? "undefined" : currentVideo.title}</h1>
+              <p className='rates'>Ratings</p>
+              <Ratings
+              placeholderRating={3.5}
+              emptySymbol={<img src={star} className="icon" alt='#' style={{width:'23px'}} />}
+              placeholderSymbol={<img src={star} className="icon" alt='#' style={{width:'23px'}} />}
+              fullSymbol={<img src={hover} className="icon" alt='#' style={{width:'23px'}} />}
+              />
+            </div>
+            <div className="barFlex">
+              <h4>Progress report</h4>
+              <div style={{ width: 100, height: 100 }}>
+                <CircularProgressbar value={percentage} text={`${percentage}%`} />
+              </div>
+            </div>
           </div>
       </div>
       <div className="sub-outline">
         <div className='course-head'>
           <h4>Course Videos</h4>
         </div>  
-          {/* <div className='styky'></div> */}
           {
             outlineVideos.map((vidObj) => (
               <>
               <p>{vidObj.outlineTitle}</p>
               {
-
-                
 
                 vidObj.videos.map((video) => (
                   <div key={video._id} className='course-list' 

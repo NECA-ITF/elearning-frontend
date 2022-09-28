@@ -7,7 +7,10 @@ import UserData from './UserData/UserData'
 
 function AdminUsers({ API_URL }) {
     const [users, setUsers] = useState([]);
+    const [users2, setUsers2] = useState({});
     const [currentUser, setCurrentUser] = useState({});
+    const [currentFilter, setCurrentFilter] = useState('All');
+
     const data =[
         {fullName: ""},
         {email: ""},
@@ -20,6 +23,8 @@ function AdminUsers({ API_URL }) {
         .then((res) => res.json())
         .then((res) => {
             setUsers(res.users);
+            setUsers2(res.users);
+            setCurrentFilter("All");
             setCurrentUser(res.users[0]);
         })
     }
@@ -38,9 +43,9 @@ function AdminUsers({ API_URL }) {
         })
     }
     function filterUsers(filter){
-        let newUsers = users;
-        if (filter === "Admin") newUsers = users.filter(user => ( user.isAdmin ));
-        if (filter === "User") newUsers = users.filter(user => ( !user.isAdmin ));
+        let newUsers = users2;
+        if (filter === "Admin") newUsers = users2.filter(user => ( user.isAdmin ));
+        if (filter === "User") newUsers = users2.filter(user => ( !user.isAdmin ));
         setCurrentUser(newUsers[0]);
         setUsers(newUsers);
     }
@@ -52,7 +57,7 @@ function AdminUsers({ API_URL }) {
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} getUsers={getUsers} filterUsers={filterUsers} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} getUsers={getUsers} filterUsers={filterUsers} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
