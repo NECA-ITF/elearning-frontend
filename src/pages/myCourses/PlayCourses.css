@@ -20,7 +20,16 @@ select{
 }
 .course-section{
     width: 95%;
+    display: flex;
     margin: auto;
+    justify-content: space-between;
+}
+.barFlex{
+    display: flex;
+    width: 30%;
+}
+.barFlex h4{
+    margin-right: 20px;
 }
 .course-header{
     font-weight: 100;
