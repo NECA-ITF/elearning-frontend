@@ -52,7 +52,6 @@ function App() {
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
         <Route path="/error-page" element={<ErrorPage />} />
-
         </Routes>
       </Router>
     </div>

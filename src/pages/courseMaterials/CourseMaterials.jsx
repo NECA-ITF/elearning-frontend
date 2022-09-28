@@ -69,11 +69,11 @@ function CourseMaterials() {
       </div>
 
       <div className='gen-course-mat'>
-        <div><a href='https://www.w3schools.com/nodejs/nodejs_intro.asp'>Introduction to Node JS</a></div>
-        <div><a href='https://frontendmasters.com/learn/node-js/'>Frontend master on Node JS</a></div>
-        <div><a href='https://github.com/nodejs/node'> Github on Node JS</a></div>
-        <div><a href='https://www.tutorialspoint.com/nodejs/index.htm'>Tutorial for Beginners on Node JS</a></div>
-        <div><a href='https://roadmap.sh/nodejs'>Road Map on Node JS</a></div>
+        <div><a href='https://www.w3schools.com/nodejs/nodejs_intro.asp'>https://www.w3schools.com/nodejs/nodejs_intro.asp</a></div>
+        <div><a href='https://frontendmasters.com/learn/node-js/'>https://frontendmasters.com/learn/node-js/</a></div>
+        <div><a href='https://github.com/nodejs/node'> https://github.com/nodejs/node</a></div>
+        <div><a href='https://www.tutorialspoint.com/nodejs/index.htm'>https://www.tutorialspoint.com/nodejs/index.htm</a></div>
+        <div><a href='https://roadmap.sh/nodejs'>https://roadmap.sh/nodejs</a></div>
       </div>
     </div>
   )
