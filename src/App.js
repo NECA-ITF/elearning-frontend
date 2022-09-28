@@ -18,6 +18,7 @@ import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
+import ErrorPage from './pages/errorPage/ErrorPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
+        <Route path="/error-page" element={<ErrorPage />} />
 
         </Routes>
       </Router>

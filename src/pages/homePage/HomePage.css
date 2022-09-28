@@ -82,10 +82,11 @@
     }  
 } */
 @media (min-width: 1920px){
-    .home-home-text h1{
+
+    .home-text h1{
         font-size: 5rem;
     }
-    .home-home-text p{
+    .home-text p{
         font-size: 1.8rem;
     }
     .mockpix img{
