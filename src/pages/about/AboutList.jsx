@@ -11,6 +11,7 @@ function AboutList({userss}) {
             img={userz.img}
             github={userz.github_link}
             name={userz.name}
+            about={userz.about}
             />
         ))}
     </div>
