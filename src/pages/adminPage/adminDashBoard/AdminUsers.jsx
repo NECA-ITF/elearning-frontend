@@ -37,6 +37,13 @@ function AdminUsers({ API_URL }) {
             getUsers();
         })
     }
+    function filterUsers(filter){
+        let newUsers = users;
+        if (filter === "Admin") newUsers = users.filter(user => ( user.isAdmin ));
+        if (filter === "User") newUsers = users.filter(user => ( !user.isAdmin ));
+        setCurrentUser(newUsers[0]);
+        setUsers(newUsers);
+    }
     useEffect(() => {
         getUsers();
     }, []);
@@ -45,7 +52,7 @@ function AdminUsers({ API_URL }) {
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} getUsers={getUsers} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} getUsers={getUsers} filterUsers={filterUsers} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {

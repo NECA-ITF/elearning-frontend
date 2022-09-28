@@ -2,7 +2,7 @@ import React from 'react'
 import './AdminDashContentHeader.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 
-function adminDashContentHeader({mData, mMode, API_URL, currentCourse, outlineCourses, getCourses, getOutline, getUsers, currentCourseOutline }) {
+function adminDashContentHeader({mData, mMode, API_URL, currentCourse, outlineCourses, getCourses, getOutline, getUsers, filterUsers, currentCourseOutline }) {
   return (
     <div className="adminDashContentHeader">
         {
@@ -16,6 +16,20 @@ function adminDashContentHeader({mData, mMode, API_URL, currentCourse, outlineCo
           {
             outlineCourses.map((course) => (
               <option key={course._id} value={ course._id }>{course.title}</option>
+            ))
+          }
+        </select>
+        }
+        {
+          mMode !== "user" ? "" : 
+          <select value="all"
+            onChange={(event) => {
+              filterUsers(event.target.value);   
+            }}
+          >
+          {
+            ["All", "Admin", "User"].map((option, index) => (
+              <option key={index} value={ option }>{option}</option>
             ))
           }
         </select>
