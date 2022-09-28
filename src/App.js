@@ -19,6 +19,8 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import WaitingPage from './pages/waitingPage/WaitingPage';
+import SuccessPage from './pages/waitingPage/SuccessPage';
 import CourseMaterials from './pages/courseMaterials/CourseMaterials';
 
 
