@@ -45,7 +45,7 @@ function AdminUsers({ API_URL }) {
         <AdminDashSide />
         <div className="adminDashContent">
             <div className="adminDashContentContainer">
-                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} />
+                <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} getUsers={getUsers} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
                         {
