@@ -21,7 +21,7 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
                 width: '90px',
                 textAlign: 'center'
             }}
-            onClick={() => { deleteUser(currentUser._id) }}
+            onClick={() => { deleteUser(user._id) }}
             />
         </div>
     </div>

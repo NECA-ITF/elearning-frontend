@@ -5,11 +5,13 @@ import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 import axios from 'axios';
+import CustomToast from '../customToast/CustomToast';
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
+  const [message, setMessage]= useState("")
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -62,8 +64,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     })
     .then(res => res.json())
     .then(res => {
-      alert(res.message)
       if(res.success) {
+        setMessage(res.message)
         closeModal();
         getCourses();
       }
@@ -81,8 +83,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     // .then(res => res.json())
     .then(res => {
       // console.log(res)
-      alert(res.data.message)
       if(res.data.success) {
+        setMessage(res.data.message)
         closeModal();
         getOutline();
       } 
@@ -113,7 +115,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     .then(res => res.json())
     // .then(res => console.log(res))
     .then(res => {
-      alert(res.message)
+      setMessage(res.message)
       if(res.success) {
         closeModal();
         getVideos(currentCourseOutline);
@@ -132,7 +134,12 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      if (!res.success) return alert(res.message);
+      closeModal();
+      alert(res.message);
+      getUsers();
+    })
   }
   
   }
@@ -146,6 +153,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
   function closeModal() {
     setIsOpen(false);
   }
+  const toastStyle={width: '100%', margin: '8px 0% auto'}
 
   return (
     <div>
@@ -192,8 +200,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
                 </>
               ))
             }
-
-            <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
+            <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/>
+            {/* <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} /> */}
         </form>
         </div>
       </Modal>

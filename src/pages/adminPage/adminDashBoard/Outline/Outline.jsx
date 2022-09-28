@@ -1,7 +1,8 @@
 import React from 'react'
-import CustomButton from '../../../../components/customButton/CustomButton'
+// import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
+import CustomToast from '../../../../components/customToast/CustomToast'
 
 function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
@@ -18,10 +19,19 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
         .then(res => res.json())
         .then(res => {
             if(res.success) getOutline();
-            alert(res.message);
+            // alert(res.message);
         })
     }
     
+    const toastStyle= {
+        marginRight: '20px',
+        background: '#151D3B',
+        color: 'white',
+        padding: "8px 10px",
+        // borderRadius: '8px',
+        width: '90px',
+        textAlign: 'center'
+    }
 
     const data =[
         {title: ""},
@@ -54,7 +64,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
                 width: '76px'
             }}
             /> */}
-           <CustomButton title='DELETE' 
+           {/* <CustomButton title='DELETE' 
             style={{
                 marginRight: '20px',
                 background: '#151D3B',
@@ -65,7 +75,8 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
                 textAlign: 'center'
             }} 
             onClick={() => { deleteOutline() }}
-            />
+            /> */}
+            <CustomToast content="deleted Sucessfully" status='success' title='DELETE' style={toastStyle} payload={deleteOutline}/>
         </div>
     </div>
     )
