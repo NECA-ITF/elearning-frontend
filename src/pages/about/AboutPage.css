@@ -49,13 +49,13 @@
     width: 100%;
     left: 0;
     overflow: scroll;
-  }
+}
 
 .cardpics:hover .pix::-webkit-scrollbar {
     display: none;  
-  }
+}
 
-  .text {
+.text {
     color: white;
     font-size: smaller;
     position: absolute;
@@ -65,6 +65,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     white-space: wrap;
+    width: 90%;
   }
 .text p {
     color: white;
