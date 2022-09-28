@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
-
+import axios from 'axios';
 
 function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
@@ -74,19 +74,15 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
   if(mode === "outline"){
     // console.log(API_URL)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    fetch(`${API_URL}/api/outlines`, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: "POST",
-      // body: JSON.stringify(Object.fromEntries(course))
-      body:JSON.stringify({courseId: currentCourse._id, ...courseData})
-      // file: JSON.stringify({name: ""})
-    })
-    .then(res => res.json())
+    axios.post(`${API_URL}/api/outlines`, {
+        courseId: currentCourse._id,
+        ...courseData
+      })
+    // .then(res => res.json())
     .then(res => {
-      alert(res.message)
-      if(res.success) {
+      // console.log(res)
+      alert(res.data.message)
+      if(res.data.success) {
         closeModal();
         getOutline();
       } 
