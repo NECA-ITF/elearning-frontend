@@ -20,7 +20,7 @@ function HomePage() {
           
         </div> */}
         <div className='display-item'>
-          <div className='text'>
+          <div className='home-text'>
             <h1>Eduspot</h1>
             <p>Welcome to Eduspot e-learning platform! Get started with us and start a course.</p>
             <div className='home-button'>
@@ -29,7 +29,7 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <div className='pix'>
+          <div className='mockpix'>
               <img src={image} alt="logo" width={600} />
           </div>
         </div>
