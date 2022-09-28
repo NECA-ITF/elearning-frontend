@@ -66,13 +66,24 @@
 /* End of the navigation section */
 
 .gen-course-mat {
-    background-color: beige;
-    padding: 30%;
-    width: 60%;
+    background-color: #eee;
+    padding: 40px;
+    width: 40%;
     margin:2rem auto;
+    border-radius: 1.7rem;
 
 }
 .gen-course-mat div {
+    border-radius: 1rem;
+    padding: 20px;
+    margin: 5px 5px;
+    background-color: white;
+}
+.gen-course-mat div:hover {
     background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
-    
+    color: white;
+}
+.gen-course-mat div a{
+    color: black;
+    text-decoration: none;
 }
