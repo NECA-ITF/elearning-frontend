@@ -12,6 +12,7 @@ function AboutCard({img, github, name, about}) {
             <div className="pix">
               <div className='text'>
                 <h3>{name}</h3>
+                <hr/>
                 <p>{about}</p>
                 <Link to={github}><img src={gitlogo} alt="" style={{width:"30px"}}/></Link> 
               </div>
