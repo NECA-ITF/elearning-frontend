@@ -7,7 +7,6 @@ import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
 import { Link, useNavigate} from 'react-router-dom';
-import {List} from 'phosphor-react'
 
 function DashBoard({ API_URL, setCurrentCourse }) {
   const [searchInput, setSearchInput]= useState("")

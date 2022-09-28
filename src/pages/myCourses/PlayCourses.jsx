@@ -46,9 +46,10 @@ function PlayCourses({ API_URL }) {
             </video>
           </div>
           <ul>
-            <li>Course Materials</li>
-            <li>Resources</li> 
-            <li>External Links</li>
+            <Link to='/course-materials'>
+              <li className='my-course'>Course Materials</li>
+            </Link>
+            <li>Resources and External Links</li> 
           </ul>
           <div className="course-section">
             <div className="course-sectionFlex">
@@ -74,14 +75,11 @@ function PlayCourses({ API_URL }) {
         <div className='course-head'>
           <h4>Course Videos</h4>
         </div>  
-          {/* <div className='styky'></div> */}
           {
             outlineVideos.map((vidObj) => (
               <>
               <p>{vidObj.outlineTitle}</p>
               {
-
-                
 
                 vidObj.videos.map((video) => (
                   <div key={video._id} className='course-list' 

@@ -19,6 +19,7 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import CourseMaterials from './pages/courseMaterials/CourseMaterials';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+        <Route path="/course-materials" element={<CourseMaterials API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
         <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
