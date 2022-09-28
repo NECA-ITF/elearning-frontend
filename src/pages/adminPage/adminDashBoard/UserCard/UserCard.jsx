@@ -13,6 +13,9 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
         width: '90px',
         textAlign: 'center'
     }
+    function handleDeleteUser(){
+        deleteUser(user._id)
+    }
   return (
     <div className="usercard"
     style={{
@@ -21,7 +24,8 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
     {...otherProps}>
         <p>{title}</p>
         <div className="usercardBtns">
-        <CustomToast content="deleted Sucessfully" status='success' title='DELETE' style={toastStyle} payload={deleteUser(user._id)}/>
+        <CustomToast content="deleted Sucessfully" status='success' title='DELETE' style={toastStyle} payload={handleDeleteUser}/>
+           
            {/* <CustomButton title='DELETE' 
             style={{
                 marginRight: '20px',
