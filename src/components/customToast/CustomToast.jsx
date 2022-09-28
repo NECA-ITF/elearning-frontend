@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import CustomButton from '../customButton/CustomButton';
 
 
-function CustomToast({title, content}) {
+function CustomToast({title, content, status}) {
 
     const showToastMessage = () => {
         toast.success(`${content}`, {

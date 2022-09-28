@@ -2,6 +2,7 @@ import React from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
+import CustomToast from '../../../../components/customToast/CustomToast'
 
 function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
@@ -19,6 +20,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
         .then(res => {
             if(res.success) getOutline();
             alert(res.message);
+            CustomToast({content:"deleted successfully"})
         })
     }
     
@@ -66,6 +68,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
             }} 
             onClick={() => { deleteOutline() }}
             />
+            {/* {deleteOutline ? <CustomToast content="deleted Sucessfully" status='success'/>:""} */}
         </div>
     </div>
     )
