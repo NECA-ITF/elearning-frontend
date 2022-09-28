@@ -9,7 +9,6 @@
 }
 
 .pics{
-
     width: 290px;
     height: 290px;
     border-top-left-radius: 10px;
@@ -21,10 +20,10 @@
     flex-wrap: wrap;
     margin: auto;
     width: 98%;
-
 }
-.ab{margin: auto;}
-
+.ab{
+    margin: auto;
+}
 .cardpics{
        margin: 5px;
        margin-top: 20px;
@@ -33,6 +32,36 @@
        border-radius: 10px;
        text-align: center;
        color: white;
-
+       position: relative;
 }
-
+.pix {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgb(92, 38, 72, .8);
+    overflow: hidden;
+    width: 0;
+    height:100%;
+    transition: .5s ease;
+}
+.cardpics:hover .pix {
+    width: 100%;
+    left: 0;
+  }
+  .text {
+    color: white;
+    font-size: smaller;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: wrap;
+  }
+.text p {
+    color: white;
+    font-size: small;
+    font-weight: 600;
+}

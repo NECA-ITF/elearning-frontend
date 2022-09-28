@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import video from './courseAssets/vid1.mp4'
-import thumbnails from '../myCourses/courseAssets/react-thumbnail.jpg'
 import star from '../myCourses/courseAssets/rating.svg'
 import hover from '../myCourses/courseAssets/star.svg'
 import '../../App.css'
