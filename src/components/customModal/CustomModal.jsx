@@ -1,17 +1,16 @@
 import React from 'react'
 import './CustomModal.css'
 import {useState,useEffect} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 import axios from 'axios';
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
-
+  const [uploadPercentage, setUploadPercentage] = useState(0)
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -64,10 +63,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     })
     .then(res => res.json())
     .then(res => {
-      if(res.status) {
-        toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
-      })
+      alert(res.message)
+      if(res.success) {
         closeModal();
         getCourses();
       }
@@ -85,12 +82,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // .then(res => res.json())
     .then(res => {
       // console.log(res)
-      //alert(res.data.message)
-     
+      alert(res.data.message)
       if(res.data.success) {
-        toast.success(`${res.data.message}`, {
-          position: toast.POSITION.TOP_CENTER
-      })
         closeModal();
         getOutline();
       } 
@@ -106,25 +99,27 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     }));
     formData.append("file", file);
 
+    const options = {
+      onUploadProgress: (progressEvent) => {
+       const {loaded, total} = progressEvent;
+    let percent = Math.floor((loaded * 100)/ total)
+    console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+  
+      if(percent < 100){
+      setUploadPercentage(percent)
+      }
+  }}
+
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    fetch(`${API_URL}/api/videos`, {
-      // headers: {
-      //   'Content-Type': 'application/json'
-      // },
-      method: "POST",
-      // body: JSON.stringify(Object.fromEntries(course))
-      body: formData
-      // file: JSON.stringify({name: ""})
-    })
-    .then(res => res.json())
+    axios.post(`${API_URL}/api/videos`, formData, options
+      )
+    // .then(res => res.json())
     // .then(res => console.log(res))
     .then(res => {
-      if(res.success) {
-        toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
-      })
+      alert(res.data.message)
+      if(res.data.success) {
         closeModal();
         getVideos(currentCourseOutline);
       } 
@@ -142,19 +137,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => {
-      if (res.success) {
-        toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
-      })
-      }else{
-          toast.error(`${res.message}`, {
-            position: toast.POSITION.TOP_CENTER
-        })
-      }
-      closeModal();
-      getUsers();
-    })
+    .then(res => console.log(res))
   }
   
   }
@@ -191,6 +174,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
+          {uploadPercentage}
             {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
             <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
             <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
@@ -204,19 +188,18 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
                   {button.toLowerCase() === "video" ? <p style={{color: "white"}}>video</p> : ""}
                   <CustomInput
                   key={index}
-                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""} ${button.toLowerCase() === "links" ? "(url, url, url)" : ""}`}
+                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
                   name={button}
                   value={courseData[button]}
                   type = {button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? 'file' : 'text' }
-                  style = {{width: '100%', margin: '4px 0'}} 
+                  style = {{width: '100%'}} 
                   onChange={button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? handleFileChange : updateCoursedata}
                   />
                 </>
               ))
             }
-            {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
+
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
-            <ToastContainer />
         </form>
         </div>
       </Modal>
