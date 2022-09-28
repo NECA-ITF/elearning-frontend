@@ -1,7 +1,9 @@
 import React from 'react'
-import CustomButton from '../../../../components/customButton/CustomButton'
+// import CustomButton from '../../../../components/customButton/CustomButton'
 import './Outline.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
+import CustomButton from '../../../../components/customButton/CustomButton';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
@@ -17,11 +19,14 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
         })
         .then(res => res.json())
         .then(res => {
-            if(res.success) getOutline();
-            alert(res.message);
+            if(res.success){ 
+                getOutline();
+                toast.success(`Deleted Sucessful`, {
+                    position: toast.POSITION.TOP_CENTER
+                })
+            }
         })
     }
-    
 
     const data =[
         {title: ""},
@@ -34,12 +39,11 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
     <div className="outline" style={{
         boxShadow: currentCourseOutline._id === outline._id ? "rgba(0, 0, 0, 0.65) 0px 5px 50px" : "",
         cursor: "pointer"
-    }}
-    onClick={() => { 
-        localStorage.setItem('currentCourseOutline', JSON.stringify(outline));
-        getVideos(outline);
-    }}
-    >
+        }}
+        onClick={() => { 
+            localStorage.setItem('currentCourseOutline', JSON.stringify(outline));
+            getVideos(outline);
+        }}>
         <p>{title}</p>
 
         <div className="outlineBtns">
@@ -64,9 +68,10 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
                 width: '90px',
                 textAlign: 'center'
             }} 
-            onClick={() => { deleteOutline() }}
+            onClick={deleteOutline}
             />
         </div>
+        <ToastContainer />
     </div>
     )
 }

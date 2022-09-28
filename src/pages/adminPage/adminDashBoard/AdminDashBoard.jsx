@@ -31,7 +31,8 @@ function AdminDashBoard({ API_URL, currentCourse, setCurrentCourse}) {
     {thumbnail: ""},
     {totalHours: ""},
     {requirements: ""},
-    {rating: ""}
+    {rating: ""},
+    {links: ""}
   ]
   const mode = 'course'
   return (

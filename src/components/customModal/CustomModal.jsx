@@ -1,15 +1,17 @@
 import React from 'react'
 import './CustomModal.css'
 import {useState,useEffect} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 import axios from 'axios';
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
+
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -62,8 +64,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     })
     .then(res => res.json())
     .then(res => {
-      alert(res.message)
-      if(res.success) {
+      if(res.status) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_CENTER
+      })
         closeModal();
         getCourses();
       }
@@ -81,8 +85,12 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     // .then(res => res.json())
     .then(res => {
       // console.log(res)
-      alert(res.data.message)
+      //alert(res.data.message)
+     
       if(res.data.success) {
+        toast.success(`${res.data.message}`, {
+          position: toast.POSITION.TOP_CENTER
+      })
         closeModal();
         getOutline();
       } 
@@ -113,8 +121,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     .then(res => res.json())
     // .then(res => console.log(res))
     .then(res => {
-      alert(res.message)
       if(res.success) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_CENTER
+      })
         closeModal();
         getVideos(currentCourseOutline);
       } 
@@ -132,7 +142,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => {
+      if (res.success) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_CENTER
+      })
+      }else{
+          toast.error(`${res.message}`, {
+            position: toast.POSITION.TOP_CENTER
+        })
+      }
+      closeModal();
+      getUsers();
+    })
   }
   
   }
@@ -182,18 +204,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
                   {button.toLowerCase() === "video" ? <p style={{color: "white"}}>video</p> : ""}
                   <CustomInput
                   key={index}
-                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
+                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""} ${button.toLowerCase() === "links" ? "(url, url, url)" : ""}`}
                   name={button}
                   value={courseData[button]}
                   type = {button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? 'file' : 'text' }
-                  style = {{width: '100%'}} 
+                  style = {{width: '100%', margin: '4px 0'}} 
                   onChange={button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? handleFileChange : updateCoursedata}
                   />
                 </>
               ))
             }
-
+            {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
+            <ToastContainer />
         </form>
         </div>
       </Modal>
