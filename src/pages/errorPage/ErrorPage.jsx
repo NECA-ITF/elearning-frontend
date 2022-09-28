@@ -6,7 +6,7 @@ import './ErrorPage.css';
 
 function ErrorPage() {
   return (
-    <div className='error'>
+    <div className='errorbody'>
         <div className='errorlogo'>
                 <Link to='/' className='links'>
                     <img src={itflogo} alt="itflogo" style={{width:'6%', height:'6%', padding:'5px 5px', marginTop: '1rem'}}/>
