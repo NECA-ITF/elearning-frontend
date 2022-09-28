@@ -24,6 +24,7 @@ function AdminUsers({ API_URL }) {
         .then((res) => {
             setUsers(res.users);
             setUsers2(res.users);
+            setCurrentFilter("All");
             setCurrentUser(res.users[0]);
         })
     }
