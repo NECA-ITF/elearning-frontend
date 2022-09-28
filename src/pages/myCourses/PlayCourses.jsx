@@ -5,6 +5,7 @@ import '../../App.css'
 import Ratings from 'react-rating'
 import './PlayCourses.css'
 import PlayCourseNav from './PlayCourseNav'
+import { Link } from 'react-router-dom'
 
 
 
@@ -44,9 +45,10 @@ function PlayCourses({ API_URL }) {
             </video>
           </div>
           <ul>
-            <li>Course Materials</li>
-            <li>Resources</li> 
-            <li>External Links</li>
+            <Link to='/course-materials'>
+              <li className='my-course'>Course Materials</li>
+            </Link>
+            <li>Resources and External Links</li> 
           </ul>
           <div className="course-section">
             <h1 className='course-header'>{currentCourse.title}</h1>
@@ -70,9 +72,7 @@ function PlayCourses({ API_URL }) {
               <>
               <p>{vidObj.outlineTitle}</p>
               {
-
                 
-
                 vidObj.videos.map((video) => (
                   <div key={video._id} className='course-list' 
                   style={ currentVideo._id === video._id ? {

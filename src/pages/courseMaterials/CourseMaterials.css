@@ -1,0 +1,78 @@
+.dashnav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #151D3B;
+    padding: 6px;
+    /* border: 1px solid #151D3B; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.dashnav{
+    /* display: flex;
+    justify-content: space-around; */
+    align-items: center;
+}
+.dashcontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+}
+.dashcontent li{
+    cursor: pointer;
+    padding: .9rem .9rem .1rem;
+}
+.dashcontent li:hover{
+    border-bottom: 2px solid red;
+}
+.dashnav{
+      align-items: center;
+}
+.userpro{
+    display: flex;
+    gap: 10px;
+    /* border: 1px solid yellow; */
+    margin-right: 1.5rem;
+    padding: .3rem .6rem .6rem .6rem;
+}
+.prodiv{
+    display: flex;
+    /* border: 1px solid blue; */
+}
+.droplogout{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 2%;
+}
+.arrowhov:hover + .droplogout{
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+.droplogout:hover {
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+
+/* End of the navigation section */
+
+.gen-course-mat {
+    background-color: beige;
+    padding: 30%;
+    width: 60%;
+    margin:2rem auto;
+
+}
+.gen-course-mat div {
+    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    
+}
