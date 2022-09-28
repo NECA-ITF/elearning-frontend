@@ -1,6 +1,7 @@
 .errorbody {
     background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
     overflow:hidden;
+    height: 100vh;
 }
 
 .errortext {
@@ -11,11 +12,12 @@
     font-weight: bolder;
     text-align: center;
 }
+
 .errorbody span {
     font-size: 12rem;
-    /* border: 1px solid white; */
+    margin-bottom: 0;
 }
 .errorbody p {
     font-size: 1.8rem;
-    /* border: 1px solid white; */
+    margin: 0;
 }

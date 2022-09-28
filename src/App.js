@@ -49,8 +49,8 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
-        <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
-        <Route path="/error-page" element={<ErrorPage />} />
+        {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
+        <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </Router>
