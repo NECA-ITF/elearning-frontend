@@ -1,4 +1,6 @@
 import React from 'react'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import video from "../../../../assets/media.io_3d1cbb22d5874411addc3e814ed6e5de.mp4"
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './OutlineVideo.css'
@@ -14,8 +16,16 @@ function OutlineVideo({ API_URL, video, currentCourse, currentCourseOutline, get
         })
         .then(res => res.json())
         .then(res => {
-            if(res.success) getVideos(currentCourseOutline);
-            alert(res.message);
+            if(res.success){ 
+                getVideos(currentCourseOutline);
+                toast.success(`${res.message}`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }else{
+                toast.success(`${res.message}`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }
         })
     }
   return (

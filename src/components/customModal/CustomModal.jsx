@@ -68,7 +68,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       if(res.success) {
         toast.success(`${res.message}`, {
           position: toast.POSITION.TOP_RIGHT
-      })}
+      })
+      }
       else{
         toast.error(`${res.message}`, {
           position: toast.POSITION.TOP_RIGHT
@@ -87,7 +88,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     })
     .then(res => {
       if(res.data.success) {
-        console.log(res)
         toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
       })}
