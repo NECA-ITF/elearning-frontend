@@ -1,4 +1,6 @@
 import React from 'react'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CustomButton from '../../components/customButton/CustomButton'
 import './CourseCard.css'
 // import RatingImage from '../../assets/images/star-grey.png'
@@ -21,10 +23,17 @@ function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurre
         body: JSON.stringify({ courseId: course._id })
     })
     .then(res => res.json())
-    // .then(res => console.log(res.success))
     .then(res => {
-        if(res.success) getCourses();
-        alert(res.message);
+        if(res.success) {
+          toast.success(`${res.message}`, {
+            position: toast.POSITION.TOP_RIGHT
+          })
+          getCourses();
+        }else{
+          toast.success(`${res.message}`, {
+            position: toast.POSITION.TOP_RIGHT
+          })
+        }
     })
 }
 

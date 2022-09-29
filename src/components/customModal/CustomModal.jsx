@@ -85,22 +85,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
         courseId: currentCourse._id,
         ...courseData
     })
-    .then(res => res.json())
     .then(res => {
       if(res.data.success) {
         console.log(res)
         toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
       })}
-      else{
-        toast.error(`${res.data.message}`, {
-          position: toast.POSITION.TOP_RIGHT
+    },(error)=>{
+      toast.error(`${error}`, {
+        position: toast.POSITION.TOP_RIGHT
       })
-      }
-      closeModal();
-      getCourses();
     })
-
+    closeModal();
+    getCourses();
   }
 
   if(mode === "video"){
