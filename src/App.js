@@ -21,14 +21,17 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
-import WaitingPage from './pages/waitingPage/WaitingPage';
-import SuccessPage from './pages/waitingPage/SuccessPage';
-import CourseMaterials from './pages/courseMaterials/CourseMaterials';
 
 
 function App() {
+<<<<<<< HEAD
   const API_URL = "http://localhost:5000";
   //const API_URL = "http://192.168.1.2:5000";
+=======
+  // const API_URL = "http://localhost:5000";
+  const API_URL = "http://192.168.1.2:5000";
+  // const API_URL = "http://192.168.136.84:5000";
+>>>>>>> 2c0d619b863da256d796169fe073f503ddd96ac3
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
@@ -49,15 +52,12 @@ function App() {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/course-materials" element={<CourseMaterials API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
         <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
-        <Route path="/waiting-page" element={<WaitingPage/>} />
-        <Route path="/success-page" element={<SuccessPage/>} />
 
         </Routes>
       </Router>
