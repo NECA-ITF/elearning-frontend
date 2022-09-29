@@ -23,6 +23,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     const newData = {...finalObj}
     // setCourseData(newData)
     setCourseDataKeys([...Object.keys(newData)])
+    // eslint-disable-next-line
   },[])
 
   function updateCoursedata(e){
@@ -49,7 +50,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     
     if(mode === "course"){
       if(courseData.instructor.trim().split(" ").length < 2){
-        return alert("Instructor must have at least two names");
+        return toast.success(`Instructor must have at least two names`, {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }
     formData.append("courseData", JSON.stringify(courseData));
     formData.append("file", file);
@@ -78,6 +81,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       closeModal();
       getCourses();
     })
+    .catch(()=> toast.error(`Server Error`, {
+      position: toast.POSITION.TOP_RIGHT
+    }) )
   }
 
   
@@ -122,12 +128,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    axios.post(`${API_URL}/api/videos`, formData, options
-    )
-
-    // .then(res => res.json())
-    // .then(res => console.log(res))
-
+    axios.post(`${API_URL}/api/videos`, formData, options)
     .then(res => {
       if(res.data.success) {
         toast.success(`${res.data.message}`, {
@@ -143,9 +144,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       setUploadPercentage(0)
       } 
     )
-    .catch((err) => toast.error(`${err}`, {
+    .catch((error) => toast.error(`Server Error ${error} `, {
       position: toast.POSITION.TOP_RIGHT
     }))
+
   }
   
   if(mode === "user"){
@@ -161,7 +163,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then((res) =>  {
       closeModal();
       getUsers();
-      if(res.success) toast.success(`${res.message}`, { toastId: 'success1',
+      if(res.success) toast.success(`User Created`, { toastId: 'success1',
         position: toast.POSITION.TOP_RIGHT
         });
     }) 
@@ -205,13 +207,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
           <div className='percent'><p style={{color: "white"}}>{(uploadPercentage !== 0) && `${uploadPercentage} %`} </p></div>
 
           {(uploadPercentage !== 0) && <progress style={{backgrounColor: "yellow", width: "320px", height: "40px",}} min={0} max={100} value={uploadPercentage}/> } 
-          
-            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
-            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
-            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
             {
               courseDataKeys.map((button,index)=>(
                 <>
@@ -229,7 +224,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
                 </>
               ))
             }
-            {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
         </form>
         </div>

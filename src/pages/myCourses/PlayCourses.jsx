@@ -20,6 +20,17 @@ function PlayCourses({ API_URL }) {
   
   // const currentVideo1 = {_id: "iniovr", title: "were here", url: "api/static/videos/vid1.mp4"}; 
   const [percentage, setPercent] = useState(80);
+
+  function addVideoToHistory(video){
+    const userData = localStorage.getItem('userData');
+    const currentCourse = localStorage.getItem('currentCourse');
+    if(!userData) return;
+    if(!currentCourse) return;
+
+    // fetch()
+
+  }
+
   useEffect(() => {
     // console.log(currentCourseOutline)
     async function getVideos(){
@@ -43,7 +54,7 @@ function PlayCourses({ API_URL }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
+            <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`} onEnded={() => {console.log(currentVideo)}}>
               <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4"/>
             </video>
           </div>
