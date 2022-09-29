@@ -49,9 +49,8 @@ function PlayCourses({ API_URL }) {
           </div>
           <ul>
             <Link to='/course-materials'>
-              <li className='my-course'>Course Materials</li>
+              <li className='my-course'>Course materials  and External links</li>
             </Link>
-            <li>Resources and External Links</li> 
           </ul>
           <div className="course-section">
             <div className="course-sectionFlex">
