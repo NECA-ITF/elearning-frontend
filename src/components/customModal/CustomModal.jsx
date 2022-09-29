@@ -11,7 +11,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
-
+  const [uploadPercentage, setUploadPercentage] = useState(0)
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -106,20 +106,15 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     }));
     formData.append("file", file);
 
+   *************************
+
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    fetch(`${API_URL}/api/videos`, {
-      // headers: {
-      //   'Content-Type': 'application/json'
-      // },
-      method: "POST",
-      // body: JSON.stringify(Object.fromEntries(course))
-      body: formData
-      // file: JSON.stringify({name: ""})
-    })
-    .then(res => res.json())
+   ********************
+    // .then(res => res.json())
     // .then(res => console.log(res))
+
     .then(res => {
       if(res.success) {
         toast.success(`${res.message}`, {
@@ -127,6 +122,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       })
         closeModal();
         getVideos(currentCourseOutline);
+        setUploadPercentage(0)
       } 
     })
     .catch((err) => console.log(err))
@@ -191,6 +187,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
+          **********************
+          
+          ***********************
             {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
             <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
             <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>

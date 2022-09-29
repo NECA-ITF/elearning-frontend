@@ -84,10 +84,10 @@ function AdminAllOutline({ API_URL }) {
                 <AdminDashContentHeader mData={data} mMode={mode} API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} getOutline={getOutline} outlineCourses={outlineCourses} />
                 <div className="adminDashContentBody">
                     <div className="adminDashCourseOutlines">
-                        {courseOutline &&
+                        {courseOutline.length ? 
                             courseOutline.sort(sort).map((outline) => (
                                 <Outline key={outline._id} title={outline.title} API_URL={API_URL} currentCourse={currentCourse} outline={outline} currentCourseOutline={currentCourseOutline} getOutline={getOutline} getVideos={getVideos} />
-                            ))
+                            )) : ""
                         }
                     </div>
                     <div className="adminDashCourseOutlinesVideos">

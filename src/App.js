@@ -26,7 +26,7 @@ import CourseMaterials from './pages/courseMaterials/CourseMaterials';
 
 function App() {
   // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://192.168.137.238:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
