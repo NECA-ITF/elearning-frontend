@@ -23,6 +23,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     const newData = {...finalObj}
     // setCourseData(newData)
     setCourseDataKeys([...Object.keys(newData)])
+    // eslint-disable-next-line
   },[])
 
   function updateCoursedata(e){
@@ -80,7 +81,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       closeModal();
       getCourses();
     })
-    .catch((err)=> toast.error(`Server Error`, {
+    .catch(()=> toast.error(`Server Error`, {
       position: toast.POSITION.TOP_RIGHT
     }) )
   }
@@ -127,20 +128,15 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    axios.post(`${API_URL}/api/videos`, formData, options
-    )
-
-    // .then(res => res.json())
-    // .then(res => console.log(res))
-
+    axios.post(`${API_URL}/api/videos`, formData, options)
     .then(res => {
-      if(res.success) {
-        toast.success(`${res.message}`, {
+      if(res.data.success) {
+        toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
       })
       getVideos(currentCourseOutline);
     }else{
-      toast.error(`${res.message}`, {
+      toast.error(`${res.data.message}`, {
         position: toast.POSITION.TOP_RIGHT
       })
     }
@@ -148,9 +144,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       setUploadPercentage(0)
       } 
     )
-    .catch((err) => toast.error(`${err}`, {
+    .catch((error) => toast.error(`Server Error ${error} `, {
       position: toast.POSITION.TOP_RIGHT
     }))
+
   }
   
   if(mode === "user"){
