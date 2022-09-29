@@ -37,8 +37,8 @@ function AdminUsers({ API_URL }) {
             body: JSON.stringify({ userId: userId })
         })
         .then((res) => res.json())
-        .then((res) => {
-            alert(res.message);
+        .then(() => {
+            //alert(res.message);
             getUsers();
         })
     }
