@@ -198,7 +198,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
-          **********************
+          <div className='percent'><p style={{color: "white"}}>{(uploadPercentage !== 0) && `${uploadPercentage} %`} </p></div>
           
           ***********************
             {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
