@@ -127,8 +127,8 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // .then(res => console.log(res))
 
     .then(res => {
-      if(res.success) {
-        toast.success(`${res.message}`, {
+      if(res.data.success) {
+        toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_CENTER
       })
         closeModal();
