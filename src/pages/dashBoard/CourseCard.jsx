@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 
 function DashBoardCourse({name, title, image, isAdmin, API_URL, course, setCurrentCourse, time, ratings, getCourses, ...otherProps}) {
   function deleteCourse(course){
+    if(!window.confirm("Are you sure you want to delete this outline?")) return;
     fetch(`${API_URL}/api/course`,{
         headers: {
             'Content-Type': 'application/json'
