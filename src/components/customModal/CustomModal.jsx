@@ -152,7 +152,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then((res) =>  {
       closeModal();
       getUsers();
-      if(res.success) toast.success(`${res.message}`, { toastId: 'success1',
+      if(res.success) toast.success(`User Created`, { toastId: 'success1',
         position: toast.POSITION.TOP_RIGHT
         });
     }) 
@@ -193,12 +193,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
-            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
-            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
-            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
             {
               courseDataKeys.map((button,index)=>(
                 <>
@@ -216,7 +210,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
                 </>
               ))
             }
-            {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
         </form>
         </div>
