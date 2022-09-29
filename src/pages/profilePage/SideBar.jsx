@@ -1,8 +1,15 @@
 import './SideBar.css'
 import logo from '../../assets/itf_log.png'
+import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom';
+import { useEffect,useState } from 'react';
 import { Password,Gear,User,SignOut,Lock} from "phosphor-react"
 function SideBar() {
+    const[userData,setUserData] = useState(null)
+
+    useEffect(()=>{
+        setUserData(JSON.parse(localStorage.getItem('userData')))
+    },[])
 
     function logoutUser() {
         localStorage.removeItem('userData');
@@ -16,12 +23,34 @@ function SideBar() {
                  <img src={logo} alt="Logo" className='img'/>
         </div>
         </Link>
-        <Link to='/dash-board' className='links'>        
+        {
+            userData ? 
+            userData.isAdmin ?
+            (<Link to='/admin-dash' className='links'> 
+                 <div  className='sidebar-icon'>
+                    <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
+                    <p>DashBoard</p>
+                </div>
+            </Link>):  
+            (<Link to='/dash-board' className='links'> 
+                 <div  className='sidebar-icon'>
+                    <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
+                    <p>DashBoard</p>
+                </div>
+            </Link>) : 
+            (<Link to='/login' className='links'>
+                <div  className='sidebar-icon'>
+                    <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
+                    <p>DashBoard</p>
+                </div>
+            </Link>)
+            }
+        {/* <Link to='/dash-board' className='links'>        
          <div  className='sidebar-icon'>
                 <User size={18} color='white' style={{ marginRight: '1rem'}} weight="thin" />
                 <p>DashBoard</p>
           </div>
-        </Link>
+        </Link> */}
           
         <Link to='/profile-page' className='links'>        
             <div  className='sidebar-icon'>
