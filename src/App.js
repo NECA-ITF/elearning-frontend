@@ -24,8 +24,8 @@ import ErrorPage from './pages/errorPage/ErrorPage';
 
 
 function App() {
-  // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://localhost:5000";
+  // const API_URL = "http://192.168.1.2:5000";
   // const API_URL = "http://192.168.136.84:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
