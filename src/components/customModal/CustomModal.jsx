@@ -1,7 +1,8 @@
 import React from 'react'
 import './CustomModal.css'
 import {useState,useEffect} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
@@ -64,38 +65,39 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     })
     .then(res => res.json())
     .then(res => {
-      if(res.status) {
+      if(res.success) {
         toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_RIGHT
       })
-        closeModal();
-        getCourses();
       }
+      else{
+        toast.error(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
+      }
+      closeModal();
+      getCourses();
     })
   }
 
   
   if(mode === "outline"){
-    // console.log(API_URL)
-    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     axios.post(`${API_URL}/api/outlines`, {
         courseId: currentCourse._id,
         ...courseData
-      })
-    // .then(res => res.json())
+    })
     .then(res => {
-      // console.log(res)
-      //alert(res.data.message)
-     
       if(res.data.success) {
         toast.success(`${res.data.message}`, {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_RIGHT
+      })}
+    },(error)=>{
+      toast.error(`${error}`, {
+        position: toast.POSITION.TOP_RIGHT
       })
-        closeModal();
-        getOutline();
-      } 
     })
-
+    closeModal();
+    getCourses();
   }
 
   if(mode === "video"){
@@ -127,20 +129,27 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // .then(res => console.log(res))
 
     .then(res => {
-      if(res.data.success) {
-        toast.success(`${res.data.message}`, {
-          position: toast.POSITION.TOP_CENTER
+      if(res.success) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
       })
-        closeModal();
-        getVideos(currentCourseOutline);
-        setUploadPercentage(0)
+      getVideos(currentCourseOutline);
+    }else{
+      toast.error(`${res.message}`, {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+      closeModal();
+      setUploadPercentage(0)
       } 
-    })
-    .catch((err) => console.log(err))
+    )
+    .catch((err) => toast.error(`${err}`, {
+      position: toast.POSITION.TOP_RIGHT
+    }))
   }
   
   if(mode === "user"){
-    console.log(courseData);
+    // console.log(courseData);
     fetch(`${API_URL}/auth/user/register`, {
       headers: {
         'Content-Type': 'application/json'
@@ -149,19 +158,14 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => {
-      if (res.success) {
-        toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
-      })
-      }else{
-          toast.error(`${res.message}`, {
-            position: toast.POSITION.TOP_CENTER
-        })
-      }
+    .then((res) =>  {
       closeModal();
       getUsers();
-    })
+      if(res.success) toast.success(`${res.message}`, { toastId: 'success1',
+        position: toast.POSITION.TOP_RIGHT
+        });
+    }) 
+  
   }
   
   }
@@ -227,7 +231,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
             }
             {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
-            <ToastContainer />
         </form>
         </div>
       </Modal>
