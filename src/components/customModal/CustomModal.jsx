@@ -120,7 +120,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-   ********************
+    axios.post(`${API_URL}/api/videos`, formData, options
+    )
+
     // .then(res => res.json())
     // .then(res => console.log(res))
 
