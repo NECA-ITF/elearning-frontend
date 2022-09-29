@@ -81,16 +81,14 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
 
   
   if(mode === "outline"){
-    // console.log(API_URL)
-    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     axios.post(`${API_URL}/api/outlines`, {
         courseId: currentCourse._id,
         ...courseData
-      })
-    // .then(res => res.json())
+    })
     .then(res => res.json())
     .then(res => {
       if(res.data.success) {
+        console.log(res)
         toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
       })}
@@ -126,7 +124,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       // file: JSON.stringify({name: ""})
     })
     .then(res => res.json())
-    // .then(res => console.log(res))
     .then(res => {
       if(res.success) {
         toast.success(`${res.message}`, {

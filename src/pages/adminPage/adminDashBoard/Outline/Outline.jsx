@@ -3,7 +3,7 @@ import React from 'react'
 import './Outline.css'
 import CustomModal from '../../../../components/customModal/CustomModal'
 import CustomButton from '../../../../components/customButton/CustomButton';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurrentCourseOutline, getOutline, getVideos}) {
     // console.log(API_URL)
@@ -22,7 +22,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
             if(res.success){ 
                 getOutline();
                 toast.success(`Deleted Sucessful`, {
-                    position: toast.POSITION.TOP_CENTER
+                    position: toast.POSITION.TOP_RIGHT
                 })
             }
         })
@@ -71,7 +71,6 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
             onClick={deleteOutline}
             />
         </div>
-        <ToastContainer />
     </div>
     )
 }
