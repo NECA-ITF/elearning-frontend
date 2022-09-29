@@ -3,11 +3,17 @@ import './HomePage.css'
 import CustomButton from '../../components/customButton/CustomButton';
 import image from '../../assets/newlogo.png';
 import NavBar from './NavBar';
+import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import TermsOfUse from '../policy/termsOfUse/TermsOfUse';
 
 
 function HomePage() {
+
+  const[userData,setUserData] = useState(null)
+    useEffect(()=>{
+        setUserData(JSON.parse(localStorage.getItem('userData')))
+    },[])
+
   return (
     <div className='homepagebody'>
       <NavBar />
@@ -24,9 +30,18 @@ function HomePage() {
             <h1>Eduspot</h1>
             <p>Welcome to Eduspot e-learning platform! Get started with us and start a course.</p>
             <div className='home-button'>
-              <Link to='/signup'>
-                <CustomButton title="GET STARTED" style={{width:'200px', height:'50px', padding:'1rem',color:'white', backgroundColor:'#151D3B', fontSize:'.7rem'}}/>
-              </Link>
+              {
+                userData ? (
+                  <Link to='/dash-board'>
+                    <CustomButton title="GET STARTED" style={{width:'200px', height:'50px', padding:'1rem',color:'white', backgroundColor:'#151D3B', fontSize:'.7rem'}}/>
+                  </Link>
+                ):
+                (
+                  <Link to='/signup'>
+                    <CustomButton title="GET STARTED" style={{width:'200px', height:'50px', padding:'1rem',color:'white', backgroundColor:'#151D3B', fontSize:'.7rem'}}/>
+                  </Link>
+                )
+              }
             </div>
           </div>
           <div className='mockpix'>

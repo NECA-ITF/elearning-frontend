@@ -49,7 +49,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     
     if(mode === "course"){
       if(courseData.instructor.trim().split(" ").length < 2){
-        return alert("Instructor must have at least two names");
+        return toast.success(`Instructor must have at least two names`, {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }
     formData.append("courseData", JSON.stringify(courseData));
     formData.append("file", file);
@@ -78,6 +80,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       closeModal();
       getCourses();
     })
+    .catch((err)=> toast.error(`Server Error`, {
+      position: toast.POSITION.TOP_RIGHT
+    }) )
   }
 
   
@@ -205,13 +210,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
           <div className='percent'><p style={{color: "white"}}>{(uploadPercentage !== 0) && `${uploadPercentage} %`} </p></div>
 
           {(uploadPercentage !== 0) && <progress style={{backgrounColor: "yellow", width: "320px", height: "40px",}} min={0} max={100} value={uploadPercentage}/> } 
-          
-            {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
-            <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Photo-url' name="PhotoUrl" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/>
-            <CustomInput placeholder='Total-Hours' name="TotalHours" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
-            {/* <CustomInput placeholder='Ratings' name="ratings" type ='text' style = {{width: '100%'}} onChange={updateCoursedata}/> */}
             {
               courseDataKeys.map((button,index)=>(
                 <>
