@@ -12,7 +12,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
-
+  const [uploadPercentage, setUploadPercentage] = useState(0)
 
   const finalObj = {};
   for(let i = 0; i < data.length; i++ ) {
@@ -108,19 +108,26 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     }));
     formData.append("file", file);
 
+    const options = {
+      onUploadProgress: (progressEvent) => {
+       const {loaded, total} = progressEvent;
+       
+    let percent = Math.floor((loaded / total) * 100)
+    console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+       
+    setUploadPercentage(percent)
+  
+  }}
+
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
-    fetch(`${API_URL}/api/videos`, {
-      // headers: {
-      //   'Content-Type': 'application/json'
-      // },
-      method: "POST",
-      // body: JSON.stringify(Object.fromEntries(course))
-      body: formData
-      // file: JSON.stringify({name: ""})
-    })
-    .then(res => res.json())
+    axios.post(`${API_URL}/api/videos`, formData, options
+    )
+
+    // .then(res => res.json())
+    // .then(res => console.log(res))
+
     .then(res => {
       if(res.success) {
         toast.success(`${res.message}`, {
@@ -132,8 +139,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
         position: toast.POSITION.TOP_RIGHT
       })
     }
-    closeModal();
-    })
+      closeModal();
+      setUploadPercentage(0)
+      } 
+    )
     .catch((err) => toast.error(`${err}`, {
       position: toast.POSITION.TOP_RIGHT
     }))
@@ -193,6 +202,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
+          <div className='percent'><p style={{color: "white"}}>{(uploadPercentage !== 0) && `${uploadPercentage} %`} </p></div>
+
+          {(uploadPercentage !== 0) && <progress style={{backgrounColor: "yellow", width: "320px", height: "40px",}} min={0} max={100} value={uploadPercentage}/> } 
+          
             {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
             <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
             <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>
