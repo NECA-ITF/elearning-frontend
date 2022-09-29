@@ -106,7 +106,16 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     }));
     formData.append("file", file);
 
-   *************************
+    const options = {
+      onUploadProgress: (progressEvent) => {
+       const {loaded, total} = progressEvent;
+       
+    let percent = Math.floor((loaded / total) * 100)
+    console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+       
+    setUploadPercentage(percent)
+  
+  }}
 
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
