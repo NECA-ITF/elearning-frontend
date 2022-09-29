@@ -152,7 +152,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then((res) =>  {
       closeModal();
       getUsers();
-      if(res.success) toast.success('Success Notification !', { toastId: 'success1',
+      if(res.success) toast.success(`${res.message}`, { toastId: 'success1',
         position: toast.POSITION.TOP_RIGHT
         });
     }) 

@@ -9,10 +9,10 @@ function CustomToast({title, content, status, style,payload}) {
     const showToastMessage = () => {
         (status==="success")?
         toast.success(`${content}`, {
-            position: toast.POSITION.TOP_CENTER
+            position: toast.POSITION.TOP_RIGHT
         }):
         toast.error(`${content}`, {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_RIGHT
       })
       
     };
