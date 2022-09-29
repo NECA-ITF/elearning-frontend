@@ -13,6 +13,10 @@ function SideBar() {
 
     function logoutUser() {
         localStorage.removeItem('userData');
+        toast.success(`Logged Out  Sucessful`, {
+            position: toast.POSITION.TOP_RIGHT
+        })
+        
     }
     
    
