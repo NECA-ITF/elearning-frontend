@@ -50,24 +50,22 @@ function LoginPage({ API_URL }) {
       .then((data) => {
         if (data.success){
           localStorage.setItem("userData", JSON.stringify(data.user))
+          toast.success(`${(data.message)}`, {
+            position: toast.POSITION.TOP_RIGHT
+        })
         }else{
           localStorage.setItem("userData", null)
+          toast.error(`${(data.message)}`, {
+            position: toast.POSITION.TOP_RIGHT
+        })
         }
         if(data.user){
           if(data.user.isAdmin){
-            toast.success(`Logged in  Sucessful`, {
-              position: toast.POSITION.TOP_RIGHT
-          })
             return navigate('/admin-dash');
           }else{
-            toast.success(`Logged in Sucessful`, {
-              position: toast.POSITION.TOP_RIGHT
-          })
             return navigate("/dash-board")
           }
         }
-
-        alert(data.message);
 
       })
   }
