@@ -1,7 +1,7 @@
 import React from 'react'
 import './CustomModal.css'
 import {useState,useEffect} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
@@ -12,7 +12,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
-  const [responseMsg, setResponseMsg] = useState({})
 
 
   const finalObj = {};
@@ -50,9 +49,7 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     
     if(mode === "course"){
       if(courseData.instructor.trim().split(" ").length < 2){
-        return toast.warn(`Instructor must have at least two names`, {
-          position: toast.POSITION.TOP_RIGHT
-        })
+        return alert("Instructor must have at least two names");
       }
     formData.append("courseData", JSON.stringify(courseData));
     formData.append("file", file);
@@ -68,15 +65,17 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     })
     .then(res => res.json())
     .then(res => {
-      if(res.status) {
-          closeModal();
-          getCourses();
-          console.log(res.message)
-
-          // toast.success(`${res.message}`, {
-          //   position: toast.POSITION.TOP_CENTER
-          // })
+      if(res.success) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })}
+      else{
+        toast.error(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
       }
+      closeModal();
+      getCourses();
     })
   }
 
@@ -89,17 +88,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
         ...courseData
       })
     // .then(res => res.json())
+    .then(res => res.json())
     .then(res => {
-      // console.log(res)
-      //alert(res.data.message)
-     
       if(res.data.success) {
         toast.success(`${res.data.message}`, {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_RIGHT
+      })}
+      else{
+        toast.error(`${res.data.message}`, {
+          position: toast.POSITION.TOP_RIGHT
       })
-        closeModal();
-        getOutline();
-      } 
+      }
+      closeModal();
+      getCourses();
     })
 
   }
@@ -129,13 +130,19 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
     .then(res => {
       if(res.success) {
         toast.success(`${res.message}`, {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_RIGHT
       })
-        closeModal();
-        getVideos(currentCourseOutline);
-      } 
+      getVideos(currentCourseOutline);
+    }else{
+      toast.error(`${res.message}`, {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+    closeModal();
     })
-    .catch((err) => console.log(err))
+    .catch((err) => toast.error(`${err}`, {
+      position: toast.POSITION.TOP_RIGHT
+    }))
   }
   
   if(mode === "user"){
@@ -148,23 +155,14 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => {
-      if (res.success) {
-      //   toast.success(`${res.message}`, {
-      //     position: toast.POSITION.TOP_CENTER
-      // })
-
-      // store the data
-      setResponseMsg({status:res.success,message:res.message})
-      console.log(res)
-      }else{
-          toast.error(`${res.message}`, {
-            position: toast.POSITION.TOP_CENTER
-        })
-      }
+    .then((res) =>  {
       closeModal();
       getUsers();
-    })
+      if(res.success) toast.success('Success Notification !', { toastId: 'success1',
+        position: toast.POSITION.TOP_RIGHT
+        });
+    }) 
+  
   }
   
   }
@@ -226,7 +224,6 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
             }
             {/* <CustomToast content={message} status='success' title='SUBMIT' style={toastStyle}/> */}
             <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% auto'}} />
-            <ToastContainer />
         </form>
         </div>
       </Modal>
