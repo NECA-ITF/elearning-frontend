@@ -21,36 +21,53 @@ function DashCourseOutline({ API_URL, setCurrentCourseOutline }) {
   }, []);
 
 
+  // return (
+  //     <div className='accord-wrapper'>
+  //       <div className='accord-container'>
+  //         <h1>Course Outline</h1>
+  //           <div className="accordion">
+  //             {courseOutline.map((outline) => (
+  //               <OutlineList key={outline._id} title={outline.title} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline}/>
+  //             ))}
+  //           </div>
+  //         <h2>{currentCourse?.title} Requirements</h2>
+  //         <ul>
+  //           {
+  //             currentCourse.requirements ? currentCourse.requirements.map((requirement, index) => (
+  //               <li key={index}>{requirement}</li>
+  //             )) : ""
+  //           }
+  //         </ul>
+  //         <h3>Description</h3>
+  //         <h5 className='description-text'>{currentCourse?.description}</h5>
+  //       </div>
+  //     </div>
+  // )
   return (
-      <div className='accord-wrapper'>
-        <div className='accord-container'>
-          <h1>Course Outline</h1>
-            <div className="accordion">
-              {courseOutline.map((outline) => (
-                <OutlineList key={outline._id} title={outline.title} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline}/>
-              ))}
+       <div className='course-wrapper'>
+        <h1 className='course-h1'>COURSE OUTLINES</h1>
+        <div className="course-outline">
+            <div className="outline-videos">
+                {courseOutline.map((outline) => (
+                  <OutlineList key={outline._id} title={outline.title} lectures={outline.lectures} time={outline.time} outline={outline} setCurrentCourseOutline={setCurrentCourseOutline}/>
+                ))}
             </div>
-          <h2>{currentCourse?.title} Requirements</h2>
-          <ul>
-            {
-              currentCourse.requirements ? currentCourse.requirements.map((requirement, index) => (
-                <li key={index}>{requirement}</li>
-              )) : ""
-            }
-            {/* <li>Knowledge of HTML and CSS</li>
-            <li>Knowledge of Javascript</li>
-            <li>Desire to learn!</li> */}
-          </ul>
-          <h3>Description</h3>
-          <h5 className='description-text'>{currentCourse?.description}</h5>
-          {/* <div>
-          <Link to='/play-courses' className='links'>
-            <CustomButton title='start course' style={{width: "100%", fontFamily:'BioRhyme, serif', marginBottom: '2rem', padding:"10px 0px 12px", boxShadow: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px"}}/>
-          </Link>
-          </div> */}
+            <div className="outline-content">
+                <h2>{currentCourse?.title} Requirements</h2>
+                <ul>
+                    {
+                      currentCourse.requirements ? currentCourse.requirements.map((requirement, index) => (
+                        <li key={index}>{requirement}</li>
+                      )) : ""
+                    }
+                </ul>
+                <h3>Description</h3>
+                <h5 className='description-text'>{currentCourse?.description}</h5>
+            </div>
         </div>
-      </div>
-  )
+    </div> 
+   
+)
 }
 
 export default DashCourseOutline

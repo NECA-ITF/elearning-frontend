@@ -92,7 +92,7 @@ function PlayCourses({ API_URL }) {
             <video key={currentVideo._id} controls autoPlay  
               alt="video" 
               id='course-vid' 
-              style={{ width: '100%'}} 
+              style={{ width: '100%', marginTop:'80px',marginLeft:'5px', borderColor:'#97204a'}} 
               poster={`${API_URL}/${currentCourse.thumbnail}`} 
               onEnded={() => { handleUpdateCourseHistory(currentVideo) }}
             >
@@ -100,7 +100,7 @@ function PlayCourses({ API_URL }) {
             </video>
           </div>
           <ul>
-            <Link to='/course-materials'>
+            <Link to='/course-materials' style={{textDecoration: 'none', color:'black'}}>
               <li className='my-course'>Course materials  and External links</li>
             </Link>
           </ul>
