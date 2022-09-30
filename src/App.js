@@ -21,11 +21,12 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import OutlinePage from './pages/outlinePage/OutlinePage';
 
 
 function App() {
   // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://192.168.1.3:5000";
   // const API_URL = "http://192.168.136.84:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
