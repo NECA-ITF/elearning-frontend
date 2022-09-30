@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import HomePage from './pages/homePage/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
@@ -19,11 +21,12 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import CourseMaterials from './pages/courseMaterials/CourseMaterials'
 
 
 function App() {
   // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://192.168.1.3:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
@@ -48,11 +51,13 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/course-materials" element={<CourseMaterials />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </Router>
+      <ToastContainer />
     </div>
   )
 }

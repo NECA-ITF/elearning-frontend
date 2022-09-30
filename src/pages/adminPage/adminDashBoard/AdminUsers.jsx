@@ -38,8 +38,8 @@ function AdminUsers({ API_URL }) {
             body: JSON.stringify({ userId: userId })
         })
         .then((res) => res.json())
-        .then((res) => {
-            // alert(res.message);
+        .then(() => {
+            //alert(res.message);
             getUsers();
         })
     }
@@ -52,6 +52,7 @@ function AdminUsers({ API_URL }) {
     }
     useEffect(() => {
         getUsers();
+        // eslint-disable-next-line 
     }, []);
   return (
     <div className="adminDashContainer">

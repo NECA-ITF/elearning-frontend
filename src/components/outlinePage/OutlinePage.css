@@ -1,0 +1,56 @@
+.course-wrapper {
+    /* background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46); */
+    overflow: hidden;
+    height: 100vh;
+    background-color: rgb(211, 194, 194);
+
+}
+.course-h1 {
+    border-bottom: 1px solid black;
+
+}
+.course-outline {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+.outline-videos {
+    width: 40%;
+    height: 80vh;
+    overflow-x: hidden;
+    scrollbar-width: 0px;
+
+}
+.outline-videos::-webkit-scrollbar{
+    display: none;
+}
+.outline-videos p {
+    /* border: 1px solid white;
+    border-radius: 5px;
+    background-color: white; */
+    padding: 10px;
+    border: 1px solid #5c2648;
+    margin: 0.5rem;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.18) 2.4px 2.4px 3.2px;
+    transform: translateZ(0);
+    transition: transform .30s ease-out;
+   
+}
+
+.outline-videos p:hover {
+    background: linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);;
+    color: white;
+    transform: scale(1.04);
+}
+.outline-content {
+    width: 40%;
+    text-align: left;
+}
+.outline-content h1 {
+    border-bottom: 10px dotted #2e2b48;
+}
