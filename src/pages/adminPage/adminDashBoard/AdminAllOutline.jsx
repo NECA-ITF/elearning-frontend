@@ -73,6 +73,7 @@ function AdminAllOutline({ API_URL }) {
         if(!Object.keys(currentCourse).length) navigate('/admin-dash', { replace: true });
         getOutline();
         getOutlineCourses();
+        // eslint-disable-next-line 
     }, []);
 
 

@@ -19,7 +19,7 @@ function OutlineList({title, lectures, time, outline, setCurrentCourseOutline}) 
     <div className="accordion-item" onClick={() => {localStorage.setItem('currentCourseOutline', JSON.stringify(outline))}}>
       <div className="accordion-title" onClick={validateLogin}>
         <div>{title}</div>
-        <div>{lectures}.{time}</div>
+        {/* <div>{lectures}.{time}</div> */}
       </div>
     </div>
   )

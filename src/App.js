@@ -20,15 +20,13 @@ import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
-import WaitingPage from './pages/waitingPage/WaitingPage';
-import SuccessPage from './pages/waitingPage/SuccessPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import CourseMaterials from './pages/courseMaterials/CourseMaterials'
 
 
 function App() {
   // const API_URL = "http://localhost:5000";
   const API_URL = "http://192.168.1.3:5000";
-  // const API_URL = "http://192.168.136.84:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
@@ -53,8 +51,7 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
-        <Route path="/waiting-page" element={<WaitingPage />} />
-        <Route path="/success-page" element={<SuccessPage />} />
+        <Route path="/course-materials" element={<CourseMaterials />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 

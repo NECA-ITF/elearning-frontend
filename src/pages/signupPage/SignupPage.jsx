@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import img from '../../assets/image2.jpg'
 import logo from '../../assets/itf_log.png'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import './SignupPage.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import validator from 'validator'
-import { CloudFog } from 'phosphor-react/dist';
+
 
 
 
@@ -76,10 +77,12 @@ function SignupPage({ API_URL }) {
       if(userData.fullName.length === 0){
         setNameStyles({...redBorder})
         setNameIsValid(false)
-        alert("Full Name Required")
-      }else{
-        setNameStyles({...greenBorder})
-        setNameIsValid(true)
+        toast.warn(`Full Name Required`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
+    }else{
+      setNameStyles({...greenBorder})
+      setNameIsValid(true)
       }
     }
     function validEmail(){
@@ -88,7 +91,9 @@ function SignupPage({ API_URL }) {
       if(userData.email.length === 0){
         setEmailStyle({...redBorder})
         setEmailIsValid(false)
-        alert("Email Required ")
+        toast.warn("Email Required ", {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }else{
         if(emailvalidate){
           setEmailStyle({...greenBorder})
@@ -96,7 +101,9 @@ function SignupPage({ API_URL }) {
         }else{
           setEmailStyle({...redBorder})
           setEmailIsValid(false)
-          alert("Invalid Email")
+          toast.warn("Invalid Email", {
+            position: toast.POSITION.TOP_RIGHT
+          })
         }
       }
     }
@@ -105,7 +112,9 @@ function SignupPage({ API_URL }) {
       if(userData.phoneNumber.length !== 11){
         setPhoneStyle({...redBorder})
         setPhoneIsValid(false)
-        alert("Phone Number not up eleven")
+        toast.warn("Phone Number not up eleven", {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }else{
         if(validator.isNumeric(userData.phoneNumber)){
           setPhoneStyle({...phoneStyle, border: '2px solid green'})
@@ -113,7 +122,9 @@ function SignupPage({ API_URL }) {
         }else{
           setPhoneStyle({...redBorder})
           setPhoneIsValid(false)
-          alert("Invalid Number")
+          toast.warn("Invalid Number", {
+            position: toast.POSITION.TOP_RIGHT
+          })
         }
       }
     }
@@ -138,7 +149,9 @@ function SignupPage({ API_URL }) {
         //set the border to red
         setPassStyles({...redBorder})
         setPassIsValid(false)
-        alert("Password is not strong enough")
+        toast.warn("Password is not strong enough", {
+          position: toast.POSITION.TOP_RIGHT
+        })
       }
       
     }
@@ -151,7 +164,9 @@ function SignupPage({ API_URL }) {
     validPassword();
     const {password, confirmPassword} = userData;
     if (password !== confirmPassword){
-      return alert("passwords don't match");
+      return toast.warn("passwords don't match", {
+        position: toast.POSITION.TOP_RIGHT
+      })
     }
     if(isemailValid && isnameValid && ispassValid && isphoneValid){
       fetch(`${API_URL}/auth/user/register`, {
@@ -163,7 +178,13 @@ function SignupPage({ API_URL }) {
       })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) navigate("/waiting-page")
+        if (data.success){
+          navigate("/waiting-page")
+        }else{
+          toast.error("User already exist", {
+            position: toast.POSITION.TOP_RIGHT
+          })
+        }
       })
     }
    }

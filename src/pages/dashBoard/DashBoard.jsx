@@ -48,6 +48,7 @@ function DashBoard({ API_URL, setCurrentCourse }) {
   }
   useEffect(() => {
     getCourses();
+    // eslint-disable-next-line 
   }, [])
 
   useEffect(() => {
