@@ -21,7 +21,7 @@ import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
 import ErrorPage from './pages/errorPage/ErrorPage';
-import OutlinePage from './pages/outlinePage/OutlinePage';
+import OutlinePage from './components/outlinePage/OutlinePage';
 
 
 function App() {
@@ -51,6 +51,7 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/outtest" element={<OutlinePage />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 
