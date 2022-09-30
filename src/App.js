@@ -20,8 +20,9 @@ import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
+import WaitingPage from './pages/waitingPage/WaitingPage';
+import SuccessPage from './pages/waitingPage/SuccessPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
-import OutlinePage from './pages/outlinePage/OutlinePage';
 
 
 function App() {
@@ -52,6 +53,8 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/waiting-page" element={<WaitingPage />} />
+        <Route path="/success-page" element={<SuccessPage />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 
