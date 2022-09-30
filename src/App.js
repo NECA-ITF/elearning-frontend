@@ -20,8 +20,13 @@ import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
+import WaitingPage from './pages/waitingPage/WaitingPage';
+import SuccessPage from './pages/waitingPage/SuccessPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
+<<<<<<< HEAD
 import CourseMaterials from './pages/courseMaterials/CourseMaterials'
+=======
+>>>>>>> master
 
 
 function App() {
@@ -52,7 +57,7 @@ function App() {
         <Route path="/policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/course-materials" element={<CourseMaterials />} />
-        {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
+
         <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
