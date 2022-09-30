@@ -6,7 +6,7 @@ import CustomButton from '../../components/customButton/CustomButton'
 import './SignupPage.css'
 import { Link, useNavigate } from 'react-router-dom';
 import validator from 'validator'
-import { CloudFog } from 'phosphor-react/dist';
+
 
 
 
