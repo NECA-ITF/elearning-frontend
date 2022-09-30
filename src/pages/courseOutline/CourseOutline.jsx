@@ -18,6 +18,7 @@ function DashCourseOutline({ API_URL, setCurrentCourseOutline }) {
     // .then(data => console.log(data))
     .then(data => setCourseOutline(data.outline.outlines))
     .catch((err) => console.log(err))
+    // eslint-disable-next-line 
   }, []);
 
 

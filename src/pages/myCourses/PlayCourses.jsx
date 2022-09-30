@@ -78,6 +78,7 @@ function PlayCourses({ API_URL }) {
   useEffect(() => {
     // console.log(currentCourseOutline)
     getVideos();
+    // eslint-disable-next-line 
   }, []);
 
   return (

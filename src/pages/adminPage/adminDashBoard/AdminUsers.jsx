@@ -51,6 +51,7 @@ function AdminUsers({ API_URL }) {
     }
     useEffect(() => {
         getUsers();
+        // eslint-disable-next-line 
     }, []);
   return (
     <div className="adminDashContainer">
