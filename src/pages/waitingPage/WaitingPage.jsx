@@ -9,9 +9,6 @@ import { toast } from 'react-toastify';
 function WaitingPage() {
   const navigate = useNavigate();
   setTimeout(() => {
-    toast.success("Sign Up successful", {
-      position: toast.POSITION.TOP_RIGHT
-    })
     navigate('/success-page')
   }, 3000)
   return (

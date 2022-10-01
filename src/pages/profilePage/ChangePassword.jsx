@@ -5,8 +5,32 @@ import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
 import { Link } from 'react-router-dom';
 import SideBar from './SideBar';
+import { toast } from 'react-toastify';
 
 function ChangePassword(){ 
+    const style = {width:'100%',height:'1rem', borderRadius:'5rem',border:' 2px solid black',padding:'1.5rem'}
+
+    const [passStyle, setPassStyles] = useState({
+        ...style
+       })
+       const [conPassStyle, setConPassStyles] = useState({
+       ...style
+       })
+
+    const redBorder = {
+        width:'100%',
+        height:'1rem', 
+        borderRadius:'5rem',
+        padding:'1.5rem',
+        border: '2px solid red'
+    }
+    const greenBorder = {
+        width:'100%',
+        height:'1rem', 
+        borderRadius:'5rem',
+        padding:'1.5rem',
+        border: '2px solid green'
+    }
    
     const[userPasswords,setUserPasswords] = useState({
         oldPassword:'',
@@ -22,15 +46,46 @@ function ChangePassword(){
         }))
         console.log(userPasswords)
     }
+    const check = Object.is(userPasswords.password,userPasswords.confirmPassword)
+    function validPassword(){
+        //check for password
+        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+    
+        if(strongPassword.test(userPasswords.password)){
+          //set the border to green
+          setPassStyles({...greenBorder})
+          //setPassIsValid(true)
+          //check for confirm password
+          if(check){
+            setConPassStyles({...greenBorder})
+            //setPassIsValid(true)
+          }else{
+            setConPassStyles({...redBorder})
+            //setPassIsValid(false)
+          }
+          
+        }else{
+          //set the border to red
+          setPassStyles({...redBorder})
+          //setPassIsValid(false)
+          toast.warn("Password is not strong enough", {
+            position: toast.POSITION.TOP_RIGHT
+          })
+        }
+        
+      }
+
     function handleOnSubmit(e){
         e.preventDefault();
         const {password,confirmPassword} = userPasswords 
-        if(password === confirmPassword){
-            //proceed running the fetch api to change
+        if (password !== confirmPassword){
+            return toast.warn("passwords don't match", {
+              position: toast.POSITION.TOP_RIGHT
+            })
         }
-        else{
-            console.log("password does not match")
-        }
+        validPassword()
+
+        //proceeed to fetch
     }
 
 
@@ -48,19 +103,19 @@ function ChangePassword(){
              </div>
              <div className="border2" >
                 <p>Enter Old Password</p>
-                <CustomInput type="password" name= 'oldPassword'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem', borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}
+                <CustomInput type="password" name= 'oldPassword'   placeholder='XXXXXXXX' style={{...style}}
                 onChange={handleChangePassword}/>
             </div>
 
             <div className="border2" >
                 <p>Create New Password</p>
-                <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}
+                <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{...passStyle}}
                 onChange={handleChangePassword}/>
             </div>
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}  onChange={handleChangePassword}/>
+                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleChangePassword}/>
             </div>
             
             <Link to='/profile-page' className='links'>        
