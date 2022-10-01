@@ -87,7 +87,9 @@ function EditedProfile({API_URL}) {
                     })
                 }
             }
-        )
+            ).catch(() => toast.error(`Server error`, {
+                position: toast.POSITION.TOP_RIGHT
+            }))
         
     }
 
