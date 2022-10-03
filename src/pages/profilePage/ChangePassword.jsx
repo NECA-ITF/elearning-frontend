@@ -6,7 +6,7 @@ import './EditedProfile.css'
 import SideBar from './SideBar';
 import { toast } from 'react-toastify';
 
-function ChangePassword(){ 
+function ChangePassword({API_URL}){
     const style = {width:'100%',height:'1rem', borderRadius:'5rem',border:' 2px solid black',padding:'1.5rem'}
 
     const [passStyle, setPassStyles] = useState({
@@ -69,6 +69,7 @@ function ChangePassword(){
     
     function handleOnSubmit(e){
         e.preventDefault();
+
         if(password === confirmPassword){
             setConPassStyles({...greenBorder})
         }else{
@@ -81,14 +82,36 @@ function ChangePassword(){
             })
         }
 
-        fetch(`${API_URL}/auth/user/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-          })
+        const localdata = JSON.parse(localStorage.getItem('userData'))
+        const userData = {
+            userId: localdata._id,
+            oldPassword: userPasswords.oldPassword,
+            newPassword: userPasswords.password
+        }
         //proceeed to fetch
+        // fetch(`${API_URL}/auth/changePassword`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(userData)
+        // })
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     if(data.success){
+        //         toast.success(`${data.message}`, {
+        //             position: toast.POSITION.TOP_RIGHT
+        //         })
+        //     }else{
+        //         toast.error(`${data.message}`, {
+        //             position: toast.POSITION.TOP_RIGHT
+        //         })
+        //     }
+        // }).catch(() => {
+        //     toast.error("Server or Network Failure", {
+        //         position: toast.POSITION.TOP_RIGHT
+        //     })
+        // })
     }
   return (
     <div className="mainone">
