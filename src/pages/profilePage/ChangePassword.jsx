@@ -44,37 +44,30 @@ function ChangePassword(){
             ...intialState,
             [name]:value
         }))
-        console.log(userPasswords)
+        //console.log(userPasswords)
     }
     const check = Object.is(userPasswords.password,userPasswords.confirmPassword)
-    function validPassword(){
-        //check for password
-        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-    
-        if(strongPassword.test(userPasswords.password)){
-          //set the border to green
-          setPassStyles({...greenBorder})
-          //setPassIsValid(true)
-          //check for confirm password
-          if(check){
-            setConPassStyles({...greenBorder})
-            //setPassIsValid(true)
-          }else{
-            setConPassStyles({...redBorder})
-            //setPassIsValid(false)
-          }
-          
-        }else{
-          //set the border to red
-          setPassStyles({...redBorder})
-          //setPassIsValid(false)
-          toast.warn("Password is not strong enough", {
-            position: toast.POSITION.TOP_RIGHT
-          })
-        }
-        
-      }
 
+
+    function handleNewpassword(){
+        handleChangePassword()
+        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+        if(strongPassword.test(userPasswords.password)){
+            setPassStyles({...greenBorder})
+        }else{
+            setPassStyles({...redBorder})
+        }
+    }
+    
+    function handleConfirmPassword(){
+        handleChangePassword()
+        if(check){
+            setConPassStyles({...greenBorder})
+        }else{
+            setConPassStyles({...redBorder})
+        }
+    }
+    
     function handleOnSubmit(e){
         e.preventDefault();
         const {password,confirmPassword} = userPasswords 
@@ -83,14 +76,9 @@ function ChangePassword(){
               position: toast.POSITION.TOP_RIGHT
             })
         }
-        validPassword()
 
         //proceeed to fetch
     }
-
-
-
-
   return (
     <div className="mainone">
     <SideBar /> 
@@ -110,12 +98,12 @@ function ChangePassword(){
             <div className="border2" >
                 <p>Create New Password</p>
                 <CustomInput type="password" name = 'password'   placeholder='XXXXXXXX' style={{...passStyle}}
-                onChange={handleChangePassword}/>
+                onChange={handleNewpassword}/>
             </div>
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleChangePassword}/>
+                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleConfirmPassword}/>
             </div>
             
             <Link to='/profile-page' className='links'>        
