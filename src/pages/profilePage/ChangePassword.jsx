@@ -81,10 +81,13 @@ function ChangePassword(){
             })
         }
 
-        toast.success("passwords match", {
-            position: toast.POSITION.TOP_RIGHT
+        fetch(`${API_URL}/auth/user/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
           })
-
         //proceeed to fetch
     }
   return (
