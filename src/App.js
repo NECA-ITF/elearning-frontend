@@ -28,8 +28,8 @@ import SuccessPage from './pages/waitingPage/SuccessPage'
 
 
 function App() {
-  // const API_URL = "http://localhost:5000";
-  const API_URL = "http://192.168.1.3:5000";
+  const API_URL = "http://localhost:5000";
+  // const API_URL = "http://192.168.1.3:5000";
   // const API_URL = "http://192.168.136.84:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
@@ -49,7 +49,7 @@ function App() {
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
         <Route path="/change-password" element={<ChangePassword />} />
-        <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
@@ -58,7 +58,7 @@ function App() {
         <Route path="/course-materials" element={<CourseMaterials />} />
         <Route path="/waiting-page" element={<WaitingPage />} />
         <Route path="/success-page" element={<SuccessPage />} />
-        <Route path="/admin-contacts" element={<AdminContacts />} />
+        <Route path="/admin-contacts" element={<AdminContacts API_URL={API_URL} />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 

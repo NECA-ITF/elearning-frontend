@@ -3,11 +3,11 @@ import ContactItems from '../../../components/contactItems/ContactItems';
 import './AdminContacts.css';
 import AdminDashSide from './AdminDashSide/AdminDashSide';
 
-function AdminContacts() {
+function AdminContacts({ API_URL }) {
   return (
     <div>
         <AdminDashSide />
-        <ContactItems />
+        <ContactItems API_URL={API_URL} />
     </div>
   )
 }
