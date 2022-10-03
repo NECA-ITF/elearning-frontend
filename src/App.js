@@ -17,6 +17,7 @@ import AboutPage from './pages/about/AboutPage';
 import AdminDashBoard from './pages/adminPage/adminDashBoard/AdminDashBoard';
 import AdminOutline from './pages/adminPage/adminDashBoard/AdminAllOutline';
 import AdminUsers from './pages/adminPage/adminDashBoard/AdminUsers';
+import AdminContacts from './pages/adminPage/adminDashBoard/AdminContacts';
 import './App.css';
 import TermsOfUse from './pages/policy/termsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/policy/privacyPolicy/PrivacyPolicy';
@@ -57,6 +58,7 @@ function App() {
         <Route path="/course-materials" element={<CourseMaterials />} />
         <Route path="/waiting-page" element={<WaitingPage />} />
         <Route path="/success-page" element={<SuccessPage />} />
+        <Route path="/admin-contacts" element={<AdminContacts />} />
         {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
         <Route path="/*" element={<ErrorPage />} />
 
