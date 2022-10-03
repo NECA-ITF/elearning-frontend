@@ -89,29 +89,29 @@ function ChangePassword({API_URL}){
             newPassword: userPasswords.password
         }
         //proceeed to fetch
-        // fetch(`${API_URL}/auth/changePassword`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(userData)
-        // })
-        // .then((response) => response.json())
-        // .then((data) => {
-        //     if(data.success){
-        //         toast.success(`${data.message}`, {
-        //             position: toast.POSITION.TOP_RIGHT
-        //         })
-        //     }else{
-        //         toast.error(`${data.message}`, {
-        //             position: toast.POSITION.TOP_RIGHT
-        //         })
-        //     }
-        // }).catch(() => {
-        //     toast.error("Server or Network Failure", {
-        //         position: toast.POSITION.TOP_RIGHT
-        //     })
-        // })
+        fetch(`${API_URL}/auth/changePassword`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.success){
+                toast.success(`${data.message}`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }else{
+                toast.error(`${data.message}`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }
+        }).catch(() => {
+            toast.error("Server or Network Failure", {
+                position: toast.POSITION.TOP_RIGHT
+            })
+        })
     }
   return (
     <div className="mainone">
