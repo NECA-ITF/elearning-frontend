@@ -13,9 +13,9 @@ function ChangePassword(){
     const [passStyle, setPassStyles] = useState({
         ...style
        })
-       const [conPassStyle, setConPassStyles] = useState({
-       ...style
-       })
+    const [conPassStyle, setConPassStyles] = useState({
+        ...style
+    })
 
     const redBorder = {
         width:'100%',
@@ -38,39 +38,43 @@ function ChangePassword(){
         confirmPassword:''
     })
 
+   
+    const {password,confirmPassword} = userPasswords 
+    
+    const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+
     function handleChangePassword(e){
         const {name,value} = e.target
         setUserPasswords(intialState => ({
             ...intialState,
             [name]:value
         }))
-        //console.log(userPasswords)
+
     }
-    const check = Object.is(userPasswords.password,userPasswords.confirmPassword)
+    //let check = Object.is(password,confirmPassword)
 
-
-    function handleNewpassword(){
-        handleChangePassword()
-        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-        if(strongPassword.test(userPasswords.password)){
+    function handleNewpassword(e){
+        const {name,value} = e.target
+        setUserPasswords(intialState => ({
+            ...intialState,
+            [name]:value
+        }))
+        
+        if(strongPassword.test(password)){
             setPassStyles({...greenBorder})
-        }else{
-            setPassStyles({...redBorder})
         }
-    }
-    
-    function handleConfirmPassword(){
-        handleChangePassword()
-        if(check){
-            setConPassStyles({...greenBorder})
-        }else{
-            setConPassStyles({...redBorder})
+        else{
+            setPassStyles({...redBorder})
         }
     }
     
     function handleOnSubmit(e){
         e.preventDefault();
-        const {password,confirmPassword} = userPasswords 
+        if(password === confirmPassword){
+            setConPassStyles({...greenBorder})
+        }else{
+            setConPassStyles({...redBorder})
+        }
         if (password !== confirmPassword){
             return toast.warn("passwords don't match", {
               position: toast.POSITION.TOP_RIGHT
@@ -103,7 +107,7 @@ function ChangePassword(){
 
             <div className="border2">
                 <p>Re-Enter Password</p>
-                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleConfirmPassword}/>
+                <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleChangePassword}/>
             </div>
             
             <Link to='/profile-page' className='links'>        
