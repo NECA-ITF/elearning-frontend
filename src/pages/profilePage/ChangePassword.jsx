@@ -3,7 +3,6 @@ import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import logo from '../../assets/itf_log.png';
 import './EditedProfile.css'
-import { Link } from 'react-router-dom';
 import SideBar from './SideBar';
 import { toast } from 'react-toastify';
 
@@ -75,11 +74,16 @@ function ChangePassword(){
         }else{
             setConPassStyles({...redBorder})
         }
+
         if (password !== confirmPassword){
             return toast.warn("passwords don't match", {
               position: toast.POSITION.TOP_RIGHT
             })
         }
+
+        toast.success("passwords match", {
+            position: toast.POSITION.TOP_RIGHT
+          })
 
         //proceeed to fetch
     }
@@ -109,13 +113,11 @@ function ChangePassword(){
                 <p>Re-Enter Password</p>
                 <CustomInput type="password" name= 'confirmPassword'  placeholder='XXXXXXXX'  style={conPassStyle}  onChange={handleChangePassword}/>
             </div>
-            
-            <Link to='/profile-page' className='links'>        
+               
             <div className="border2">
-                <CustomButton title={'Confirm Password'} style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
+                <CustomButton title={'Confirm Password'} type='submit' style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
             </div> 
-            </Link>
-        </div>
+            </div>
         </form>
     </div>
 
