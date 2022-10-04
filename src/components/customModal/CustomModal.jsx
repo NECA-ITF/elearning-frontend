@@ -96,7 +96,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       if(res.data.success) {
         toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
-      })}
+      })
+      getOutline();
+    }
     },(error)=>{
       toast.error(`${error}`, {
         position: toast.POSITION.TOP_RIGHT
