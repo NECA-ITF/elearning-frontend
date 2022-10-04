@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./ContactItems.css";
 import ContactItem from '../contactItem/ContactItem';
-function ContactItems() {
+function ContactItems({ API_URL }) {
+  const [messages, setMessages] = useState([]);
+  async function getMessages(){
+    let response = await fetch(`${API_URL}/api/messages`);
+    response = await response.json();
+    if(response.success){
+      setMessages(response.messages);
+    }
+  }
+  useEffect(() => {
+    getMessages();
+  });
   return (
     <div className='contact-wrapper'>
       <div className='contact-heading'>
@@ -17,9 +28,11 @@ function ContactItems() {
             </ul>
           </div>
           <div className="contact-item">
-            <ContactItem />
-            <ContactItem />
-            <ContactItem />
+            {
+              messages.map((msg, index) => (
+                <ContactItem key={msg._id} msg={msg} index={index + 1} />
+              ))
+            }
           </div>
           <div className='contact-enteries'>
             <div className='enteries'>
