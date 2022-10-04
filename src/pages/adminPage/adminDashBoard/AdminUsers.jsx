@@ -29,6 +29,7 @@ function AdminUsers({ API_URL }) {
         })
     }
     function deleteUser( userId ){
+        if(!window.confirm("Are you sure you want to delete this user?")) return;
         fetch(`${API_URL}/auth/user`, {
             headers: {
                 'Content-Type': 'application/json'

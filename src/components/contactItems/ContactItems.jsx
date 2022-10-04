@@ -17,7 +17,7 @@ function ContactItems({ API_URL }) {
     <div className='contact-wrapper'>
       <div className='contact-heading'>
           <div className='contact-us'><h4>Contact Us Messages</h4></div>
-          <div className='contact-list'>
+          {/* <div className='contact-list'>
             <ul>
               <li className='item'>No:</li>
               <li className='item'>Name:</li>
@@ -26,7 +26,7 @@ function ContactItems({ API_URL }) {
               <li className='item'>Message:</li>
               <li className='item'>Delete:</li>
             </ul>
-          </div>
+          </div> */}
           <div className="contact-item">
             {
               messages.map((msg, index) => (
