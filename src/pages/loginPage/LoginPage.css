@@ -92,3 +92,11 @@
     margin: 10% 0% 0;
     font-size: 3.4rem;
 }
+@media screen and (max-width:700px) {
+    .col-2l{
+        display: none;
+    }
+    .forml{
+        width: 100%;
+    }
+}
