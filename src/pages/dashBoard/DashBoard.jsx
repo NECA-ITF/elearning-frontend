@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify'
 import itflogo from '../../assets/itf_log.png';
 import profile from '../../assets/dashboard/profile.svg'
 import './DashBoard.css'
@@ -7,7 +8,6 @@ import CustomInput from '../../components/customInput/CustomInput'
 import DashCourseList from './DashCourseList';
 import arrow from '../../assets/dashboard/arrow.svg'
 import { Link, useNavigate} from 'react-router-dom';
-import {List} from 'phosphor-react'
 
 function DashBoard({ API_URL, setCurrentCourse }) {
   const [searchInput, setSearchInput]= useState("")
@@ -33,6 +33,9 @@ function DashBoard({ API_URL, setCurrentCourse }) {
 
   function logoutUser(params) {
     localStorage.setItem('userData', null);
+    toast.success(`Logged Out  Sucessful`, {
+      position: toast.POSITION.TOP_RIGHT
+    })
     setUserData(null)
     navigate('/')
   }

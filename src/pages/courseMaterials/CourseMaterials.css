@@ -1,0 +1,97 @@
+.dashnav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #151D3B;
+    padding: 6px;
+    /* border: 1px solid #151D3B; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.dashnav{
+    /* display: flex;
+    justify-content: space-around; */
+    align-items: center;
+}
+.dashcontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+}
+.dashcontent li{
+    cursor: pointer;
+    padding: .9rem .9rem .1rem;
+}
+.dashcontent li:hover{
+    border-bottom: 2px solid red;
+}
+.dashnav{
+      align-items: center;
+}
+.userpro{
+    display: flex;
+    gap: 10px;
+    /* border: 1px solid yellow; */
+    margin-right: 1.5rem;
+    padding: .3rem .6rem .6rem .6rem;
+}
+.prodiv{
+    display: flex;
+    /* border: 1px solid blue; */
+}
+.droplogout{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 2%;
+}
+.arrowhov:hover + .droplogout{
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+.droplogout:hover {
+    display: block;
+    color: #D82148;
+    transition: 4s ease-in;
+}
+
+/* End of the navigation section */
+
+.gen-course-mat {
+    background-color: #eee;
+    padding: 40px;
+    width: 45%;
+    /* height: 100%; */
+    margin:2rem auto;
+    border-radius: 1.7rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    overflow: hidden;
+}
+.gen-course-mat div {
+    border-radius: 1rem;
+    padding: 14px;
+    margin: 10px 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    transform: translateZ(0);
+    transition: transform .30s ease-out;
+}
+.gen-course-mat div:hover {
+    background:linear-gradient(0.9turn,#f2174f, #cc1b4d, #bd1c4d, #97204a, #5c2648, #2e2b48, #202c46);
+    transform: scale(1.04);
+}
+.gen-course-mat div a{
+    color: black;
+    text-decoration: none;
+}
+.gen-course-mat div:hover a{
+    color: white;
+}

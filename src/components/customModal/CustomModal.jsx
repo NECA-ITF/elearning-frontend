@@ -1,6 +1,8 @@
 import React from 'react'
 import './CustomModal.css'
 import {useState,useEffect} from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
@@ -63,32 +65,39 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     })
     .then(res => res.json())
     .then(res => {
-      alert(res.message)
       if(res.success) {
-        closeModal();
-        getCourses();
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
       }
+      else{
+        toast.error(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
+      }
+      closeModal();
+      getCourses();
     })
   }
 
   
   if(mode === "outline"){
-    // console.log(API_URL)
-    // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     axios.post(`${API_URL}/api/outlines`, {
         courseId: currentCourse._id,
         ...courseData
-      })
-    // .then(res => res.json())
-    .then(res => {
-      // console.log(res)
-      alert(res.data.message)
-      if(res.data.success) {
-        closeModal();
-        getOutline();
-      } 
     })
-
+    .then(res => {
+      if(res.data.success) {
+        toast.success(`${res.data.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })}
+    },(error)=>{
+      toast.error(`${error}`, {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    })
+    closeModal();
+    getCourses();
   }
 
   if(mode === "video"){
@@ -102,33 +111,45 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
     const options = {
       onUploadProgress: (progressEvent) => {
        const {loaded, total} = progressEvent;
-    let percent = Math.floor((loaded * 100)/ total)
+       
+    let percent = Math.floor((loaded / total) * 100)
     console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+       
+    setUploadPercentage(percent)
   
-      if(percent < 100){
-      setUploadPercentage(percent)
-      }
   }}
 
     // return console.log(API_URL);
     //  console.log(currentCourseOutline)
     // console.log(JSON.stringify({courseId: currentCourse._id, ...courseData}))
     axios.post(`${API_URL}/api/videos`, formData, options
-      )
+    )
+
     // .then(res => res.json())
     // .then(res => console.log(res))
+
     .then(res => {
-      alert(res.data.message)
-      if(res.data.success) {
-        closeModal();
-        getVideos(currentCourseOutline);
+      if(res.success) {
+        toast.success(`${res.message}`, {
+          position: toast.POSITION.TOP_RIGHT
+      })
+      getVideos(currentCourseOutline);
+    }else{
+      toast.error(`${res.message}`, {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+      closeModal();
+      setUploadPercentage(0)
       } 
-    })
-    .catch((err) => console.log(err))
+    )
+    .catch((err) => toast.error(`${err}`, {
+      position: toast.POSITION.TOP_RIGHT
+    }))
   }
   
   if(mode === "user"){
-    console.log(courseData);
+    // console.log(courseData);
     fetch(`${API_URL}/auth/user/register`, {
       headers: {
         'Content-Type': 'application/json'
@@ -137,7 +158,14 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       body: JSON.stringify({ ...courseData, isAdmin: true })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then((res) =>  {
+      closeModal();
+      getUsers();
+      if(res.success) toast.success(`${res.message}`, { toastId: 'success1',
+        position: toast.POSITION.TOP_RIGHT
+        });
+    }) 
+  
   }
   
   }
@@ -174,7 +202,10 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutlin
       >
         <div className="modal-form">
           <form onSubmit={createCourse}>
-          {uploadPercentage}
+          <div className='percent'><p style={{color: "white"}}>{(uploadPercentage !== 0) && `${uploadPercentage} %`} </p></div>
+
+          {(uploadPercentage !== 0) && <progress style={{backgrounColor: "yellow", width: "320px", height: "40px",}} min={0} max={100} value={uploadPercentage}/> } 
+          
             {/* <CustomInput placeholder='Title' name="Title" style = {{width: ' 100%'}} onChange={updateCoursedata} />
             <CustomInput placeholder='Instructor' name="Instructor" style = {{width: '100%'}} onChange={updateCoursedata}/>
             <CustomInput placeholder=' Description' name="Description" style = {{width: '100%'}} onChange={updateCoursedata}/>

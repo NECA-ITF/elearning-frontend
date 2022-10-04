@@ -7,6 +7,8 @@ import './PlayCourses.css'
 import PlayCourseNav from './PlayCourseNav'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -46,9 +48,9 @@ function PlayCourses({ API_URL }) {
             </video>
           </div>
           <ul>
-            <li>Course Materials</li>
-            <li>Resources</li> 
-            <li>External Links</li>
+            <Link to='/course-materials'>
+              <li className='my-course'>Course materials  and External links</li>
+            </Link>
           </ul>
           <div className="course-section">
             <div className="course-sectionFlex">
@@ -74,14 +76,11 @@ function PlayCourses({ API_URL }) {
         <div className='course-head'>
           <h4>Course Videos</h4>
         </div>  
-          {/* <div className='styky'></div> */}
           {
             outlineVideos.map((vidObj) => (
               <>
               <p>{vidObj.outlineTitle}</p>
               {
-
-                
 
                 vidObj.videos.map((video) => (
                   <div key={video._id} className='course-list' 

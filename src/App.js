@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import HomePage from './pages/homePage/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
@@ -54,6 +56,7 @@ function App() {
 
         </Routes>
       </Router>
+      <ToastContainer />
     </div>
   )
 }
