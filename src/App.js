@@ -48,7 +48,7 @@ function App() {
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
 
-        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
         <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
         <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
         <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
