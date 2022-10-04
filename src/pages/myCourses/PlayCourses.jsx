@@ -8,6 +8,7 @@ import PlayCourseNav from './PlayCourseNav'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 
 
@@ -17,21 +18,67 @@ function PlayCourses({ API_URL }) {
   const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
-  
   // const currentVideo1 = {_id: "iniovr", title: "were here", url: "api/static/videos/vid1.mp4"}; 
-  const [percentage, setPercent] = useState(80);
+  const [percentage, setPercent] = useState(0);
+
+  function getProgress(outlineVideos){
+    const userData = localStorage.getItem('userData');
+    const currentCourse = localStorage.getItem('currentCourse');
+    if(!userData) return;
+    if(!currentCourse) return;
+
+    // return console.log({
+    //   userId: JSON.parse(userData)._id,
+    //   courseId: JSON.parse(currentCourse)._id
+    // })
+    
+    axios.get(`${API_URL}/api/history/course/${JSON.parse(userData)._id}/${JSON.parse(currentCourse)._id}`)
+    .then((res) => {
+      // return console.log(outlineVideos)
+      const watchedCount = res.data.courseHistory.watchedVideos.length;
+      let courseVideoCount = 0;
+      outlineVideos.forEach(outline => (
+        courseVideoCount += outline.videos.length
+      ))
+      setPercent(Math.round( (watchedCount/courseVideoCount) * 100 ));
+    })
+    .catch(err => console.log(err))
+
+
+  }
+
+  function handleUpdateCourseHistory(video){
+    const userData = localStorage.getItem('userData');
+    const currentCourse = localStorage.getItem('currentCourse');
+    if(!userData) return;
+    if(!currentCourse) return;
+    
+    axios.post(`${API_URL}/api/history/course`, {
+      userId: JSON.parse(userData)._id,
+      courseId: JSON.parse(currentCourse)._id,
+      videoId: video._id
+    })
+    .then((res) => {
+      if(res.data.success) getProgress(outlineVideos);
+    })
+    .catch(err => console.log(err.response.data.message))
+
+  }
+
+  async function getVideos(){
+    let response = await fetch(`${API_URL}/api/allvideos/${currentCourse._id}`);
+    response = await response.json();
+    if(response.success){
+      setOutlineVideos(response.allData);
+      const clickedOutline = response.allData.find(videoObj => videoObj.outlineTitle === currentCourseOutline.title);
+      setCurrentVideo(clickedOutline.videos[0]);
+  }
+  getProgress(response.allData);
+  }
   useEffect(() => {
     // console.log(currentCourseOutline)
-    async function getVideos(){
-      let response = await fetch(`${API_URL}/api/allvideos/${currentCourse._id}`);
-      response = await response.json();
-      if(response.success){
-        setOutlineVideos(response.allData);
-        const clickedOutline = response.allData.find(videoObj => videoObj.outlineTitle === currentCourseOutline.title);
-        setCurrentVideo(clickedOutline.videos[0]);
-    }
-    }
     getVideos();
+    // eslint-disable-next-line 
   }, []);
 
   return (
@@ -43,12 +90,18 @@ function PlayCourses({ API_URL }) {
       <div className='course-container'>
       <div className="course-video">
           <div style={{ width: '100%'}}>
-            <video key={currentVideo._id} controls autoPlay  alt="video" id='course-vid' style={{ width: '100%'}} poster={`${API_URL}/${currentCourse.thumbnail}`}>
+            <video key={currentVideo._id} controls autoPlay  
+              alt="video" 
+              id='course-vid' 
+              style={{ width: '100%', marginTop:'80px',marginLeft:'5px', borderColor:'#97204a'}} 
+              poster={`${API_URL}/${currentCourse.thumbnail}`} 
+              onEnded={() => { handleUpdateCourseHistory(currentVideo) }}
+            >
               <source src={`${API_URL}/${currentVideo.url}`} type="video/mp4"/>
             </video>
           </div>
           <ul>
-            <Link to='/course-materials'>
+            <Link to='/course-materials' style={{textDecoration: 'none', color:'black'}}>
               <li className='my-course'>Course materials  and External links</li>
             </Link>
           </ul>
