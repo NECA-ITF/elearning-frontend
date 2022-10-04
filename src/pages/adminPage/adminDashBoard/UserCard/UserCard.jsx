@@ -24,7 +24,7 @@ function Outline({title, user, currentUser, deleteUser, ...otherProps}) {
     {...otherProps}>
         <p>{title}</p>
         <div className="usercardBtns">
-        <CustomToast content="deleted Sucessfully" status='success' title='DELETE' style={toastStyle} payload={handleDeleteUser}/>
+        <CustomToast content="user deleted sucessfully" status='success' title='DELETE' style={toastStyle} payload={handleDeleteUser}/>
            
            {/* <CustomButton title='DELETE' 
             style={{

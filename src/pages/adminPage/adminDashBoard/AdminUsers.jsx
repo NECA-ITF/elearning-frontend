@@ -29,6 +29,7 @@ function AdminUsers({ API_URL }) {
         })
     }
     function deleteUser( userId ){
+        if(!window.confirm("This process is irreversible. Do you wish to proceed?")) return;
         fetch(`${API_URL}/auth/user`, {
             headers: {
                 'Content-Type': 'application/json'

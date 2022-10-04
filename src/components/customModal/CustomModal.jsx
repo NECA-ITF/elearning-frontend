@@ -8,7 +8,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 import axios from 'axios';
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])

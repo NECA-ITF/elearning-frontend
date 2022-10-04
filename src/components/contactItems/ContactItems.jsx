@@ -30,7 +30,7 @@ function ContactItems({ API_URL }) {
           <div className="contact-item">
             {
               messages.map((msg, index) => (
-                <ContactItem key={msg._id} msg={msg} index={index + 1} />
+                <ContactItem key={msg._id} msg={msg} index={index + 1} API_URL={API_URL} getMessages={getMessages} />
               ))
             }
           </div>
