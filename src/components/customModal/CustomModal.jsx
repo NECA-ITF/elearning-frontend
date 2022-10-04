@@ -8,7 +8,7 @@ import CustomInput from '../customInput/CustomInput'
 import CustomButton from '../customButton/CustomButton'
 import axios from 'axios';
 
-function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers, getOutline, getVideos, currentCourseOutline }) {
+function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getOutline, getVideos, currentCourseOutline }) {
   const [file, setFile] = useState(null)
   const [courseData, setCourseData] = useState({})
   const [courseDataKeys,setCourseDataKeys] = useState([])
@@ -96,7 +96,9 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
       if(res.data.success) {
         toast.success(`${res.data.message}`, {
           position: toast.POSITION.TOP_RIGHT
-      })}
+      })
+      getOutline();
+    }
     },(error)=>{
       toast.error(`${error}`, {
         position: toast.POSITION.TOP_RIGHT
@@ -214,11 +216,11 @@ function CustomModal({ data, mode, API_URL, currentCourse, getCourses, getUsers,
                   {button.toLowerCase() === "video" ? <p style={{color: "white"}}>video</p> : ""}
                   <CustomInput
                   key={index}
-                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""} ${button.toLowerCase() === "links" ? "(url, url, url)" : ""}`}
+                  placeholder={`${button.toUpperCase()} ${button.toLowerCase() === "requirements" ? "(HTML, CSS, NodeJS)" : ""}`}
                   name={button}
                   value={courseData[button]}
                   type = {button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? 'file' : 'text' }
-                  style = {{width: '100%', margin: '4px 0'}} 
+                  style = {{width: '100%'}} 
                   onChange={button.toLowerCase() === ("thumbnail") || button.toLowerCase() === ("video") ? handleFileChange : updateCoursedata}
                   />
                 </>
