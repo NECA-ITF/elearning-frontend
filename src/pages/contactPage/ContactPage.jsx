@@ -33,7 +33,9 @@ function ContactPage({ API_URL }){
         <div className="smallContc">
           <form className='formc' onSubmit={sendMessage}>
             <div className="colc">
+              <Link to='/' className='links'>
                 <img src={logo} alt="Logo" className="img" />          
+              </Link>
               <h2>Send Us A Message</h2>
               <CustomInput placeholder='Your full name*' name="name" style = {{width: '100%', marginTop: '-2.2%'}}  onChange={updateContactInfo} />
               <CustomInput placeholder='Email*' name="email" style = {{width: '100%', marginTop: '-2.2%'}}  onChange={updateContactInfo} />
