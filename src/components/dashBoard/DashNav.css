@@ -68,12 +68,12 @@
     display: block;
     margin-top: 1%;
     color: #D82148;
-    transition: 4s ease-in;
+    transition: .1s ease-in;
 }
 .droplogout:hover {
     display: block;
     color: #D82148;
-    transition: 4s ease-in;
+    transition: .1s ease-in;
 }
 
 @media screen and (max-width:850px) {
