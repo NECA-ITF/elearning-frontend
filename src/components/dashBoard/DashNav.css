@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 70px;
     background-color: #f9f9f9;
     color: #151D3B;
     padding: 6px;
@@ -58,13 +59,14 @@
     position: absolute;
     z-index: 1;
     color: #D82148;
-    margin-top: 2%;
+    margin-top: 1.5%;
 }
 .droplogout h4{
     color: #D82148;
 }
 .arrowhov:hover + .droplogout{
     display: block;
+    margin-top: 1%;
     color: #D82148;
     transition: 4s ease-in;
 }
