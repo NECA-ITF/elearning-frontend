@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import HomePage from './pages/homePage/HomePage';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -30,15 +30,20 @@ import SuccessPage from './pages/waitingPage/SuccessPage'
 
 function App() {
   //const API_URL = "http://localhost:5000";
-   const API_URL = "http://192.168.1.2:5000";
+  const API_URL = "http://192.168.1.2:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
+  const [auth, setAuth] = useState({})
+  useEffect(()=>{
+    setAuth(JSON.parse(localStorage.getItem('auth')))
+  },[])
+
   return (
     <div>
       <Router>
         <Routes>
-          <Route element = {<PrivateRoutes />}>
+          <Route element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
             <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
             <Route path="/profile-page" element={<ProfilePage />} />
