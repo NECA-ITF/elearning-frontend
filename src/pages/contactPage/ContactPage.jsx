@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import img from '../../assets/image4.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
@@ -7,20 +7,41 @@ import { MapPin, Phone, EnvelopeSimple, FacebookLogo, LinkedinLogo, InstagramLog
 import './ContactPage.css'
 import { Link } from "react-router-dom";
 
-function ContactPage(){
+function ContactPage({ API_URL }){
+  const [contactInfo, setContactInfo] = useState({});
+  function updateContactInfo(event){
+    const { name, value } = event.target;
+    setContactInfo((prevContactInfo) => ({
+      ...prevContactInfo,
+      [name]: value
+  }));
+  }
+
+  async function sendMessage(event){
+    event.preventDefault();
+    let response = await fetch(`${API_URL}/api/message/new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(contactInfo)
+    });
+    response = await response.json();
+    alert(response.message);
+  }
     return(
         <div className="smallContc">
-          <form className='formc'>
+          <form className='formc' onSubmit={sendMessage}>
             <div className="colc">
+              <Link to='/' className='links'>
                 <img src={logo} alt="Logo" className="img" />          
-              <h2>Send Us A Message</h2>
-              <CustomInput placeholder='Your full name*' style = {{width: '100%', marginTop: '-2.2%'}} />
-              <CustomInput placeholder='Email*' style = {{width: '100%', marginTop: '-2.2%'}} />
-              <CustomInput placeholder='Phone number*' style = {{width: '100%', marginTop: '-2.2%'}} />
-              <textarea placeholder="Write us a message" cols="20" rows="4" id="textc"></textarea>
-              <Link to='/' className="links">
-              <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% 0'}} />
               </Link>
+              <h2>Send Us A Message</h2>
+              <CustomInput placeholder='Your full name*' name="name" style = {{width: '100%', marginTop: '-2.2%'}}  onChange={updateContactInfo} />
+              <CustomInput placeholder='Email*' name="email" style = {{width: '100%', marginTop: '-2.2%'}}  onChange={updateContactInfo} />
+              <CustomInput placeholder='Phone number*' name="phone" style = {{width: '100%', marginTop: '-2.2%'}}  onChange={updateContactInfo} />
+              <textarea placeholder="Write us a message" cols="20" rows="4" id="textc" name="message" onChange={updateContactInfo} ></textarea>
+              <CustomButton title = 'SUBMIT' style = {{width: '100%', margin: '8px 0% 0'}} />
             </div>
           </form>
         <div className="col-2c">

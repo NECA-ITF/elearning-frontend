@@ -29,6 +29,7 @@ function AdminUsers({ API_URL }) {
         })
     }
     function deleteUser( userId ){
+        if(!window.confirm("Are you sure you want to delete this user?")) return;
         fetch(`${API_URL}/auth/user`, {
             headers: {
                 'Content-Type': 'application/json'
@@ -37,8 +38,8 @@ function AdminUsers({ API_URL }) {
             body: JSON.stringify({ userId: userId })
         })
         .then((res) => res.json())
-        .then((res) => {
-            alert(res.message);
+        .then(() => {
+            //alert(res.message);
             getUsers();
         })
     }
@@ -51,6 +52,7 @@ function AdminUsers({ API_URL }) {
     }
     useEffect(() => {
         getUsers();
+        // eslint-disable-next-line 
     }, []);
   return (
     <div className="adminDashContainer">

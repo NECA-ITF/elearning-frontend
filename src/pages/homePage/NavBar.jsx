@@ -51,6 +51,10 @@ function NavBar() {
                 <div className='apply'>
                     {
                     userData ? 
+                    userData.isAdmin ?
+                    (<Link to='/admin-dash' className='links'> 
+                        <p> Admin Dashboard </p> 
+                    </Link>):  
                     (<Link to='/dash-board' className='links'> 
                         <p> Dashboard </p> 
                     </Link>) : 

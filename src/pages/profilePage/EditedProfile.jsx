@@ -3,6 +3,7 @@ import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import './EditedProfile.css'
 import SideBar from './SideBar';
+import { toast } from 'react-toastify'
 import { useEffect } from 'react';
 
 function EditedProfile({API_URL}) {
@@ -44,24 +45,29 @@ function EditedProfile({API_URL}) {
     function handleSubmit(e){
         //to prevent refreshing if page after submitting
         e.preventDefault()
-        console.log(userEditedProfile)
+        // console.log(userEditedProfile)
 
         const{fullName,phoneNumber} = userEditedProfile
 
         if(fullName.trim() === '' || phoneNumber.trim() === ''){
-            return  console.log('you cannot use empty space')
+            return  toast.warn(`you cannot use empty space`, {
+                position: toast.POSITION.TOP_RIGHT
+            })
         }
+
+        const newData = localStorageData
+        newData.fullName = fullName
+        newData.phoneNumber = phoneNumber
+
         setLocalStorageData(initialLC => ({
             ...initialLC,
-            fullName:userEditedProfile.fullName,
-            phoneNumber:userEditedProfile.phoneNumber
+            fullName:fullName,
+            phoneNumber:phoneNumber
         }))
 
-        localStorage.setItem('userData',JSON.stringify(localStorageData))
+        localStorage.setItem('userData',JSON.stringify(newData))
 
-        const id = localStorageData._id
-
-        fetch(`${API_URL}/auth/user/updateprofile/${id}`, {
+        fetch(`${API_URL}/auth/user/updateprofile/${localStorageData._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,10 +77,19 @@ function EditedProfile({API_URL}) {
             .then((response) => response.json())
             .then((data) => {
                 if(data.success){
-                    console.log('done')
+                    console.log(data)
+                    toast.success(`${data.message}`, {
+                        position: toast.POSITION.TOP_RIGHT
+                    })
+                }else{
+                    toast.error(`${data.message}`, {
+                        position: toast.POSITION.TOP_RIGHT
+                    })
                 }
             }
-        )
+            ).catch(() => toast.error(`Server error`, {
+                position: toast.POSITION.TOP_RIGHT
+            }))
         
     }
 
@@ -84,25 +99,25 @@ function EditedProfile({API_URL}) {
         <SideBar />
         <div className="main1">
             <form onSubmit={handleSubmit} >
-            <div className='Back1'>
-            
-                {/* <div className='profile-img'>
-                <User size={85} weight="thin" /> 
-                </div> */}
+                <div className='Back1'>
+                
+                    {/* <div className='profile-img'>
+                    <User size={85} weight="thin" /> 
+                    </div> */}
 
-                <div className="border2" >
-                    <p>Fullname</p>
-                    <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}} value={userEditedProfile.fullName} onChange = {updateEditedprofile}/>
-                </div>
+                    <div className="border2" >
+                        <p>Fullname</p>
+                        <CustomInput placeholder='Maryam Suleiman' name="fullName" style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}} value={userEditedProfile.fullName} onChange = {updateEditedprofile}/>
+                    </div>
 
-                <div className="border2">
-                    <p>Phone number</p>
-                    <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
+                    <div className="border2">
+                        <p>Phone number</p>
+                        <CustomInput  placeholder='0908755780' name="phoneNumber"  style={{width:'100%',height:'1rem',borderRadius:'5rem',border:' 1px solid rgba(255, 135, 135, 0.637)',padding:'1.5rem'}}value ={userEditedProfile.phoneNumber}  onChange = {updateEditedprofile} />
+                    </div>
+                    <div className="border2">
+                        <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
+                    </div> 
                 </div>
-                <div className="border2">
-                    <CustomButton title={'Confirm Changes'} type='submit' style={{width:'100%', height:'1rem',borderRadius:'5rem',padding:'1.5rem'}}/>
-                </div> 
-            </div>
             </form>
         </div>
     </div>

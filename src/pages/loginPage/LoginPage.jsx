@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import { toast } from 'react-toastify'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
 import CustomInput from '../../components/customInput/CustomInput';
@@ -23,6 +24,7 @@ function LoginPage({ API_URL }) {
 
   if(userData !== null){
     navigate("/dash-board")
+    
   }
 
 
@@ -48,8 +50,14 @@ function LoginPage({ API_URL }) {
       .then((data) => {
         if (data.success){
           localStorage.setItem("userData", JSON.stringify(data.user))
+          toast.success(`${(data.message)}`, {
+            position: toast.POSITION.TOP_RIGHT
+        })
         }else{
           localStorage.setItem("userData", null)
+          toast.error(`${(data.message)}`, {
+            position: toast.POSITION.TOP_RIGHT
+        })
         }
         if(data.user){
           if(data.user.isAdmin){
@@ -58,8 +66,6 @@ function LoginPage({ API_URL }) {
             return navigate("/dash-board")
           }
         }
-
-        alert(data.message);
 
       })
   }
