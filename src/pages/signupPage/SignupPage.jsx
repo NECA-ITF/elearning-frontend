@@ -213,6 +213,7 @@ function SignupPage({ API_URL }) {
                   <option value="3.">What is your mother's maiden name?</option>
                   <option value="4.">What is your best friend's name?</option>
                   <option value="5.">What is your pet's name?</option>
+                  <option value="6.">What was your favorite food as a child?</option>
               </select>
                 {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
               <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>
