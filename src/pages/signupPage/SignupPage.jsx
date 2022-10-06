@@ -30,6 +30,16 @@ function SignupPage({ API_URL }) {
     margin: '2% 0 0 0',
     border: ''
    })
+  const [securityStyle, setSecurityStyle] = useState({
+    width: '100%',
+    margin: '2% 0 0 0',
+    border: ''
+   })
+  const [answerStyle, setAnswerStyle] = useState({
+    width: '100%',
+    margin: '2% 0 0 0',
+    border: ''
+   })
   const [phoneStyle, setPhoneStyle] = useState({
     width: '100%',
     margin: '2% 0 0 0',
@@ -197,6 +207,14 @@ function SignupPage({ API_URL }) {
               <CustomInput placeholder='FullName*' name="fullName" style = {nameStyle} onChange={updateUserdata} />
               <CustomInput placeholder='Email*' name="email" style = {emailStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Phone Number' name="phoneNumber" style = {phoneStyle} onChange={updateUserdata}/>
+              <select name="security" id="questions">
+                  <option selected value="1.">Security Question*</option>
+                  <option value="2.">What waas your childhood nickname?</option>
+                  <option value="3.">What is your mother's maiden name?</option>
+                  <option value="4.">What is your best friend's name?</option>
+              </select>
+                {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
+              <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Password*' name="password" type ='password' style = {passStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {conpasStyle} onChange={updateUserdata}/>
             {/* <Link to='/login' className='links'> */}
