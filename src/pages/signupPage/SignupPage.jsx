@@ -233,7 +233,9 @@ function SignupPage({ API_URL }) {
           <img src={img} alt = 'learning' />
           <div className="abs">
             <div className="flexs">
-                <img src={logo} alt="Logo" className='img'/>
+                <Link to='/' className='links'>
+                  <img src={logo} alt="Logo" className='img'/>
+                </Link>
                 <p>Eduspot</p>
             </div>
             <h1>Welcome to our E-learning center</h1>

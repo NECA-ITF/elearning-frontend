@@ -93,7 +93,9 @@ function LoginPage({ API_URL }) {
           <img src={img} alt = 'learning' />
           <div className="absl">
             <div className="flexl">
-              <img src={logo} alt="Logo" className='imgl'/>
+              <Link to='/' className='links'>
+                <img src={logo} alt="Logo" className='imgl'/>
+              </Link>
               <p>Eduspot</p>
             </div>
             <h1>Welcome Back!</h1>
