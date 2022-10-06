@@ -4,13 +4,14 @@ import logo from '../../assets/itf_log.png'
 import CustomInput from '../../components/customInput/CustomInput';
 import CustomButton from '../../components/customButton/CustomButton'
 import './ForgotPassword.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function ForgotPassword({ API_URL }) {
   const [userData, setUserData] = useState({});
   const [securityPhase, setSecurityPhase] = useState(1);
   const [securityQuestion, setSecurityQuestion] = useState('');
+  const navigate = useNavigate();
 
   const updateUserData = (event) => {
     const {name, value} = event.target;
@@ -59,10 +60,8 @@ function ForgotPassword({ API_URL }) {
     .then((res) => res.json())
     .then((res) => {
       alert(res.message);
+      if (res.success) navigate("/login")
     })
-    // .then((data) => {
-    //   if (data.success) navigate("/login")
-    // })
   }
   function changePhase(phase){
     if (phase > securityPhase) return;
@@ -91,11 +90,10 @@ function ForgotPassword({ API_URL }) {
                 </>
               :
               <>
-                <p>Enter your new password and we’ll help reset your password.</p>
                 <p>{securityQuestion}</p>
                 <CustomInput required={true} name="answer" value={userData.answer} onChange={updateUserData} placeholder='Answer*' style = {{width: '100%'}} />
-                <CustomInput required={true} name="newPassword" value={userData.newPassword} onChange={updateUserData} placeholder='New password*' style = {{width: '100%'}} />
-                <CustomInput required={true} name="confirmNewPassword" value={userData.confirmNewPassword} onChange={updateUserData} placeholder='Confirm new password*' style = {{width: '100%'}} />
+                <CustomInput required={true} name="newPassword" value={userData.newPassword} onChange={updateUserData} placeholder='New password*' style = {{width: '100%'}} type="password" />
+                <CustomInput required={true} name="confirmNewPassword" value={userData.confirmNewPassword} onChange={updateUserData} placeholder='Confirm new password*' style = {{width: '100%'}} type="password" />
               </>
               }
               {/* <Link to='/login'className='links'> */}
