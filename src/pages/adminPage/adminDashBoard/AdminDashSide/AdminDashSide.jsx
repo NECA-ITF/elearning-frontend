@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './AdminDashSide.css'
 import { toast } from 'react-toastify'
@@ -7,22 +6,15 @@ import { Link, useNavigate } from 'react-router-dom'
 
 function AdminDashSide() {
 
-    const [userData, setUserData] = useState(null);
     const navigate = useNavigate()
 
     function logoutUser(params) {
-        localStorage.setItem('userData', null);
+        localStorage.clear()
         toast.success(`Logged Out  Sucessful`, {
-          position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.TOP_RIGHT
         })
-        setUserData(null)
-        navigate('/')
-      }
-    
-      useEffect(() => {
-        const user = localStorage.getItem('userData');
-        setUserData(JSON.parse(user));
-      }, [])
+        navigate("/")
+    }
 
   return (
     <div className="adminDashSide">
