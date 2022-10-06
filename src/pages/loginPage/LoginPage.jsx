@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import { toast } from 'react-toastify'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
@@ -15,17 +15,6 @@ function LoginPage({ API_URL }) {
     email: "",
     password: "",
   })
-
-  const[userData,setUserData] = useState(null)
-
-  useEffect(()=>{
-    setUserData(JSON.parse(localStorage.getItem('userData')))
-  },[])
-
-  if(userData !== null){
-    navigate("/dash-board")
-    
-  }
 
 
   function updateLoginPage(e){
@@ -50,6 +39,7 @@ function LoginPage({ API_URL }) {
       .then((data) => {
         if (data.success){
           localStorage.setItem("userData", JSON.stringify(data.user))
+          localStorage.setItem('auth',JSON.stringify({token:true}))
           toast.success(`${(data.message)}`, {
             position: toast.POSITION.TOP_RIGHT
         })
@@ -92,7 +82,9 @@ function LoginPage({ API_URL }) {
           <img src={img} alt = 'learning' />
           <div className="absl">
             <div className="flexl">
-              <img src={logo} alt="Logo" className='imgl'/>
+              <Link to='/' className='links'>
+                <img src={logo} alt="Logo" className='imgl'/>
+              </Link>
               <p>Eduspot</p>
             </div>
             <h1>Welcome Back!</h1>

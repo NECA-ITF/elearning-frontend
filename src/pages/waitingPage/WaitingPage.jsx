@@ -3,14 +3,18 @@ import './WaitingPage.css';
 import waiting from '../../assets/waitingPage/waiting1.png';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 // import CustomButton from '../../components/customButton/CustomButton';
 
 
 function WaitingPage() {
   const navigate = useNavigate();
-  setTimeout(() => {
-    navigate('/success-page')
-  }, 3000)
+  useEffect(()=>{
+    setTimeout(() => {
+      navigate('/success-page')
+    }, 3000)
+  },[])
+
   return (
     <div className='waiting-page'>
         <div className="waiting-body">
