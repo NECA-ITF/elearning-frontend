@@ -39,29 +39,28 @@ function App() {
       <Router>
         <Routes>
           <Route element = {<PrivateRoutes />}>
+            <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
+            <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
+            <Route path="/profile-page" element={<ProfilePage />} />
+            <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
 
+            <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
+            <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
+            <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+            <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+            <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
+            <Route path="/waiting-page" element={<WaitingPage />} />
+            <Route path="/success-page" element={<SuccessPage />} />
           </Route>
           <Route path="/" element={<HomePage/>} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
           <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
           <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
           <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />
           <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
-          <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
-          <Route path="/profile-page" element={<ProfilePage />} />
-          <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
-
-          <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
-          <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
-          <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-          <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-          <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
           <Route path="/policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/course-materials" element={<CourseMaterials />} />
-          <Route path="/waiting-page" element={<WaitingPage />} />
-          <Route path="/success-page" element={<SuccessPage />} />
           <Route path="/admin-contacts" element={<AdminContacts API_URL={API_URL} />} />
           {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
           <Route path="/*" element={<ErrorPage />} />
