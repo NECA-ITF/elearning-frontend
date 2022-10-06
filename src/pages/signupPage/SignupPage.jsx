@@ -213,6 +213,7 @@ function SignupPage({ API_URL }) {
                   <option value="3.">What is your mother's maiden name?</option>
                   <option value="4.">What is your best friend's name?</option>
                   <option value="5.">What is your pet's name?</option>
+                  <option value="6.">What was your favorite food as a child?</option>
               </select>
                 {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
               <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>
@@ -232,7 +233,9 @@ function SignupPage({ API_URL }) {
           <img src={img} alt = 'learning' />
           <div className="abs">
             <div className="flexs">
-                <img src={logo} alt="Logo" className='img'/>
+                <Link to='/' className='links'>
+                  <img src={logo} alt="Logo" className='img'/>
+                </Link>
                 <p>Eduspot</p>
             </div>
             <h1>Welcome to our E-learning center</h1>
