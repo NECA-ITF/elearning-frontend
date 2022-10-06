@@ -179,6 +179,7 @@ function SignupPage({ API_URL }) {
       })
     }
     if(isemailValid && isnameValid && ispassValid && isphoneValid){
+      // return console.log(userData)
       fetch(`${API_URL}/auth/user/register`, {
         method: 'POST',
         headers: {
@@ -191,7 +192,7 @@ function SignupPage({ API_URL }) {
         if (data.success){
           navigate("/waiting-page")
         }else{
-          toast.error("User already exist", {
+          toast.error(`${data.message}`, {
             position: toast.POSITION.TOP_RIGHT
           })
         }
@@ -207,17 +208,35 @@ function SignupPage({ API_URL }) {
               <CustomInput placeholder='FullName*' name="fullName" style = {nameStyle} onChange={updateUserdata} />
               <CustomInput placeholder='Email*' name="email" style = {emailStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Phone Number' name="phoneNumber" style = {phoneStyle} onChange={updateUserdata}/>
-              <select name="security" id="questions">
-                  <option selected value="1.">Security Question*</option>
-                  <option value="2.">What was your childhood nickname?</option>
-                  <option value="3.">What is your mother's maiden name?</option>
-                  <option value="4.">What is your best friend's name?</option>
-                  <option value="5.">What is your pet's name?</option>
-                  <option value="6.">What was your favorite food as a child?</option>
-                  <option value="7.">What is your favorite sport?</option>
+              <select name="securityQuestion" id="questions" value={userData.securityQuestion} onChange={updateUserdata} required>
+                  <option selected value="">Security Question*</option>
+
+                  <option value="What was your childhood nickname?">
+                    What was your childhood nickname?
+                  </option>
+
+                  <option value="What is your mother's maiden name?">
+                    What is your mother's maiden name?
+                  </option>
+
+                  <option value="What is your best friend's name?">
+                    What is your best friend's name?
+                  </option>
+
+                  <option value="What is your pet's name?">
+                    What is your pet's name?
+                  </option>
+
+                  <option value="What was your favorite food as a child?">
+                    What was your favorite food as a child?
+                  </option>
+
+                  <option value="What is your favorite sport?">
+                    What is your favorite sport?
+                  </option>
               </select>
                 {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
-              <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>
+              <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata} required/>
               <CustomInput placeholder='Password*' name="password" type ='password' style = {passStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {conpasStyle} onChange={updateUserdata}/>
             {/* <Link to='/login' className='links'> */}

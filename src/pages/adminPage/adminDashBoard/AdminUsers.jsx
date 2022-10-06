@@ -4,6 +4,7 @@ import AdminDashSide from './AdminDashSide/AdminDashSide'
 import AdminDashContentHeader from './AdminDashContentHeader/AdminDashContentHeader'
 import UserCard from './UserCard/UserCard'
 import UserData from './UserData/UserData'
+import { toast } from 'react-toastify';
 
 function AdminUsers({ API_URL }) {
     const [users, setUsers] = useState([]);
@@ -29,7 +30,6 @@ function AdminUsers({ API_URL }) {
         })
     }
     function deleteUser( userId ){
-        if(!window.confirm("Are you sure you want to delete this user?")) return;
         fetch(`${API_URL}/auth/user`, {
             headers: {
                 'Content-Type': 'application/json'
@@ -38,8 +38,12 @@ function AdminUsers({ API_URL }) {
             body: JSON.stringify({ userId: userId })
         })
         .then((res) => res.json())
-        .then(() => {
-            //alert(res.message);
+        .then((res) => {
+            if(res.success){
+                toast.success(`${res.message}`, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }
             getUsers();
         })
     }

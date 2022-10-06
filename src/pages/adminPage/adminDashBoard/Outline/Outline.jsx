@@ -19,7 +19,7 @@ function Outline({title, mData, mMode, API_URL, currentCourse, outline, setCurre
         .then(res => {
             if(res.success){ 
                 getOutline();
-                toast.success(`Deleted Sucessful`, {
+                toast.success(`${res.message}`, {
                     position: toast.POSITION.TOP_RIGHT
                 })
             }
