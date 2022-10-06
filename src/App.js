@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import HomePage from './pages/homePage/HomePage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoutes from './util/PrivateRoutes';
 import SignupPage from './pages/signupPage/SignupPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
@@ -28,39 +29,46 @@ import SuccessPage from './pages/waitingPage/SuccessPage'
 
 
 function App() {
-  const API_URL = "http://localhost:5000";
-  // const API_URL = "http://192.168.136.84:5000";
+  //const API_URL = "http://localhost:5000";
+  const API_URL = "http://192.168.1.2:5000";
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
+  const [auth, setAuth] = useState({})
+  useEffect(()=>{
+    setAuth(JSON.parse(localStorage.getItem('auth')))
+  },[])
+
   return (
     <div>
       <Router>
         <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
-        <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
-        <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
-        <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />
-        <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
-        <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
-        <Route path="/profile-page" element={<ProfilePage />} />
-        <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
+          <Route element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
+            <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
+            <Route path="/profile-page" element={<ProfilePage />} />
+            <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
 
-        <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
-        <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
-        <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-        <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
-        <Route path="/policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfUse />} />
-        <Route path="/course-materials" element={<CourseMaterials />} />
-        <Route path="/waiting-page" element={<WaitingPage />} />
-        <Route path="/success-page" element={<SuccessPage />} />
-        <Route path="/admin-contacts" element={<AdminContacts API_URL={API_URL} />} />
-        {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
-        <Route path="/*" element={<ErrorPage />} />
+            <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
+            <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
+            <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+            <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+            <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
+            <Route path="/waiting-page" element={<WaitingPage />} />
+            <Route path="/success-page" element={<SuccessPage />} />
+          </Route>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
+          <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
+          <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />
+          <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
+          <Route path="/policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/course-materials" element={<CourseMaterials />} />
+          <Route path="/admin-contacts" element={<AdminContacts API_URL={API_URL} />} />
+          {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
+          <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </Router>
