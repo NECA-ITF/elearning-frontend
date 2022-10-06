@@ -30,6 +30,16 @@ function SignupPage({ API_URL }) {
     margin: '2% 0 0 0',
     border: ''
    })
+  const [securityStyle, setSecurityStyle] = useState({
+    width: '100%',
+    margin: '2% 0 0 0',
+    border: ''
+   })
+  const [answerStyle, setAnswerStyle] = useState({
+    width: '100%',
+    margin: '2% 0 0 0',
+    border: ''
+   })
   const [phoneStyle, setPhoneStyle] = useState({
     width: '100%',
     margin: '2% 0 0 0',
@@ -197,6 +207,17 @@ function SignupPage({ API_URL }) {
               <CustomInput placeholder='FullName*' name="fullName" style = {nameStyle} onChange={updateUserdata} />
               <CustomInput placeholder='Email*' name="email" style = {emailStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Phone Number' name="phoneNumber" style = {phoneStyle} onChange={updateUserdata}/>
+              <select name="security" id="questions">
+                  <option selected value="1.">Security Question*</option>
+                  <option value="2.">What was your childhood nickname?</option>
+                  <option value="3.">What is your mother's maiden name?</option>
+                  <option value="4.">What is your best friend's name?</option>
+                  <option value="5.">What is your pet's name?</option>
+                  <option value="6.">What was your favorite food as a child?</option>
+                  <option value="7.">What is your favorite sport?</option>
+              </select>
+                {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
+              <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Password*' name="password" type ='password' style = {passStyle} onChange={updateUserdata}/>
               <CustomInput placeholder='Confirm Password*' name="confirmPassword" type ='password' style = {conpasStyle} onChange={updateUserdata}/>
             {/* <Link to='/login' className='links'> */}
@@ -213,7 +234,9 @@ function SignupPage({ API_URL }) {
           <img src={img} alt = 'learning' />
           <div className="abs">
             <div className="flexs">
-                <img src={logo} alt="Logo" className='img'/>
+                <Link to='/' className='links'>
+                  <img src={logo} alt="Logo" className='img'/>
+                </Link>
                 <p>Eduspot</p>
             </div>
             <h1>Welcome to our E-learning center</h1>

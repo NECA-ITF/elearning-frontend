@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import './AdminDashSide.css'
+import { toast } from 'react-toastify'
 import itflogo from '../../../../assets/itf_log.png';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function AdminDashSide() {
+
+    const [userData, setUserData] = useState(null);
+    const navigate = useNavigate()
+
+    function logoutUser(params) {
+        localStorage.setItem('userData', null);
+        toast.success(`Logged Out  Sucessful`, {
+          position: toast.POSITION.TOP_RIGHT
+        })
+        setUserData(null)
+        navigate('/')
+      }
+    
+      useEffect(() => {
+        const user = localStorage.getItem('userData');
+        setUserData(JSON.parse(user));
+      }, [])
+
   return (
     <div className="adminDashSide">
         <div className="dashSideBtn">
@@ -56,6 +75,27 @@ function AdminDashSide() {
                 }}
             />
         </Link>
+        <Link to='/profile-page' className='links'>
+            <CustomButton  
+                title="Admin Profile" 
+                style={{ 
+                    marginBottom: "10px",
+                    padding: "10px 5px",
+                    display:"block",
+                    width:'100%'
+                }}
+            />
+        </Link>
+        <CustomButton  
+                title="Logout" 
+                onClick={logoutUser}
+                style={{ 
+                    marginTop: "18rem",
+                    padding: "10px 5px",
+                    display:"block",
+                    width:'100%'
+                }}
+            />
         </div>
     </div>
   )

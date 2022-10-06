@@ -44,37 +44,50 @@
 .dashnav{
       align-items: center;
 }
-.userpro{
+.usericons{
     display: flex;
     gap: 10px;
     /* border: 1px solid yellow; */
     padding: .3rem .6rem .6rem .6rem;
 }
-.prodiv{
+.dash-prof{
     display: flex;
     /* border: 1px solid blue; */
 }
-.droplogout{
+.dashlog{
+    display: none;
+    position: absolute;
+    color: #D82148;
+    margin-top: 15px;
+}
+.dashlog h4{
+    color: #D82148;
+}
+.dashlog:hover{
+    display: block;
+}
+.dasharrow:hover + .dashlog{
+    display: block;
+}
+/* .droplogout1{
     display: none;
     position: absolute;
     z-index: 1;
     color: #D82148;
     margin-top: 1.5%;
 }
-.droplogout h4{
+.droplogout1 h4{
     color: #D82148;
 }
-.arrowhov:hover + .droplogout{
+.arrowhov1:hover + .droplogout1{
     display: block;
     margin-top: 1%;
     color: #D82148;
-    transition: .1s ease-in;
 }
-.droplogout:hover {
+.droplogout1:hover {
     display: block;
     color: #D82148;
-    transition: .1s ease-in;
-}
+} */
 
 @media screen and (max-width:850px) {
     .dashnav-bar{
@@ -82,7 +95,7 @@
         padding: 1px;
         font-size: 12px;
     }
-    .userpro{
+    .usericons{
         margin-right: 0.8rem;
         padding: .1rem .3rem .3rem .3rem;
     }
@@ -176,10 +189,10 @@
         transform: none;
     }
 
-    .userpro img, .dashnav, .prodiv{
+    .usericons img, .dashnav, .dash-prof{
         display: none;
     }
-    .userpro h3{
+    .usericons h3{
         display: none;
     }
 
