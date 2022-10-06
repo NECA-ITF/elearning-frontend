@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import { toast } from 'react-toastify'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
@@ -16,13 +16,6 @@ function LoginPage({ API_URL }) {
     password: "",
   })
 
-  const[userData,setUserData] = useState(null)
-
-  useEffect(()=>{
-    setUserData(JSON.parse(localStorage.getItem('userData')))
-  },[])
-
-  
 
   function updateLoginPage(e){
     const {name, value} = e.target
