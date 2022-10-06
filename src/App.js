@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import HomePage from './pages/homePage/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -34,52 +34,46 @@ function App() {
 
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
-  const [auth, setAuth] = useState({})
-  // const[userData,setUserData] = useState(null)
-  useEffect(()=>{
-    // setUserData(JSON.parse(localStorage.getItem('userData')))
-    setAuth(JSON.parse(localStorage.getItem('auth')))
-  },[])
 
   return (
     <div>
       <Router>
         <Routes>
-          <Route path='/admin-dash' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/admin-dash' element = {<PrivateRoutes/>}>
             <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
           </Route>
-          <Route path='/play-courses' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/play-courses' element = {<PrivateRoutes />}>
             <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
           </Route>
-          <Route path='/profile-page' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/profile-page' element = {<PrivateRoutes />}>
             <Route path="/profile-page" element={<ProfilePage />} />
           </Route>
-          <Route path='/edited-profile' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/edited-profile' element = {<PrivateRoutes />}>
             <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
           </Route>
-          <Route path='/success-page' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/success-page' element = {<PrivateRoutes />}>
             <Route path="/success-page" element={<SuccessPage />} />
           </Route>
-          <Route path='/waiting-page' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/waiting-page' element = {<PrivateRoutes />}>
             <Route path="/waiting-page" element={<WaitingPage />} />
           </Route>
-          <Route path='/admin-users' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/admin-users' element = {<PrivateRoutes />}>
             <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
           </Route>
-          <Route path='/admin-outline' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/admin-outline' element = {<PrivateRoutes />}>
             <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
           </Route>
-          <Route path='/course-outline' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/course-outline' element = {<PrivateRoutes />}>
             <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
           </Route>
-          <Route path='/contact-page' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/contact-page' element = {<PrivateRoutes />}>
             <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
           </Route>
-          <Route path='/change-password' element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/change-password' element = {<PrivateRoutes />}>
             <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
           </Route>
 
-          
+
           <Route path="/" exact element={<HomePage/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
