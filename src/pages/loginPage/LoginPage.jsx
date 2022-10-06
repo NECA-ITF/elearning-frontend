@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import { toast } from 'react-toastify'
 import img from '../../assets/image2.jpg';
 import logo from '../../assets/itf_log.png';
@@ -15,17 +15,6 @@ function LoginPage({ API_URL }) {
     email: "",
     password: "",
   })
-
-  const[userData,setUserData] = useState(null)
-
-  useEffect(()=>{
-    setUserData(JSON.parse(localStorage.getItem('userData')))
-  },[])
-
-  //cadd auth to the storage and make the token true
-  if(userData !== null){
-    navigate("/dash-board")
-  }
 
 
   function updateLoginPage(e){
