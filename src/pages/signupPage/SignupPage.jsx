@@ -209,9 +209,10 @@ function SignupPage({ API_URL }) {
               <CustomInput placeholder='Phone Number' name="phoneNumber" style = {phoneStyle} onChange={updateUserdata}/>
               <select name="security" id="questions">
                   <option selected value="1.">Security Question*</option>
-                  <option value="2.">What waas your childhood nickname?</option>
+                  <option value="2.">What was your childhood nickname?</option>
                   <option value="3.">What is your mother's maiden name?</option>
                   <option value="4.">What is your best friend's name?</option>
+                  <option value="5.">What is your pet's name?</option>
               </select>
                 {/* <CustomInput placeholder='Security Question*' name="securityQuestion" style = {securityStyle} onChange={updateUserdata}/> */}
               <CustomInput placeholder='Your Answer' name="answer" style = {answerStyle} onChange={updateUserdata}/>

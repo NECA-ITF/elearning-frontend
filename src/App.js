@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import HomePage from './pages/homePage/HomePage';
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoutes from './util/PrivateRoutes';
@@ -35,7 +35,9 @@ function App() {
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   const [auth, setAuth] = useState({})
+  const[userData,setUserData] = useState(null)
   useEffect(()=>{
+    setUserData(JSON.parse(localStorage.getItem('userData')))
     setAuth(JSON.parse(localStorage.getItem('auth')))
   },[])
 
@@ -57,12 +59,12 @@ function App() {
             <Route path="/waiting-page" element={<WaitingPage />} />
             <Route path="/success-page" element={<SuccessPage />} />
           </Route>
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/" exact element={<HomePage/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
           <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
           <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />
-          <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
+          <Route path="/dash-board" element={userData?.isAdmin ? <AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} /> :  <DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
           <Route path="/policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/course-materials" element={<CourseMaterials />} />
