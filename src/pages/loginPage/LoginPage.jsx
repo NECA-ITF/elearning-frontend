@@ -22,9 +22,9 @@ function LoginPage({ API_URL }) {
     setUserData(JSON.parse(localStorage.getItem('userData')))
   },[])
 
+  //cadd auth to the storage and make the token true
   if(userData !== null){
     navigate("/dash-board")
-    
   }
 
 
@@ -50,6 +50,7 @@ function LoginPage({ API_URL }) {
       .then((data) => {
         if (data.success){
           localStorage.setItem("userData", JSON.stringify(data.user))
+          localStorage.setItem('auth',JSON.stringify({token:true}))
           toast.success(`${(data.message)}`, {
             position: toast.POSITION.TOP_RIGHT
         })
