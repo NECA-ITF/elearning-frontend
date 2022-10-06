@@ -3,70 +3,6 @@
 .dashcontainer{
     font-family: 'BioRhyme', serif;
 }
-.dashnav-bar{
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #f9f9f9;
-    color: #151D3B;
-    padding: 6px;
-    /* border: 1px solid #151D3B; */
-    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-}
-
-.dashnav{
-    /* display: flex;
-    justify-content: space-around; */
-    align-items: center;
-}
-.dashcontent{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-
-}
-.dashcontent li{
-    cursor: pointer;
-    padding: .9rem .9rem .1rem;
-}
-.dashcontent li:hover{
-    border-bottom: 2px solid red;
-}
-.dashnav{
-      align-items: center;
-}
-.userpro{
-    display: flex;
-    gap: 10px;
-    /* border: 1px solid yellow; */
-    margin-right: 1.5rem;
-    padding: .3rem .6rem .6rem .6rem;
-}
-.prodiv{
-    display: flex;
-    /* border: 1px solid blue; */
-}
-.droplogout{
-    display: none;
-    position: absolute;
-    z-index: 1;
-    margin-top: 2%;
-}
-.arrowhov:hover + .droplogout{
-    display: block;
-    color: #D82148;
-    transition: 4s ease-in;
-}
-.droplogout:hover {
-    display: block;
-    color: #D82148;
-    transition: 4s ease-in;
-}
 .dashcustominput{
     display: flex;
     justify-content: center;
@@ -83,6 +19,9 @@
     margin-top: 0.2rem;
     /* margin-bottom: 3rem; */
 }
+.dashindiv-mob{
+    display: none;
+}
 .titlediv{
     width: 100%;
     /* border: 1px solid green; */
@@ -91,47 +30,23 @@
     margin-left: 6rem;
 }
 @media screen and (max-width:850px) {
-    .dashnav-bar{
-        width: 80%;
-        padding: 1px;
-        font-size: 12px;
-    }
     .dashcustominput{
         width: 100%;
-    }
-    .userpro{
-        margin-right: 0.8rem;
-        padding: .1rem .3rem .3rem .3rem;
-    }
-    .dashcontent{
-        display: flex;
-        justify-content:left;
-        /* align-items: center; */
-        list-style: none;
-    }
-    .dashcontent li{
-        padding: .3rem .3rem .1rem;
     }
 }
-@media screen and (max-width:350px){
+@media screen and (max-width:500px){
+    .dashindiv{
+        display: none;
+    }
+    .dashindiv-mob{
+        display: flex;
+    }
     .dashcustominput{
         width: 100%;
     }
-    .dashcontent{
-        display: grid;
-        /* justify-content:left; */
-        /* align-items: center; */
-        list-style: none;
+    .titlediv h1{
+        font-size: 20px;
     }
-    .userpro h3{
-        display: none;
-    }
-    /* .dashinput{
-        width: 50px;
-    }
-    .dashbet{
-        width: 20px;
-    } */
 }
 
 

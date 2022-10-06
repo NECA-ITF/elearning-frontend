@@ -34,7 +34,7 @@ function ContactItems({ API_URL }) {
               ))
             }
           </div>
-          <div className='contact-enteries'>
+          {/* <div className='contact-enteries'>
             <div className='enteries'>
               <ul>
               <li>Show</li>
@@ -49,7 +49,7 @@ function ContactItems({ API_URL }) {
               <li>{'>'}</li>
               </ul>
             </div>
-          </div>
+          </div> */}
       </div>
     </div>
   )

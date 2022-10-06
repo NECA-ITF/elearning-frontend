@@ -9,7 +9,7 @@ function ContactItem({ msg, index, API_URL, getMessages }) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({messageId: messageId})
+      body: JSON.stringify({ messageId: messageId })
     });
     response = await response.json();
     // alert(response.message);
