@@ -27,6 +27,7 @@ function AdminDashSide() {
   return (
     <div className="adminDashSide">
         <div className="dashSideBtn">
+            <div>
             <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Link to='/' className='links'><img src={itflogo} alt="itflogo" style={{width:'60px', height:'60px', padding:'5px 5px'}}/></Link>
                 <h4 style={{ color: "white" }}>Admin Dashboard</h4>
@@ -86,16 +87,19 @@ function AdminDashSide() {
                 }}
             />
         </Link>
+        </div>
+        <div>
         <CustomButton  
                 title="Logout" 
                 onClick={logoutUser}
                 style={{ 
-                    marginTop: "18rem",
+                    marginTop: "auto",
                     padding: "10px 5px",
                     display:"block",
                     width:'100%'
                 }}
             />
+        </div>
         </div>
     </div>
   )
