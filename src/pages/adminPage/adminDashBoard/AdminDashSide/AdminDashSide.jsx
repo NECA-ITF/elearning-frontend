@@ -75,11 +75,22 @@ function AdminDashSide() {
                 }}
             />
         </Link>
+        <Link to='/profile-page' className='links'>
+            <CustomButton  
+                title="Admin Profile" 
+                style={{ 
+                    marginBottom: "10px",
+                    padding: "10px 5px",
+                    display:"block",
+                    width:'100%'
+                }}
+            />
+        </Link>
         <CustomButton  
                 title="Logout" 
                 onClick={logoutUser}
                 style={{ 
-                    marginBottom: "10px",
+                    marginTop: "18rem",
                     padding: "10px 5px",
                     display:"block",
                     width:'100%'
