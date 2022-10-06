@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 function ForgotPassword({ API_URL }) {
   const [userData, setUserData] = useState({});
+  const [securityPhase, setSecurityPhase] = useState(1);
+  const [securityQuestion, setSecurityQuestion] = useState('');
 
   const updateUserData = (event) => {
     const {name, value} = event.target;
@@ -19,48 +21,85 @@ function ForgotPassword({ API_URL }) {
     // console.log(userData);
   }
 
-  const getVideos = async (event) => {
+  const validateEmail = async (event) => {
     event.preventDefault();
+    
 
-    const { password, confirmPassword } = userData;
-    if (password !== confirmPassword)
+    let response = await fetch(`${API_URL}/auth/validateEmail`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      body: JSON.stringify(userData)
+    })
+    response = await response.json();
+    if (response.success){
+      setSecurityQuestion(response.securityQuestion);
+      setSecurityPhase(phase => (phase + 1));
+    }
+  }
+
+  const resetPassword = async (event) => {
+    event.preventDefault();
+    const { newPassword, confirmNewPassword } = userData;
+    if (newPassword !== confirmNewPassword)
       return alert("passwords don't match");
 
     let userData2 = userData;
-    delete userData2["confirmPassword"];
+    delete userData2["confirmNewPassword"];
     setUserData(userData2)
-    console.log(userData);
 
     fetch(`${API_URL}/auth/forgottenpassword`, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(userData)
     })
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => {
+      alert(res.message);
+    })
     // .then((data) => {
     //   if (data.success) navigate("/login")
     // })
   }
+  function changePhase(phase){
+    if (phase > securityPhase) return;
 
+    setSecurityPhase(phase);
+  }
   return (
    
     <div className="smallContf">
-          <form className='formf' onSubmit={getVideos}>
+          <form className='formf' onSubmit={ securityPhase === 1 ? validateEmail : resetPassword }>
             <div className="colf">
                 <div className="flex">
                     <img src= {logo} alt="Logo" />
                     <h1>Eduspot</h1>        
                 </div>
-                <h2>Forgot your password?</h2>          
-              <p>Enter your email and new password and we’ll help reset your password.</p>
-              <CustomInput required={true} name="email" onChange={updateUserData} placeholder='Email*' style = {{width: '100%'}} />
-              <CustomInput required={true} name="password" onChange={updateUserData} placeholder='New password*' style = {{width: '100%'}} />
-              <CustomInput required={true} name="confirmPassword" onChange={updateUserData} placeholder='Confirm new password*' style = {{width: '100%'}} />
+                <h2>Forgot your password?</h2>   
+                <div style={{height: "30px", width: "80%", borderBottom: "2px solid white", display: "flex", flexDirection: "row", justifyContent: "space-between", marginLeft: "auto", marginRight: "auto"}} >
+                  <p style={{borderRadius: "50%", border: "1px solid white", height: "30px", width: "30px", fontWeight: "bold", backgroundColor: securityPhase >= 1 ? "green" : "#202c46", cursor: "pointer"}} onClick={() => { changePhase(1) }} >1</p>
+                  <p style={{borderRadius: "50%", border: "1px solid white", height: "30px", width: "30px", fontWeight: "bold", backgroundColor: securityPhase >= 2 ? "green" : "#202c46", cursor: "pointer"}} onClick={() => { changePhase(2) }} >2</p>
+                </div>       
+              {
+                securityPhase === 1 ? 
+                <>
+                <p>Please enter your email</p>
+                  <CustomInput required={true} name="email" value={userData.email} onChange={updateUserData} placeholder='Email*' style = {{width: '100%'}} />
+                </>
+              :
+              <>
+                <p>Enter your new password and we’ll help reset your password.</p>
+                <p>{securityQuestion}</p>
+                <CustomInput required={true} name="answer" value={userData.answer} onChange={updateUserData} placeholder='Answer*' style = {{width: '100%'}} />
+                <CustomInput required={true} name="newPassword" value={userData.newPassword} onChange={updateUserData} placeholder='New password*' style = {{width: '100%'}} />
+                <CustomInput required={true} name="confirmNewPassword" value={userData.confirmNewPassword} onChange={updateUserData} placeholder='Confirm new password*' style = {{width: '100%'}} />
+              </>
+              }
               {/* <Link to='/login'className='links'> */}
-              <CustomButton title='Reset Password ' style = {{width: '100%', marginTop: '20px'}} />
+              <CustomButton title={securityPhase === 1 ? 'Confirm Email' : 'Reset Password'} style = {{width: '100%', marginTop: '20px'}} />
               {/* </Link> */}
             </div>
             <div className='bottomf'>  
