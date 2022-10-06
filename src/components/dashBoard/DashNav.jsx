@@ -60,24 +60,24 @@ function DashNav() {
                         </Link>   
                 </ul>
             </nav>
-            <div className='userpro'>
-            <h3>
-                {userData ? `Welcome, ${userData.fullName}` : ""}
-            </h3>
-            <div className='prodiv'>
-                <img src={profile} alt='profileicon' style={{width:'20px'}}/>
-                <img src={arrow} alt='arrowdown' style={{width:'20px'}} className='arrowhov'/>
-                <div className='droplogout'>
-                {
-                        userData ? (
-                            <h4 onClick={logoutUser} style={{cursor: 'pointer'}}>Logout</h4>
-                        ): 
-                        <Link to='/login' className='links'>        
-                                <h4>login</h4>
+            <div className='usericons'>
+                <h3>
+                    {userData ? `Welcome, ${userData.fullName}` : ""}
+                </h3>
+                <div className='dash-prof'>
+                    <img src={profile} alt="profileicon" style={{width:'20px'}}/>
+                    <img src={arrow} alt="arrowicon" style={{width:'20px'}} className='dasharrow'/>
+                    <div className="dashlog">
+                        {
+                            userData ? (
+                                <h4 onClick={logoutUser} style={{cursor: 'pointer'}}>Logout</h4>
+                            ):
+                            <Link to='/login' className='links'>
+                                <h4 style={{cursor: 'pointer'}}>Login</h4>
                             </Link>
-                    }
+                        }
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         
