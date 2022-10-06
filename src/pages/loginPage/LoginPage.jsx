@@ -22,11 +22,7 @@ function LoginPage({ API_URL }) {
     setUserData(JSON.parse(localStorage.getItem('userData')))
   },[])
 
-  //cadd auth to the storage and make the token true
-  if(userData !== null){
-    navigate("/dash-board")
-  }
-
+  
 
   function updateLoginPage(e){
     const {name, value} = e.target

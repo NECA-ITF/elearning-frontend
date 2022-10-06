@@ -35,9 +35,9 @@ function App() {
   const [currentCourse, setCurrentCourse] = useState({});
   const [currentCourseOutline, setCurrentCourseOutline] = useState({});
   const [auth, setAuth] = useState({})
-  const[userData,setUserData] = useState(null)
+  // const[userData,setUserData] = useState(null)
   useEffect(()=>{
-    setUserData(JSON.parse(localStorage.getItem('userData')))
+    // setUserData(JSON.parse(localStorage.getItem('userData')))
     setAuth(JSON.parse(localStorage.getItem('auth')))
   },[])
 
@@ -45,33 +45,54 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route element = {<PrivateRoutes auth = {auth}/>}>
+          <Route path='/admin-dash' element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/admin-dash" element={<AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} />} />
+          </Route>
+          <Route path='/play-courses' element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/play-courses" element={<PlayCourses API_URL={API_URL} currentCourse={currentCourse} currentCourseOutline={currentCourseOutline} />} />
+          </Route>
+          <Route path='/profile-page' element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/profile-page" element={<ProfilePage />} />
+          </Route>
+          <Route path='/edited-profile' element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/edited-profile" element={<EditedProfile API_URL={API_URL} />} />
-
-            <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
-            <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
-            <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-            <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
-            <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
-            <Route path="/waiting-page" element={<WaitingPage />} />
+          </Route>
+          <Route path='/success-page' element = {<PrivateRoutes auth = {auth}/>}>
             <Route path="/success-page" element={<SuccessPage />} />
           </Route>
+          <Route path='/waiting-page' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/waiting-page" element={<WaitingPage />} />
+          </Route>
+          <Route path='/admin-users' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/admin-users" element={<AdminUsers API_URL={API_URL} />} />
+          </Route>
+          <Route path='/admin-outline' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/admin-outline" element={<AdminOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} currentCourseOutline={currentCourseOutline} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+          </Route>
+          <Route path='/course-outline' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/course-outline" element={<CoursesOutline API_URL={API_URL} currentCourse={currentCourse} setCurrentCourseOutline={setCurrentCourseOutline} />} />
+          </Route>
+          <Route path='/contact-page' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/contact-page" element={<ContactPage API_URL={API_URL} />} />
+          </Route>
+          <Route path='/change-password' element = {<PrivateRoutes auth = {auth}/>}>
+            <Route path="/change-password" element={<ChangePassword API_URL={API_URL} />} />
+          </Route>
+
+          
           <Route path="/" exact element={<HomePage/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/signup" element={<SignupPage API_URL={API_URL} />} />
           <Route path="/login" element={<LoginPage API_URL={API_URL} />} />
           <Route path="/forgot-password" element={<ForgotPassword API_URL={API_URL} />} />
-          <Route path="/dash-board" element={userData?.isAdmin ? <AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} /> :  <DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
+          {/* <Route path="/dash-board" element={userData?.isAdmin ? <AdminDashBoard API_URL={API_URL} currentCourse={currentCourse} setCurrentCourse={setCurrentCourse} /> :  <DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
+          <Route path="/dash-board" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} />
           <Route path="/policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/course-materials" element={<CourseMaterials />} />
           <Route path="/admin-contacts" element={<AdminContacts API_URL={API_URL} />} />
           {/* <Route path="*" element={<DashBoard API_URL={API_URL} setCurrentCourse={setCurrentCourse} />} /> */}
           <Route path="/*" element={<ErrorPage />} />
-
         </Routes>
       </Router>
       <ToastContainer />
