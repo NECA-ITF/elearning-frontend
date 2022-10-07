@@ -3,6 +3,7 @@ import itflogo from '../../assets/itf_log.png';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 import {useState,useEffect} from 'react'
+import Hamburger from '../../components/Hamburger/Hamburger';
 
 function NavBar() {
     const[userData,setUserData] = useState(null)
@@ -62,6 +63,9 @@ function NavBar() {
                         <p> LOGIN </p>
                     </Link>)
                     }
+                </div>
+                <div className='home-mob'>
+                    <Hamburger/>
                 </div>
         </div>
      )

@@ -110,4 +110,12 @@
     background-size: 100% calc(2vw + 90px);
     }
 }
+@media screen and (max-width:500px){
+    .shapedividers_com-6246{
+        display: none;
+    }
+    .mockpix{
+        display: none;
+    }
+}
      

@@ -69,4 +69,19 @@
     color: white;
     transition: ease-in .5s;
 }
+.home-mob{
+    display: none;
+}
+@media screen and (max-width:500px){
+    .home-mob{
+        display: block;
+        position: relative;
+        z-index: 3;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .apply, .nav{
+        display: none;
+    }
+}
 
