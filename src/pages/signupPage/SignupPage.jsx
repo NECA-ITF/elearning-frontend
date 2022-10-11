@@ -203,7 +203,12 @@ function SignupPage({ API_URL }) {
   return (
       <div className="smallCont">
           <form className='form' onSubmit={sendNewUserData}>
-            <div className="col">          
+            <div className="col"> 
+               <Link to='/' className='links'>
+                <div className="signmob">
+                  <img src={logo} alt="Logo" className='signmob-img'/>
+                </div>
+              </Link>        
               <h2>Sign up and start learning today</h2>
               <CustomInput placeholder='FullName*' name="fullName" style = {nameStyle} onChange={updateUserdata} />
               <CustomInput placeholder='Email*' name="email" style = {emailStyle} onChange={updateUserdata}/>
@@ -250,7 +255,7 @@ function SignupPage({ API_URL }) {
 
           </form>
         <div className="col-2">
-          <img src={img} alt = 'learning' />
+          <img src={img} alt = 'learning' className='signimg'/>
           <div className="abs">
             <div className="flexs">
                 <Link to='/' className='links'>

@@ -4,11 +4,11 @@
     align-items: center;
     width: 100vw;
     background-color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: fixed;
     top: 0;
     height: 70px;
-    z-index: 3;
+    z-index: 1;
 }
 .apply {
     background-color:#151D3B;
@@ -38,7 +38,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .content{
     display: flex;
@@ -68,5 +68,20 @@
     background-color:#D82148;
     color: white;
     transition: ease-in .5s;
+}
+.home-mob{
+    display: none;
+}
+@media screen and (max-width:800px){
+    .home-mob{
+        display: block;
+        position: relative;
+        z-index: 6;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .apply, .nav{
+        display: none;
+    }
 }
 
