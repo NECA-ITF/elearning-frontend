@@ -1,4 +1,4 @@
-@media screen and (max-width:500px){
+@media screen and (max-width:800px){
     /* .ham-index{
         z-index: 10;
     } */
@@ -53,10 +53,13 @@
         /* display: none; */
         position: absolute;
         width: 200px;
+        /* z-index: 10; */
         margin: -100px 0 0 -90px;
         padding: 50px;
+        /* height: 100vh; */
+        color: white;
         padding-top: 100px;
-        background: #ededed;
+        background: #D82148;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         /* to stop flickering of text in safari */
@@ -68,6 +71,7 @@
     .hamburger li{
         padding: 10px 0;
         font-size: 15px;
+        color: white;
     }
 
     .res-inp:checked ~ .hamburger{

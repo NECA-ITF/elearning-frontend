@@ -65,7 +65,7 @@
     left: -1px;
     right: -1px;
     top: -1px;
-    z-index: 3;
+    z-index: 1;
     height: 100vh;
     width: 100vw;
     pointer-events: none;
@@ -110,12 +110,29 @@
     background-size: 100% calc(2vw + 90px);
     }
 }
-@media screen and (max-width:500px){
+
+@media screen and (max-width:800px){
     .shapedividers_com-6246{
         display: none;
     }
+    .display-item{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .mockpix img{
+        width: 300px;
+    }
+}
+@media screen and (max-width:500px){
+    .home-text h1{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width:350px){
     .mockpix{
         display: none;
     }
 }
-     

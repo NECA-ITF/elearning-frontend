@@ -63,7 +63,12 @@ function LoginPage({ API_URL }) {
   return (
     <div className="smallContl">
           <form className='forml' onSubmit={getUserData}>
-            <div className="coll">          
+            <div className="coll"> 
+            <Link to='/' className='links'>
+                <div className="logmob">
+                  <img src={logo} alt="Logo" className='mob-img'/>
+                </div>
+              </Link>  
               <h1>Login</h1>
               <CustomInput placeholder='Email*' name="email" style = {{width: '100%'}} onChange={updateLoginPage}/>
               <CustomInput placeholder='Password*' name="password" type ='password' style = {{width: '100%'}} onChange={updateLoginPage}/>
@@ -79,7 +84,7 @@ function LoginPage({ API_URL }) {
             </div>
           </form>
         <div className="col-2l">
-          <img src={img} alt = 'learning' />
+          <img src={img} alt = 'learning' className='img' />
           <div className="absl">
             <div className="flexl">
               <Link to='/' className='links'>
