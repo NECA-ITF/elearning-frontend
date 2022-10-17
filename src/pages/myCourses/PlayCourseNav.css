@@ -9,6 +9,7 @@
     top: 0;
     height: 70px;
     z-index: 1;
+    padding: 20px;
 }
 .apply {
     background-color:#151D3B;
