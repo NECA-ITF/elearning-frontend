@@ -44,6 +44,7 @@ select{
     width: 100%;
     z-index: 2;
     background-color: #EEE;
+    padding: 20px;
 }
 .course-video{
     width: 75%;

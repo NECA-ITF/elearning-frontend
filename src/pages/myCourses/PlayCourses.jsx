@@ -16,6 +16,7 @@ import axios from 'axios';
 function PlayCourses({ API_URL }) {
   const currentCourse = JSON.parse(localStorage.getItem('currentCourse'));
   const currentCourseOutline = JSON.parse(localStorage.getItem('currentCourseOutline'));
+  
   const [outlineVideos, setOutlineVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState({}); 
   // const currentVideo1 = {_id: "iniovr", title: "were here", url: "api/static/videos/vid1.mp4"}; 
