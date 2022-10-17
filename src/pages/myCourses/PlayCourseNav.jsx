@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import itflogo from '../../assets/itf_log.png';
 import profile from '../../assets/dashboard/profile.svg'
 import arrow from '../../assets/dashboard/arrow.svg'
-import '../homePage/NavBar.css';
+import './PlayCourseNav.css';
 import '../dashBoard/DashBoard.css'
 import { Link, useNavigate } from 'react-router-dom';
 
